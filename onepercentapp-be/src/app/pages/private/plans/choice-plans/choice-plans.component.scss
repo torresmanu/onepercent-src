@@ -1,0 +1,88 @@
+.section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.onepercentPro {
+  width: auto;
+  font-weight: 600;
+  padding: 4px 11px;
+  background-color: #bcdf84;
+  border-radius: 13px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-top: 2rem;
+  }
+
+  .title {
+    align-self: stretch;
+
+    color: var(--onepercent-gray-950, #131313);
+    text-align: center;
+    /* Laussane_L_550 */
+    /* font-family: "TWK Lausanne"; */
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+  }
+}
+
+.plans {
+  .plans-text {
+    align-self: stretch;
+
+    color: var(--onepercent-gray-950, #131313);
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.pFreeTrial {
+  color: var(--onepercent-gray-950, #131313);
+  text-align: center;
+
+  /* Inter_XS_Reg */
+  font-family: Inter;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.buttons {
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  ion-button.btn-outline-dark,
+  ion-button.btn-dark {
+    display: grid;
+  }
+  section {
+    padding-bottom: 10rem;
+  }
+}
+
+.plans-selector-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

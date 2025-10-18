@@ -1,0 +1,13 @@
+@mixin card-base() {
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow-card);
+    overflow: hidden;
+}
+
+// --- Clases ---
+
+.card-primary {
+    @include card-base();
+    background-color: var(--white-color);
+    color: var(--dark-color);
+}

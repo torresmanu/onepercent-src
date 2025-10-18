@@ -1,0 +1,47 @@
+<ng-container>
+    <div class="wrapper ion-padding">
+        <ion-header *ngIf="!showLoader">
+            <ion-toolbar class="header-toolbar">
+                <ion-buttons slot="start">
+                    <ion-icon (click)="backstep.emit()" name="arrow-back-outline"></ion-icon>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <div class="step-flex-container">
+            <div class="step-content">
+                <div class="step-header">
+                    <h1 class="title font-lausanne-l">{{getCurrentStep().headerText.title | translate}}</h1>
+                    <h3 class="description" *ngIf="getCurrentStep().headerText.description">
+                        {{getCurrentStep().headerText.description | translate}}</h3>
+                </div>
+                <div class="option-group" *ngIf="getCurrentStep().component === 'default'; else results">
+                    <div class="option-card" *ngFor="let option of mockedMetas; let i = index"
+                        [class.selected]="currentSelected ? currentSelected === option.id : false"
+                        (click)="selectOption(option.id)">
+                        <img [src]="option.icon" class="option-icon">
+                        <div class="option-title">{{ option.title}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #results>
+            <div class="cards-container">
+                <div *ngFor="let result of getResults()">
+                    <app-options-result-card [results]="result" [style]="getCurrentStep().style">
+                    </app-options-result-card>
+                </div>
+            </div>
+        </ng-template>
+        <ion-buttons class="buttons-container">
+            <ion-button expand="block" class="deny-btn" mode="ios" (click)="deny.emit()"
+                *ngIf="getCurrentStep().denyBtn">
+                {{ getCurrentStep().denyBtn | translate }}
+            </ion-button>
+            <ion-button expand="block" class=".btn-dark" mode="ios" (click)="continue.emit()">
+                {{ getCurrentStep().acceptBtn | translate }}
+            </ion-button>
+
+        </ion-buttons>
+    </div>
+</ng-container>

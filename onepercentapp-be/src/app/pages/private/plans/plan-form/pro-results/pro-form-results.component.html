@@ -1,0 +1,9 @@
+<ion-content fullscreen>
+    <app-loader-form-results *ngIf="showLoader" (finished)="showLoader = false"  ></app-loader-form-results>
+    <app-options-result-form [stepsConfig]="steps" [stepNumber]="stepNumber" (continue)="continue()"
+        (backstep)="backstep()" (deny)="deny()" *ngIf="!isFullPictureStep && !showLoader">
+    </app-options-result-form>
+        <app-fullscreen-picture *ngIf="isFullPictureStep && !showLoader" pictureUrl="../../../../../../assets/imgs/plan-forms/proResults.png"
+            title="PRO_FORM_RESULTS.FULLSCREEN_PICTURE"
+            buttonText="PRO_FORM_RESULTS.START_BTN" (continue)="goToHome()"></app-fullscreen-picture>
+</ion-content>

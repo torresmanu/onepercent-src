@@ -1,0 +1,26 @@
+<app-header backButton="/private/profile" title="Contacto" />
+<ion-content class="safe-area ion-padding">
+  <div class="contact-header">
+    <h1>{{ 'CONTACT.TITLE' | translate }}<span class="highlight">{{ 'CONTACT.FOR' | translate }}</span></h1><span class="highlight end">{{ 'CONTACT.HELP_YOU' | translate }}</span>
+  </div>
+
+  <div class="contact-content">
+    <p class="font-xm-regular">{{ 'CONTACT.DESCRIPTION' | translate }}</p>
+
+    <ul>
+      <li class="font-xm-regular">{{ 'CONTACT.TEXT1' | translate }}</li>
+      <li class="font-xm-regular">{{ 'CONTACT.TEXT2' | translate }}</li>
+      <li class="font-xm-regular">{{ 'CONTACT.TEXT3' | translate }}</li>
+      <li class="font-xm-regular">{{ 'CONTACT.TEXT4' | translate }}</li>
+      <li class="font-xm-regular">{{ 'CONTACT.TEXT5' | translate }}</li>
+    </ul>
+    
+    <div class="contact-info">
+      <p class="font-xm-regular">{{ 'CONTACT.CONTACT_US' | translate }}<a class="font-xm-regular" href="mailto:info&#64;theonepercentapp.com">info&#64;theonepercentapp.com</a>{{ 'CONTACT.CONTACT_US1' | translate }}</p>
+    </div>
+  </div>
+
+  <div class="logo-container">
+    <app-logo [width]="'2.5rem'" [height]="'2.5rem'" [dark]="true"></app-logo>
+  </div>
+</ion-content> 

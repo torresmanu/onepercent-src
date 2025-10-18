@@ -1,0 +1,25 @@
+ion-row,
+ion-col {
+  height: 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+ion-button {
+  --color: black;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.date {
+  color: #1c1c1c;
+  /* Inter_XM_Sb */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

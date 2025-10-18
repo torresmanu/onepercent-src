@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../node_modules/@revenuecat/purchases-capacitor/dist/esm/index.js"],
+  "sourcesContent": ["import { registerPlugin } from '@capacitor/core';\nconst Purchases = registerPlugin('Purchases', {\n    web: () => import('./web').then((m) => new m.PurchasesWeb()),\n});\nexport * from './definitions';\nexport { Purchases };\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,IAAM,YAAY,eAAe,aAAa;AAAA,EAC1C,KAAK,MAAM,OAAO,mBAAO,EAAE,KAAK,CAAC,MAAM,IAAI,EAAE,aAAa,CAAC;AAC/D,CAAC;",
+  "names": []
+}

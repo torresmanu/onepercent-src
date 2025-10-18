@@ -1,0 +1,35 @@
+<ion-content class="ion-padding safe-area choice-plans-continer">
+  <div class="section-wrapper">
+    <section>
+      <span class="onepercentPro">onepercent pro</span>
+      <div class="header">
+        <img src="../../../../../assets/imgs/icon-dark.png" alt="logo" class="logo">
+        <h2 class="title font-lausanne-xl">{{ 'CHOICEPLAN.TITLE' | translate }}<br>
+          {{ 'CHOICEPLAN.TITLE1' | translate }}</h2>
+      </div>
+      <div class="plans">
+        <h2 class="plans-text">{{ 'CHOICEPLAN.PLANS_TEXT' | translate }}<br>
+          {{ 'CHOICEPLAN.PLANS_TEXT1' | translate }}</h2>
+        <div class="plans-selector-container">
+          <div *ngFor="let pkg of availablePackages; let i = index" (click)="selectPlan(i, pkg)">
+            <app-plan-card *ngIf="discounts" [plan]="pkg" [discounts]="discounts" [isSelected]="selectedPlanIndex === i"></app-plan-card>
+          </div>
+          <p class="pFreeTrial" *ngIf="selectedPlanIndex !== null && availablePackages[selectedPlanIndex]?.product?.introPrice">
+{{'CHOICEPLAN.FREETRIAL' | translate}}{{ availablePackages[selectedPlanIndex]?.product.introPrice.periodNumberOfUnits }} {{'PLANS.' + availablePackages[selectedPlanIndex]?.identifier + "." + availablePackages[selectedPlanIndex]?.product.introPrice.periodUnit | translate}} {{ 'CHOICEPLAN.LATER' | translate }} {{ availablePackages[selectedPlanIndex]?.product.pricePerYear}}.</p>
+        </div>
+      </div>
+    </section>
+    <div class="buttons">
+      <ion-button (click)="goHome()" class="btn-outline-dark wide-btn" style="--box-shadow: none;">
+        {{ 'CHOICEPLAN.GO_TO_BASIC_PLAN_BUTTON' | translate }}
+      </ion-button>
+      <!-- <ion-button (click)="openRevenueCat()" class="btn-dark wide-btn">
+        {{ 'CHOICEPLAN.START_FREE_TRIAL_BUTTON' | translate }}
+      </ion-button> -->
+      <ion-button (click)="openRevenueCat()"  class="btn-dark wide-btn">
+        {{ 'CHOICEPLAN.START_FREE_TRIAL_BUTTON' | translate }}
+      </ion-button>
+
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,65 @@
+<app-header  *ngIf="!deleted" backButton="/private/home" title="Eliminar cuenta"/>
+
+<!-- Mostrar contenido PREVIO a eliminación -->
+<ion-content class="safe-area ion-padding">  
+  <div  *ngIf="!deleted" class="container">
+    <div>
+      <ion-text>
+        <h1 class="font-m-semibold">{{ 'DELETE_ACCOUNT.TITLE' | translate }}</h1>
+      </ion-text>
+
+      <div class="infoContainer">
+        <div class="iconContainer">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        <div class="textContainer">
+          <p class="font-m-semibold primaryText">{{ 'DELETE_ACCOUNT.PRYMARY_TEXT1' | translate }}</p>
+          <p class="secondText">{{ 'DELETE_ACCOUNT.SECOND_TEXT1' | translate }}</p>
+        </div>
+      </div>
+
+      <div class="infoContainer">
+        <div class="iconContainer">
+          <ion-icon name="file-tray-stacked-outline"></ion-icon>
+        </div>
+        <div class="textContainer">
+          <p class="font-m-semibold primaryText">{{ 'DELETE_ACCOUNT.PRYMARY_TEXT2' | translate }}</p>
+          <p class="secondText">{{ 'DELETE_ACCOUNT.SECOND_TEXT2' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+</div>
+<!-- Mostrar contenido POST eliminación -->
+  <div *ngIf="deleted" class="container">
+   <div style="    margin-top: 20dvh;">
+      <p class="textUp font-lausanne-xl">
+        Tu <span class="highlight">cuenta</span> ha sido  <span class="highlight">eliminada</span>
+      </p>
+      <p class="textDown">Gracias por haber formado parte de onepercent. Esperamos que hayas tenido una buena experiencia.</p>
+      <img class="logo bye-image" src="../../../../../assets/imgs/icon-dark.png" alt="Imagen de despedida"/>
+    </div>
+
+  </div>
+
+
+
+
+  
+  <div  class="buttonContainer">
+  <ion-button
+  *ngIf="deleted"
+  expand="block" class="btn-dark" (click)="goRoot()">
+     Salir
+    </ion-button>
+  
+    <ion-button 
+  *ngIf="!deleted"
+  fill="outline" expand="block" color="danger" class="btn-outline-red" (click)="openModalDelete()">
+    {{ 'DELETE_ACCOUNT.BUTTON1' | translate }}
+  </ion-button>
+</div>
+
+</ion-content>
+
+

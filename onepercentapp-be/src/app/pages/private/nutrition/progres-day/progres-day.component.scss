@@ -1,0 +1,120 @@
+.slide-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0.5rem; // 8px
+}
+
+swiper-container {
+  --swiper-pagination-bullet-inactive-color: #d8d8d8; // gris inactivo
+  --swiper-pagination-bullet-active-color: #131313; // negro activo
+  --swiper-theme-color: #131313;
+}
+
+.daily-timeline-container {
+  height: 20.9375rem; // 335px
+  margin: 1rem; // 16px
+  background: #f1f1f1;
+  border-radius: 0.75rem; // 12px
+  padding: 1rem; // 16px
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.05); // 0 2px 6px
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem; // 8px
+
+    .title {
+      font-weight: 600;
+      font-size: 0.875rem; // 14px
+    }
+
+    .score {
+      font-weight: 600;
+      font-size: 0.875rem; // 14px
+
+      small {
+        font-weight: 400;
+        color: #666;
+      }
+    }
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+.event-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #f2f2f2;
+  margin: 1rem; // 16px
+  border-radius: 0.75rem; // 12px
+  font-size: 0.8125rem; // 13px
+  overflow: hidden;
+}
+
+.event-info {
+  display: flex;
+  padding: 0.5rem 2rem; // 8px 32px
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-time {
+  color: #131313;
+  /* Inter_M_Sb */
+  font-family: Inter;
+  font-size: 0.875rem; // 14px
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.event-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem; // 4px
+}
+
+.event-title {
+  color: #2b2b2b;
+  /* Inter_XS_Reg */
+  font-family: Inter;
+  font-size: 0.625rem; // 10px
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.event-subtitle {
+  color: #2b2b2b;
+  /* Inter_XS_Reg */
+  font-family: Inter;
+  font-size: 0.625rem; // 10px
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.event-score {
+  display: flex;
+  align-items: center;
+  background-color: #bcdf84;
+  padding: 1rem; // 16px
+  border-top-right-radius: 0.75rem; // 12px
+  border-bottom-right-radius: 0.75rem; // 12px
+}
+
+.event-points {
+  font-weight: bold;
+  font-size: 0.875rem; // 14px
+  color: #000;
+}

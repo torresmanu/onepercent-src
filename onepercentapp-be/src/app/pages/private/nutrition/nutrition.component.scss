@@ -1,0 +1,254 @@
+ion-header,
+ion-toolbar {
+  --background: #fff;
+  --ion-background-color: #fff;
+  --border-width: 0;
+  --border-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem; // 10px
+  background-color: #fff;
+  border: none;
+
+  .logo {
+    width: 2.5rem; // 40px
+    height: 2.5rem; // 40px
+  }
+
+  .title {
+    color: #131313;
+    /* Inter_XM_Sb */
+    font-family: Inter;
+    font-size: 1rem; // 16px
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .nutrition {
+    color: #55812a;
+    /* Inter_XM_Sb */
+    font-family: Inter;
+    font-size: 1rem; // 16px
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+
+
+.todays-progress {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 1rem; // 16px
+  padding-right: 0.5rem; // 8px
+
+  .progress-text {
+    color: #1c1c1c;
+    /* Inter_XM_Sb */
+    font-family: Inter;
+    font-size: 1rem; // 16px
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .button {
+    background-color: transparent;
+    border: none;
+    color: #55812a;
+    font-size: 1rem; // 16px
+    cursor: pointer;
+  }
+}
+
+.slide-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+swiper-container {
+  --swiper-pagination-bullet-inactive-color: #d8d8d8; // gris inactivo
+  --swiper-pagination-bullet-active-color: #131313; // negro activo
+  --swiper-theme-color: #131313;
+  height: 9rem;
+}
+
+.title-register {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 1rem 0 1rem; // 16px 16px 0 16px
+  align-items: center;
+
+  .your-registration {
+    color: #1c1c1c;
+
+    /* Inter_XM_Sb */
+    font-family: Inter;
+    font-size: 1rem; // 16px
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .no-shadow-btn {
+    --background: transparent;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
+
+.mb-first {
+  margin-bottom: 8px;
+}
+
+.mb-first:last-child {
+  margin-bottom: 0;
+}
+.container {
+  margin: 1rem; // 16px
+  display: flex;
+  padding: 1rem; // 16px
+  justify-content: space-between;
+  align-items: flex-end;
+  align-self: stretch;
+  border-radius: 0.625rem; // 10px
+  background: #f2f2f2;
+  box-shadow: 0rem 0.6875rem 0.1875rem 0rem rgba(0, 0, 0, 0),
+    // 0px 11px 3px 0px
+    0rem 0.4375rem 0.1875rem 0rem rgba(0, 0, 0, 0.01),
+    // 0px 7px 3px 0px
+    0rem 0.25rem 0.125rem 0rem rgba(0, 0, 0, 0.05),
+    // 0px 4px 2px 0px
+    0rem 0.125rem 0.125rem 0rem rgba(0, 0, 0, 0.09),
+    // 0px 2px 2px 0px
+    0rem 0rem 0.0625rem 0rem rgba(0, 0, 0, 0.1); // 0px 0px 1px 0px
+
+  .container-text {
+    margin-right: 2rem; // 32px
+    .container-title {
+      color: #1c1c1c;
+      /* Inter_L_Sb */
+      font-family: Inter;
+      font-size: 1.25rem; // 20px
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin: 0;
+    }
+
+    .container-p {
+      color: #1c1c1c;
+      /* Inter_S_Reg */
+      font-family: Inter;
+      font-size: 0.75rem; // 12px
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin: 0;
+      margin-top: 0.5rem; // 8px
+    }
+  }
+
+  .img-container {
+    width: 3.125rem; // 50px
+    height: 3.125rem; // 50px
+  }
+}
+
+.kitchen-zone {
+  margin: 1rem; // 16px
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .kitchen-title {
+    color: #1c1c1c;
+    /* Inter_XM_Sb */
+    font-family: Inter;
+    font-size: 1rem; // 16px
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .badge {
+    display: flex;
+    height: 1.1875rem; // 19px
+    padding: 0.1131rem 0.4524rem; // 1.81px 7.24px
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.6786rem; // 10.86px
+    border: 0.1131rem solid #bcdf84; // 1.81px
+    background: #bcdf84;
+  }
+
+  .badge-text {
+    color: #131313;
+    text-align: center;
+    font-family: Inter;
+    font-size: 0.6786rem; // 10.86px
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+.recipe-library {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin:0.5rem  1rem;
+
+  .library-text {
+    color: #1c1c1c;
+    /* Inter_XM_Sb */
+    font-family: Inter;
+    font-size: 1rem; // 16px
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .button {
+    background-color: transparent;
+    border: none;
+    color: #55812a;
+    font-size: 1rem; // 16px
+    cursor: pointer;
+    padding-right: 0.5rem; // 8px
+  }
+}
+
+.collapsable-card-container {
+  padding: 0.5rem; // 8px
+  margin: 0.5rem 1rem 1rem 1rem; // 0.5rem=8px, 1rem=16px
+  border-radius: 0.625rem; // 10px
+  background-color: #d8d8d8;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  box-sizing: border-box;
+
+  &.collapsed {
+    height: 3.75rem; // 60px
+  }
+}
+
+.dotted-line {
+  border-bottom: 1px dotted #bdbdbd;
+  width: 100%;
+  height: 0;
+  margin-top: 2px;
+  display: block;
+}

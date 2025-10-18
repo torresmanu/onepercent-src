@@ -1,0 +1,61 @@
+<swiper-container
+  slides-per-view="1"
+  pagination="true"
+  style="width: 100%;"
+>
+  <swiper-slide *ngFor="let slide of slides">
+    <ng-container>
+      <!-- Slide tipo "1" -->
+      <ng-container *ngIf="slide.type === '1'">
+        <div class="slide-row">
+          <ion-card>
+            <div>
+              <ion-icon src="assets/icon/clockGreen.svg"></ion-icon>
+            </div>
+            <div>
+              <p class="font-xs-regular">MINUTOS DIARIOS</p>
+              <p class="font-lausanne-14">75/60</p>
+              <p class="font-xs-regular">50pts</p>
+            </div>
+          </ion-card>
+          <ion-card>
+            <div>
+              <ion-icon src="assets/icon/shoesGreen.svg"></ion-icon>
+            </div>
+            <div>
+              <p class="font-xs-regular">PASOS DIARIOS</p>
+              <p class="font-lausanne-14">10.000/25.0000</p>
+              <p class="font-xs-regular">50pts</p>
+            </div>
+          </ion-card>
+        </div>
+      </ng-container>
+
+      <!-- Slide tipo "2" -->
+      <ng-container *ngIf="slide.type === '2'">
+        <div class="slide-row">
+          <ion-card>
+            <div>
+              <ion-icon src="assets/icon/clockGreen.svg"></ion-icon>
+            </div>
+            <div>
+              <p class="font-xs-regular">MINUTOS DIARIOS</p>
+              <p class="font-lausanne-14">75/60</p>
+              <p class="font-xs-regular">50pts</p>
+            </div>
+          </ion-card>
+          <ion-card>
+            <div>
+              <ion-icon src="assets/icon/shoesGreen.svg"></ion-icon>
+            </div>
+            <div>
+              <p class="font-xs-regular">PASOS DIARIOS</p>
+              <p class="font-lausanne-14">10.000/25.0000</p>
+              <p class="font-xs-regular">50pts</p>
+            </div>
+          </ion-card>
+        </div>
+      </ng-container>
+    </ng-container>
+  </swiper-slide>
+</swiper-container>

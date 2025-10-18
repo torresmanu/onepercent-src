@@ -1,0 +1,32 @@
+<app-header [backButton]="'/public/login-with-email'" />
+<ion-content class="safe-area ion-padding forgot-password-page">
+  <div class="h-full flex-col justify-between">
+    <div>
+      <div class="logo-container flex-row align-center justify-center">
+        <app-logo [dark]="true"></app-logo>
+      </div>
+
+      <h1 class="title font-lausanne-l">{{ 'EMAIL_FORM.TITLE' | translate }}</h1>
+      <form [formGroup]="registerForm" style="margin-top: 2rem !important">
+        <app-custom-input [placeholder]="'Correo electrónico'"
+          [control]="utilsService.getFormControl(registerForm, 'email')" type="email"
+          [hasError]="utilsService.getFormError(registerForm, 'email')" [errorMessage]="
+            utilsService.getErrorMessage(registerForm, 'email') ||
+            (registerForm.get('email')?.errors?.['emailTaken'] ? 'El email ya está registrado.' : '') ||
+            (registerForm.get('email')?.errors?.['serverError'] ? 'Error al verificar el email.' : '')
+          " [icon]="
+            utilsService.getFormError(registerForm, 'email')
+              ? 'close-outline'
+              : registerForm.controls['email'].value !== ''
+              ? 'checkmark-outline'
+              : 'mail-outline'
+          " [autocomplete]="'email'" [labelPlacement]="'stacked'" name="email"
+          [ngClass]="{'input-error': isTaken}"></app-custom-input>
+      </form>
+    </div>
+
+    <ion-button expand="block" class="btn-dark ion-margin-bottom" [disabled]="registerForm.invalid" (click)="next()">
+      {{ 'EMAIL_FORM.BUTTON_CONTINUE' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

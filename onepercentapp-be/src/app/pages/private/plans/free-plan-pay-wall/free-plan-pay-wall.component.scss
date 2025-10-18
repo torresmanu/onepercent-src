@@ -1,0 +1,251 @@
+.sectionUp {
+  background-image: url("../../../../../assets/imgs/paywallInfoHeader.jpg");
+  height: 30dvh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .headerText {
+    padding: 0rem 0rem 0rem 1rem;
+
+    h2 {
+      color: #fff;
+      /* font-family: "TWK Lausanne"; */
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 550;
+      line-height: normal;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    span {
+      color: #bcdf84;
+      /* font-family: "TWK Lausanne"; */
+    }
+  }
+}
+
+.containerUp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  .logoUp {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.onepercentPro {
+  display: flex;
+  height: 1.492rem;
+  padding: 0.142rem 0.568rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.853rem;
+
+  border: 0.142rem solid #bcdf84;
+  background: #bcdf84;
+  color: #131313;
+
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.853rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.sectionDown {
+  border-radius: 0.625rem;
+  z-index: 2;
+  position: relative;
+  top: -1.25rem;
+  background: #fff;
+  padding: 1rem 1.5rem 0 1.5rem;
+
+  .containerText {
+    align-self: stretch;
+    color: #131313;
+
+    /* Inter_L_Sb */
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    color: #131313;
+    margin-bottom: 24px;
+  }
+
+  .containerDown {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .imgContainerDown {
+      display: flex;
+      width: 2rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-shrink: 0;
+      margin-right: 1rem;
+      margin-left: 2.875rem;
+    }
+
+    .textContainerDown {
+      margin-right: 1.5rem;
+    }
+
+    .titleContainer {
+      color: #97bf60;
+      font-family: Inter;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .pContainer {
+      color: #131313;
+      font-family: Inter;
+      font-size: 0.625rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: 0;
+      margin-bottom: 10%;
+    }
+  }
+}
+
+.termsText {
+  display: grid;
+  margin-top: 1.5rem;
+
+  .ptermsText {
+    color: #131313;
+    text-align: center;
+    /* Inter_XS_Reg */
+    font-family: Inter;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+  }
+
+  .cancelationText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 0.625rem;
+
+    background: #f2f2f2;
+    margin-top: 1rem;
+
+    .titleCancelation {
+      align-self: stretch;
+      color: #131313;
+      /* Inter_S_Bold */
+      font-family: Inter;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin: 1rem 0 0 1rem;
+    }
+
+    .pCancelation {
+      align-self: stretch;
+      color: #131313;
+      /* Inter_S_Reg */
+      font-family: Inter;
+      font-size: 0.75rem;
+      padding: 1rem;
+    }
+  }
+
+  .titleCancelationText {
+    align-self: stretch;
+    color: #131313;
+    /* Inter_S_Bold */
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .pCancelation {
+    color: #131313;
+    /* Inter_S_Reg */
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+
+    .onepercent-italics {
+      color: #131313;
+      /* Inter_S_Reg */
+      font-family: Inter;
+      font-size: 0.75rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  margin-top: 16px;
+
+  .wide-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    align-self: stretch;
+  }
+}
+
+@media (max-height: 53.125rem), (max-width: 700px) {
+  .sectionUp .headerText h2,
+  .sectionUp .headerText span {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-height: 31.25rem), (max-width: 500px) {
+  .sectionUp .headerText h2,
+  .sectionUp .headerText span {
+    font-size: 2rem;
+  }
+}
+
+@media (max-height: 500px), (max-width: 400px) {
+  .sectionUp .headerText h2,
+  .sectionUp .headerText span {
+    font-size: 1.5rem;
+  }
+}

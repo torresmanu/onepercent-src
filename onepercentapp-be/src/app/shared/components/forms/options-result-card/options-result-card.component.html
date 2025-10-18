@@ -1,0 +1,9 @@
+<div class="result-card" [ngStyle]="style">
+    <div class="result-item" *ngFor="let item of results">
+        <div class="wrapper">
+            <img [src]="item.icon" class="result-icon" />
+            <div class="result-title">{{ item.title }}</div>
+        </div>
+        <span class="result">{{ item.result }}</span>
+    </div>
+</div>

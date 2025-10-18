@@ -1,0 +1,19 @@
+<div class="selectable-options">
+    <ng-container *ngFor="let option of options; let i = index">
+        <button *ngIf="!option.input" type="button" class="selectable-option" (click)="toggleOption(option.value)"
+            [ngClass]="[inputStyle, isSelected(option.value) ? 'selected' : '']">
+            <span class="option-label" [ngClass]="multiselect ? 'multiselect' : ''">{{ option.label | translate
+                }}</span>
+            <img *ngIf="multiselect" class="selectable-icon"
+                [src]="isSelected(option.value) ? '../../../../assets/icon/checked.svg' : '../../../../assets/icon/unchecked.svg'"
+                alt="check icon" />
+        </button>
+        <div *ngIf="option.input" class="selectable-option input-option"
+            [ngClass]="[inputStyle, isSelected(option.value) ? 'selected' : '']" (click)="focusInput(i)">
+            <input #inputRef type="text" class="option-input" [placeholder]="option.label | translate"
+                (focus)="onInputFocus(option.value)" (input)="onInputChange($event, option.value)"
+                [ngClass]="option.inputStyle" />
+            <img class="selectable-icon" src="../../../../assets/icon/pencil.svg" alt="check icon" />
+        </div>
+    </ng-container>
+</div>

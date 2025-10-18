@@ -1,0 +1,10 @@
+<ion-radio-group [(ngModel)]="selectedIndex" (ionChange)="selectionChange.emit(selectedIndex)">
+    <div class="card" *ngFor="let item of hydrationRegister$ | async; let i = index"
+        [class.selected]="selectedIndex === i">
+        <div class="color-card" [style.background]="item.color"></div>
+        <div class="input">
+            <div class="status">{{ item.status }}</div>
+            <ion-radio class="MD" slot="end" [value]="i" mode="md" style="--color-checked: #97bf60"></ion-radio>
+        </div>
+    </div>
+</ion-radio-group>

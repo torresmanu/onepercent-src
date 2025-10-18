@@ -1,0 +1,32 @@
+<div class="card-grid" [class.selected]="isSelected">
+  <div class="row-one">
+    <div class="icon-duration-container">
+      <ion-icon [name]="isSelected ? checkboxIcons.selected : checkboxIcons.unselected"
+                class="plan-checkbox"></ion-icon>
+      <!-- Si es un plan mockeado -->
+      <span class="plan-duration" *ngIf="plan?.duration">{{ plan.identifier + '.TITLE' | translate }}</span>
+      <!-- Si es un paquete de RevenueCat -->
+      <span class="plan-duration" *ngIf="plan?.product?.title">{{ "PLANS." + plan.identifier + '.TITLE' | translate }}</span>
+    </div>
+
+    <span class="plan-discount" *ngIf="discounts[plan.identifier]">
+      {{ "PLANS." + plan.identifier + '.DISCOUNT' | translate }} {{ discounts[plan.identifier].percent }}%
+    </span>
+  </div>
+  <div class="row-two">
+    <!-- Precio -->
+    <span class="plan-price" *ngIf="plan?.price">{{ plan.price }}</span>
+    <span class="plan-price" *ngIf="plan?.product?.priceString">{{ plan.product.pricePerMonthString }}</span>
+    <!-- Billing -->
+    <span class="plan-billing" *ngIf="plan?.billing">{{ plan.billing }}</span>
+    <span class="plan-billing" *ngIf="plan?.product?.subscriptionPeriod">
+      {{subscriptionPeriod( plan.product.subscriptionPeriod)}} {{'PLANS.' + plan.identifier + '.FACTURATION' | translate}}
+    </span>
+  </div>
+  <div class="row-three">
+    <span *ngIf="plan?.freeTrial" class="plan-freetrial">{{ plan.freeTrial }}</span>
+    <span *ngIf="plan?.product?.introPrice" class="plan-freetrial">
+      {{ plan.product.introPrice.periodNumberOfUnits }} {{'PLANS.' + plan.identifier + "." + plan.product.introPrice.periodUnit | translate}} {{'PLANS.' + plan.identifier + '.FREE_TRIAL' | translate}}
+    </span>
+  </div>
+</div>

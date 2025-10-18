@@ -1,0 +1,95 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--spacing-lg);
+}
+
+.profile-avatar {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+
+  ion-avatar {
+    width: 7.5rem;
+    height: 7.5rem;
+    --border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ion-color-light);
+  }
+}
+
+.pro-badge {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--ion-color-primary);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.profile-name {
+  font-size: 1.75rem;
+  font-weight: 550;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.edit-profile-btn {
+  --border-color: var(--ion-color-primary);
+  --color: var(--ion-color-primary);
+  margin-bottom: var(--spacing-lg);
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ion-list {
+  background: var(--ion-color-medium);
+  border-radius: var(--ion-border-radius);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+ion-item {
+
+    padding-left: 0 !important;
+
+  ion-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+  --border-radius: var(--ion-border-radius);
+  margin-bottom: var(--spacing-sm);
+}
+
+ion-item:last-child {
+  margin-bottom: 0;
+}
+
+// Clase especial para listas con un solo ítem
+ion-list.single-item-list ion-item {
+  margin-bottom: 0;
+}
+
+
+ion-icon[slot="start"] {
+  margin-right: var(--spacing-md);
+}
+
+ion-label {
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.singleButtonPadding{
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}

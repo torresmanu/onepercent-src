@@ -1,0 +1,13 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "RUPM2436KQ.app.onepercent.app",
+                "paths": [
+                    "/reset-password/*"
+                ]
+            }
+        ]
+    }
+}

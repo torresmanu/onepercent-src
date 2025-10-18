@@ -1,0 +1,25 @@
+.login-email-page {
+  // Estilos específicos de los elementos
+  .logo-container {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  h1.title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  // Enlace de contraseña olvidada
+  .forgot-password {
+    a {
+      color: var(--ion-color-success);
+      cursor: pointer;
+    }
+  }
+
+  // Botón de continuar en la parte inferior
+  ion-button {
+    margin-top: 2rem;
+  }
+}

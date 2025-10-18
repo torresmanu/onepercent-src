@@ -1,0 +1,71 @@
+.maincontainer {
+  display: flex;
+  height: 100%;
+  align-content: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+
+  h2 {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  p{
+    color: var(--onepercent-gray-50, #FFF);
+
+
+font-size: .875rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+  .maincontainer-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: stretch;
+
+    .category-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      .category-label {
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 0;
+        margin-bottom: 0.375rem;
+      }
+      .recipe-title{
+
+        font-size: 1.75rem;
+        font-style: normal;
+        font-weight: 550;
+        line-height: normal;
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .packButtons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+    }
+    ion-button {
+      width: 100%;
+    }
+  }
+}

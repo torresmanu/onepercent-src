@@ -1,0 +1,30 @@
+<ion-content class="welcome-name-page flex-col">
+  <!-- Imagen de fondo -->
+  <div class="image-container">
+      <ion-back-button class="back-button " defaultHref="/welcome" mode="md"
+            icon="../../../../../../assets/icon/backArrow.svg"
+
+      ></ion-back-button>
+      <div class="header">
+          <h2 class="title font-lausanne-xxl">{{ 'REGISTER_START_FORM.TITLE' | translate }}
+          <span class="highlight font-lausanne-xxl">{{ 'REGISTER_START_FORM.HIGHLIGHT' | translate }}</span></h2> 
+          <!-- Imagen -->
+      <div class="ion-margin-top">
+        <img src="assets/imgs/icon.png" alt="app-logo" class="app-logo">
+      </div>  
+        </div>
+    </div>
+
+  <!-- Contenido principal -->
+  <div class="content-container ion-padding flex-col justify-between">
+      <div>
+          <p class="text">{{ 'REGISTER_START_FORM.TEXT' | translate }}<span class="text-span">{{ 'REGISTER_START_FORM.SPAN' | translate }}</span>{{  'REGISTER_START_FORM.TEXT1' | translate }}</p>
+          <p class="text">{{ 'REGISTER_START_FORM.TEXT2' | translate }}</p>
+      </div>
+
+      <!-- Botón continuar -->
+      <ion-button expand="block" class="btn-dark ion-margin-bottom" mode="ios" (click)="continue()">
+          {{ 'REGISTER_START_FORM.BUTTON_DISCOVER' | translate }}
+      </ion-button>
+  </div>
+</ion-content>

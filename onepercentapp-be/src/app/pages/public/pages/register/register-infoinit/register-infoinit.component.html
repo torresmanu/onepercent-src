@@ -1,0 +1,45 @@
+<ion-content class="welcome-name-page flex-col safe-area">
+  <div>
+    <!-- Imagen de fondo -->
+    <div class="image-container">
+      <ion-back-button
+      icon="../../../../../../assets/icon/backArrow.svg"
+
+        class="back-button"
+        defaultHref="/welcome"
+        mode="md"
+      ></ion-back-button>
+    </div>
+    <div class="content-container flex-col justify-between">
+      <div>
+        <swiper-container pagination="true" pagination-bullet="true">
+          <swiper-slide *ngFor="let slide of slides">
+            <div
+              class="slide"
+              [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }"
+            >
+              <div class="text-overlay">
+                {{ slide.textBefore }}
+                <span class="highlight">{{ slide.highlight }}</span>
+                {{ slide.textAfter }}
+                <span class="highlight">{{ slide.highlight2 }}</span>
+                {{ slide.textAfter2 }}
+                <span class="highlight">{{ slide.highlight3 }}</span>
+              </div>
+
+              <ion-button
+                *ngIf="slide?.control"
+                expand="block"
+                class="ion-margin-bottom"
+                mode="ios"
+                (click)="continue()"
+              >
+                {{ "REGISTER_INFOINIT.BUTTON_CONTINUE" | translate }}
+              </ion-button>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </div>
+  </div>
+</ion-content>

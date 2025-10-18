@@ -1,0 +1,29 @@
+<app-header [backButton]="'/public/email-form'" />
+<ion-content class="safe-area ion-padding forgot-password-page">
+  <div class="h-full flex-col justify-between">
+    <div>
+      <div class="logo-container flex-row align-center justify-center">
+        <app-logo [dark]="true"></app-logo>
+      </div>
+      <h1 class="title font-lausanne-l">{{ 'VERIFY_EMAIL.TITLE' | translate }}</h1>
+      <ol class="info">
+        <li>
+          <ion-text>{{ 'VERIFY_EMAIL.DESCRIPTION' | translate }}<span>{{ 'VERIFY_EMAIL.SPAN' | translate }}</span>
+            <span>{{ email }}</span><span>{{ 'VERIFY_EMAIL.TEXT' | translate }}</span></ion-text>
+        </li>
+        <li>
+          <ion-text><span>{{ 'VERIFY_EMAIL.TEXT2' | translate }}</span> <span>{{ 'VERIFY_EMAIL.SPAN1' | translate
+              }}</span> <span>{{ 'VERIFY_EMAIL.TEXT3' | translate }}</span></ion-text>
+        </li>
+        <li>
+          <ion-text><span>{{ 'VERIFY_EMAIL.SPAN2' | translate }}</span>{{ 'VERIFY_EMAIL.TEXT4' | translate }}
+            <span>{{ 'VERIFY_EMAIL.SPAN3' | translate }}</span>{{ 'VERIFY_EMAIL.TEXT5' | translate }}<span>{{ 'VERIFY_EMAIL.SPAN4' | translate }}</span></ion-text>
+        </li>
+      </ol>
+    </div>
+
+    <ion-button expand="block" class="btn-dark ion-margin-bottom" (click)="next()">
+      {{ 'VERIFY_EMAIL.BUTTON_LOGIN' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

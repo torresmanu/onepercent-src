@@ -1,0 +1,161 @@
+.login-page {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  // Imagen de fondo que ocupa toda la pantalla
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../../../assets/imgs/bienvenida.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  // Overlay oscuro para mejor legibilidad del texto
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    z-index: 2;
+  }
+
+  // Contenedor principal del contenido
+  .login-container {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 24px 40px 24px;
+  }
+
+  // Texto motivacional en la parte superior
+  .motivational-text {
+    margin-top: 60px;
+
+    h1 {
+      margin: 0;
+      line-height: 1.1;
+      text-align: left;
+
+      .text-white {
+        color: #ffffff;
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+
+      .text-green {
+        color: var(--ion-color-primary);
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Logo de la aplicación
+  .logo-section {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+
+    .app-logo {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  // Botones en la parte inferior centrados
+  .buttons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+
+    .btn-start {
+      --background: var(--ion-color-primary);
+      --color: #ffffff;
+      --border-radius: 12px;
+      --padding-top: 16px;
+      --padding-bottom: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: none;
+      width: 100%;
+      max-width: 280px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .login-link {
+      color: #ffffff;
+      font-size: 14px;
+      margin: 0;
+      text-align: center;
+
+      a {
+        color: var(--ion-color-primary);
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Responsive design para diferentes tamaños de pantalla
+@media (max-width: 375px) {
+  .login-page {
+    .motivational-text h1 {
+      .text-white,
+      .text-green {
+        font-size: 2rem;
+      }
+    }
+
+    .login-container {
+      padding: 40px 20px 30px 20px;
+    }
+
+    .motivational-text {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (min-width: 414px) {
+  .login-page {
+    .motivational-text h1 {
+      .text-white,
+      .text-green {
+        font-size: 2.8rem;
+      }
+    }
+  }
+}

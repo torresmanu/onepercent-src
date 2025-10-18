@@ -1,0 +1,17 @@
+<ion-row class="ion-padding-horizontal ion-no-margin" style="align-items: center;">
+  <ion-col size="2">
+    <ion-button fill="clear" (click)="previousDay()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  </ion-col>
+
+  <ion-col class="ion-text-center">
+    <span class="date">{{ getDayLabel() }}</span>
+  </ion-col>
+
+  <ion-col size="2">
+    <ion-button fill="clear" (click)="nextDay()">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </ion-col>
+</ion-row>

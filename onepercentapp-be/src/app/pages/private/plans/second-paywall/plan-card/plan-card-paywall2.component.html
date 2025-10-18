@@ -1,0 +1,50 @@
+<div *ngFor="let package of availablePackages">
+  <div class="plan-card-container">
+    <div *ngIf="discounts[package.identifier]"
+    
+    (click)="onSelect(package.identifier)"
+      [class.selected]="selectedId === package.identifier"
+      role="button"
+      tabindex="0"
+      (keydown.enter)="onSelect(package.identifier)"
+      (keydown.space)="onSelect(package.identifier)"
+      [attr.aria-pressed]="selectedId === package.identifier ? 'true' : 'false'"
+      [attr.aria-label]="'Seleccionar plan ' + package.identifier"class="discount-container">
+      <h3 class="font-xs-semibold">
+        {{ "PLANS." + package.identifier + '.DISCOUNT' | translate }} {{ discounts[package.identifier].percent }}%
+      </h3>
+    </div>
+
+    <div
+      class="plan-card-content"
+      (click)="onSelect(package.identifier)"
+      [class.selected]="selectedId === package.identifier"
+      role="button"
+      tabindex="0"
+      (keydown.enter)="onSelect(package.identifier)"
+      (keydown.space)="onSelect(package.identifier)"
+      [attr.aria-pressed]="selectedId === package.identifier ? 'true' : 'false'"
+      [attr.aria-label]="'Seleccionar plan ' + package.identifier"
+    >
+      <div class="plan-card-header">
+        <h1 style="line-height: normal !important;" class="font-xm-semibold">{{ "PLANS." + package.identifier + '.TITLE' | translate }}</h1>
+      </div>
+
+      <div class="plan-card-body">
+        <h2 class="font-lsb-semibold">{{ package.product.pricePerMonthString }}</h2>
+        <h2 class="font-xs-bold">/mes</h2>
+      </div>
+
+      <div class="plan-card-footer">
+        <p class="font-xxs-regular">
+          {{ 'PLANS.' + package.identifier + '.FACTURATION' | translate }}
+        </p>
+        <p *ngIf="package?.product?.introPrice" class="font-xxs-regular">
+          {{ package.product.introPrice.periodNumberOfUnits }}
+          {{ 'PLANS.' + package.identifier + '.' + package.product.introPrice.periodUnit | translate }}
+          {{ 'PLANS.' + package.identifier + '.FREE_TRIAL' | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<app-header backButton="/private/profile" title="{{ 'PROFILE.SUBSCRIPTIONS' | translate }}" />
+
+<ion-content class="safe-aread-flex">
+  <div class="sub-summary-card">
+    <!-- FILA: Tipo -->
+    <div class="row">
+      <div class="left">
+        <ion-icon name="pricetag-outline"></ion-icon>
+        <span>Tipo</span>
+      </div>
+      <div class="right success">
+        {{ planLabel }}
+      </div>
+    </div>
+
+    <!-- FILA: Pago -->
+    <div class="row">
+      <div class="left">
+        <ion-icon name="cash-outline"></ion-icon>
+        <span>Pago</span>
+      </div>
+      <div class="right success">
+        {{ billingLabel }}
+      </div>
+    </div>
+
+    <!-- FILA: Estado -->
+    <div class="row">
+      <div class="left">
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+        <span>Estado</span>
+      </div>
+      <div class="right success">
+        {{ statusLabel }}
+      </div>
+    </div>
+
+    <!-- FILA: Próximo pago -->
+    <div class="row">
+      <div class="left">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <span>Próximo pago</span>
+      </div>
+      <div class="right success">
+        {{ nextPaymentLabel }}
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-button expand="block" (click)="subscription()">
+  <ion-label class="btn-dark">{{ 'PROFILE.SUBSCRIPTIONS' | translate }}</ion-label>
+</ion-button>

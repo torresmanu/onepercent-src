@@ -1,0 +1,9 @@
+<app-header backButton="/private/home" title="Cerrar sesión"/>
+<ion-content class="safe-area ion-padding">  
+<div class="container">
+<ion-text>
+  <p>{{ 'LOGOUT.DESCRIPTION' | translate }}</p>
+</ion-text>
+<ion-button class="btn-primary btn-dark" (click)="logOut()">{{ 'LOGOUT.LOGOUT_BUTTON' | translate }}</ion-button>
+</div>
+</ion-content>

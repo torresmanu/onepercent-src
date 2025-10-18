@@ -1,0 +1,95 @@
+<ion-item
+  class="custom-input"
+  lines="none"
+  [class.input-error]="hasError"
+  [class.has-value]="hasValue"
+  [class.input-valid]="!hasError && isValid"
+  [ngClass]="inputStyle"
+>
+
+  <ng-container *ngIf="type === 'date'; else normalInput">
+    <ion-item
+      button
+      class="date-input"
+      detail="false"
+      lines="none"
+      [class.input-error]="hasError"
+      [class.has-value]="hasValue"
+      [class.input-valid]="!hasError && isValid"
+      (click)="openDatepicker()"
+      #mainInput>
+      <ion-label
+        [ngStyle]="{'font-size': fontSize, 'color': control.value ? 'black' : 'gray'}"
+        class="w-full">
+        {{ control.value ? (control.value | date:'dd/MM/yy') : placeholder }}
+      </ion-label>
+    </ion-item>
+  </ng-container>
+
+  <ng-template #normalInput>
+    <ion-input
+      [type]="type"
+      [placeholder]="placeholder"
+      [autocomplete]="autocomplete"
+      [formControl]="control"
+      [inputmode]="inputmode"
+      [pattern]="pattern || ''"
+      (ionInput)="onInputChange($event)"
+      [ngStyle]="{'font-size': fontSize}"
+      [ngClass]="inputStyle"
+      #mainInput
+    ></ion-input>
+  </ng-template>
+
+  <ng-container *ngIf="customIcon; else ioniconBlock">
+    <img
+      [src]="customIcon"
+      alt="icon"
+      slot="end"
+      style="height: 1.5em; width: 1.5em"
+      [ngStyle]="customIconColor ? {'color': customIconColor} : {}"
+      (click)="triggerInputClick()" />
+  </ng-container>
+
+  <ng-template #ioniconBlock>
+    <ion-icon
+      *ngIf="icon"
+      slot="end"
+      [name]="icon"
+      [color]="!hasError && isValid ? 'success' : (hasValue ? 'dark' : 'medium')"
+    ></ion-icon>
+  </ng-template>
+
+  <ion-icon
+    *ngIf="isPassword"
+    (click)="passwordToggle()"
+    slot="end"
+    [name]="hide ? 'eye-outline' : 'eye-off-outline'"
+    [color]="!hasError && isValid ? 'success' : (hasValue ? 'dark' : 'medium')"
+  ></ion-icon>
+</ion-item>
+
+<div *ngIf="hasError && errorMessage" class="font-s-semibold error-message">
+  <ion-text color="danger">{{ errorMessage }}</ion-text>
+</div>
+
+<ng-container *ngIf="showDatepicker">
+  <div class="datepicker-modal">
+    <div class="datepicker-overlay" (click)="showDatepicker = false"></div>
+    <ion-datetime
+      #dt
+      presentation="date"
+      [value]="control.value"
+      (ionChange)="onDateChange($event)"
+      (ionCancel)="showDatepicker = false">
+      <ion-buttons slot="buttons">
+        <ion-button style="color: #E83826" (click)="dt.cancel()">
+          {{ 'DATEPICKER.CANCEL' | translate }}
+        </ion-button>
+        <ion-button style="color: #92AD60" (click)="dt.confirm()">
+          {{ 'DATEPICKER.CONFIRM' | translate }}
+        </ion-button>
+      </ion-buttons>
+    </ion-datetime>
+  </div>
+</ng-container>

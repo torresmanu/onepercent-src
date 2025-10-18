@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border" mode="md">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        *ngIf="backButton"
+        [defaultHref]="backButton"
+        mode="md"
+        icon="arrow-back-outline"
+      ></ion-back-button>
+    
+    <ion-back-button
+        *ngIf="backButtonBackwards"
+        defaultHref
+        mode="md"
+        (click)="goBack()"
+        icon="arrow-back-outline"
+
+      ></ion-back-button>
+
+      <ion-button *ngIf="isModal" (click)="closeModal()">
+        <ion-icon slot="start"  name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="title" class="ion-text-center font-lsb-semibold"
+      >{{ title }}</ion-title
+    >
+    <ion-buttons slot="end" *ngIf="backButton">
+      <div class="invisible-spacer"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

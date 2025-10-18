@@ -1,0 +1,25 @@
+ion-card {
+  padding: 16px;
+  margin: 0;
+  background-image: url("/assets/imgs/activity/todaysPillCardDefault.png");
+  min-height: 11.875rem;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    color: white;
+    margin: 0;
+  }
+}
+
+.foot-container {
+  display: flex;
+  justify-content: space-between;
+  .icon-text{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+  }
+}

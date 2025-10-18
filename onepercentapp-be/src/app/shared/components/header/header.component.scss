@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.invisible-spacer {
+  width: 44px; /* Aproximadamente el ancho del botón de regreso */
+  visibility: hidden;
+}
+
+ion-title {
+  padding: 0;
+  color: black;
+}

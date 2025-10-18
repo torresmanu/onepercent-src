@@ -1,0 +1,29 @@
+<app-header backButton="/private/profile" title="{{ 'NOTIFICATION.TITLE' | translate }}" />
+<ion-content  class="ion-padding d-flex safe-area" >
+    <div class="notification-info">
+        <p class="text font-m-semibold">{{ 'NOTIFICATION.P_NOTIFICATIONS' | translate }}</p>
+    </div>
+
+    <ion-list lines="none" class="notification-settings">
+        <ion-item class="notification-item">
+            <ion-label>
+                <div class="flex flex-row justify-center">
+                    <img slot="start" src="assets/icon/notifications.svg" alt="icono de notificaciones" />
+                    <div>
+                        <h2 class="font-m-semibold !m-0">{{ 'NOTIFICATION.PUSH' | translate }}</h2>
+                        <p
+                            class="font-m-regular">{{ 'NOTIFICATION.PUSH_DESCRIPTION' | translate }}</p>
+                    </div>
+                </div>
+            </ion-label>
+            <ion-toggle slot="end" [(ngModel)]="pushEnabled" (ionChange)="togglePushNotifications($event)"
+                color="success" mode="md"></ion-toggle>
+        </ion-item>
+    </ion-list>
+
+    <div class="button-fixed-bottom">
+        <ion-button expand="block" class="btn-dark" (click)="saveChanges()">
+            {{ 'NOTIFICATION.SAVE' | translate }}
+        </ion-button>
+    </div>
+</ion-content>

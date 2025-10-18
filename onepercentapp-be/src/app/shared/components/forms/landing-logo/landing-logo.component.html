@@ -1,0 +1,21 @@
+<ng-container>
+    <div class="step-container relative">
+        <ion-header [ngStyle]="{'background-image': 'url(' + pictureUrl + ')'}" class="step-header">
+            <ng-container class="header-text-container">
+                <h2 class="header-text font-lausanne-xxl" [innerHTML]="headerTitle | translate">
+                </h2>
+                <div class="logo-container">
+                    <app-logo [width]="'2.5rem'"></app-logo>
+                </div>
+            </ng-container>
+        </ion-header>
+        <div class="step-content">
+            <div class="step-text-container">
+                <p class="step-description" [innerHTML]="description | translate"></p>
+            </div>
+            <ion-button expand=" block" class="ion-margin-bottom" mode="ios" color="dark" (click)="onContinue()">
+                {{ buttonText | translate }}
+            </ion-button>
+        </div>
+    </div>
+</ng-container>

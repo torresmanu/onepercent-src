@@ -1,0 +1,12 @@
+<div class="container">
+  <h2 class="title">{{ 'PROGRESS_BAR.YOUR_PROGRESS' | translate }}</h2>
+  <div class="score">
+    <p class="points">
+      <span class="current">{{ puntos }}</span>
+      <span class="separator"> / </span>
+      <span class="total">600</span>
+      <span class="txt-points"> pts</span>
+    </p>
+    <ion-progress-bar [value]="progress"></ion-progress-bar>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div [class]="'collapsable-card-container' + class " [class.collapsed]="isCollapsed"
+  [style.height.px]="isCollapsed ? 50 : contentHeight">
+  <div class="inside-content" #cardInner>
+    <!-- Header -->
+    <div class="container-header">
+      <img *ngIf="icon" [src]="icon" alt="icon" />
+      <div class="title-toggle">
+        <div class="tittle-kcal">
+          <h2 class="title">{{ title | translate }}</h2>
+          <p class="recommended" *ngIf="!isCollapsed && recommended">
+            {{ 'NUTRITION.RECOMMENDED' | translate }}: {{ recommended }}
+          </p>
+        </div>
+        <button class="toggle-button" (click)="toggleCollapse()">
+          <img [src]="
+              isCollapsed
+                ? 'assets/imgs/nutrition/arrow-down.svg'
+                : 'assets/imgs/nutrition/arrow-up.svg'
+            " alt="" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Bloque comida -->
+    <ng-container *ngIf="type === 'food' && items">
+
+
+      <div class="info-container">
+        <div class="item" *ngFor="let item of items">
+          <div class="item-row">
+            <span class="text">{{ item.text }}</span>
+            <span class="kcal-text">{{ item.kcal }} kcal</span>
+
+          </div>
+          <span class="dotted-line"></span>
+        </div>
+
+        <div class="total">
+          <p class="text">{{ 'NUTRITION.TOTAL' | translate }}</p>
+
+
+          <div class="points" *ngIf="points">
+            <img class="point-icon" *ngFor="let point of points" [src]="
+                point
+                  ? 'assets/imgs/nutrition/traffic-light-on.svg'
+                  : 'assets/imgs/nutrition/traffic-light-off.svg'
+              " alt="Punto" />
+
+            <p class="kcal-text">{{ total }} kcal</p>
+          </div>
+
+
+
+          <button class="edit-button">
+            <img src="assets/imgs/nutrition/edit.svg" alt="">
+          </button>
+
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Bloque hidratación -->
+    <ng-container *ngIf="type === 'hydration' && items">
+      <div class="info-container">
+        <div class="item1" *ngFor="let item of items">
+          <div class="info1">
+            <span class="text1">{{ item.status }}</span>
+            <span class="hour1">{{ item.hour }}</span>
+          </div>
+          <span class="dotted-line"></span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

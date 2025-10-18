@@ -1,0 +1,208 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "2488627F",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6744360214",
+    "_developerTeamID" : "RUPM2436KQ",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 779277940.88850701,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21694363",
+      "localizations" : [
+
+      ],
+      "name" : "Onepercent App Subscriptions",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "49.9",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "6746443867",
+          "introductoryOffer" : {
+            "internalID" : "1FC88D2F",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P2W"
+          },
+          "localizations" : [
+            {
+              "description" : "12-months autorenewal subscription",
+              "displayName" : "12-months autorenewal",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Suscripción con renovación automática anual",
+              "displayName" : "Renovación automática anual",
+              "locale" : "es_ES"
+            },
+            {
+              "description" : "Subscripció amb renovació automàtica anual",
+              "displayName" : "Renovació automàtica anual",
+              "locale" : "ca"
+            }
+          ],
+          "productID" : "300",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "12-months autorenewal",
+          "subscriptionGroupID" : "21694363",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.95",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6746443631",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "6-months autorenewal subscription",
+              "displayName" : "6-months autorenewal",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Suscripción con renovación cada 6 meses",
+              "displayName" : "Renovación automática 6 meses",
+              "locale" : "es_ES"
+            },
+            {
+              "description" : "Suscripció amb renovació cada 6 mesos",
+              "displayName" : "Renovació automàtica 6 mesos",
+              "locale" : "ca"
+            }
+          ],
+          "productID" : "200",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "6-months autorenewal",
+          "subscriptionGroupID" : "21694363",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "7.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6746443376",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly autorenewal subscription",
+              "displayName" : "Monthly autorenewal",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Subscripció amb renovació automàtica mensual",
+              "displayName" : "Renovació automàtica mensual",
+              "locale" : "ca"
+            },
+            {
+              "description" : "Suscripción con renovación automática mensual",
+              "displayName" : "Renovación automática mensual",
+              "locale" : "es_ES"
+            }
+          ],
+          "productID" : "100",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly autorenewal",
+          "subscriptionGroupID" : "21694363",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

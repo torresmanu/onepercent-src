@@ -1,0 +1,38 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--spacing-lg);
+}
+
+
+.profile-avatar {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+
+  ion-avatar {
+    width: 7.5rem;
+    height: 7.5rem;
+    --border-radius: 50%;
+    border: 2px solid var(--ion-color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ion-color-light);
+  }
+  ion-icon {
+  position: absolute;
+    bottom: 36px;
+    right: 33px;
+    color: var(--ion-color-light);
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 2.5rem;
+  }
+}
+.button-container{
+      position: absolute;
+    bottom: 52px;
+    width: 93%;
+}
+

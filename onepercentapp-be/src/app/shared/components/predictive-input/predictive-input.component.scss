@@ -1,0 +1,48 @@
+.predictive-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.predictive-input-container {
+  position: relative;
+}
+ion-item {
+  background: #f4f5f8;
+  border-radius: 10px;
+  pointer-events: auto;
+  //--highlight-color-focused: var(--ion-color-primary);
+  .date-input {
+    width: 100%;
+    height: 100%;
+    --background: #f4f5f8;
+    pointer-events: all;
+  }
+}
+
+ion-list {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  overflow-y: auto;
+  z-index: 1000;
+  max-height: 150px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px !important;
+}
+
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
+
+ion-item {
+ --border-style: none;
+}

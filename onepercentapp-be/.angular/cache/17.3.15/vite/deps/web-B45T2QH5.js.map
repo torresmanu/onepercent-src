@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../node_modules/capacitor-plugin-app-tracking-transparency/dist/esm/web.js"],
+  "sourcesContent": ["import { WebPlugin } from '@capacitor/core';\nexport class AppTrackingTransparencyWeb extends WebPlugin {\n    getStatus() {\n        return Promise.resolve({ status: 'authorized' });\n    }\n    requestPermission() {\n        return Promise.resolve({ status: 'authorized' });\n    }\n}\n"],
+  "mappings": ";;;;;;AACO,IAAM,6BAAN,cAAyC,UAAU;AAAA,EACtD,YAAY;AACR,WAAO,QAAQ,QAAQ,EAAE,QAAQ,aAAa,CAAC;AAAA,EACnD;AAAA,EACA,oBAAoB;AAChB,WAAO,QAAQ,QAAQ,EAAE,QAAQ,aAAa,CAAC;AAAA,EACnD;AACJ;",
+  "names": []
+}

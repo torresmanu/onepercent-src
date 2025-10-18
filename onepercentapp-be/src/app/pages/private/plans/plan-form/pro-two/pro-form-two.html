@@ -1,0 +1,10 @@
+<ion-content fullscreen>
+    <app-landing-logo *ngIf="isLandingLogo; else optionsForm" title="PRO_FORM_TWO.STEP1_TITLE"
+        [headerTitle]="'PRO_FORM_TWO.STEP1_TITLE'" [description]="'PRO_FORM_TWO.STEP1_DESCRIPTION'"
+        [pictureUrl]="'../../../../../assets/imgs/plan-forms/get-to-know.png'" (continue)="isLandingLogo = false">
+    </app-landing-logo>
+    <ng-template #optionsForm>
+        <app-options-form [stepData]="steps[stepNumber]" [stepNumber]="stepNumber" [stepsConfig]="steps"
+            [formMetas]="formMetas" (continue)="continue()" (goBack)="goBack()"></app-options-form>
+    </ng-template>
+</ion-content>

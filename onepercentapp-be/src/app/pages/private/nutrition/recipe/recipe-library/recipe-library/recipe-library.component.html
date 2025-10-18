@@ -1,0 +1,204 @@
+<ion-header>
+  <ion-toolbar class="ion-no-border ion-no-shadow">
+    <div class="header">
+      <ion-buttons slot="start">
+        <ion-back-button
+          class="back-button"
+          defaultHref="/nutrition"
+          mode="md"
+          icon="../../../../../../assets/icon/backArrow.svg"
+
+        ></ion-back-button>
+      </ion-buttons>
+      <h1 class="title">Biblioteca de recetas</h1>
+      <ion-buttons slot="end"> </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-searchbar
+    class="search-bar"
+    placeholder="Buscar recetas"
+    debounce="500"
+    [value]="searchText()"
+    (input)="updateSearch($event)"
+    (ionCancel)="clearSearch()"
+    mode="ios"
+  ></ion-searchbar>
+
+  <ion-radio-group
+    class="ion-margin-bottom"
+    (ionChange)="filterTime($event)"
+    mode="ios"
+  >
+    <ion-row>
+      <ion-col>
+        <ion-radio class="time-chip" [value]="10"> 10 minutos</ion-radio>
+      </ion-col>
+      <ion-col>
+        <ion-radio class="time-chip" [value]="20">20 minutos</ion-radio>
+      </ion-col>
+      <ion-col>
+        <ion-radio class="time-chip" [value]="30">30 minutos</ion-radio>
+      </ion-col>
+    </ion-row>
+  </ion-radio-group>
+
+  <div [hidden]="searchText() !== ''">
+    <div class="recipe-list" [hidden]="loading() === true">
+      <div class="recipe-library" button [routerLink]="['recipe-favorites']">
+        <h2 class="library-text">Tus recetas favoritas</h2>
+
+        <button class="button">
+          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        </button>
+      </div>
+
+      <swiper-container
+        slides-per-view="2"
+        pagination="false"
+        *ngIf="recipesFavorites.length > 0"
+      >
+        <ng-container *ngFor="let recipe of recipesFavorites">
+          <swiper-slide>
+            <ng-container>
+              <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
+            </ng-container>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+
+      <p class="ion-padding" *ngIf="recipesFavorites.length === 0">
+        No se ha encontrado ninguna receta.
+      </p>
+
+      <div class="recipe-library" button [routerLink]="['recipe-ingredients']">
+        <h2 class="library-text">Desayuno</h2>
+
+        <button class="button">
+          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        </button>
+      </div>
+
+      <swiper-container
+        slides-per-view="2"
+        pagination="false"
+        *ngIf="recipesBreakfast.length > 0"
+      >
+        <ng-container *ngFor="let recipe of recipesBreakfast">
+          <swiper-slide>
+            <ng-container>
+              <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
+            </ng-container>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+
+      <p class="ion-padding" *ngIf="recipesBreakfast.length === 0">
+        No se ha encontrado ninguna receta.
+      </p>
+
+      <div class="recipe-library" button [routerLink]="['recipe-categories']">
+        <h2 class="library-text">Comida</h2>
+
+        <button class="button">
+          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        </button>
+      </div>
+
+      <swiper-container
+        slides-per-view="2"
+        pagination="false"
+        *ngIf="recipesLunch.length > 0"
+      >
+        <ng-container *ngFor="let recipe of recipesLunch">
+          <swiper-slide>
+            <ng-container>
+              <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
+            </ng-container>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+
+      <p class="ion-padding" *ngIf="recipesLunch.length === 0">
+        No se ha encontrado ninguna receta.
+      </p>
+
+      <div class="recipe-library" button [routerLink]="['recipe-categories']">
+        <h2 class="library-text">Cena</h2>
+
+        <button class="button">
+          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        </button>
+      </div>
+
+      <swiper-container
+        slides-per-view="2"
+        pagination="false"
+        *ngIf="recipesDinner.length > 0"
+      >
+        <ng-container *ngFor="let recipe of recipesDinner">
+          <swiper-slide>
+            <ng-container>
+              <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
+            </ng-container>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+      <p class="ion-padding" *ngIf="recipesDinner.length === 0">
+        No se ha encontrado ninguna receta.
+      </p>
+
+      <div class="recipe-library" button [routerLink]="['recipe-categories']">
+        <h2 class="library-text">Snack</h2>
+
+        <button class="button">
+          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        </button>
+      </div>
+
+      <swiper-container
+        slides-per-view="2"
+        pagination="false"
+        *ngIf="recipesSnacks.length > 0"
+      >
+        <ng-container *ngFor="let recipe of recipesSnacks">
+          <swiper-slide>
+            <ng-container>
+              <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
+            </ng-container>
+          </swiper-slide>
+        </ng-container>
+      </swiper-container>
+
+      <p class="ion-padding" *ngIf="recipesSnacks.length === 0">
+        No se ha encontrado ninguna receta.
+      </p>
+    </div>
+    <div class="ion-padding" [hidden]="loading() === false">
+      <h3>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 80%"
+        ></ion-skeleton-text>
+      </h3>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 60%"
+        ></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text
+          [animated]="true"
+          style="width: 30%"
+        ></ion-skeleton-text>
+      </p>
+    </div>
+  </div>
+
+  <app-recipe-search
+    [hidden]="searchText() === ''"
+    [recipes]="searchedRecipes"
+  ></app-recipe-search>
+</ion-content>

@@ -1,0 +1,42 @@
+@mixin flex($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    gap: 1rem;
+    
+  }
+  
+  // Clases generadas con el mixin
+  .flex {
+    @include flex();
+  }
+  
+  .flex-row {
+    @include flex(row);
+  }
+  
+  .flex-col {
+    @include flex(column);
+  }
+  
+  .justify-center {
+    justify-content: center
+  }
+  
+  .justify-between {
+    justify-content: space-between
+  }
+  .justify-evenly {
+    justify-content: space-evenly
+  }
+  
+  .align-items-center {
+    align-items: center
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap
+  }
+  
+  .flex-nowrap {
+    flex-wrap: nowrap;
+  }

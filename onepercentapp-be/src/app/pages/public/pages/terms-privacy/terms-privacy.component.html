@@ -1,0 +1,43 @@
+<ion-content class="safe-area ion-padding terms-page">
+    <div class="h-full flex-col justify-between">
+      <div>
+        <div class="logo-container flex-row start">
+          <img src="assets/imgs/icon-dark.png" alt="">
+        </div>
+
+        <h1 class="title font-lausanne-xl">
+          {{ 'TERMS_PRIVACY.TITLE1' | translate }} <ion-text color="success">{{ 'TERMS_PRIVACY.TITLE2' | translate }}</ion-text>
+        </h1>
+  
+        <div class="terms-content ion-margin-top">
+          <h2 class="font-lsb-semibold ion-margin-bottom">{{ 'TERMS_PRIVACY.PROTECT_DATA_TITLE' | translate }}</h2>
+          
+          <p class="font-xm-regular ion-margin-bottom">
+            {{ 'TERMS_PRIVACY.PROTECT_DATA_TEXT' | translate }}
+          </p>
+  
+          <h2 class="font-lsb-semibold ion-margin-bottom ion-margin-top">{{ 'TERMS_PRIVACY.NO_MEDICAL_TITLE' | translate }}</h2>
+          
+          <p class="font-xm-regular ion-margin-bottom">
+            {{ 'TERMS_PRIVACY.NO_MEDICAL_TEXT' | translate }}
+          </p>
+  
+          <p class="font-xm-regular ion-margin-bottom ion-margin-top">
+            {{ 'TERMS_PRIVACY.CONTINUE_ACCEPT' | translate }}
+            <a href="/private/profile/termsAndConditions">{{ 'TERMS_PRIVACY.TERMS_LINK' | translate }}</a> 
+            {{ 'TERMS_PRIVACY.AND' | translate }}
+            <a href="/private/profile/privacyPolicy">{{ 'TERMS_PRIVACY.PRIVACY_LINK' | translate }}</a>.
+          </p>
+        </div>
+      </div>
+  <div class="buttonsBox">
+
+    <ion-button 
+    expand="block" 
+    class="btn-dark ion-margin-bottom" 
+    (click)="acceptTerms()">
+    {{ 'TERMS_PRIVACY.CONTINUE_BUTTON' | translate }}
+  </ion-button>
+</div>
+    </div>
+  </ion-content>

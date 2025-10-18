@@ -1,0 +1,77 @@
+<app-header  backButton="/private/home" title="{{ 'PROFILE.SETTINGS' | translate }}" />
+<ion-content class="safe-area ion-padding">
+  <div class="profile-container">
+    <div class="profile-avatar">
+      <ion-avatar>
+        <img *ngIf="user?.imageProfile" [src]="environment.assetsUrl + '/' + user?.imageProfile" alt="Foto de perfil" />
+        <img *ngIf="!user?.imageProfile" src="assets/icon/user-avatar.svg" alt="{{ 'PROFILE.ALT_USER_AVATAR' | translate }}" />
+      </ion-avatar>
+      <div *ngIf="user?.userLicenses && hasProLicense()" class="pro-badge">
+        <span>{{ 'PROFILE.ONEPERCENT_PRO' | translate }}</span>
+      </div>
+    </div>
+    <h1 class="profile-name font-lausanne-l">{{ getUserFullName() }}</h1>
+  </div>
+  <ion-button expand="block" class="btn-primary singleButtonPadding" (click)="editProfile()">
+    {{ 'PROFILE.EDIT_PROFILE' | translate }}
+  </ion-button>
+
+  <ion-list lines="none" class="single-item-list">
+    <ion-item button detail="true" (click)="goToSubscription()" class="ion-no-margin">
+      <ion-icon  src="assets/icon/suscription.svg"></ion-icon>
+
+      <ion-label>{{ 'PROFILE.SUBSCRIPTION' | translate }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list lines="none" class="">
+
+    <ion-item button detail="true" (click)="goToNotifications()" class="ion-no-margin">
+      <ion-icon   src="assets/icon/notifications.svg"></ion-icon>
+
+      <ion-label>{{ 'PROFILE.NOTIFICATIONS' | translate }}</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="user?.isSocialUser === false"
+      button detail="true" (click)="goToChangePassword()" class="ion-no-margin">
+      <ion-icon   src="assets/icon/lock.svg" ></ion-icon>
+
+      <ion-label>{{ 'PROFILE.CHANGE_PASSWORD' | translate }}</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="logout()" class="ion-no-margin">
+      <ion-icon   src="assets/icon/close-sesion.svg"></ion-icon>
+      <ion-label>{{ 'PROFILE.LOGOUT' | translate }}</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goToDeleteAccount()" class="ion-no-margin">
+      <ion-icon   src="assets/icon/drop.svg"></ion-icon>
+      <ion-label>{{ 'PROFILE.DELETE_ACCOUNT' | translate }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list lines="none" class="">
+    <ion-item  button detail="true" (click)="goToTerms()" class="ion-no-margin">
+      <ion-icon   src="assets/icon/terms.svg"></ion-icon>
+      
+      <ion-label>{{ 'PROFILE.TERMS' | translate }}</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goToPrivacy()" class="ion-no-margin">
+      <ion-icon    src="assets/icon/policy.svg"></ion-icon>
+
+      <ion-label>{{ 'PROFILE.PRIVACY' | translate }}</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goToMedicalInfo()" class="ion-no-margin">
+      <ion-icon   src="assets/icon/medic.svg"></ion-icon>
+
+      <ion-label>{{ 'PROFILE.MEDICAL_NOTICE' | translate }}</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goToContact()" class="ion-no-margin">
+      <ion-icon   src="assets/icon/contact.svg"></ion-icon>
+
+      <ion-label>{{ 'PROFILE.CONTACT' | translate }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

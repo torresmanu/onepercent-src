@@ -1,0 +1,105 @@
+.container {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--ion-color-medium);
+  padding: 8px;
+  margin: 16px 0px 120px;
+}
+
+.black-block,
+.grey-block {
+  display: block;
+  width: 90%;
+  height: 100%;
+  border-radius: 8px;
+  margin: 0 2%;
+  font-size: 14px;
+}
+.black-block {
+  background-color: black;
+  color: white;
+}
+
+.grey-block {
+  background-color: #ededed;
+}
+
+.slide-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.current {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.total {
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.separator {
+  font-family: "TWK Lausanne";
+  font-size: 0.75rem;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.txt-points {
+  /* Inter_S_Reg */
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.content {
+  padding: 4px;
+  align-items: center;
+  flex: 1 0 0;
+  display: flex;
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  font-size: 12px;
+
+  .title {
+    font-family: Inter;
+
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+
+  .objective {
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 2px;
+  }
+
+  .score {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2px;
+    margin-bottom: 12px;
+  }
+  .points {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,114 @@
+/*
+* App Global SCSS
+* ----------------------------------------------------------------------------
+* Put style rules here that you want to apply globally. These styles are for
+* the entire app and not just one component. Additionally, this file can be
+* used as an entry point to import other CSS/Sass files to be included in the
+* output CSS.
+* For more information on global stylesheets, visit the documentation:
+* https://ionicframework.com/docs/layout/global-stylesheets
+*/
+@import 'theme/core/typography';
+
+html.font-small {
+  font-size: 14px;
+}
+html.font-medium {
+  font-size: 16px;
+}
+html.font-large {
+  font-size: 18px;
+}
+html.font-xlarge {
+  font-size: 20px;
+}
+.plt-hybrid .ion-page {
+  padding-top: var(--safe-area-inset-top);
+}
+
+ion-header ion-toolbar:first-of-type {
+  padding-top:  0px;
+}
+
+ion-footer {
+  background-color: var(--onepercent-white, #ffffff);
+}
+
+h1 {
+  margin: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px;
+  opacity: 30%;
+
+  ion-icon {
+    font-size: 6.25rem;
+  }
+}
+
+.validators {
+  color: var(--ion-color-danger);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+// Estilos personalizados para toasts
+ion-toast.multiline-toast::part(message) {
+  white-space: pre-wrap;         
+  font-family: "TWK Lausanne", sans-serif;
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+
+}
+
+/* (Opcional) contenedor del toast */
+ion-toast.multiline-toast::part(container) {
+  max-width: 90%;
+  min-width: auto;
+}
+
+/* (Opcional) botones del toast */
+ion-toast.multiline-toast::part(button) {
+  font-size: 0.95rem;
+  font-weight: 550;
+}
+
+.header-md {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.border{
+  border: 1px solid var(--ion-color-medium);
+  border-radius: 8px;
+}
+
+button:active,
+button.ion-activated,
+.ion-activated {
+  opacity: 0.8 !important;
+    background: inherit !important;
+}
+
+ion-button:active,
+ion-button.ion-activated {
+  opacity: 0.8 !important;
+  background: inherit !important;
+}
+.button-native:after{
+  background: inherit !important;
+  
+}
+

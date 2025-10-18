@@ -1,0 +1,47 @@
+<p class="ion-padding"><b>Resultados de la búsqueda</b></p>
+<ng-container *ngFor="let recipe of recipes">
+  <ion-row
+    class="ion-margin"
+    [class]="'recipe_' + recipe.section.toLowerCase()"
+  >
+    <ion-col
+      size="4"
+      class="recipe-image"
+      [ngStyle]="{ backgroundImage: 'url(' + recipe.image + ')' }"
+    >
+    </ion-col>
+
+    <ion-col size="8" class="ion-padding">
+      <div class="title">{{ recipe.title }}</div>
+      <div class="description">{{ recipe.description }}</div>
+
+      <div class="recipe-text">
+        <div class="points">
+          <img
+            *ngFor="let number of [].constructor(recipe.value); let i = index"
+            src="../../../../../assets/imgs/nutrition/traffic-light-on.svg"
+            style="width: 18px; height: 18px"
+          />
+          <img
+            *ngFor="let number of [].constructor(points); let i = index"
+            src="../../../../../assets/imgs/nutrition/traffic-light-off.svg"
+            style="width: 18px; height: 18px"
+          />
+        </div>
+        <div class="time">
+          <img
+            *ngIf="recipe.section !== 'Breakfast'"
+            src="../../../../../assets/icons/initFormIcons/clock_green_solid.svg"
+            style="width: 16px; height: 16px"
+          />
+          <img
+            *ngIf="recipe.section === 'Breakfast'"
+            src="../../../../../assets/icons/initFormIcons/clock_black_solid.svg"
+            style="width: 16px; height: 16px"
+          />
+          <span> {{ recipe.time }}'</span>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ng-container>

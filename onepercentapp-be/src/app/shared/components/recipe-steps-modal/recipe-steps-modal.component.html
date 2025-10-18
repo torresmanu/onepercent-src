@@ -1,0 +1,116 @@
+<ion-header
+  [style.--ion-background-color]="backgroundColor"
+  [style.--background]="backgroundColor"
+  [style.background]="backgroundColor"
+  [style.--color]="textColor"
+>
+  <ion-toolbar
+    [style.--ion-background-color]="backgroundColor"
+    [style.--background]="backgroundColor"
+    [style.background]="backgroundColor"
+    [style.--color]="textColor"
+  >
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <img
+          *ngIf="buttonTypes"
+          src="../../../../../../assets/icon/btn-back.svg"
+          alt=""
+        />
+        <img
+          *ngIf="!buttonTypes"
+          src="../../../../../../assets/icon/btn-back-white.svg"
+          alt=""
+        />
+      </ion-button>
+    </ion-buttons>
+    <ion-title [style.color]="textColor">Preparando Receta ....</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  [style.--ion-background-color]="backgroundColor"
+  [style.--background]="backgroundColor"
+  [style.background]="backgroundColor"
+  [style.--color]="textColor"
+>
+  <div
+    class="maincontainer"
+    [style.--ion-background-color]="backgroundColor"
+    [style.--background]="backgroundColor"
+    [style.background]="backgroundColor"
+    [style.--color]="textColor"
+    [style.color]="textColor"
+  >
+    <div>
+      <div class="maincontainer-category">
+        <div class="category-container">
+          <h3 class="category-label" [style.color]="textColor">
+            {{ recipe?.category }}
+          </h3>
+          <h2 class="recipe-title" [style.color]="textColor">
+            {{ recipe?.title }}
+          </h2>
+        </div>
+      </div>
+      <div *ngIf="steps?.length; else noSteps">
+        <div *ngIf="steps[currentStep - 1] as step">
+          <h2 [style.color]="textColor">
+            Paso {{ currentStep }} de {{ steps.length }}
+          </h2>
+          <p [style.color]="textColor">{{ step.text }}</p>
+        </div>
+      </div>
+      <ng-template #noSteps>
+        <p [style.color]="textColor">No hay pasos para mostrar.</p>
+      </ng-template>
+    </div>
+    <div class="button-container">
+      <div class="packButtons" *ngIf="buttonTypes">
+        <ion-button
+          mode="ios"
+          class="ion-margin-bottom btn-transparent-outline-dark"
+          *ngIf="currentStep !== 1"
+          (click)="prevStep()"
+          >Anterior</ion-button
+        >
+        <ion-button
+          mode="ios"
+          class="ion-margin-bottom btn-dark"
+          *ngIf="currentStep !== steps.length"
+          (click)="nextStep()"
+          >Siguiente</ion-button
+        >
+        <ion-button
+          mode="ios"
+          class="ion-margin-bottom btn-dark"
+          *ngIf="currentStep === steps.length"
+          >Registrar</ion-button
+        >
+      </div>
+
+      <div class="packButtons" *ngIf="!buttonTypes">
+        <ion-button
+          mode="ios"
+          class="ion-margin-bottom btn-transparent-outline-green"
+          *ngIf="currentStep !== 1"
+          (click)="prevStep()"
+          >Anterior</ion-button
+        >
+        <ion-button
+          mode="ios"
+          class="ion-margin-bottom start-button"
+          *ngIf="currentStep !== steps.length"
+          (click)="nextStep()"
+          >Siguiente</ion-button
+        >
+        <ion-button
+          mode="ios"
+          class="ion-margin-bottom start-button"
+          *ngIf="currentStep === steps.length"
+          >Registrar</ion-button
+        >
+      </div>
+    </div>
+  </div>
+</ion-content>

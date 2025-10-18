@@ -1,0 +1,42 @@
+<ion-content class="login-page">
+  <!-- Imagen de fondo -->
+  <div class="background-image"></div>
+  
+  <!-- Overlay oscuro para mejor legibilidad -->
+  <div class="dark-overlay"></div>
+  
+  <!-- Contenido principal -->
+  <div class="login-container">
+    <!-- Texto motivacional -->
+    <div class="motivational-text">
+      <h1 class="font-lausanne-xxl">
+        <span class="text-white">{{ 'WELCOME_PAGE.TITLE' | translate }}</span><br>
+        <span class="text-green">{{ 'WELCOME_PAGE.SPAN1' | translate }}</span><br>
+        <span class="text-green">{{ 'WELCOME_PAGE.SPAN2' | translate }}</span>
+      </h1>
+    </div>
+
+    <!-- Logo de la aplicación -->
+    <div class="logo-section">
+      <div class="app-logo">
+        <img src="assets/icon/icon-128.webp" alt="One Percent App Logo">
+      </div>
+    </div>
+
+    <!-- Botones centrados en la parte inferior -->
+    <div class="buttons-section">
+      <ion-button 
+        expand="block" 
+        class="btn-primary btn-start" 
+        (click)="goToRegister()"
+        shape="round">
+        {{ 'WELCOME_PAGE.BUTTON_START' | translate }}
+      </ion-button>
+      
+      <p class="login-link">
+        {{ 'WELCOME_PAGE.ARE_YOU_USER?' | translate }} 
+        <a (click)="goToLoginWithEmail()">{{ 'WELCOME_PAGE.BUTTON_LOGIN' | translate }}</a>
+      </p>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,42 @@
+<app-header backButton="/private/food-registration" title="{{ 'EDIT_INGREDIENT.TITLE' | translate }}" />
+<ion-content class="safe-area ion-padding">
+    <div class="ingredient">
+        <h2 class="title">{{ ingredient.name }}</h2>
+        <div class="icon">
+            <ion-icon [name]="isFavorited ? 'heart' : 'heart-outline'"
+                [ngClass]="{ favorited: isFavorited, animate: animateHeart }" (click)="toggleFavorite()"></ion-icon>
+        </div>
+    </div>
+
+    <div class="unit">
+        <p class="text">
+            {{ ingredient.unit }}
+        </p>
+        <button class="select-unit" disabled>
+            <img src="assets/imgs/btn-select.svg" alt="">
+        </button>
+    </div>
+
+    <div class="quantity-kcal">
+        <div class="quantity">
+            <p class="text">{{ ingredient.quantity }}</p>
+        </div>
+
+        <div class="kcal">
+            <p class="text">{{ ingredient.kcal }} kcal</p>
+        </div>
+    </div>
+
+    <div class="nutrition-info">
+        
+    </div>
+
+
+    <ion-footer>
+        <div class="button-container">
+            <ion-button expand="block" class="btn-dark">
+                {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
+            </ion-button>
+        </div>
+    </ion-footer>
+</ion-content>

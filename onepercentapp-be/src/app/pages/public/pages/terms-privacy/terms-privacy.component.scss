@@ -1,0 +1,49 @@
+.terms-page {
+  // Configuración para ocupar toda
+
+  // Estilos específicos
+  .logo-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 2.75rem;
+  }
+
+  h1.title {
+    font-size: 2rem;
+font-style: normal;
+font-weight: 550;
+line-height: normal;
+  }
+
+  .terms-text {
+    font-size: 1rem;
+line-height: normal;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: var(--ion-color-medium);
+  }
+
+  a{
+    text-decoration: underline;
+    color: var(--ion-color-success);;
+  }
+
+  .terms-content {
+    margin-bottom: 2rem;
+  }
+  h2{
+    margin-top: 2rem;
+  }
+  p{
+    font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+  .buttonBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+}

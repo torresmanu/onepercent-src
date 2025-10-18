@@ -1,0 +1,26 @@
+.forgot-password-page {
+  h1.title {
+    text-align: center;
+    margin-block: 1rem;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    margin-bottom: 2rem;
+  }
+  .info {
+    padding: 0;
+    margin-left: 1.5rem;
+    li {
+      margin-bottom: 1rem;
+      ion-text {
+        color: var(--onepercent-gray-950, #131313);
+        font-size: 0.875rem;
+        font-weight: 700;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

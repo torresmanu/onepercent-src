@@ -1,0 +1,22 @@
+.meal-card {
+  height: 48px;
+  margin: 0.5rem 1rem;
+  padding: 1rem;
+  gap: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--onepercent-gray-300, #b2b2b2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-card.selected {
+  border-color: #97bf60;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

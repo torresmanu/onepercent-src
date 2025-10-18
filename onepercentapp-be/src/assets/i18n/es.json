@@ -1,0 +1,609 @@
+{
+    "NOTIFICATIONS": {
+        "TITLE": "Notificaciones",
+        "DESCRIPTION": "También puedes activar las notificaciones en la configuración de tu dispositivo.",
+        "PUSH":"Notificación push",
+        "PUSH_DESCRIPTION":"Esto afectará a todas las notificaciones visibles fuera de la aplicación.",
+        "SAVE":"Guardar"
+    },
+    "WELCOME": {
+        "TITLE":"Bienvenido a",
+        "OP":"onepercent",
+        "DESCRIPTION": "La app en la que tus hábitos suman puntos y te dicen cómo de sano estás.",
+        "CONTINUE":"Continuar",
+        "YOUR_NAME":"¿Cómo te llamas?"
+    },
+
+    "WELCOME_PAGE": {
+      "TITLE": "Cada hábito importa.",
+      "SPAN1": "Haz que",
+      "SPAN2": "sumen.",
+
+      "BUTTON_START": "Empezar",
+      "BUTTON_LOGIN": "Inicia sesión",
+      "ARE_YOU_USER?": "¿Ya eres usuario?"
+    },
+
+    "RECOVER_PASSWORD": {
+      "TITLE": "Recupera tu",
+      "TITLE2": "contraseña",
+
+      "YOUR_EMAIL": "Introduce tu correo electrónico y recibirás un mensaje con las instrucciones para recuperar tu contraseña.",
+
+      "BUTTON_SEND": "Enviar e-mail"
+    },
+
+    "CONFIRM_EMAIL": {
+      "TITLE": "E-mail enviado",
+      "DESCRIPTION": "Revisa tu bandeja de correo electrónico, y sigue las instrucciones descritas para cambiar tu contraseña.",
+      "SPAM_TEXT": "Si no ves el e-mail, es posible que necesites revisar tu carpeta de spam.",
+      "BUTTON_BACK": "Volver al inicio"
+    },
+
+    "PASSWORD-FORM": {
+      "TITLE": "Crea una contraseña",
+      "VALIDATOR": "Debe contar con 8 caracteres y al menos con una mayúscula, una minúscula y un número.",
+      "BUTTON_CONTINUE": "Continuar"
+    },
+
+    "EMAIL_FORM": {
+      "TITLE": "Empecemos con tu correo electrónico",
+      "BUTTON_CONTINUE": "Continuar"
+    },
+
+    "REGISTER_START_FORM": {
+      "TITLE": "¿Cuál es tu",
+      "HIGHLIGHT": "balance saludable?",
+
+      "TEXT": "Tu balance saludable es la puntuación obtenida por tus ",
+      "SPAN": "acciones diarias. Cuantos más puntos, más sano",
+      "TEXT1": " estás siendo.",
+
+      "TEXT2": "Vamos a descubrirlo.",
+
+      "BUTTON_DISCOVER": "Descubrir"
+    },
+
+    "VERIFY_EMAIL":{
+      "TITLE": "Verifica tu e-mail",
+      "DESCRIPTION": "Abre el correo ",
+      "SPAN": " que hemos enviado a ",
+      "TEXT": ". Si no lo ves, revisa tu carpeta de spam.",
+
+      "TEXT2": "Sigue los pasos ",
+      "SPAN1": " del correo para ",
+      "TEXT3": " verificar tu e-mail.",
+
+      "SPAN2": "Cuando esté verificado, ",
+      "TEXT4": " vuelve aquí",
+      "SPAN3": " y pulsa el ",
+      "TEXT5": "botón inferior ",
+      "SPAN4": "\"Iniciar sesión\"",
+
+      "BUTTON_LOGIN": "Iniciar sesión"
+
+    },
+
+    "REGISTER_INFOINIT": {
+      "BUTTON_CONTINUE": "Continuar"
+    },
+
+    "TERMS_PRIVACY": {
+    "TITLE1": "Términos y",
+    "TITLE2": "Privacidad",
+    "PROTECT_DATA_TITLE": "Protegemos tus datos",
+    "PROTECT_DATA_TEXT": "Personalizaremos tu experiencia con tu información pero nunca la compartiremos con fines comerciales.",
+    "NO_MEDICAL_TITLE": "No sustituyas la consulta médica",
+    "NO_MEDICAL_TEXT": "Nuestras recomendaciones han sido supervisadas por profesionales de la salud y siguen las orientaciones de la OMS, pero no deben sustituir el asesoramiento de un médico. Consulta con un profesional si tienes una situación médica específica o alguna duda.",
+    "CONTINUE_ACCEPT": "Continuando aceptas los",
+    "TERMS_LINK": "Términos y Condiciones de uso",
+    "AND": "y la",
+    "PRIVACY_LINK": "Política de privacidad",
+    "CONTINUE_BUTTON": "Continuar"
+  },
+   "RESET_PASSWORD": {
+    "TITLE1": "Restablece tu",
+    "TITLE2": "contraseña",
+    "SUBTITLE": "Ingresa y confirma tu nueva contraseña para restablecer el acceso a tu cuenta.",
+    "PASSWORD_REQUIREMENTS": "Debe contar con 8 caracteres y al menos con una mayúscula, una minúscula y un número."
+  },
+  
+  "LOGIN": {
+    "WELCOME_BACK": "Bienvenido de nuevo.",
+    "SIGN_IN_TO_ACCOUNT": "Inicia sesión en tu cuenta.",
+    "CONTINUE_WITH_GOOGLE": "Continuar con Google",
+    "CONTINUE_WITH_APPLE": "Continuar con Apple",
+    "CONTINUE_WITH_FACEBOOK": "Continuar con Facebook",
+    "SIGN_IN_WITH_EMAIL": "Inicia sesión con el correo electrónico",
+    "CONTINUE_ACCEPTS": "Al continuar aceptas nuestros",
+    "TERMS_LINK": "Términos y Condiciones de uso",
+    "AND": "y nuestra",
+    "PRIVACY_LINK": "Política de Privacidad"
+  },
+   "LOGIN_EMAIL": {
+    "TITLE": "Inicia sesión con tu correo electrónico",
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "PASSWORD_PLACEHOLDER": "Contraseña",
+    "FORGOT_PASSWORD": "¿Has olvidado tu contraseña?",
+    "CONTINUE": "Continuar"
+  },
+  "PROFILE": {
+    "SETTINGS": "Ajustes",
+    "ONEPERCENT_PRO": "onepercent pro",
+    "EDIT_PROFILE": "Editar perfil",
+    "SUBSCRIPTION": "Tu suscripción",
+    "SUBSCRIPTIONS": "Suscripción",
+
+    "NOTIFICATIONS": "Notificaciones",
+    "CHANGE_PASSWORD": "Cambiar contraseña",
+    "LOGOUT": "Cerrar sesión",
+    "DELETE_ACCOUNT": "Eliminar cuenta",
+    "TERMS": "Términos y Condiciones",
+    "PRIVACY": "Política de Privacidad",
+    "MEDICAL_NOTICE": "Aviso Médico",
+    "CONTACT": "Contacto",
+    "ALT_PROFILE_IMAGE": "Foto de perfil",
+    "ALT_USER_AVATAR": "Avatar de usuario",
+    "ALT_SUBSCRIPTION_ICON": "icono de suscripción",
+    "ALT_NOTIFICATIONS_ICON": "icono de notificaciones",
+    "ALT_CHANGE_PASSWORD_ICON": "icono de cambiar contraseña",
+    "ALT_LOGOUT_ICON": "icono de cerrar sesión",
+    "ALT_DELETE_ACCOUNT_ICON": "icono de eliminar cuenta",
+    "ALT_TERMS_ICON": "icono de términos y condiciones",
+    "ALT_PRIVACY_ICON": "icono de política de privacidad",
+    "ALT_MEDICAL_ICON": "icono de aviso médico",
+    "ALT_CONTACT_ICON": "icono de contacto"
+  },
+  "LOGOUT": {
+    "TITLE": "Cerrar sesión",
+    "DESCRIPTION": "Si cierras sesión tendrás que ingresar tus credenciales nuevamente para acceder a tu cuenta.",
+    "LOGOUT_BUTTON": "Cerrar sesión",
+    "CANCEL_BUTTON": "Cancelar"
+  },
+
+  "COMPARASIONPLANS": {
+    "TITLE": "Construye buenos hábitos con el plan básico",
+
+    "COLUMN2": "Básico",
+    
+    "ROW1":"Seguimiento de hábitos",
+    "ROW2":"Plan hecho a medida",
+    "ROW3":"Entrenamientos nuevos cada mes",
+    "ROW4":"Acceso a más de 500 recetas",
+    "ROW5":"Recetas recomendadas con IA",
+    "ROW6":"Valora tus comidas con IA",
+    "ROW7":"Cero anuncios",
+
+    "START_BUTTON": "Empezar",
+    "SEE_PLANS_BUTTON": "Ver planes Pro"
+  },
+
+  "FREEPLANPAYWALL": {
+    "TITLE": ", ve con todo.",
+    "TITLE1": "Ve con ",
+
+    "DESCRIPTION": "Cómo funciona tu prueba gratuita",
+
+    "TEXT1_TITLE": "Hoy",
+    "TEXT1_SUBTITLE":"Desbloquea todo el acceso a las funcionalidades de onepercent pro.",
+
+    "TEXT2_TITLE": "Día 12",
+    "TEXT2_SUBTITLE":"Te avisaremos con una notificación o por correo de que tu prueba está a punto de terminar.",
+
+    "TEXT3_TITLE": "Día 14",
+    "TEXT3_SUBTITLE":"Se efectuará el pago a los 14 días del inicio de la prueba gratuita, cancélalo antes cuando quieras.",
+
+    "FREE_TRIAL_TEXT":"Prueba gratuita de 14 días, después 59,88 € al año (4,99 € al mes).",
+    "FREE_TRIAL_TEXT2":"Cancélalo cuando quieras.",
+
+    "CANCELATION_TITLE": "Cómo cancelar el pago del pro",
+    "CANCELATION_TEXT": "Es muy sencillo: entra en la App Store, ve a tu Perfil, después en Suscripciones y selecciona ",
+    "CANCELATION_TEXT2": " para cancelar la prueba gratuita.",
+
+    "NOTNOW_BUTTON": "Ahora no",
+
+    "START_FREE_TRIAL_BUTTON": "Empezar prueba gratuita"
+
+  },
+
+  "CHOICEPLAN": {
+    "TITLE": "Escoge tu plan.",
+    "TITLE1": "Escoge cómo cuidarte.",
+
+    "PLANS_TEXT": "Mismas ventajas,",
+    "PLANS_TEXT1": "diferentes formas de pago.",
+
+    "FREETRIAL": "Prueba gratuita de ",
+    "LATER": " después",
+    "FREETRIAL1": "Cancélalo cuando quieras.",
+
+    "GO_TO_BASIC_PLAN_BUTTON": "Ir al plan básico",
+    "START_FREE_TRIAL_BUTTON": "Empezar prueba gratuita"
+  },
+
+  "NOTIFICATION": {
+    "TITLE":"Notificaciones",
+
+    "P_NOTIFICATIONS":"También puedes activar las notificaciones en la configuración de tu dispositivo.",
+
+    "PUSH":"Notificaciones push",
+    "PUSH_DESCRIPTION":"Esto afectará a todas las notificaciones visibles fuera de la aplicación",
+
+    "SAVE":"Guardar cambios"
+  },
+
+  "PLAN_SELECT_INFO": {
+    "INFO_BUTTON": "Descubrir mi plan"
+  },
+
+  "DELETE_ACCOUNT": {
+    "TITLE": "Eliminar tu cuenta de onepercent es una operación irreversible. Al continuar con este proceso, ten en cuenta lo siguiente:",
+
+    "PRYMARY_TEXT1": "Se eliminarán tus datos",
+    "SECOND_TEXT1": "E-mail, contraseñas, ubicación, direcciones, datos de pago...",
+
+    "PRYMARY_TEXT2": "Se eliminará tu contenido",
+    "SECOND_TEXT2": "Tus artículos disponibles, favoritos, y demás contenidos asociados.",
+
+    "BUTTON1": "Eliminar cuenta"
+  },
+
+  "CHANGE_PASSWORD": {
+    "TEXT" : "La contraseña debe tener al menos 8 caracteres e incluir una combinación de números, letras mayúsculas y minúsculas.",
+
+    "ACTUAL_PASSWORD": "Tu contraseña actual",
+
+    "FORGOT_PASSWORD": "¿Has olvidado tu contraseña?",
+
+    "NEW_PASSWORD": "Tu nueva contraseña",
+    "PLACEHOLDER_OLD_PASSWORD": "Contraseña actual",
+    "PLACEHOLDER_NEW_PASSWORD": "Nueva contraseña",
+    "PLACEHOLDER_REPEAT_PASSWORD": "Repetir nueva contraseña",
+
+    "PASSWORD_MIN_LENGTH": "Debe tener al menos 8 caracteres.",
+    "PASSWORD_PATTERN": "Debe contener al menos un número",
+
+    "REPIT_PASSWORD": "Repite tu nueva contraseña",
+    "PASSWORDS_NOT_MATCH": "Las contraseñas no coinciden",
+
+    "CHANGE_PASSWORD_BUTTON": "Continuar"
+  },
+  
+  "CONTACT": {
+    "TITLE": "Estamos aquí ",
+    "FOR": " para",
+    "HELP_YOU": "ayudarte.",
+
+    "DESCRIPTION": "Puedes ponerte en contacto con nosotros para:",
+
+    "TEXT1": "Resolver problemas técnicos o errores en la app.",
+    "TEXT2": "Consultar sobre pagos, suscripciones o facturación.",
+    "TEXT3": "Obtener información sobre funciones y características.",
+    "TEXT4": "Compartir sugerencias o reportar inconvenientes.",
+    "TEXT5": "Cualquier otra consulta relacionada con tu experiencia en la app.",
+
+    "CONTACT_US": "Escríbenos a ",
+    "CONTACT_US1": " y nuestro equipo te responderá lo antes posible."
+  },
+
+  "TERMS_AND_CONDITIONS" : {
+    "TITLE": "Términos y condiciones de uso",
+    "LAST_UPDATE": "Última actualización: 19 de enero del 2025",
+
+    "INTRO": "Bienvenido a onepercent, una plataforma móvil que fomenta un estilo de vida saludable mediante la asignación de objetivos diarios de alimentación, actividad física y bienestar general. Los usuarios pueden obtener puntos al cumplir con sus objetivos de salud, los cuales reflejan su progreso, siempre visible a través del menú principal.",
+
+    "TEXT1_TITLE": "1. Introducción",
+    "TEXT1_SUBTITLE": "",
+
+    "TEXT2_TITLE": "2. Aceptación y uso de la aplicación",
+    "TEXT2_SUBTITLE": "",
+
+    "TEXT3_TITLE": "3. Registro",
+    "TEXT3_SUBTITLE": "",
+
+    "TEXT4_TITLE": "4. Licencia de uso",
+    "TEXT4_SUBTITLE": "",
+
+    "TEXT5_TITLE": "5. Uso de los servicios",
+    "TEXT5_SUBTITLE": ""
+  },
+
+  "TAB_BAR": {
+    "HOME": "Home",
+    "ACTIVITY": "Actividad",
+    "NUTRITION": "Nutrición",
+    "STADISTICS": "Estadísticas"
+  },
+
+  "STEPS": {
+    "STEP1_TITLE": "¿Como de activo eres en tu día a día?",
+    "STEP1_DESCRIPTION": "Selecciona la opción que mejor describa tu actividad diaria.",
+    "STEP2_TITLE": "¿Haces ejercicio durante la semana?",
+    "STEP2_DESCRIPTION": "Desde entrenar en el gimnasio o hacer clases dirigidas hasta ir a correr o practicar un deporte.",
+    "STEP3_TITLE": "¿Cuánto sueles hidratarte durante el día?",
+    "STEP3_DESCRIPTION": "Ten en cuenta tanto agua como cafés, refrescos y zumos, pero no bebidas alcohólicas.",
+    "STEP4_TITLE": "¿Cuántas veces comes al día?",
+    "STEP4_DESCRIPTION": "No cuentes un picoteo pequeño de frutos secos, pero sí comida en cantidades mayores.",
+    "STEP5_TITLE": "¿Qué opciones describen mejor tu dieta?",
+    "STEP5_DESCRIPTION": "Puedes escoger hasta 2 opciones.",
+    "STEP6_TITLE": "¿Sueles comer frutas y hortalizas en tu día a día?",
+    "STEP6_DESCRIPTION": "No tengas en cuenta las patatas o el boniato."
+  },
+
+  "ERRORS": {
+    "REQUIRED": "Este campo es obligatorio.",
+    "EMAIL": "Ingresa un correo electrónico válido.",
+    "EMAIL_TAKEN": "El correo ingresado ya está registrado.",
+    "MINLENGTH": "Este campo debe tener al menos {{requiredLength}} caracteres",
+    "MINLENGTH_PASSWORD": "La contraseña necesita contener un mínimo de {{requiredLength}} caracteres.",
+    "MAXLENGTH": "Este campo no debe exceder los {{requiredLength}} caracteres.",
+    "NO_UPPERCASE": "La contraseña necesita contener por lo menos una letra mayúscula.",
+    "NO_LOWERCASE": "La contraseña necesita contener por lo menos una letra minúscula.",
+    "NO_DIGIT": "La contraseña necesita contener por lo menos un carácter numérico.",
+    "PATTERN_PHONE": "Ingresa un número de teléfono válido.",
+    "PATTERN": "El formato ingresado no es válido.",
+    "MUST_MATCH": "Los valores no coinciden.",
+    "PASSWORDS_NOT_MATCH": "Las contraseñas no coinciden.",
+    "PASSWORD_PATTERN":"Las contraseñas deben tener una mayúscula, una minúscula y un número.",
+    "MIN": "El valor es menor al mínimo permitido.",
+    "MAX": "El valor es mayor al máximo permitido.",
+    "CUSTOM": "{{custom}}.",
+    "INVALID": "Campo no válido.",
+    "CM": "Por favor, ingresa la medida en centímetros.",
+    "KG": "Por favor, ingresa el peso en kg.",
+    "STRICT_EMAIL": "Introduce un email con dominio válido (p. ej. usuario@dominio.com).",
+    "PASSWORD_UPPERCASE": "La contraseña debe contener al menos una letra mayúscula.",
+    "PASSWORD_LOWERCASE": "La contraseña debe contener al menos una letra minúscula.",
+    "PASSWORD_DIGIT": "La contraseña debe contener al menos un carácter numérico."
+  },
+
+  "SECOND_PAYWALL": {
+    "HEADER_TEXT": "Da el siguiente paso.",
+    "HEADER_TEXT1": "Escoge ",
+    "HEADER_SPAN": "cómo cuidarte",
+
+    "DESCRIPTION": "Escoge tu opción pro",
+
+    "MONTH": "mes",
+
+    "FREE_TRIAL_7DAYS": "Prueba gratuita de 7 días, después 41,94 € cada seis meses (6,99 € al mes).",
+    "FREE_TRIAL_14DAYS": "Prueba gratuita de 14 días, después 59,88 € al año (4,99 € al mes).",
+    "FREE_TRIAL_TEXT2": "Cancélalo cuando quieras.",
+
+    "ADVANTAGE1": "Planes hechos a medida",
+    "ADVANTAGE2": "Píldoras de entrenamiento y recetas ilimitadas",
+    "ADVANTAGE3": "Planes de entrenamiento y de menú semanales",
+    "ADVANTAGE4": "Recomendaciones con IA",
+    "ADVANTAGE5": "Escáner de alimentos con IA",
+    "ADVANTAGE6": "Dile adiós a los anuncios",
+
+    "GO_TO_BASIC_PLAN_BUTTON": "Seguir con el plan básico",
+    "CHOICEPLAN_BUTTON": "Escoger plan"
+  },
+  "PRO_FORM": {
+    "STEP1_TITLE": "Este es tu nuevo estilo de vida. Esto es <span class='highlight'>onepercent pro.</span>",
+    "STEP1_BTN": "Empezar",
+    "STEP2_TITLE": "Vamos a <span class='highlight'>conocerte</span>",
+    "STEP2_DESC": "<span class='font-semibold''>Cada persona, cada cuerpo y cada vida son diferentes. Por eso, onepercent pro personaliza las recomendaciones y objetivos según el perfil de cada usuario.<br> <br> Con este cuestionario descubriremos qué es lo mejor para ti.</span>",
+    "STEP3_TITLE": "¿Cuándo naciste?",
+    "STEP3_DESC": "",
+    "STEP4_TITLE": "¿Cuánto mides?",
+    "STEP4_DESC": "Tu altura será usada para configurar tus objetivos.",
+    "STEP5_DESC": "<span class='desc-span'>Preguntar sobre el género y el sexo puede generar incomodidad en algunas personas.<br><br>Por esa razón, podrás evitar responder las siguientes preguntas, pero deberás tener en cuenta que tus objetivos saludables no serán tan precisos. <br> <span/>",
+    "STEP3_INPUT_PLACEHOLDER": "Fecha de nacimiento",
+    "STEP4_INPUT_PLACEHOLDER": "Centímetros",
+    "STEP6_TITLE": "¿Qué opción describe mejor tu identidad de género actualmente?",
+    "STEP6_DESC": "La elección no afectará a tus objetivos.",
+    "STEP7_TITLE": "¿Cuál es tu sexo?",
+    "STEP7_DESC": "Escoge la opción que más se adapte a tu fisiología actual para que podamos adaptar correctamente tus objetivos.",
+    "STEP8_TITLE": "¿Cuánto pesas?",
+    "STEP8_DESC": "Lo ideal es tomar de referencia el peso de primera hora del día.",
+    "STEP8_INPUT_PLACEHOLDER": "Kilogramos",
+    "STEP9_TITLE": "¿Cómo conociste onepercent?",
+    "STEP9_DESC": "Selecciona los que necesites.",
+    "STEP9_OPTION_PODCAST": "Podcast",
+    "STEP9_OPTION_PRESS": "Prensa, revista (formato físico o web)",
+    "STEP9_OPTION_INTERNET_AD": "Por un anuncio de internet",
+    "STEP9_OPTION_INFLUENCER": "Por un influencer",
+    "STEP9_OPTION_FRIEND": "Por un amigo o familiar",
+    "STEP9_OPTION_HEALTH_PRO": "Por recomendación de un profesional sanitario",
+    "STEP9_OPTION_STORE": "App Store o Google Play",
+    "STEP9_OPTION_OTHER": "Otro",
+    "GENDER_MALE": "Masculino",
+    "GENDER_FEMALE": "Femenino",
+    "GENDER_NONBINARY": "No binario",
+    "GENDER_NOT_SAY": "Prefiero no decirlo",
+    "GENDER_INTERSEXUAL": "Intersexual",
+    "GENDER_OTHER": "Otra"
+  },
+  "DATEPICKER": {
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Aplicar",
+    "TITLE": "Selecciona tu fecha de nacimiento."
+  },
+
+  "REGISTER_PAGE": {
+    "WELCOME_TEXT": "Crea tu cuenta y descubre tu plan personalizado",
+
+    "CONTINUE_WITH_GOOGLE": "Continuar con Google",
+    "CONTINUE_WITH_APPLE": "Continuar con Apple",
+    "CONTINUE_WITH_FACEBOOK": "Continuar con Facebook",
+
+    "CREATE_ACCOUNT": "Crear cuenta con el correo electrónico",
+
+    "LEGAL_TEXT": "Al continuar aceptas nuestros",
+    "TERMS_LINK": "Términos y Condiciones de uso,",
+    "AND": " y nuestra ",
+    "PRIVACY_LINK": "Política de Privacidad"
+  },
+
+  "BASIC_FORM": {
+    "STEP1_DESC": "Para <span class='weight-800'>crear tu usuario</span> y <span class='weight-800'>personalizar tu experiencia</span> en onepercent, necesitamos saber más de ti.",
+    "STEP5_TITLE": "¿Cuál es tu género?",
+    "STEP5_DESC": "Selecciona la opción con la que te sientas más cómodo.",
+    "STEP6_TITLE": "¿Dónde vives?",
+    "STEP6_INPUT_PLACEHOLDER": "Indícanos tu provincia"
+  },
+
+  "PRO_FORM_TWO" : {
+    "STEP1_TITLE": "Configurar <span class='highlight'>balance saludable</span>",
+    "STEP1_DESCRIPTION": "Para poder marcar tus <span class='weight-800'>objetivos saludables</span> es necesario saber <span class='weight-800'>cuánta energía</span> consume tu cuerpo.",
+    "STEP2_SUBTITLE": "Antes escogiste la siguiente opción, ¿sigue siendo correcta?",
+    "STEP2_TITLE": "¿Cómo de activo eres en tu día a día?",
+    "STEP2_DESCRIPTION": "Selecciona el nivel sin tener en cuenta prácticas deportivas, solo desplazamientos durante el trabajo, tiempo libre...",
+    "STEP3_TITLE": "¿Con qué frecuencia sueles ejercitarte?",
+    "STEP3_DESCRIPTION": "Escoge el número de sesiones que realices a la semana practicando cualquier deporte, entrenos de resistencia o fuerza.",
+    "STEP4_TITLE": "¿Cuál es tu nivel cardiovascular actual?",
+    "STEP4_DESCRIPTION": "Tu nivel está directamente relacionado con el tiempo que lleves practicando un deporte que involucre el cardio, como correr, natación, ir en bicicleta o practicas deportivas de equipo, raqueta, combate o artísticas." 
+  },
+
+  "PRO_FORM_RESULTS": {
+    "STEP1_TITLE": "Este es tu balance saludable y tus objetivos diarios",
+    "STEP1_DESCRIPTION": "Según las estimaciones y recomendaciones sanitarias, estas son las metas que tendrás que cumplir cada día para tener unos buenos hábitos y obtener beneficios para tu salud.",
+    "STEP2_TITLE": "¿Quieres marcarte un objetivo personal?",
+    "STEP2_DESCRIPTION": "Escoge si desearías centrarte en uno de los objetivos diarios para potenciarlo.",
+    "STEP3_TITLE": "¿Estás de acuerdo con tu objetivo personal?",
+    "CONTINUE": "Continuar",
+    "NOT_NOW": "Ahora no",
+    "YES": "Sí",  
+    "NO": "No",
+    "FULLSCREEN_PICTURE": "Estás listo para cambiar tu vida con <span class='highlight'>onepercent pro.</span>",
+    "START_BTN": "Empezar"
+  },
+  "ALLERGIES": {
+    "LANDING_TITLE": "Alergias e <span class='highlight'>intolerancias</span>",
+    "LANDING_DESCRIPTION": "Onepercent tiene como meta ofrecerte <span class='weight-800'>comidas sanas</span> y, sobre todo, <span class='weight-800'>fáciles y rápidas</span> de preparar que se adecúen a tus <span class='weight-800'>necesidades alimentarias.</span> ",
+    "STEP1_TITLE": "¿Tienes alguna alergia?",
+    "STEP1_DESCRIPTION": "Escoge las opciones que necesites.",
+    "STEP2_TITLE": "¿Tienes alguna intolerancia?",
+    "STEP2_DESCRIPTION": "Escoge las opciones que necesites.",
+    "STEP3_TITLE": "¿Cuáles son tus preferencias alimentarias?",
+    "STEP3_DESCRIPTION": "Escoge las opciones que necesites.",
+    "START_BTN": "Empezar",
+    "CONTINUE_BTN": "Continuar"
+  },
+  "NUTRITION": {
+    "TITLE": "Tu zona de ",
+    "TITLE_SPAN": "nutrición",
+
+    "PROGRESS_TEXT": "Tu progreso de hoy",
+
+    "HYDRATE_REGISTER": "Tu registro de hidratación",
+
+    "EAT_REGISTER": "Tu registro de comida",
+
+    "KITCHEN_IA": "Cocina con la IA",
+    "KITCHEN_IA_DESCRIPTION": "Fotografía tus alimentos y descubre recetas adaptadas a ti gracias a la IA.",
+
+    "KITCHEN_ZONE": "Zona de cocina",
+
+    "LIBRARY_TEXT": "Biblioteca de recetas",
+
+    "HYDRATION_TITLE": "Agua",
+    "FOOD_TITLE": "Comida",
+    "RECOMMENDED": "Recomendado",
+    "TOTAL": "Total"
+  },
+
+  "SPLIT_SLIDE": {
+    "TITLE": "ALIMENTACIÓN",
+
+    "OBJETIVE": " Kcal consumidas",
+
+    "SCORE": " / 100 pts"
+  },
+
+  "WATER_SLIDE": {
+    "TITLE": "HIDRATACIÓN",
+
+    "SCORE": " / 100 pts"
+  },
+
+  "FRUIT_SLIDE": {
+    "TITLE": "FRUTAS",
+
+    "SCORE": " / 100 pts"
+  },
+
+  "PROGRESS_BAR": {
+    "YOUR_PROGRESS": "Tu puntuación de hoy"
+  },
+
+  "HYDRATION_REGISTRATION": {
+    "TITLE": "Registro de hidratación",
+    "DESCRIPTION": "Pulsa sobre el color que tuvo tu orina en tu última micción para medir tu nivel de hidratación.",
+    "DESCRIPTION1": "Actualízalo cada vez que vayas al baño.",
+    "REGISTRATION.BUTTON": "Registrar"
+  },
+
+  "FOOD_REGISTRATION": {
+    "TITLE": "Registro de comida",
+    "INPUT_PLACEHOLDER": "Buscar ingrediente",
+
+    "SELECT_MEAL": "Comida del día",
+
+    "RECORDING_RECIPES": "Registrando",
+    "RECENT_RECIPES": "Recientes",
+    "FAVORITE_RECIPES": "Favoritos",
+
+    "NO_INGREDIENTS": "Todavía no hay ingredientes.",
+    "ADD_INGREDIENT": "Añade uno.",
+
+    "SAVE_BUTTON": "Guardar"
+  },
+
+  "WEEKLY_MENU": {
+    "TITLE": "Tu menú semanal "
+  },
+
+  "DAILY_SLIDER": {
+    "MORNING_TITLE": "Unbeatable",
+    "MORNING_TITLE1": "Mornings",
+
+    "MIDDAYS_TITLE": "Natural",
+    "MIDDAYS_TITLE1": "Middays"
+  },
+
+  "SELECT_MEAL_MODAL": {
+    "SAVE_BUTTON": "Guardar" 
+  },
+
+  "PROGRESS_DAY": {
+    "CHRONOLOGY": "Cronología diaria"
+  },
+
+  "EDIT_INGREDIENT": {
+    "TITLE": "Editar ingrediente"
+  },
+
+  "PLANS":{
+    "$rc_annual":{
+      "TITLE": "12 meses",
+      "DISCOUNT":"Ahorra un",
+      "FACTURATION": "anualmente",
+      "DAY": "dias ",
+      "FREE_TRIAL": " de prueba gratuita",
+
+      "WEEK":" semanas"
+
+    },
+
+      "$rc_monthly": {
+        "TITLE": "1 mes",
+      "DISCOUNT":"",
+      "FREE_TRIAL": "",
+      "FACTURATION": "Facturados mensualmente",
+      "WEEK":""
+      },
+      "$rc_six_month": {
+      "TITLE": "6 meses",
+      "DISCOUNT":"Ahorra un",
+      "FACTURATION": " cada 6 meses",
+      "FREE_TRIAL": "de prueba gratuita",
+      "WEEK":" semana"
+      }
+
+  }
+}
+
+

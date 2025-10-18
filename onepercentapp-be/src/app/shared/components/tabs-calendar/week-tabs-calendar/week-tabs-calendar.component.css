@@ -1,0 +1,12 @@
+ion-row,
+ion-col {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ion-button {
+  --color: black;
+  --padding-start: 0;
+  --padding-end: 0;
+}

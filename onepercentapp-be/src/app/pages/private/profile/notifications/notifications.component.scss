@@ -1,0 +1,60 @@
+.text {
+  color: #131313;
+  /* Inter_M_Sb */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.notification-info {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  align-self: stretch;
+
+  color: #131313;
+  /* Inter_M_Sb */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.notification-settings {
+  margin-bottom: 1.25;
+  border-radius: 0.5rem;
+  background-color: var(--ion-color-light);
+}
+
+.notification-item {
+  --background:#F2F2F2;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  
+  ion-label {
+    h2 {
+      margin: 0;
+      margin-bottom: 0.25rem;
+    }
+    p {
+        margin: 0;
+        line-height: normal;
+      color: var(--ion-color-dark-gray);
+    }
+  }
+}
+
+.save-button {
+  margin-top: 1.875rem;
+}
+
+.button-fixed-bottom {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  padding-bottom: env(safe-area-inset-bottom);
+} 

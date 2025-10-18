@@ -1,0 +1,15 @@
+<div class="inner-content">
+
+  <div class="modal-header">
+    <h2 class="font-lausanne-l ">{{ title }}</h2>
+  </div>
+  <div class="modal-body">
+    <p class="font-m-semibold">{{ message }}</p>
+  </div>
+  <div class="modal-footer">
+    <div class="buttons">
+      <ion-button style="--box-shadow: none;" class="btn-outline-dark"  (click)="cancelDeletion()">{{ cancelButtonText }}</ion-button>
+      <ion-button fill="solid" class="btn-primary-red" (click)="confirmDeletion()">{{ confirmButtonText }}</ion-button>
+    </div>
+  </div>
+</div>

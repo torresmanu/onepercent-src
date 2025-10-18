@@ -1,0 +1,11 @@
+<ion-content fullscreen>
+    <app-landing-logo *ngIf="isLandingLogo; else optionsForm" title="PRO_FORM_TWO.STEP1_TITLE"
+        [headerTitle]="'ALLERGIES.LANDING_TITLE'" [description]="'ALLERGIES.LANDING_DESCRIPTION'"
+        [pictureUrl]="'assets/imgs/plan-forms/allergies-landing.png'" (continue)="isLandingLogo = false"
+        buttonText="ALLERGIES.START_BTN">
+    </app-landing-logo>
+    <ng-template #optionsForm>
+        <app-options-form [stepData]="steps[stepNumber]" [stepNumber]="stepNumber" [stepsConfig]="steps"
+            [formMetas]="formMetas" (continue)="continue()" (goBack)="goBack()"></app-options-form>
+    </ng-template>
+</ion-content>

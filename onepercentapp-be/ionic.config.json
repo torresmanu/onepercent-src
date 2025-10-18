@@ -1,0 +1,7 @@
+{
+  "name": "one-percent",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

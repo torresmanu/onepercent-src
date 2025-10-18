@@ -1,0 +1,131 @@
+<app-header backButton="/private/resetPassword" title="Cambiar contraseña" />
+<ion-content class="safe-area ion-padding">
+  <div class="change-password-container">
+    <form [formGroup]="form" class="change-password-form">
+      <div class="textUpper">
+        <h3>{{ "CHANGE_PASSWORD.TEXT" | translate }}</h3>
+      </div>
+      <div class="input-wrapper">
+        <div class="input-block">
+          <label for="oldPassword">{{
+            "CHANGE_PASSWORD.ACTUAL_PASSWORD" | translate
+          }}</label>
+          <app-custom-input
+            [control]="utilsService.getFormControl(form, 'oldPassword')"
+            [hasError]="utilsService.getFormError(form, 'oldPassword')"
+            [errorMessage]="!form.get('oldPassword')?.errors?.['invalidOldPassword'] ? utilsService.getErrorMessage(form,'oldPassword') : ''"
+            [type]="'password'"
+            [placeholder]="
+              'CHANGE_PASSWORD.PLACEHOLDER_OLD_PASSWORD' | translate
+            "
+            icon="lock-closed"
+            autocomplete="off"
+            [labelPlacement]="'fixed'"
+            [fontSize]="FONT_SIZES.sm"
+          >
+          </app-custom-input>
+          <div
+            *ngIf="form.get('oldPassword')?.errors?.['invalidOldPassword']"
+            class="error"
+          >
+            <ion-text class="passwordMismatch" color="danger"
+              >Contraseña antigua incorrecta</ion-text
+            >
+          </div>
+          <div class="forgotPassword">
+            <a (click)="gotoResetPassPage()">{{
+              "CHANGE_PASSWORD.FORGOT_PASSWORD" | translate
+            }}</a>
+          </div>
+        </div>
+        <div class="input-block">
+          <label for="newPassword">{{
+            "CHANGE_PASSWORD.NEW_PASSWORD" | translate
+          }}</label>
+          <app-custom-input
+            [control]="utilsService.getFormControl(form, 'newPassword')"
+            [hasError]="utilsService.getFormError(form, 'newPassword')"
+            [fontSize]="FONT_SIZES.sm"
+            [errorMessage]="utilsService.getErrorMessage(form, 'newPassword')"
+            [type]="'password'"
+            [labelPlacement]="'fixed'"
+            [placeholder]="
+              'CHANGE_PASSWORD.PLACEHOLDER_NEW_PASSWORD' | translate
+            "
+            icon="lock-closed"
+            autocomplete="off"
+          [autocomplete]="'new-password'"
+
+          >
+          </app-custom-input>
+          <div
+            *ngIf="!utilsService.getErrorMessage(form,'password') && form.errors?.['passwordMismatch'] && form.get('password')"
+            class="error"
+          >
+            <ion-text class="passwordMismatch">
+              {{ "ERRORS.PASSWORDS_NOT_MATCH" | translate }}</ion-text
+            >
+          </div>
+        </div>
+
+        <div class="input-block">
+          <label for="password">{{
+            "CHANGE_PASSWORD.REPIT_PASSWORD" | translate
+          }}</label>
+          <app-custom-input
+            [control]="utilsService.getFormControl(form, 'password')"
+            [hasError]="utilsService.getFormError(form, 'password')"
+            [fontSize]="FONT_SIZES.sm"
+            [errorMessage]="utilsService.getErrorMessage(form, 'password')"
+            [type]="'password'"
+            icon="lock-closed"
+            autocomplete="current-password"
+            [placeholder]="
+              'CHANGE_PASSWORD.PLACEHOLDER_REPEAT_PASSWORD' | translate
+            "
+            [labelPlacement]="'fixed'"
+          >
+          </app-custom-input>
+          <div
+            *ngIf="!utilsService.getErrorMessage(form,'password') && form.errors?.['passwordMismatch'] && form.get('password')"
+            class="error"
+          >
+            <ion-text class="passwordMismatch">
+              {{ "ERRORS.PASSWORDS_NOT_MATCH" | translate }}</ion-text
+            >
+          </div>
+        </div>
+      </div>
+      <!-- 
+
+
+
+          1er input: required
+          2o input required y formato
+          3 que se repita el segundo y requerido
+      -->
+
+      <!-- Agrupar todos los errores aquí debajo -->
+      <!-- <div class="error-group">
+        <div *ngIf="form.get('newPassword')?.touched && form.get('newPassword')?.invalid" class="error">
+          <span *ngIf="form.get('newPassword')?.errors?.['minlength']">{{ 'CHANGE_PASSWORD.PASSWORD_MIN_LENGTH' |
+            translate }}</span>
+          <span *ngIf="form.get('newPassword')?.errors?.['pattern']">{{ 'CHANGE_PASSWORD.PASSWORD_PATTERN' | translate
+            }}</span>
+        </div>
+        <div *ngIf="form.errors?.['passwordMismatch'] && form.get('password')?.touched" class="error">
+          {{ 'ERRORS.PASSWORDS_NOT_MATCH' | translate }}</ion-text>
+        </div>
+      </div> -->
+    </form>
+    <ion-button
+      expand="block"
+      [disabled]="form.invalid"
+      class="btn-dark"
+      (click)="updatePassword()"
+      style="margin-top: auto"
+    >
+      {{ "CHANGE_PASSWORD.CHANGE_PASSWORD_BUTTON" | translate }}
+    </ion-button>
+  </div>
+</ion-content>

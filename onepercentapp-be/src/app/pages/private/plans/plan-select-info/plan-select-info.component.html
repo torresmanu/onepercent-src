@@ -1,0 +1,54 @@
+<ion-content class="welcome-name-page flex-col">
+    <!-- Imagen de fondo -->
+    <div class="image-container">
+      <img class="logo bye-image" src="../../../../../assets/imgs/icon.png" alt="Imagen de despedida"/>
+    </div>
+    <div class="content-container  flex-col justify-between">
+        <div >
+            <swiper-container pagination="true"  pagination-bullet="true" >
+                <swiper-slide *ngFor="let slide of slides">
+                  <div class="slide" [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }">
+                    <div>
+                    <div *ngIf="slide.textImage === 1 || slide.textImage === 2" class="text-overlay font-lausanne-xxl">
+                      {{ slide.textBefore }}
+                      <span class="highlight">{{ slide.highlight }}</span>
+                    </div>
+
+                    <div *ngIf="slide.textImage === 1" class="text-overlay2 font-lausanne-s">
+                      {{ slide.textBefore2 }}
+                      <span class="highlight">{{ slide.highlight2 }}</span>
+                    </div>
+                    <div  *ngIf="slide.textImage === 1" class="text-overlay2 font-lausanne-s">
+                      {{ slide?.textBefore3 }}
+                      <span class="highlight">{{ slide.highlight3 }}</span>
+                    </div>
+                   <div  *ngIf="slide.textImage === 1" class="text-overlay2 font-lausanne-s">
+                     <span class="highlight">{{ slide.highlight4 }}</span>
+                        {{slide?.textBefore4}}
+                     <span class="highlight">{{ slide.highlight5 }}</span>
+                        {{slide?.textBefore5}}<br>
+                    </div>
+
+                    <div class="text-overlay2 font-lausanne-s">
+                        {{slide.textBefore6}}<br>
+                        {{slide.textBefore7}}
+                        <br>
+                        <br>
+                        {{slide.textBefore8}}
+                        <span class="highlight">{{ slide.highlight6 }}</span>
+                        {{slide.textBefore9}}
+                    </div>
+
+                </div>
+
+
+                    <ion-button *ngIf="slide?.control" expand="block" class="ion-margin-bottom" mode="ios" (click)="continue()">
+                        {{ 'PLAN_SELECT_INFO.INFO_BUTTON' | translate }}
+                    </ion-button>
+                    </div>
+            </swiper-slide>
+            
+        </swiper-container> 
+</div>
+</div>  
+</ion-content>

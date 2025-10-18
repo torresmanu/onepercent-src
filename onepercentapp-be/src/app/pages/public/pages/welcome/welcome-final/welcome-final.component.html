@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border"></ion-header>
+<ion-content class="welcome-name-page flex-col">
+  <!-- Imagen de fondo -->
+  <div class="image-container">
+    <ion-back-button
+      icon="../../../../../../assets/icon/backArrow.svg"
+      class="back-button"
+      defaultHref="/welcome"
+      mode="md"
+    ></ion-back-button>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content-container ion-padding flex-col justify-between">
+    <div>
+      <h2 class="title font-lausanne-xl">{{ "WELCOME.TITLE" | translate }}</h2>
+      <h2 class="title font-lausanne-xl">
+        {{ "WELCOME.OP" | translate }}, {{ firstName }}
+      </h2>
+      <p class="font-xm-semibold">{{ "WELCOME.DESCRIPTION" | translate }}</p>
+    </div>
+
+    <!-- Botón continuar -->
+    <ion-button
+      expand="block"
+      class="btn-dark ion-margin-bottom"
+      mode="ios"
+      (click)="continue()"
+    >
+      {{ "WELCOME.CONTINUE" | translate }}
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,48 @@
+<body style="margin:0;padding:0;">
+  <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+    <tr>
+      <td align="center" style="padding:0;">
+        <table role="presentation" style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
+          <tr>
+            <td align="center" style="padding:40px 0 30px 0;">
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:36px 30px 42px 30px;">
+              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                <tr>
+                  <td style="padding:0 0 36px 0;color:#153643;">
+                    <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;">{{subject}}</h1>
+                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">{{message}}</p>
+                    {{#if payload}}
+                      <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><pre>{{{payload}}}</pre></p>
+                    {{/if}}
+                    {{#if buttonHref}}
+                      <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="{{buttonHref}}" style="color:#ee4c50;text-decoration:underline;">{{__ "Access here"}}</a></p>
+                    {{/if}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr style="border-top:1px solid #cccccc">
+            <td style="padding:30px;background:#fff;">
+              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
+                <tr>
+                  <td style="padding:0;width:50%;" align="left">
+                    
+                  </td>
+                  <td style="padding:0;width:50%;" align="right">
+                    <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
+                  
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>

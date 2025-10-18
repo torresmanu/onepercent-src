@@ -1,0 +1,103 @@
+<ion-content class="safe-area ion-padding">
+  <div class="section-wrapper">
+    <section class="sectionUp">
+      <div class="header">
+        <img src="../../../../../../assets/imgs/icon-dark.png" class="logoUp" />
+        <h2 class="title font-lausanne-xl">{{ 'COMPARASIONPLANS.TITLE' | translate }}</h2>
+      </div>
+    </section>
+
+    <section class="sectionDown">
+      <div class="tablePlans">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="plan-basic">{{ 'COMPARASIONPLANS.COLUMN2' | translate }}</th>
+              <th class="badge">
+                <div class="badge">
+                  <img src="../../../../../assets/imgs/badge-soft-green.svg" alt="onepercentpro"
+                    class="onapercentpro-badge">
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ 'COMPARASIONPLANS.ROW1' | translate }}</td>
+              <td class="plan-cell">
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+              <td>
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'COMPARASIONPLANS.ROW2' | translate }}</td>
+              <td class="plan-cell">
+                <img src="../../../../../assets/imgs/cross-gray.svg" alt="">
+              </td>
+              <td>
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'COMPARASIONPLANS.ROW3' | translate }}</td>
+              <td class="plan-cell">
+                <img src="../../../../../assets/imgs/cross-gray.svg" alt="">
+              </td>
+              <td>
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'COMPARASIONPLANS.ROW4' | translate }}</td>
+              <td class="plan-cell">
+                <img src="../../../../../assets/imgs/cross-gray.svg" alt="">
+              </td>
+              <td>
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'COMPARASIONPLANS.ROW5' | translate }}</td>
+              <td class="plan-cell">
+                <img src="../../../../../assets/imgs/cross-gray.svg" alt="">
+              </td>
+              <td>
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'COMPARASIONPLANS.ROW6' | translate }}</td>
+              <td class="plan-cell">
+                <img src="../../../../../assets/imgs/cross-gray.svg" alt="">
+              </td>
+              <td>
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'COMPARASIONPLANS.ROW7' | translate }}</td>
+              <td class="plan-cell plan-cell-bottom">
+                <img src="../../../../../assets/imgs/cross-gray.svg" alt="">
+              </td>
+              <td class="plan-pro-bottom">
+                <img src="../../../../../assets/imgs/check-green.svg" alt="">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="buttons">
+        <ion-button (click)="goToHome()" class="btn-outline-dark wide-btn" style="--box-shadow: none;">
+          {{ 'COMPARASIONPLANS.START_BUTTON' | translate }}
+        </ion-button>
+        <ion-button (click)="goToChoicePlan()" class="btn-dark wide-btn">
+          {{ 'COMPARASIONPLANS.SEE_PLANS_BUTTON' | translate }}
+        </ion-button>
+      </div>
+    </section>
+  </div>
+</ion-content>

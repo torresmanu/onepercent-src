@@ -1,0 +1,41 @@
+.card {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #b2b2b2;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-left: 8px;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.color-card {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.card.selected {
+  border-color: #97bf60;
+}
+
+.status {
+  color: #131313;
+  /* Inter_M_Sb */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.input {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+

@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "157423904083",
+    "project_id": "onepercent-bc810",
+    "storage_bucket": "onepercent-bc810.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157423904083:android:92fdb37b21fa918b1a6da6",
+        "android_client_info": {
+          "package_name": "app.onepercent.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157423904083-b53gsl76g2faor29qp5ri5brabtagqqd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.onepercent.app",
+            "certificate_hash": "88294dad0307c753cc61c1d52cb52052e02a574d"
+          }
+        },
+        {
+          "client_id": "157423904083-b8pibme8q53f3f2ufb3tuhltag35b37s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.onepercent.app",
+            "certificate_hash": "3e72982af160a8a7f7b86d676b0a29b07337da75"
+          }
+        },
+        {
+          "client_id": "157423904083-mpmo86n40fbcrm7mbjoags4mrr09voko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQgFZmTqPTxhSHXuOkFzspGIiIORH9xeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157423904083-mpmo86n40fbcrm7mbjoags4mrr09voko.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "157423904083-eibegbg98pm71jthjhddhaspec5l2gk8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.onepercent.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

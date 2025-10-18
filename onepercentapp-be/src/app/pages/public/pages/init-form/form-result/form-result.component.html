@@ -1,0 +1,40 @@
+<ion-content class="safe-area ">
+
+  <div class="content-container">
+    <div class="ion-padding">
+      <h1 class="font-lausanne-xxl" *ngIf="step === 0">Descubre en qué punto se encuentra <span class="highlight">tu salud.</span></h1>
+      <h2 class="font-lausanne-xl" *ngIf="step === 1">{{name}}, tu balance saludable es <span class="highlight">correcto.</span>
+        Hemos creado un <span class="highlight">plan</span> para ti.</h2>
+      <div class="ion-margin-top">
+        <app-logo width="60px"  *ngIf="step === 0"></app-logo>
+        <app-logo width="40px"  *ngIf="step === 1"></app-logo>
+        
+      </div>
+    </div>
+
+
+    <div class="button-container ion-padding">
+      <ion-button *ngIf="step === 0" expand="block" class="btn-primary" (click)="continue()">
+        Continuar
+      </ion-button>
+
+    </div>
+    <div class="graphic-container" *ngIf="step === 1">
+      <p>Estás en un buen punto de partida. Con onepercent mejorarás tu salud y tus hábitos.</p>
+      <div class="chart-container">
+        <div class="label-container">
+          <span class="chart-label">Puntuación de <br>salud actual</span>
+        </div>
+        <canvas #healthChart height="200"></canvas>
+        <span class="corner-label left">Hoy</span>
+        <span class="corner-label right">Objetivo</span>
+      </div>
+      <ion-button expand="block" class="btn-dark" (click)="goToRegister()">
+        Ver plan
+      </ion-button>
+    </div>
+
+
+  </div>
+
+</ion-content>

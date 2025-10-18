@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border ion-no-shadow">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-img src="../../../../assets/imgs/icon.png"></ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="font-xm-semibold">Buenos días, <span>{{ user?.firstname }}</span>
+      <p class="font-m-semibold">¡Vamos a por un día saludable!</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-avatar slot="end" [routerLink]="['/private/profile']">
+          <img *ngIf="user?.imageProfile" [src]="environment.assetsUrl + '/' + user?.imageProfile"
+            alt="Foto de perfil" />
+        <img *ngIf="!user?.imageProfile" src="assets/icon/user-avatar.svg" alt="no image " />
+        </ion-avatar>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="safe-area ion-padding">
+
+  <ion-segment [value]="period()" mode="ios" (ionChange)="changeValue($event)">
+    <ion-segment-button value="day">
+      <ion-label>HOY</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="week">
+      <ion-label>SEMANA</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="month">
+      <ion-label>MES</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [hidden]="period()!=='day'">
+    <div class="welcome-container">
+      <ion-button   class="btn btn-primary" expand="full" (click)="navigateToProFormTwoResults()">Ver pro form two results</ion-button>
+      <ion-button expand="full" class="btn btn-primary " (click)="navigateToProFormTwo()">Ver pro form two</ion-button>
+      <ion-button expand="full"  class="btn btn-dark" (click)="navigateToProForm()">Ver pro form</ion-button>
+      <ion-button expand="full" (click)="navigateToBasicForm()">Ver basic form</ion-button>
+      <ion-button expand="full" (click)="navigateToAllergies()">Ver allergies form</ion-button>
+      <ion-button expand="full" (click)="navigateToPlans()">Ver Planes</ion-button>
+      <ion-button expand="full" (click)="goToSecondPaywall()">Ver Second-Paywall</ion-button>
+      <ion-button expand="full" (click)="goToPaywall()">Ver Paywall</ion-button>
+      <ion-button expand="full" (click)="goRecipeDetail()">recipe Detail</ion-button>
+      <ion-button expand="full" (click)="goHealthTest()">health test</ion-button>
+
+
+
+      <ion-button expand="full" (click)="goToFoodRegistration()">Ver Food Registration</ion-button>
+
+    </div>
+
+
+
+
+
+  </div>
+
+  <app-weekly-menu [hidden]="period()!=='week'"></app-weekly-menu>
+
+  <div [hidden]="period()!=='month'">
+  </div>
+
+</ion-content>

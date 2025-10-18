@@ -1,0 +1,31 @@
+<div class="loader-container">
+  <div class="circle-wrapper">
+    <svg viewBox="0 0 36 36" class="circular-chart">
+      <path
+        class="circle-bg"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path
+        class="circle"
+        [attr.stroke-dasharray]="percentage + ', 100'"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+    </svg>
+    <p  class="font-lausanne-40" >{{ percentage }}%</p>
+  </div>    
+
+  <h2 class="title font-lausanne-l">Calculando tu balance saludable</h2>
+
+  <ul class="steps">
+    <li *ngFor="let step of steps; let i = index">
+      <ion-icon name="checkmark-circle" *ngIf="i < stepIndex" color="success"></ion-icon>
+
+
+      <span *ngIf="i < stepIndex" class="step-text">{{ step }}</span>
+    </li>
+  </ul>
+</div>

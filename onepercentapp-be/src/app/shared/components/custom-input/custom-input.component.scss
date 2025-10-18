@@ -1,0 +1,83 @@
+.custom-input {
+  --background: #f4f5f8;
+  --border-radius: 10px;
+  margin-bottom: 0.5rem;
+  pointer-events: auto;
+
+  .date-input {
+    width: 100%;
+    height: 100%;
+    --background: #f4f5f8;
+    pointer-events: all;
+  }
+}
+
+/* Mensaje de error */
+.error-message {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Borde rojo en error */
+::ng-deep .input-error {
+  border: 1.5px solid #e53935 !important;
+  border-radius: 11px;
+}
+
+/* Borde verde cuando es válido */
+::ng-deep .input-valid {
+  border: 1.5px solid var(--ion-color-success, #2dd36f) !important;
+  border-radius: 11px;
+}
+
+/* Highlight del ion-input en verde cuando es válido */
+::ng-deep .input-valid ion-input {
+  --highlight-color-focused: var(--ion-color-success, #2dd36f);
+}
+
+/* Si usas el date-input, hereda también el borde */
+::ng-deep ion-item.date-input.input-valid {
+  border: 1.5px solid var(--ion-color-success, #2dd36f) !important;
+  border-radius: 8px;
+}
+
+.datepicker-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  display: contents;
+  min-height: 100vh;
+}
+
+.datepicker-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  z-index: 999;
+  pointer-events: auto;
+}
+
+ion-datetime {
+  position: absolute !important;
+  left: 50vw !important;
+  top: 50vh !important;
+  transform: translate(-50%, -50%) !important;
+  width: 80vw !important;
+  max-width: 350px !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12) !important;
+  background: #fff !important;
+  border-radius: 12px !important;
+  pointer-events: auto;
+}
+:host ::ng-deep ion-item.date-input[button]::part(native) {
+  padding-left: 0;
+}
+
+:host ::ng-deep #cancel-button {
+  --color: #e83826 !important;
+}

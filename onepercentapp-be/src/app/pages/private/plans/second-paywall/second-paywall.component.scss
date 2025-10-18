@@ -1,0 +1,316 @@
+.sectionUp {
+  background-image: url("../../../../../assets/imgs/paywallInfoHeader.jpg");
+  height: 30dvh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .headerText {
+    color: #fff;
+    font-size: clamp(1.2rem, 4vh, 2rem);
+    font-weight: 550;
+    padding: 0 0 0 1rem;
+
+    h2 {
+      color: #fff;
+      font-size: clamp(1.2rem, 4vh, 2rem);
+      font-weight: 550;
+      margin: 0;
+    }
+
+    span {
+      color: #bcdf84;
+      font-size: clamp(1.2rem, 4vh, 2rem);
+      font-weight: 550;
+    }
+  }
+}
+
+.containerUp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+
+  .logoUp {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.onepercentPro {
+  padding: 0.142rem 0.568rem;
+  border-radius: 0.853rem;
+  border: 0.142rem solid #bcdf84;
+  background: #bcdf84;
+  color: #131313;
+  font-size: 0.853rem;
+  font-weight: 600;
+}
+
+.sectionDown {
+  border-radius: 0.625rem;
+  z-index: 2;
+  position: relative;
+  top: -1.25rem;
+  background: #fff;
+}
+
+.title-container {
+  align-self: stretch;
+  margin-left: 1rem;
+  color: #131313;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.plans-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.875rem;
+}
+
+.plans-selector {
+  max-width: 6.5rem;
+  max-height: 8.25rem;
+  position: relative;
+  display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: 0.5rem;
+  border: 0.125rem solid #d8d8d8;
+  background: #f2f2f2;
+  gap: 0.3125rem;
+}
+
+.plans-selector-selected {
+  border: 0.125rem solid #75a042;
+}
+
+.plan-discount-container {
+  width: 6.5rem;
+  pointer-events: none;
+  position: absolute;
+  top: -1.25rem;
+  left: 1;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+}
+
+.plan-discount {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  padding: 0.25rem 0.625rem 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  font-family: Inter;
+  font-size: 0.625rem;
+  font-weight: 600;
+  border-radius: 0.625rem 0.625rem 0 0;
+  background: #d8d8d8;
+}
+
+.discount-billing {
+  color: #808080;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.5rem;
+  font-weight: 400;
+}
+
+.plan-discount-selected {
+  box-sizing: border-box;
+  border-radius: 0.625rem 0.625rem 0 0;
+  display: flex;
+  padding: 0.25rem 0.625rem 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+  background: #75a042;
+}
+
+.plan-duration {
+  color: #6e6e6e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plan-duration-number-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.plan-duration-number {
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+.plan-duration-label {
+  font-size: 0.75rem;
+  color: #808080;
+  font-weight: 600;
+}
+
+.plan-duration-selected .plan-duration-number,
+.plan-duration-selected .plan-duration-label {
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.plan-check-icon {
+  position: absolute;
+  left: 92%;
+  font-size: 1.1em;
+  color: #75a042;
+  visibility: hidden;
+}
+
+.plan-check-icon.visible {
+  visibility: visible;
+}
+
+.plan-price {
+  color: #6e6e6e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.plan-price-selected {
+  color: #2b2b2b;
+  font-weight: 700;
+}
+
+.plan-price-suffix,
+.plan-price-suffix-selected {
+  font-size: 0.625rem;
+  font-weight: 700;
+  font-family: Inter;
+  text-align: center;
+}
+
+.plan-price-suffix {
+  color: #6e6e6e;
+}
+
+.plan-price-suffix-selected {
+  color: #2b2b2b;
+}
+
+.plan-freetrial {
+  display: flex;
+  color: #b2b2b2;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.5rem;
+  font-weight: 400;
+}
+
+.plan-freetrial-selected {
+  color: #75a042;
+}
+
+.free-trial-info {
+  align-self: stretch;
+  color: #131313;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.625rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.plan-billing {
+  color: #b2b2b2;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.5rem;
+  font-weight: 400;
+}
+
+.plan-billing-selected {
+  color: #808080;
+}
+
+@for $i from 1 through 6 {
+  .advantage-#{$i} {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-left: 1rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .icon#{$i} {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text#{$i} {
+    color: #131313;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.paywall-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  .btn-outline-dark {
+    color: black;
+  }
+}
+
+.cards-container {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}

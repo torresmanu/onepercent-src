@@ -1,0 +1,13 @@
+<div class="predictive-input-container">
+    <ion-item>
+        <ion-input [(ngModel)]="searchText" (ngModelChange)="filterItems()" [placeholder]='placeholder'
+            class="input"></ion-input>
+        <ion-icon [name]="!searchText ?  'close-outline' : 'chevron-down-outline'" slot="end"
+            (click)="!searchText ? clearSearch() : null"></ion-icon>
+    </ion-item>
+    <ion-list *ngIf="filteredItems.length">
+        <ion-item *ngFor="let item of filteredItems" (click)="selectItem(item)">
+            {{ item.name }}
+        </ion-item>
+    </ion-list>
+</div>

@@ -1,0 +1,22 @@
+<ion-content  class="safe-area ion-padding email-sent-page">
+  <div class="h-full flex-col justify-between">
+    <div>
+      <h1 class="title">{{ 'CONFIRM_EMAIL.TITLE' | translate }}</h1>
+
+      <p class="font-m-regular">
+        {{ 'CONFIRM_EMAIL.DESCRIPTION' | translate }}
+      </p>
+      
+      <p class="ion-margin-top font-m-regular">
+        {{ 'CONFIRM_EMAIL.SPAM_TEXT' | translate }}
+      </p>
+    </div>
+
+    <ion-button 
+      expand="block" 
+      class="btn-dark ion-margin-bottom" 
+      (click)="backToLogin()">
+      {{ 'CONFIRM_EMAIL.BUTTON_BACK' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

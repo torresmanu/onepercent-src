@@ -1,0 +1,133 @@
+@mixin font-inter($size, $weight, $line: 100%) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line;
+}
+
+.font-xs-regular {
+  @include font-inter(10px, 400);
+}
+.font-xxs-regular {
+  @include font-inter(8px, 400);
+}
+.font-xs-semibold {
+  @include font-inter(10px, 600);
+}
+.font-s-regular {
+  @include font-inter(12px, 400);
+}
+.font-s-semibold {
+  @include font-inter(12px, 600);
+}
+.font-s-bold {
+  @include font-inter(12px, 700);
+}
+.font-xs-bold {
+  @include font-inter(10px, 700);
+}
+.font-m-regular {
+  @include font-inter(14px, 400);
+}
+.font-m-semibold {
+  @include font-inter(14px, 600);
+}
+.font-xm-normal {
+  @include font-inter(16px, 500);
+}
+.font-m-bold {
+  @include font-inter(14px, 700);
+}
+
+.font-m-extrabold {
+  @include font-inter(14px, 800);
+}
+.font-xm-regular {
+  @include font-inter(16px, 400);
+}
+.font-xm-semibold {
+  @include font-inter(16px, 600);
+}
+.font-xm-extrabold {
+  @include font-inter(16px, 800);
+}
+.font-lsb-regular {
+  @include font-inter(20px, 400);
+}
+.font-lsb-semibold {
+  @include font-inter(20px, 600);
+}
+.font-lsb-extrabold {
+  @include font-inter(20px, 800);
+}
+
+@font-face {
+  font-family: "TWK Lausanne";
+  src: url("/assets/fonts/TWKLausanne/TWKLausanne-550.woff2") format("woff2"),
+    url("/assets/fonts/TWKLausanne/TWKLausanne-550.woff") format("woff");
+  font-weight: 550;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-lausanne-xxl {
+  font-family: "TWK Lausanne";
+  font-size: 3rem; // 48px
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.font-lausanne-xl {
+  font-family: "TWK Lausanne";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.font-lausanne-l {
+  font-family: "TWK Lausanne";
+  font-size: 1.75rem; // 28px
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.font-lausanne-m {
+  font-family: "TWK Lausanne";
+  font-size: 1.5rem; // 24px
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.font-lausanne-s {
+  font-family: "TWK Lausanne";
+  font-size: 1.25rem; // 20px
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.font-lausanne-12 {
+  font-family: "TWK Lausanne";
+  font-size: .875rem; // 14px
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+.font-lausanne-14 {
+  font-family: "TWK Lausanne";
+  font-size: .875rem; // 14px
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.font-lausanne-40 {
+  font-family: "TWK Lausanne";
+  font-size: 2.5rem; // 40px
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}

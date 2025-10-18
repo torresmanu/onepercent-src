@@ -1,0 +1,14 @@
+<svg viewBox="0 0 275.23 642.2" width="100px" height="200px" class="svg-image">
+  <!-- Border outline -->
+  <path [attr.d]="getShapePath()" fill="#ffffff" />
+
+  <!-- Clip path for animation -->
+  <defs>
+    <clipPath [attr.id]="uniqueId">
+      <rect #fillRect x="0" y="642" width="275.23" height="0" fill="#ffffff" />
+    </clipPath>
+  </defs>
+
+  <!-- Background fill with animation -->
+  <path [attr.d]="getShapePath()" [attr.fill]="fillColor" [attr.clip-path]="'url(#' + uniqueId + ')'" />
+</svg>

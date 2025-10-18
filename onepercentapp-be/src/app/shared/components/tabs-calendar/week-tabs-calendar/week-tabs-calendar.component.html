@@ -1,0 +1,32 @@
+<div class="period-container">
+  <ion-row class="ion-padding-horizontal ion-no-margin">
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="previousWeek()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+     </ion-button>
+    </ion-col>
+    <ion-col>
+      <span class="">
+        {{ getWeekRange() }}
+     </span>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="nextWeek()">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-padding-horizontal ion-no-margin">
+     @for (item of weekDays; track $index) {
+       <ion-col>{{item}}</ion-col>
+    }
+  </ion-row>
+
+  <ion-row class="ion-padding-horizontal ion-no-margin">
+    @for (item of imagenesArray; track $index) {
+       <ion-col><img [src]="'../../../../../assets/icons/initFormIcons/' + item "></ion-col>
+    }
+  </ion-row>
+
+</div>

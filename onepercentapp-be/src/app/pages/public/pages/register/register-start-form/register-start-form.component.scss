@@ -1,0 +1,77 @@
+ion-content::part(background) {
+  background-color: var(--ion-color-primary);
+}
+
+.welcome-name-page {
+  .image-container {
+    height: 50%;
+    background-image: url("../../../../../../assets/imgs/registerFormStart.png");
+    background-size: cover;
+    background-position: center;
+
+    .app-logo {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .back-button {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+
+      color: white;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 10px;
+    }
+
+    .header {
+      margin: 1rem;
+      margin-top: 0;
+      font-weight: 500;
+      line-height: 1.2;
+      top: 8dvh;
+      position: absolute;
+      color: white;
+
+      .title {
+        margin: 1rem 0;
+
+        .highlight {
+          color: var(--ion-color-primary);
+        }
+      }
+    }
+  }
+
+  .content-container {
+    height: 50%;
+
+    .text {
+      color: #131313;
+      font-family: Inter;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+
+      margin: 0.688rem 0 1rem 0; // 11px 0 16px 0
+    }
+
+    .text-span {
+      color: #131313;
+      /* Inter_XM_XB */
+      font-family: Inter;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+    }
+
+    ion-button {
+      margin-bottom: 2rem;
+    }
+  }
+}

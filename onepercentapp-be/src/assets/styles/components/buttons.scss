@@ -1,0 +1,145 @@
+ion-button,
+ion-button .button-native,
+ion-button span {
+  font-weight: 600 !important;
+}
+
+@mixin button-base() {
+  --border-radius: var(--ion-border-radius);
+  @include font-inter(16px, 600);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  --padding-top: var(--spacing-md);
+  --padding-bottom: var(--spacing-md);
+  text-transform: none !important;
+  &:disabled {
+    --opacity: 0.6;
+    --color: red;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary() {
+  @include button-base();
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+}
+
+@mixin button-secondary() {
+  @include button-base();
+  --background: var(--ion-color-secondary);
+  --color: var(--ion-color-secondary-contrast);
+}
+@mixin button-dark() {
+  @include button-base();
+  --background: var(--ion-color-dark);
+  --color: var(--ion-color-dark-contrast);
+  
+}
+
+@mixin button-grey() {
+  @include button-base();
+  --background: #717171;
+  --color: white;
+}
+
+@mixin button-outline($color) {
+  @include button-base();
+  --background: transparent;
+  --border-color: $color;
+  --border-width: 1px;
+  --color: $color;
+  --font-weight: 600;
+--line-height: normal;
+}
+
+@mixin button-round($size: 48px) {
+  @include button-base();
+  width: $size;
+  height: $size;
+  --border-radius: 50%;
+  --padding-top: var(--spacing-xxs);
+  --padding-bottom: var(--spacing-xxs);
+  --padding-left: var(--spacing-xxs);
+  --padding-right: var(--spacing-xxs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-primary-red() {
+  @include button-base();
+  --background: var(--ion-color-danger);
+  --color: white;
+}
+
+.btn {
+  //Clase genérica para aplicar estilos distintos
+  @include button-base();
+}
+
+.btn-primary {
+  @include button-primary();
+}
+.btn-secondary {
+  @include button-secondary();
+}
+.btn-dark {
+  @include button-dark();
+}
+.btn-grey {
+  @include button-grey();
+}
+.btn-outline-dark {
+  @include button-outline(var(--ion-color-dark));
+}
+.btn-round {
+  @include button-round();
+}
+.btn-outline-red {
+  @include button-outline(var(--ion-color-danger));
+}
+
+.btn-primary-red{
+  @include button-primary-red();
+}
+
+.btn-transparent-outline-dark {
+  --border-radius: var(--ion-border-radius);
+  border-radius: var(--ion-border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  --padding-top: var(--spacing-md);
+  --padding-bottom: var(--spacing-md);
+  text-transform: none !important;
+  --background: transparent;
+  --color: black;
+  border: 1px solid black;
+  background: transparent;
+}
+
+.btn-transparent-outline-green {
+  --border-radius: var(--ion-border-radius);
+  border-radius: var(--ion-border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  --padding-top: var(--spacing-md);
+  --padding-bottom: var(--spacing-md);
+  text-transform: none !important;
+  --background: transparent;
+  --color: #BCDF84;
+  border: 1px solid #BCDF84;
+}
+
+
+
+
+ion-button.button-disabled {
+  opacity: 1 !important; /* anula la opacidad de Ionic */
+  --background: #717171; /* gris de fondo */
+  --color: white;        /* texto e ícono */
+  cursor: not-allowed;
+}

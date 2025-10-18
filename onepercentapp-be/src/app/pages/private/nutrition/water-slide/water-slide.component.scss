@@ -1,0 +1,55 @@
+.container {
+  padding: 0 0.5rem; // 0px 8px
+  align-items: center;
+  flex: 1 0 0;
+  border-bottom: 1px solid #ededed;
+  border-radius: 0.625rem; // 10px
+  background: #ededed;
+  display: flex;
+  width: 10.34375rem; // 165.5px
+
+  .icon {
+    padding: 0.5rem; // 8px
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem; // 8px
+
+    .title {
+      color: #131313;
+      font-family: Inter;
+      font-size: 0.75rem; // 12px
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      margin-top: 0.625rem; // 10px
+      margin-bottom: 0.125rem; // 2px
+    }
+
+    .objective {
+      color: #131313;
+      /* Laussane_XS_550 */
+      font-size: 0.75rem; // 12px
+      font-style: normal;
+      font-weight: 550;
+      line-height: normal;
+      margin-top: 0;
+      margin-bottom: 0.125rem; // 2px
+    }
+
+    .score {
+      color: #131313;
+      /* Inter_XS_Reg */
+      font-family: Inter;
+      font-size: 0.625rem; // 10px
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: 0.125rem; // 2px
+      margin-bottom: 0.75rem; // 12px
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<ion-content fullscreen class="safe-area">
+    <ng-container>
+        <app-landing-logo *ngIf="isLandingLogo" title="PRO_FORM.STEP1_TITLE" [headerTitle]="'PRO_FORM.STEP2_TITLE'"
+            [description]="'BASIC_FORM.STEP1_DESC'" [pictureUrl]="'assets/imgs/plan-forms/get-to-know.png'"
+            (continue)="isLandingLogo = false">
+        </app-landing-logo>
+
+        <app-picture-form *ngIf="!isLandingLogo" [stepData]="steps[currentStep]" [currentStep]="currentStep"
+            [totalSteps]="totalSteps" [steps]="steps" (continue)="continue()" (backstep)="backstep()"
+            [provinces]="provinces"></app-picture-form>
+    </ng-container>
+</ion-content>

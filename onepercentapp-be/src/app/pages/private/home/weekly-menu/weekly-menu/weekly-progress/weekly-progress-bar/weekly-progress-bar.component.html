@@ -1,0 +1,15 @@
+<ion-row class="ion-margin ion-align-items-center">
+  <ion-col>
+    Balance semanal
+  </ion-col>
+  <ion-col class="points">
+      <span class="current">{{ puntos }}</span>
+      <span class="separator"> / </span>
+      <span class="total">600</span>
+      <span class="txt-points"> pts</span>
+  </ion-col>
+</ion-row>
+
+<ion-row class="ion-margin">
+  <ion-progress-bar [value]="progress"></ion-progress-bar>
+</ion-row>

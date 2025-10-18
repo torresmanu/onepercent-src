@@ -1,0 +1,17 @@
+<app-header backButton="/private/nutrition" title="{{ 'HYDRATION_REGISTRATION.TITLE' | translate }}" />
+<ion-content class="safe-area ion-padding">
+  <div class="text">
+    <p class="description">{{ 'HYDRATION_REGISTRATION.DESCRIPTION' | translate }}</p>
+    <p class="description">{{ 'HYDRATION_REGISTRATION.DESCRIPTION1' | translate }}</p>
+  </div>
+
+  <div class="input-cards">
+    <app-input-card (selectionChange)="onSelectionChange($event)"></app-input-card>
+  </div>
+
+  <div class="button-container">
+    <ion-button expand="block" class="btn-dark" [disabled]="selected === null" (click)="registerHydration()">
+      {{ 'HYDRATION_REGISTRATION.REGISTRATION.BUTTON' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

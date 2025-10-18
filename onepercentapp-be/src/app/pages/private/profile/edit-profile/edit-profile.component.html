@@ -1,0 +1,51 @@
+<app-header backButton="/private/profile" title="Editar perfil" />
+<ion-content class="safe-area ion-padding">
+  <div class="profile-container">
+    <div class="profile-avatar">
+      <ion-avatar>
+        <img *ngIf="user?.imageProfile" [src]="environment.assetsUrl + '/' + user?.imageProfile" alt="Foto de perfil" />
+        <img *ngIf="!user?.imageProfile" src="assets/icon/user-avatar.svg" alt="user avatar" />
+      </ion-avatar>
+      <ion-icon (click)="changeimageProfile()" name="camera-outline" class="camera-icon"></ion-icon>
+      <div *ngIf="user?.userLicenses && hasProLicense()" class="pro-badge">
+        <span>onepercent pro</span>
+      </div>
+    </div>
+  </div>
+<div>
+
+<form [formGroup]="form">
+  <app-custom-input
+    [control]="utilsService.getFormControl(form,'firstname') "
+    icon="pencil-outline"
+    type="text"
+    placeholder="Introduce tu nombre"
+    autocomplete="name"
+    [labelPlacement]="'fixed'">
+  </app-custom-input>
+
+<app-custom-input
+  [control]="utilsService.getFormControl(form, 'email')"
+  [hasError]="utilsService.getFormError(form, 'email')"
+  [errorMessage]="utilsService.getErrorMessage(form, 'email')"
+  type="email"
+  [icon]="utilsService.getFormError(form, 'email') ?  'close-outline': 'check-outline' "
+  autocomplete="email"
+  placeholder="Introduce tu email"
+  [labelPlacement]="'fixed'"
+>
+</app-custom-input>
+<div class="button-container">
+
+  <ion-button
+  expand="block"
+  [disabled]="form.invalid"
+  (click)="updateUser()"
+  class="btn-dark">
+  Guardar cambios
+</ion-button>
+</div>
+</form>
+</div>
+
+</ion-content>

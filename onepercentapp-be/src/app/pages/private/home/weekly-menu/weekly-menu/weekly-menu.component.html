@@ -1,0 +1,116 @@
+<div class="container">
+  <app-week-tabs-calendar (updatePoints)="changePoints()"></app-week-tabs-calendar>
+
+  <app-weekly-progress-bar [puntos]="balancePoints"></app-weekly-progress-bar>
+
+  <ion-row>
+    <ion-col class="black-block ion-padding">
+      <p>Actividad física</p>
+      <p>
+        <span class="current">{{physicalPoints}}</span>
+        <span class="separator">/</span>
+        <span class="total">300</span>
+        <span class="txt-points"> pts</span>
+      </p>
+      <app-number-one-animation [percentage]="physicalAnimationbumber" [fillColor]="'#BCDF84'" [duration]="1500" [shape]="'shape1'"></app-number-one-animation>
+    </ion-col>
+
+    <ion-col class="grey-block ion-padding">
+      <p>Nutrición</p>
+      <p>
+        <span class="current">{{nutritionPoints}}</span>
+        <span class="separator">/</span>
+        <span class="total">300</span>
+        <span class="txt-points"> pts</span>
+      </p>
+      <app-number-one-animation [percentage]="nutritionAnimationbumber" [fillColor]="'#BCDF84'" [duration]="1500" [shape]="'shape2'"></app-number-one-animation>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-top">
+    <ion-col class="black-block ion-no-padding">
+      <div class="content">
+        <div class="icon">
+          <img src="../../../../../../assets/icons/initFormIcons/clock_green.svg" alt="">
+        </div>
+        <div class="info-container">
+          <p class="title">MINUTOS </p>
+          <p class="objective">TOTALES</p>
+          <p class="score">{{minutePoints}}/60</p>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col class="grey-block ion-no-padding">
+      <div class="content">
+        <div class="icon">
+          <img src="../../../../../../assets/icons/initFormIcons/halfGlass.svg" alt="">
+        </div>
+        <div class="info-container">
+          <p class="title">HIDRATACIÓN</p>
+          <p class="objective">PROMEDIA</p>
+          <p class="score">{{minutePoints < 30 ? 'Baja' :'Alta'}}</p>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-top">
+    <ion-col class="black-block ion-no-padding">
+      <div class="content">
+        <div class="icon">
+          <img src="../../../../../../assets/icons/initFormIcons/steps_green.svg" alt="">
+        </div>
+        <div class="info-container">
+          <p class="title">PASOS</p>
+          <p class="objective">TOTALES</p>
+          <p class="score">{{stepsPoints}}/12.000</p>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col class="grey-block ion-no-padding">
+      <div class="content">
+        <div class="icon">
+          <img src="../../../../../../assets/icons/initFormIcons/cutlery.svg" alt="">
+        </div>
+        <div class="info-container">
+          <p class="title">ALIMENTACIÓN</p>
+          <p class="objective">{{feedPoints}} kcal</p>
+          <div class="points">
+            <img src="../../../../../assets/imgs/nutrition/traffic-light-on.svg" alt="">
+            <img src="../../../../../assets/imgs/nutrition/traffic-light-on.svg" alt="">
+            <img src="../../../../../assets/imgs/nutrition/traffic-light-on.svg" alt="">
+            <img src="../../../../../assets/imgs/nutrition/traffic-light-off.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-top">
+    <ion-col class="black-block ion-no-padding">
+      <div class="content">
+        <div class="icon">
+          <img src="../../../../../../assets/icons/initFormIcons/clock_green.svg" alt="">
+        </div>
+        <div class="info-container">
+          <p class="title">ACTIVIDADES</p>
+          <p class="objective">{{activitityPoints}}</p>
+          <p class="score"></p>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col class="grey-block ion-no-padding">
+      <div class="content">
+        <div class="icon">
+          <img src="../../../../../assets/imgs/nutrition/fruit.svg" alt="">
+        </div>
+        <div class="info-container">
+          <p class="title">FRUTAS</p>
+          <p class="objective">{{fruitPoints}} / 4 porciones</p>
+          <p class="score"></p>
+        </div>
+      </div>
+    </ion-col>
+</ion-row>
+
+</div>

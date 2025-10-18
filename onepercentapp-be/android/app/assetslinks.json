@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.onepercent.app",
+            "sha256_cert_fingerprints": [
+                "49:81:77:6F:91:6A:7F:14:A1:4E:C6:66:59:56:16:AB:63:DE:4B:B3:8C:1F:C8:03:79:B5:C0:87:95:AD:D3:84"
+            ]
+        }
+    }
+]

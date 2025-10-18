@@ -1,0 +1,11 @@
+        <ion-item (click)="openModalStepRecipes(steps, step.step)" *ngFor="let step of steps">
+          <div class="step-card">
+            <ion-label>
+              <div class="step-header">
+                <h3>Paso {{ step.step }}</h3>
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+              <p>{{ step.text }}</p>
+            </ion-label>
+          </div>
+          </ion-item>

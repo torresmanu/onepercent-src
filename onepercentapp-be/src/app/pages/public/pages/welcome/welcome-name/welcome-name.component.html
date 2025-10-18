@@ -1,0 +1,49 @@
+<ion-header></ion-header>
+<ion-content class="welcome-name-page flex-col">
+  <!-- Imagen de fondo -->
+  <div class="image-container" [class.keyboard-open]="isKeyboardOpen">
+    <ion-back-button
+      class="back-button"
+      mode="md"
+      defaultHref="/welcome"
+      icon="../../../../../../assets/icon/backArrow.svg"
+    ></ion-back-button>
+  </div>
+
+  <!-- Contenido principal -->
+  <div
+    class="content-container ion-padding flex-col justify-between"
+    [class.keyboard-open]="isKeyboardOpen"
+  >
+    <div>
+      <h2 class="title font-lausanne-xl">
+        {{ "WELCOME.YOUR_NAME" | translate }}
+      </h2>
+
+      <!-- Input para el nombre -->
+      <app-custom-input
+        [placeholder]="'Nombre y apellido'"
+        [autocomplete]="'name'"
+        type="text"
+        [control]="name"
+        [labelPlacement]="'stacked'"
+        [customIcon]="
+          name.value !== ''
+            ? 'assets/imgs/check-gray.svg'
+            : 'assets/imgs/pencil-gray.svg'
+        "
+      />
+    </div>
+
+    <!-- Botón continuar -->
+    <ion-button
+      expand="block"
+      class="btn btn-dark ion-margin-bottom"
+      [disabled]="name.value === ''"
+      (click)="continue()"
+      mode="ios"
+    >
+      {{ "WELCOME.CONTINUE" | translate }}
+    </ion-button>
+  </div>
+</ion-content>

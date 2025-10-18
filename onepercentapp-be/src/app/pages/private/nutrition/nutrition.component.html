@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header">
+      <img class="logo" src="../../../../assets/imgs/icon.png" alt="" />
+      <h2 class="title">
+        {{ "NUTRITION.TITLE" | translate
+        }}<span class="nutrition">{{
+          "NUTRITION.TITLE_SPAN" | translate
+          }}</span>
+      </h2>
+      <ion-avatar slot="end" [routerLink]="['/private/profile']">
+        <img *ngIf="user?.imageProfile" [src]="environment.assetsUrl + '/' + user?.imageProfile" alt="Foto de perfil" />
+                <img *ngIf="!user?.imageProfile" src="assets/icon/user-avatar.svg" alt="{{ 'PROFILE.ALT_USER_AVATAR' | translate }}" />
+
+      </ion-avatar>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="safe-area">
+  <div class="todays-progress">
+    <h2 class="progress-text">{{ "NUTRITION.PROGRESS_TEXT" | translate }}</h2>
+
+    <button class="button" (click)="goToProgressDay()">
+      <img src="../../../../assets/imgs/button.svg" alt="" />
+    </button>
+  </div>
+
+  <swiper-container slides-per-view="1" pagination="true" style="width: 100%; height: 9rem">
+    <swiper-slide *ngFor="let slide of slides">
+      <ng-container>
+        <!-- Slide tipo "split" -->
+        <ng-container *ngIf="slide.type === 'split'">
+          <app-split-slide (puntosChange)="puntosSplit = $event"></app-split-slide>
+        </ng-container>
+
+        <!-- Slide tipo "double" -->
+        <ng-container *ngIf="slide.type === 'double'">
+          <div class="slide-row">
+            <app-water-slide (puntosChange)="puntosWater = $event"></app-water-slide>
+            <app-fruit-slide (puntosChange)="puntosFruit = $event"></app-fruit-slide>
+          </div>
+        </ng-container>
+      </ng-container>
+    </swiper-slide>
+  </swiper-container>
+
+  <app-progress-bar [puntos]="puntosTotales"></app-progress-bar>
+
+  <div class="title-register">
+
+    <h2 class="your-registration">{{ 'NUTRITION.HYDRATE_REGISTER' | translate }}</h2>
+    <button class="no-shadow-btn" (click)="goToHydratationRegistration()">
+      <img class="desplegable-button" src="../../../../assets/imgs/nutrition/button-green.svg" alt="">
+    </button>
+  </div>
+
+  <!-- BLOQUE HIDRATACIÓN -->
+  <div class="collapsable-card-container">
+    <app-collapsable-card [type]="'hydration'" [icon]="'assets/imgs/nutrition/glass-green.svg'"
+      [title]="'NUTRITION.HYDRATION_TITLE'" [items]="hydrateRegister">
+    </app-collapsable-card>
+  </div>
+
+  <div class="title-register">
+
+    <h2 class="your-registration">{{ 'NUTRITION.EAT_REGISTER' | translate }}</h2>
+    <button class="no-shadow-btn" (click)="goToFoodRegistration()">
+      <img class="desplegable-button" src="../../../../assets/imgs/nutrition/button-green.svg" alt="">
+
+    </button>
+  </div>
+
+  <!-- BLOQUE COMIDA -->
+  <div class="collapsable-card-container">
+
+    <app-collapsable-card *ngFor="let food of foodData" class="mb-first" [type]="'food'" [icon]="food.icon"
+      [title]="food.title" [recommended]="food.recommended" [items]="food.items" [total]="food.total"
+      [points]="food.points">
+    </app-collapsable-card>
+  </div>
+
+
+  <div class="container">
+    <div class="container-text">
+      <h2 class="container-title">{{ "NUTRITION.KITCHEN_IA" | translate }}</h2>
+      <p class="container-p">
+        {{ "NUTRITION.KITCHEN_IA_DESCRIPTION" | translate }}
+      </p>
+    </div>
+
+    <div class="img-container">
+      <img src="../../../../assets/imgs/nutrition/scan.svg" alt="" />
+    </div>
+  </div>
+
+  <div class="kitchen-zone">
+    <h2 class="kitchen-title">{{ "NUTRITION.KITCHEN_ZONE" | translate }}</h2>
+
+    <div class="badge">
+      <p class="badge-text">onepercent pro</p>
+    </div>
+  </div>
+
+  <app-weekly-menu></app-weekly-menu>
+
+  <div class="recipe-library" button [routerLink]="['recipe-library']">
+    <h2 class="library-text">{{ "NUTRITION.LIBRARY_TEXT" | translate }}</h2>
+
+    <button class="button">
+      <img src="../../../../assets/imgs/button.svg" alt="" />
+    </button>
+  </div>
+
+  <app-daily-highlights-slider></app-daily-highlights-slider>
+</ion-content>

@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #F2F2F2;
+  border-radius: .625rem;
+
+  p{
+    margin: 0;
+  }
+  ion-icon {
+    font-size: 20px;
+
+  }
+}

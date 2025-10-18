@@ -1,0 +1,91 @@
+.change-password-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--spacing-lg);
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+label {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+::ng-deep ion-label {
+  margin-bottom: 30px !important;
+  // O usa padding si prefieres
+}
+
+.textUpper {
+  h3 {
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+a {
+  color: var(--onepercent-gray-300, #b2b2b2);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 14px;
+  margin-top: -16px;
+}
+
+.forgotPassword {
+  a {
+    color: #3e6b19;
+    text-decoration: underline;
+  }
+}
+
+.change-password-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-block label {
+  display: block;
+  flex-direction: column-reverse;
+  margin-bottom: 0.5rem;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  color: #e53935;
+  font-weight: 600;
+}
+
+.passwordMismatch {
+  color: var(--onepercent-semantics-danger-500, #e83826);
+  font-style: normal;
+  line-height: normal;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

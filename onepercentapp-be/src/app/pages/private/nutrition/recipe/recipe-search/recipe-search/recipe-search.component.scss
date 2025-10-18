@@ -1,0 +1,79 @@
+ion-row{
+  height: 125px;
+  border-radius: 10px;
+  border : 1px solid white;
+}
+
+
+.recipe_breakfast {
+  background: var(--ion-color-primary);
+}
+
+.recipe_lunch,
+.recipe_snacks {
+  background: var(--ion-color-secondary);
+}
+
+.recipe_dinner {
+  background: var(--ion-color-dark);
+  color: white;
+}
+
+.recipe-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: black;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 600;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: black;
+}
+.recipe-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.points {
+  display: flex;
+  flex-direction: row;
+  gap: 0.15rem;
+}
+.points img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.time {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  width: auto;
+  height: 30px;
+  text-wrap: nowrap;
+  font-size: 12px;
+  gap: 4px;
+}

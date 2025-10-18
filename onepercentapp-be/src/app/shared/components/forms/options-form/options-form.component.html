@@ -1,0 +1,58 @@
+<ng-container>
+    <div class="wrapper ion-padding">
+        <ion-header *ngIf="!showLoader">
+            <ion-toolbar class="header-toolbar">
+                <ion-buttons slot="start">
+                    <ion-icon (click)="goBack()" name="arrow-back-outline"></ion-icon>
+                </ion-buttons>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" [style.width]="(stepNumber + 1) / totalSteps * 100 + '%'"></div>
+                    </div>
+                    <div class="progress-text">{{ stepNumber + 1}}/{{totalSteps}}</div>
+                </div>
+            </ion-toolbar>
+        </ion-header>
+
+        <div class="step-flex-container">
+            <div class="step-content">
+                <div class="step-header">
+                    <span class="subtitle" *ngIf="stepsConfig[stepNumber].headerText.subtitle"
+                        [innerHTML]="stepsConfig[stepNumber].headerText.subtitle | translate">
+                    </span>
+                    <h1 class="font-lausanne-l" [innerHTML]="stepsConfig[stepNumber].headerText.title | translate"></h1>
+                    <span class="description">{{stepsConfig[stepNumber].headerText.description | translate}}</span>
+                </div>
+                <img src="/assets/icons/initFormIcons/foodHeaders.svg" alt="" class="food-header w-full"
+                    *ngIf="isFullPictureStep()">
+                <div class="option-group" *ngIf="!isFullPictureStep(); else fullPictureTemplate">
+                    <div class="option-card" *ngFor="let option of currentValues; let i = index"
+                        [class.selected]="currentSelected.includes(option.id)"
+                        (click)="select(option.id, allowMultiple, max)">
+                        <img [src]="currentIcons[i]" class="option-icon">
+                        <div class="text-wrapper">
+                            <div class="option-title">{{ option.title}}</div>
+                            <div *ngIf="option.description" class="option-description">{{ option.description }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #fullPictureTemplate>
+                    <div class="option-group">
+                        <div *ngFor="let option of currentValues; let i = index" class="full-picture"
+                            [class.selected-outline]="currentSelected.includes(option.id)"
+                            (click)="select(option.id, currentStep.selected?.allowMultiple, currentStep.selected?.max)">
+                            <img [src]="currentIcons[i]" class="option-icon" *ngIf="currentValues && currentValues[i]" />
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="button-container">
+            <button ion-button (click)="continueStep()" class="continue-btn"
+                [ngClass]="{'disabled-btn': !currentSelected.length}" [disabled]="!currentSelected.length">{{ 'WELCOME.CONTINUE' | translate }}</button>
+        </div>
+    </div>
+
+</ng-container>

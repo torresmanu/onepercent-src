@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border ion-no-shadow">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-img src="../../../../assets/imgs/icon.png"></ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tu zona de <span>Workout</span> </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-avatar slot="end" [routerLink]="['/private/profile']">
+          <img
+            *ngIf="user?.imageProfile"
+            [src]="environment.assetsUrl + '/' + user?.imageProfile"
+            alt="Foto de perfil"
+          />
+          <img
+            *ngIf="!user?.imageProfile"
+            src="assets/icon/user-avatar.svg"
+            alt="no image "
+          />
+        </ion-avatar>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="safe-area ion-padding">
+  <div class="page-blocks">
+    <div class="todays-progress">
+      <h2 class="progress-text">tu progresso de hoy</h2>
+      <button class="button">
+        <img src="../../../../assets/imgs/button.svg" alt="" />
+      </button>
+    </div>
+
+    <app-swiper-cards></app-swiper-cards>
+    <app-today-progress-card></app-today-progress-card>
+    <app-today-pill-card></app-today-pill-card>
+
+    <div class="todays-progress">
+      <h2 class="progress-text">Biblioteca de píldoras</h2>
+      <button class="button">
+        <img src="../../../../assets/imgs/button.svg" alt="" />
+      </button>
+    </div>
+
+    <app-pills-selection-swipper></app-pills-selection-swipper>
+    <app-register-activity-card></app-register-activity-card>
+  </div>
+</ion-content>

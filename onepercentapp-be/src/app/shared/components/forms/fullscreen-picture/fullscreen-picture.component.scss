@@ -1,0 +1,63 @@
+.content {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: padding-box;
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.text-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.text-container h2 {
+  font-size: 3rem;
+  font-weight: 550;
+  font-family: "TWK Lausanne", Arial, sans-serif;
+  line-height: 1.2;
+  color: white;
+}
+.highlight {
+  color: #bcdf84;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding-right: 0.75rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--ion-color-primary);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}
+
+ion-button {
+  font-weight: 600 !important;
+}

@@ -1,0 +1,75 @@
+<ion-content class="safe-area paywall-content">
+  <section class="sectionUp">
+    <div class="containerUp">
+      <img src="../../../../../../assets/imgs/icon.png" class="logoUp" />
+      <span class="onepercentPro">onepercent pro</span>
+    </div>
+
+    <div class="headerText">
+      <h2 class="font-lausanne-xl">{{ 'SECOND_PAYWALL.HEADER_TEXT' | translate }}</h2>
+      <h2 class="font-lausanne-xl">{{ 'SECOND_PAYWALL.HEADER_TEXT1' | translate }}<span>{{ 'SECOND_PAYWALL.HEADER_SPAN' | translate }}</span>
+      </h2>
+    </div>
+  </section>
+
+  <section class="sectionDown ion-padding">
+    <h2 class="title-container">{{ 'SECOND_PAYWALL.DESCRIPTION' | translate }}</h2>
+
+
+<app-plan-card-paywall2 class="cards-container" *ngIf="availablePackages.length > 0 && discounts"  [availablePackages]="availablePackages" [discounts]="discounts"></app-plan-card-paywall2>
+
+    <p *ngIf="selectedPlanIndex === 1" class="free-trial-info">
+      {{ 'SECOND_PAYWALL.FREE_TRIAL_7DAYS' | translate }}<br>{{ 'SECOND_PAYWALL.FREE_TRIAL_TEXT2' | translate }}
+    </p>
+
+    <p *ngIf="selectedPlanIndex === 2" class="free-trial-info">
+      {{ 'SECOND_PAYWALL.FREE_TRIAL_14DAYS' | translate }}<br>{{ 'SECOND_PAYWALL.FREE_TRIAL_TEXT2' | translate }}
+    </p>
+
+    <div class="advantages-ProPlans">
+
+      <div class="advantage-1">
+        <img class="icon1" src="../../../../../assets/imgs/second-paywall/icon1.svg" alt="">
+        <p class="text1">{{ 'SECOND_PAYWALL.ADVANTAGE1' | translate }}</p>
+      </div>
+
+      <div class="advantage-2">
+        <img class="icon2" src="../../../../../assets/imgs/second-paywall/icon2.svg" alt="">
+        <p class="text2">{{ 'SECOND_PAYWALL.ADVANTAGE2' | translate }}</p>
+      </div>
+
+      <div class="advantage-3">
+        <img class="icon3" src="../../../../../assets/imgs/second-paywall/icon3.svg" alt="">
+        <p class="text3">{{ 'SECOND_PAYWALL.ADVANTAGE3' | translate }}</p>
+      </div>
+
+      <div class="advantage-4">
+        <img class="icon4" src="../../../../../assets/imgs/second-paywall/icon4.svg" alt="">
+        <p class="text4">{{ 'SECOND_PAYWALL.ADVANTAGE4' | translate }}</p>
+      </div>
+
+      <div class="advantage-5">
+        <img class="icon5" src="../../../../../assets/imgs/second-paywall/icon5.svg" alt="">
+        <p class="text5">{{ 'SECOND_PAYWALL.ADVANTAGE5' | translate }}</p>
+      </div>
+
+      <div class="advantage-6">
+        <img class="icon6" src="../../../../../assets/imgs/second-paywall/icon6.svg" alt="">
+        <p class="text6">{{ 'SECOND_PAYWALL.ADVANTAGE6' | translate }}</p>
+      </div>
+
+    </div>
+
+    
+  </section>
+</ion-content>
+<ion-footer>
+  <div class="buttons">
+      <ion-button (click)="goToHome()" class="btn-outline-dark">
+        {{ 'SECOND_PAYWALL.GO_TO_BASIC_PLAN_BUTTON' | translate }}
+      </ion-button>
+      <ion-button class="btn-dark wide-btn">
+        {{ 'SECOND_PAYWALL.CHOICEPLAN_BUTTON' | translate }}
+      </ion-button>
+    </div>
+</ion-footer>

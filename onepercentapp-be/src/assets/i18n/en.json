@@ -1,0 +1,110 @@
+{
+  "STEPS": {
+    "STEP1_TITLE": "What is your level of physical activity?",
+    "STEP1_DESCRIPTION": "Select the option that best describes your daily activity.",
+    "STEP2_TITLE": "Do you exercise during the week?",
+    "STEP2_DESCRIPTION": "From working out at the gym or taking classes to running or playing a sport.",
+    "STEP3_TITLE": "How much do you usually hydrate during the day?",
+    "STEP3_DESCRIPTION": "Include water, coffee, soft drinks, and juices, but not alcoholic beverages.",
+    "STEP4_TITLE": "How many servings of fruits and vegetables do you eat per day?",
+    "STEP4_DESCRIPTION": "Include all the fruits and vegetables you usually consume.",
+    "STEP5_TITLE": "What are your main eating habits?",
+    "STEP5_DESCRIPTION": "Select the habits that best describe your diet.",
+    "STEP6_TITLE": "And finally, do you usually eat fruits and vegetables in your daily life?"
+  },
+  "RESET_PASSWORD": {
+    "TITLE1": "Reset your",
+    "TITLE2": "password",
+    "SUBTITLE": "Enter and confirm your new password to restore access to your account.",
+    "PASSWORD_REQUIREMENTS": "Must have 8 characters and at least one uppercase, one lowercase and one number."
+  },
+  "CHANGE_PASSWORD": {
+    "PLACEHOLDER_OLD_PASSWORD": "Current password",
+    "PLACEHOLDER_NEW_PASSWORD": "New password",
+    "PLACEHOLDER_REPEAT_PASSWORD": "Repeat new password",
+    "PASSWORDS_NOT_MATCH": "Passwords do not match"
+  },
+  "ERRORS": {
+    "REQUIRED": "This field is required",
+    "EMAIL": "Enter a valid email address",
+    "EMAIL_TAKEN": "The entered email is already registered.",
+    "MINLENGTH": "This field must be at least {{requiredLength}} characters",
+    "MINLENGTH_PASSWORD": "The password must be at least {{requiredLength}} characters",
+    "MAXLENGTH": "This field must not exceed {{requiredLength}} characters",
+    "NO_UPPERCASE": "The password must contain at least one uppercase letter",
+    "NO_LOWERCASE": "The password must contain at least one lowercase letter",
+    "NO_DIGIT": "The password must contain at least one number",
+    "PATTERN_PHONE": "Enter a valid phone number",
+    "PATTERN": "The entered format is not valid",
+    "MUST_MATCH": "Values do not match",
+    "PASSWORDS_NOT_MATCH": "Passwords do not match",
+    "MIN": "The value is less than the minimum allowed",
+    "MAX": "The value is greater than the maximum allowed",
+    "CUSTOM": "{{custom}}",
+    "INVALID": "Invalid field",
+    "CM": "Please enter your height in centimeters.",
+    "KG": "Please enter the weight in kg",
+    "STRICT_EMAIL": "Introduce un email con dominio válido (p. ej. usuario@dominio.com)",
+    "PASSWORD_UPPERCASE": "La contraseña debe contener al menos una letra mayúscula",
+    "PASSWORD_LOWERCASE": "La contraseña debe contener al menos una letra minúscula",
+    "PASSWORD_DIGIT": "La contraseña debe contener al menos un número"
+  },
+  "PRO_FORM": {
+    "STEP1_TITLE": "This is your new lifestyle. This is.",
+    "STEP1_BTN": "Start",
+    "STEP2_TITLE": "Let's <span class='highlight'>get to know you</span>",
+    "STEP2_DESC": "To <b>create your user and personalize your experience</b> in onepercent, we need to know more about you.",
+    "STEP3_TITLE": "When were you born?",
+    "STEP3_DESC": "",
+    "STEP4_TITLE": "How tall are you?",
+    "STEP4_DESC": "Your height will be used to set your goals.",
+    "STEP6_TITLE": "Which option best describes your gender identity currently?",
+    "STEP6_DESC": "Your choice will not affect your goals.",
+    "GENDER_MALE": "Male",
+    "GENDER_FEMALE": "Female",
+    "GENDER_NONBINARY": "Non-binary",
+    "GENDER_NOT_SAY": "Prefer not to say",
+    "GENDER_OTHER": "Other",
+    "STEP7_TITLE": "What is your sex?",
+    "STEP7_DESC": "Choose the option that best matches your current physiology so we can properly adapt your goals.",
+    "STEP8_TITLE": "How much do you weigh?",
+    "STEP8_DESC": "Ideally, use your weight from first thing in the morning as a reference.",
+    "STEP8_INPUT_PLACEHOLDER": "Kilograms",
+    "STEP9_TITLE": "How did you hear about onepercent?",
+    "STEP9_DESC": "Select as many as you need.",
+    "STEP9_OPTIONS": [
+      "Podcast",
+      "Press, magazine (physical or web format)",
+      "From an internet ad",
+      "From an influencer",
+      "From a friend or family member",
+      "By recommendation of a healthcare professional",
+      "App Store or Google Play",
+      "Other"
+    ],
+    "STEP9_OPTION_PODCAST": "Podcast",
+    "STEP9_OPTION_PRESS": "Press, magazine (physical or web format)",
+    "STEP9_OPTION_INTERNET_AD": "From an internet ad",
+    "STEP9_OPTION_INFLUENCER": "From an influencer",
+    "STEP9_OPTION_FRIEND": "From a friend or family member",
+    "STEP9_OPTION_HEALTH_PRO": "By recommendation of a healthcare professional",
+    "STEP9_OPTION_STORE": "App Store or Google Play",
+    "STEP9_OPTION_OTHER": "Other"
+  },
+  "DATEPICKER": {
+    "CANCEL": "Cancel",
+    "CONFIRM": "Set",
+    "TITLE": "Select your birth date."
+  },
+  "BASIC_FORM": {
+    "INTRO": "To create your account and personalize your experience in onepercent, we need to know more about you.",
+    "STEP5_TITLE": "What is your gender?",
+    "STEP5_DESC": "Choose the option you feel most comfortable with.",
+    "STEP6_TITLE": "Where do you live?",
+    "STEP6_INPUT_PLACEHOLDER": "Enter your city or country"
+  },
+  "PRO_FORM_PT2": {
+    "STEP1_TITLE": "Set up your <span class='highlight'>healthy balance</span>",
+    "STEP2_DESC": "To be able to set your <strong>healthy goals</strong>, we need to know <strong>how much energy</strong> your body consumes."
+  }
+}

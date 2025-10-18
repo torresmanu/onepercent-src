@@ -1,0 +1,5 @@
+<ion-content class="safe-area">
+  <app-options-form *ngIf="formMetas && (formMetas | keyvalue).length > 0 && !showLoader" [stepNumber]="stepNumber"
+    (continue)="continue()" (backstep)="goBack()" [stepsConfig]="stepsConfig" [formMetas]="formMetas"></app-options-form>
+  <app-loader-form-results *ngIf="showLoader" (finished)="goToResults()"></app-loader-form-results>
+</ion-content>

@@ -1,0 +1,99 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url("../../../../../../assets/imgs/resultsForm.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  padding: 1rem 0rem;
+
+  h1 {
+    color: var(--onepercent-gray-50, #fff);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+  }
+  h2 {
+    color: var(--onepercent-gray-50, #fff);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+  }
+  span {
+    color: var(--onepercent-Soft-Green-500, #bcdf84);
+  }
+
+  .button-container {
+    margin-top: auto; // Esto empuja el botón al fondo
+    width: 100%;
+  }
+  .graphic-container {
+    background-color: #bcdf84;
+    margin-top: auto;
+    margin-bottom: -15px;
+    padding: 0 1rem 2rem 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    p {
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}
+.label-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center; // 🔁 Verticalmente centrado
+  justify-content: start; // 🔁 Horizontalmente centrado
+  pointer-events: none; // No bloquea el canvas
+  padding-left: 27px;
+}
+
+.chart-label {
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 12px;
+
+  color: #b2b2b2 !important;
+}
+.chart-container {
+  display: flex;
+  position: relative;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 0.625rem;
+  width: 100%;
+  padding: 0.5rem;
+  height: 100%;
+}
+.corner-label {
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+  font-size: 15px;
+  color: black !important;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.corner-label.left {
+  left: calc(28px + 0.5rem);
+  bottom: 20px;
+}
+
+.corner-label.right {
+  right: calc(20px + 0.5rem);
+  bottom: 20px;
+}

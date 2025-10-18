@@ -1,0 +1,13 @@
+<ion-content fullscreen class="safe-area">
+    <app-fullscreen-picture *ngIf="isFullscreenPicture" [stepData]="steps[currentStep]" title="PRO_FORM.STEP1_TITLE"
+        buttonText="PRO_FORM.STEP1_BTN" [pictureUrl]="'/assets/imgs/plan-forms/pro-plan-bg.png'"
+        (continue)="isFullscreenPicture = false; isLandingLogo = true"></app-fullscreen-picture>
+
+    <app-landing-logo *ngIf="isLandingLogo" title="PRO_FORM.STEP1_TITLE" [headerTitle]="'PRO_FORM.STEP2_TITLE'"
+        [description]="'PRO_FORM.STEP2_DESC'" [image]="steps[currentStep].image"
+        [pictureUrl]="'assets/imgs/plan-forms/get-to-know.png'" (continue)="isLandingLogo = false">
+    </app-landing-logo>
+
+    <app-picture-form *ngIf="!isLandingLogo && !isFullscreenPicture" [stepData]="steps[currentStep]"
+        [currentStep]="currentStep" [steps]="steps" class="btn btn-dark" (continue)="continue()" (backstep)="backstep()"></app-picture-form>
+</ion-content>

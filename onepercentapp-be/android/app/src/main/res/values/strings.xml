@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">onepercent</string>
+    <string name="title_activity_main">onepercent</string>
+    <string name="package_name">app.onepercent.app</string>
+    <string name="custom_url_scheme">app.onepercent.app</string>
+    <string name="facebook_app_id">1185194956411307</string>
+    <string name="fb_login_protocol_scheme">fb1185194956411307</string>
+    <string name="facebook_client_token">2fb689121950ee4703a95fd55c15ebe1</string>
+</resources>

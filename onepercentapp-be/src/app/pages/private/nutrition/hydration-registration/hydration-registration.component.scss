@@ -1,0 +1,20 @@
+.description {
+  color: #131313;
+  /* Inter_M_Reg */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 52px;
+  width: 93%;
+}

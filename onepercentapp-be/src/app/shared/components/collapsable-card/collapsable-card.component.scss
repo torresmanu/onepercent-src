@@ -1,0 +1,158 @@
+:host {
+  display: block;
+}
+
+.collapsable-card-container {
+  background-color: #d8d8d8;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.inside-content {
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  overflow: hidden;
+
+  ion-icon {
+    float: right;
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+}
+
+/* .mb-first{
+  margin-bottom: 8px;
+  :last-child {
+    margin-bottom: 0;
+  }
+} */
+
+.container-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+
+  img {
+    padding: 0.75rem;
+  }
+
+  .title-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    margin: 0.875rem 0 0.875rem 0.5rem;
+    margin-bottom: 0;
+    color: #131313;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .toggle-button {
+    background: none;
+    border: none;
+    margin-right: 0.75rem;
+  }
+}
+
+.info-container {
+  margin-bottom: .625rem;
+  overflow: hidden;
+
+  .item1,
+  .item {
+    margin-bottom: 0;
+
+    .info1,
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .dotted-line {
+      display: block;
+      border-bottom: 1px dotted #bdbdbd;
+      height: 0;
+      margin: 0 0.875rem 1rem 0.875rem;
+    }
+  }
+
+  .text1,
+  .text {
+    color: #3e3e3e;
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .hour1,
+  .kcal-text {
+    color: #3e3e3e;
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+}
+
+.recommended {
+  margin: 0 14px 8px 8px;
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 500;
+  font-family: Inter;
+  margin-bottom: 0.5rem;
+}
+
+.total {
+  padding: 0 0.875rem 0.25rem 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0.875rem;
+    right: 3rem;
+    bottom: 0.25rem;
+    border-bottom: 1px dotted #ccc;
+    height: 1px;
+  }
+
+  .text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .points {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.25rem 0;
+  }
+
+  .point-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .kcal-text {
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+
+  .edit-button {
+    background: none;
+    z-index: 1;
+    position: relative;
+    padding-left: 0.5rem;
+  }
+}

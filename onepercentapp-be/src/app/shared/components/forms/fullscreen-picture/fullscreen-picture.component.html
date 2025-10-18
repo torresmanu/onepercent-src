@@ -1,0 +1,12 @@
+<div class="content" [ngStyle]="{'background-image': pictureUrl ? 'url(' + pictureUrl + ')' : ''}">
+    <!-- Imagen de fondo -->
+    <div class="flex-col justify-between h-full px-[1rem] ">
+        <div class="text-container">
+            <h2 [innerHTML]="title | translate"></h2>
+            <app-logo></app-logo>
+        </div>
+        <ion-button expand="block" class="ion-margin-bottom continue-btn" mode="ios" (click)="onContinue()">
+            {{ 'PRO_FORM.STEP1_BTN' | translate }}
+        </ion-button>
+    </div>
+</div>

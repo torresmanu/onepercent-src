@@ -1,0 +1,70 @@
+<ng-container>
+    <div class="step-container relative">
+        <ion-header [class.steppper-header]="stepData.headerType === 'stepper'"
+            [ngStyle]="{'background-image': 'url(' + stepData.image + ')'}" class="step-header">
+            <ng-container class="header-text-container" *ngIf="stepData.headerType === 'text'; else stepperHeader">
+                <h2 *ngIf="stepData.headerType === 'text'" class="header-text" [innerHTML]="stepData.title | translate">
+                </h2>
+                <div class="logo-container">
+                    <app-logo [width]="'2.5rem'"></app-logo>
+                </div>
+            </ng-container>
+            <ng-template #stepperHeader>
+                <ion-toolbar class="header-toolbar">
+                    <div class="flex justify-between items-center w-full">
+                        <div class="image-container">
+                            <ion-button class="back-button" fill="white" (click)="onBackstep($event)" type="button">
+                                <ion-icon class="text-white" name="arrow-back-outline" size="large"></ion-icon>
+                            </ion-button>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" [style.width.%]="((currentStep + 1) / steps.length) * 100">
+                                </div>
+                            </div>
+                            <div class="progress-text">{{ currentStep + 1}}/{{steps.length}}</div>
+                        </div>
+                    </div>
+
+                </ion-toolbar>
+            </ng-template>
+        </ion-header>
+        <div class="step-content">
+            <div class="step-text-container">
+                <h2 class="step-title font-lausanne-xl" *ngIf="stepData.content != 'text' && stepData.title"
+                    [innerHTML]="stepData.title | translate">
+                </h2>
+                <p class="step-description" [innerHTML]="stepData.description | translate"></p>
+                <ng-container *ngIf="stepData.content === 'selectable'; else inputBlock">
+                    <app-selectable-options [options]="stepData.options" [value]="stepData.control.value"
+                        [multiselect]="stepData.multiselect" (valueChange)="stepData.control.setValue($event)">
+                    </app-selectable-options>
+                </ng-container>
+                <ng-template #inputBlock>
+                    <div class="input-container">
+                        <div *ngFor="let input of stepData.inputs; let i = index">
+                            <app-custom-input *ngIf="!input.isPredictive" [type]="input.type"
+                                [placeholder]="input.placeholder | translate" [control]="input.control"
+                                [icon]="input.icon" [customIcon]="getCustomIcon(input)" [options]="input.options"
+                                [multiselect]="input.multiselect" [pattern]="input.pattern"
+                                [hasError]="utilsService.getFormError(input.control)"
+                                [errorMessage]="input.customErrorMessage ? (input.customErrorMessage | translate) : utilsService.getErrorMessage(input.control)"
+                                (inputChange)="input.value = $event" labelPlacement="stacked" class="custom-input">
+                            </app-custom-input>
+                            <app-predictive-input *ngIf="input.isPredictive" [suggestions]="provinces"
+                                [placeholder]="input.placeholder | translate" [ngClass]="input.inputStyle"
+                                (valueChange)="input.control.setValue($event)" [control]="input.control">
+                            </app-predictive-input>
+                        </div>
+
+                    </div>
+
+                </ng-template>
+            </div>
+            <ion-button expand=" block" class="ion-margin-bottom continue-btn" mode="ios" color="dark"
+                (click)="onContinue()" [disabled]="!isStepValid()">
+                {{ 'WELCOME.CONTINUE' | translate }}
+            </ion-button>
+        </div>
+    </div>
+</ng-container>

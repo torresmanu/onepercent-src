@@ -1,0 +1,146 @@
+.section-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sectionUp {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .logoUp {
+      margin-top: 3rem;
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+
+    .title {
+      align-self: stretch;
+      color: var(--onepercent-gray-950, #131313);
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1.75rem;
+      font-weight: 550;
+      line-height: normal;
+      /* font-family: "TWK Lausanne"; */
+    }
+  }
+}
+
+.sectionDown {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 12%;
+  .tablePlans {
+    .badge {
+      width: 5.063rem;
+      height: 1rem;
+    }
+
+    .comparison-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      overflow: hidden;
+
+      th,
+      td {
+        padding: 16px 8px 8px 8px;
+        text-align: center;
+        font-family: Inter, sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: normal;
+        color: var(--onepercent-gray-700, #3e3e3e);
+        border-bottom: 0.063rem solid #bcdf84;
+      }
+
+      th {
+        font-weight: 700;
+        
+
+        &.badge {
+          border-bottom: none;
+        }
+
+        &:first-child {
+          text-align: left;
+          border-bottom: none;
+        }
+      }
+
+      td {
+        font-weight: 600;
+        &:first-child {
+          text-align: left;
+          font-weight: 600;
+        }
+        &:last-child {
+          border-right: none;
+        }
+      }
+
+      // Bordes y radios especiales para las columnas de planes
+      th:nth-child(2) {
+        border-top-left-radius: 0.625rem;
+        border-top-right-radius: 0.625rem;
+        border-top: 0.063rem dashed #75a042;
+        border-left: 0.063rem dashed #75a042;
+        border-right: 0.063rem dashed #75a042;
+        border-bottom: none;
+      }
+
+      td:nth-child(2) {
+        border-left: 0.063rem dashed #75a042;
+        border-right: 0.063rem dashed #75a042;
+      }
+
+      tr:last-child td:nth-child(2) {
+        border-bottom-left-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        border-bottom: 0.063rem dashed #75a042;
+      }
+
+      tr:last-child td:last-child {
+        border-bottom-right-radius: 0.0625rem;
+      }
+
+      // Quitar borde inferior en la última fila
+      tr:last-child th,
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .crosses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+
+  .cross {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b2b2b2;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .buttons {
+    background-color: #fff;
+    display: flex;
+    margin-top: auto;
+    flex-direction: column;
+  }
+}
+
+ion-content {
+  --padding-bottom: 0rem;
+}

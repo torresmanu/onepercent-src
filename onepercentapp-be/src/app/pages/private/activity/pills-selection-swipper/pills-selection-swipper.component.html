@@ -1,0 +1,41 @@
+<swiper-container
+  slides-per-view="1.5"
+  pagination="false"
+
+>
+  <swiper-slide *ngFor="let slide of slides">
+    <ng-container>
+      <!-- Slide tipo "1" -->
+      <ng-container *ngIf="slide.type === '1'">
+        <div class="slide-row">
+          <ion-card>
+            <div>
+              <p class="font-lsb-semibold">Explossive Power</p>
+            </div>
+            <div>
+              <ion-icon src="assets/imgs/activity/pillIconSet.svg"></ion-icon>
+            </div>
+          </ion-card>
+      
+        </div>
+      </ng-container>
+
+      <!-- Slide tipo "2" -->
+      <ng-container *ngIf="slide.type === '2'">
+        <div class="slide-row">
+          <ion-card>
+            <div>
+              <ion-icon src="assets/icon/clockGreen.svg"></ion-icon>
+            </div>
+            <div>
+              <p class="font-xs-regular">MINUTOS DIARIOS</p>
+              <p class="font-lausanne-14">75/60</p>
+              <p class="font-xs-regular">50pts</p>
+            </div>
+          </ion-card>
+          
+        </div>
+      </ng-container>
+    </ng-container>
+  </swiper-slide>
+</swiper-container>

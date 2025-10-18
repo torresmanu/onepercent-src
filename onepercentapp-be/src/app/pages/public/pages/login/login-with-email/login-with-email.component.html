@@ -1,0 +1,54 @@
+<app-header [backButton]="'/public/login'" />
+<ion-content class="safe-area ion-padding login-email-page">
+  <div class="h-full flex-col justify-between">
+    <div>
+      <div class="logo-container flex-row align-center justify-center">
+        <app-logo [dark]="true"></app-logo>
+      </div>
+
+      <h1 class="title font-lausanne-l">{{ "LOGIN_EMAIL.TITLE" | translate }}</h1>
+
+      <form [formGroup]="loginForm" class="ion-margin-top">
+        <app-custom-input
+          [placeholder]="'LOGIN_EMAIL.EMAIL_PLACEHOLDER' | translate"
+          [control]="utilsService.getFormControl(loginForm, 'email')"
+          [type]="'email'"
+          [hasError]="utilsService.getFormError(loginForm, 'email')"
+          [errorMessage]="utilsService.getErrorMessage(loginForm, 'email')"
+          icon="mail-outline"
+          [autocomplete]="'email'"
+          [labelPlacement]="'stacked'"
+        ></app-custom-input>
+
+        <app-custom-input
+          [placeholder]="'LOGIN_EMAIL.PASSWORD_PLACEHOLDER' | translate"
+          [control]="utilsService.getFormControl(loginForm, 'password')"
+          [type]="'password'"
+          [hasError]="utilsService.getFormError(loginForm, 'password')"
+          [errorMessage]="utilsService.getErrorMessage(loginForm, 'password')"
+          class="ion-margin-top"
+          [labelPlacement]="'fixed'"
+          [autocomplete]="'current-password'"
+        ></app-custom-input>
+
+        <p class="forgot-password ion-text-left ion-margin-top">
+          <a
+            style="text-decoration: underline"
+            class="font-s-semibold"
+            (click)="forgotPassword()"
+            >{{ "LOGIN_EMAIL.FORGOT_PASSWORD" | translate }}</a
+          >
+        </p>
+      </form>
+    </div>
+
+    <ion-button
+      expand="block"
+      class="btn-dark ion-margin-bottom"
+      [disabled]="loginForm.invalid"
+      (click)="login()"
+    >
+      {{ "LOGIN_EMAIL.CONTINUE" | translate }}
+    </ion-button>
+  </div>
+</ion-content>

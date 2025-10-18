@@ -1,0 +1,83 @@
+<app-header backButton="/private/nutrition" title="{{ 'FOOD_REGISTRATION.TITLE' | translate }}" />
+<ion-content class="safe-area ion-padding">
+  <app-custom-input [control]="foodInputControl" [placeholder]="'FOOD_REGISTRATION.INPUT_PLACEHOLDER' | translate"
+    name="foodInput" customIcon="assets/imgs/search-btn.svg"></app-custom-input>
+
+  <div class="meal-of-the-day">
+    <p class="meal-title" [ngClass]="{ 'no-meal-selected': !selectedMealTitle, 'meal-selected': selectedMealTitle }">
+      {{ selectedMealTitle || ('FOOD_REGISTRATION.SELECT_MEAL' | translate) }}
+    </p>
+    <button class="select-meal" (click)="openSelectMealModal()">
+      <img src="assets/imgs/btn-select.svg" alt="">
+    </button>
+  </div>
+
+  <div class="tab-recipes">
+    <ion-segment [value]="selectedTab()" mode="ios" (ionChange)="changeTab($event)">
+      <ion-segment-button value="registrando">
+        <ion-label>{{ 'FOOD_REGISTRATION.RECORDING_RECIPES' | translate }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="recientes">
+        <ion-label>{{ 'FOOD_REGISTRATION.RECENT_RECIPES' | translate }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favoritos">
+        <ion-label>{{ 'FOOD_REGISTRATION.FAVORITE_RECIPES' | translate }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="tab-content">
+    <div [hidden]="selectedTab() !== 'registrando'">
+      <div class="content">
+        <ng-container *ngIf="ingredients.length > 0; else noIngredients">
+          <div class="ingredient-card" *ngFor="let ingredient of ingredients; let i = index"
+            (click)="editIngredient(i)">
+            <div class="ingredient-info">
+
+              <div class="ingredient-index">
+                {{i + 1}}
+              </div>
+              <div>
+                <div class="ingredient-name">{{ ingredient.name }}</div>
+                <div class="ingredient-details">
+                  <div class="ingredient-amount">{{ ingredient.quantity }} {{ ingredient.unit }}</div>
+                  <span class="ingredient-separator"> | </span>
+                  <div class="ingredient-kcal">{{ ingredient.kcal }} kcal</div>
+                </div>
+              </div>
+            </div>
+            <button class="remove-btn" (click)="removeIngredient(i); $event.stopPropagation()">
+              <img src="assets/imgs/cross-btn.svg" alt="">
+            </button>
+          </div>
+        </ng-container>
+        <ng-template #noIngredients>
+          <p class="content-text">{{ 'FOOD_REGISTRATION.NO_INGREDIENTS' | translate }}</p>
+          <p class="content-text">{{ 'FOOD_REGISTRATION.ADD_INGREDIENT' | translate }}</p>
+        </ng-template>
+      </div>
+    </div>
+    <div [hidden]="selectedTab() !== 'recientes'">
+      Contenido de Recientes
+    </div>
+    <div [hidden]="selectedTab() !== 'favoritos'">
+      Contenido de Favoritos
+    </div>
+
+    <div class="camera-btn">
+      <button class="camera-button">
+        <span class="camera-icon">
+          <img src="assets/imgs/camera-btn.svg" alt="">
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <ion-footer>
+    <div class="button-container">
+      <ion-button expand="block" class="btn-dark" [disabled]="!selectedMealTitle">
+        {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
+      </ion-button>
+    </div>
+  </ion-footer>
+</ion-content>

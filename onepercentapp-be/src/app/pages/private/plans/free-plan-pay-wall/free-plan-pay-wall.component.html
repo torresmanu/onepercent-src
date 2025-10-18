@@ -1,0 +1,84 @@
+<ion-content class="safe-area">
+  <section class="sectionUp">
+    <div class="containerUp">
+      <img src="../../../../../../assets/imgs/icon.png" class="logoUp" />
+      <span class="onepercentPro">onepercent pro</span>
+    </div>
+
+    <div class="headerText">
+      <h2 class="font-lausanne-xl">
+        {{ username }}{{ "FREEPLANPAYWALL.TITLE" | translate }}
+      </h2>
+      <h2 class="font-lausanne-xl">
+        {{ "FREEPLANPAYWALL.TITLE1" | translate }}<span>onepercent pro.</span>
+      </h2>
+    </div>
+  </section>
+
+  <section class="sectionDown">
+    <h2 class="containerText">
+      {{ "FREEPLANPAYWALL.DESCRIPTION" | translate }}
+    </h2>
+
+    <div class="containerDown">
+      <div class="imgContainerDown">
+        <img src="../../../../../../assets/imgs/free-plan-info-icon.svg" />
+      </div>
+
+      <div class="textContainerDown">
+        <h3 class="titleContainer">
+          {{ "FREEPLANPAYWALL.TEXT1_TITLE" | translate }}
+        </h3>
+        <p class="pContainer">
+          {{ "FREEPLANPAYWALL.TEXT1_SUBTITLE" | translate }}
+        </p>
+
+        <h3 class="titleContainer">
+          {{ "FREEPLANPAYWALL.TEXT2_TITLE" | translate }}
+        </h3>
+        <p class="pContainer">
+          {{ "FREEPLANPAYWALL.TEXT2_SUBTITLE" | translate }}
+        </p>
+
+        <h3 class="titleContainer">
+          {{ "FREEPLANPAYWALL.TEXT3_TITLE" | translate }}
+        </h3>
+        <p class="pContainer">
+          {{ "FREEPLANPAYWALL.TEXT3_SUBTITLE" | translate }}
+        </p>
+      </div>
+    </div>
+
+    <div class="termsText">
+      <p class="ptermsText">
+        {{ "FREEPLANPAYWALL.FREE_TRIAL_TEXT" | translate }}<br />{{
+          "FREEPLANPAYWALL.FREE_TRIAL_TEXT2" | translate
+        }}
+      </p>
+
+      <div class="cancelationText">
+        <h3 class="titleCancelation">
+          {{ "FREEPLANPAYWALL.CANCELATION_TITLE" | translate }}
+        </h3>
+        <p class="pCancelation">
+          {{ "FREEPLANPAYWALL.CANCELATION_TEXT" | translate }}
+          <span class="onepercent-italics">onepercent</span>
+          {{ "FREEPLANPAYWALL.CANCELATION_TEXT2" | translate }}
+        </p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <ion-button
+        (click)="goToplanComparaison()"
+        class="btn-outline-dark wide-btn"
+        style="--box-shadow: none"
+      >
+        {{ "FREEPLANPAYWALL.NOTNOW_BUTTON" | translate }}</ion-button
+      >
+      <ion-button (click)="goToHome()" class="btn-dark wide-btn">{{
+        "FREEPLANPAYWALL.START_FREE_TRIAL_BUTTON" | translate
+      }}</ion-button>
+    </div>
+  </section>
+</ion-content>

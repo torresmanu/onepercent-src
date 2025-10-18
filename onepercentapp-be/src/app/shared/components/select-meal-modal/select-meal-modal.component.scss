@@ -1,0 +1,30 @@
+.modal-header {
+  display: flex;
+  justify-content: center;
+   h2 {
+    color: #131313;
+    text-align: center;
+    /* Laussane_L_550 */
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+  }
+}
+
+.title {
+  color: #131313;
+  text-align: center;
+  /* Laussane_L_550 */
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+}

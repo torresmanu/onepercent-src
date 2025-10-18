@@ -1,0 +1,65 @@
+<ion-content class="safe-area ion-padding login-page">
+  <div class="h-full flex-col justify-between">
+    <!-- Botón back -->
+    <div class="back-button">
+      <ion-button fill="clear" (click)="goBack()">
+        <img src="assets/icon/btn-back.svg" alt="Back button">
+      </ion-button>
+    </div>
+
+    <!-- Logo -->
+    <div>
+      <div class="logo-container flex-row align-center justify-center align-items-center">
+        <app-logo [dark]="true"></app-logo>
+        <img src="assets/imgs/onepercent-text.svg" alt="onepercent logo">
+      </div>
+
+      <!-- Texto de bienvenida -->
+      <div class="welcome-text">
+        <p class="font-lausanne-l">{{ 'REGISTER_PAGE.WELCOME_TEXT' | translate}}</p>
+      </div>
+
+      <!-- Botones de redes sociales -->
+      <div class="buttons">
+        <ion-button expand="block" fill="outline" class="btn-outline-dark google"
+          (click)="signInWith(providers.google)">
+          <img src="assets/icon/google-logo.png" slot="start" class="ion-margin-end" />
+          <p class="continue-with">{{ 'REGISTER_PAGE.CONTINUE_WITH_GOOGLE' | translate}}</p>
+        </ion-button>
+
+        <ion-button expand="block" fill="outline" class="btn-outline-dark apple" (click)="signInWith(providers.apple)">
+          <ion-icon name="logo-apple" slot="start" class="ion-margin-end"></ion-icon>
+          <p class="continue-with">{{ 'REGISTER_PAGE.CONTINUE_WITH_APPLE' | translate}}</p>
+        </ion-button>
+
+        <ion-button expand="block" fill="outline" class="btn-outline-dark facebook"
+          (click)="signInWith(providers.facebook)">
+          <img src="assets/icon/meta-logo.png" slot="start" class="ion-margin-end" />
+          <p class="continue-with">{{ 'REGISTER_PAGE.CONTINUE_WITH_FACEBOOK' | translate}}</p>
+        </ion-button>
+      </div>
+
+      <!-- Separador -->
+      <div class="divider">
+        <div class="line"></div>
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+
+      <!-- Botón de inicio de sesión con correo -->
+      <ion-button expand="block" class="btn-dark" (click)="register()">
+        {{ 'REGISTER_PAGE.CREATE_ACCOUNT' | translate}}
+      </ion-button>
+    </div>
+
+    <!-- Texto legal -->
+    <div class="legal-text ion-margin-bottom ion-text-center font-s-semibold">
+      <p>
+        {{ 'REGISTER_PAGE.LEGAL_TEXT' | translate}}
+        <a (click)="goToTerms()">{{ 'REGISTER_PAGE.TERMS_LINK' | translate}}</a>
+        {{ 'REGISTER_PAGE.AND' | translate}}
+        <a (click)="goToPrivacy()">{{ 'REGISTER_PAGE.PRIVACY_LINK' | translate}}</a>
+      </p>
+    </div>
+  </div>
+</ion-content>
