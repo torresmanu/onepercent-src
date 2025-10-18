@@ -1,80 +1,146 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import {Logger, ValidationPipe} from '@nestjs/common';
-import * as bodyParser from 'body-parser';
-const fileUpload = require('express-fileupload');
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import {ResponseFormatInterceptor} from "./common/interceptors/response-format.interceptor";
-import {ValidationExceptionPipe} from "./common/pipes/validation-exeption.pipe";
-import { useContainer } from 'class-validator';
-import * as multer from 'multer';
-import {NestExpressApplication} from "@nestjs/platform-express";
-import {join} from "path";
+import { bootstrapApplication } from '@angular/platform-browser';
+import {
+  PreloadAllModules,
+  RouteReuseStrategy,
+  provideRouter,
+  withPreloading,
+} from '@angular/router';
+import {
+  IonicRouteStrategy,
+  provideIonicAngular,
+} from '@ionic/angular/standalone';
 
-/**
- * Print the start logo
- */
-function printStartLogo(){
-  const logger = new Logger('Main');
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+  HTTP_INTERCEPTORS,
+  HttpClient,
+} from '@angular/common/http';
 
-  logger.debug("             ,:::://///,:::-.");
-  logger.debug("           /:''/////// ``:::`;/|/");
-  logger.debug("          /'   ||||||     :://'`\\");
-  logger.debug("        .' ,   ||||||     `/(  e \\");
-  logger.debug("  -===~__-'__X_`````_____/~`-._ `.");
-  logger.debug("             ~~        ~~       `~-'");
-  logger.log(process.env.API_NAME + " - Armadillo Amarillo S.L. (C)");
-  logger.log("App listening on port " + process.env.API_PORT + "...");
-}
+import { importProvidersFrom } from '@angular/core';
+import { Drivers } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
-async function bootstrap() {
-  // Create app
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-  useContainer(app.select(AppModule), { fallbackOnErrors: true });
+import { initializeApp } from 'firebase/app';
+import cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 
-  // Global pipes
-  app.useGlobalPipes(new ValidationExceptionPipe());
-  app.useGlobalPipes(new ValidationPipe({
-    transform: true, // <-- Necesario para que funcione @Type()
-    whitelist: true, // Recomendado para ignorar campos no esperados
-  }));
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
+import { environment } from './environments/environment';
 
-  // Interceptors
-  app.useGlobalInterceptors(new ResponseFormatInterceptor());
+import { TokenInterceptor } from './app/core/interceptors/token.interceptor';
 
-  // Files limits
-  app.use(bodyParser.json({ limit: '5000mb' }));
-  app.use(bodyParser.urlencoded({ limit: '5000mb', extended: true }));
+import { addIcons } from 'ionicons';
+import {
+  checkmarkOutline,
+  createOutline,
+  eyeOffOutline,
+  eyeOutline,
+  logoApple,
+  mailOutline,
+  pencilOutline,
+  homeOutline,
+  personOutline,
+  fitnessOutline,
+  statsChartOutline,
+  settingsOutline,
+  chevronForwardOutline,
+  chevronBackOutline,
+  notificationsOutline,
+  lockClosedOutline,
+  logOutOutline,
+  trashOutline,
+  documentTextOutline,
+  shieldOutline,
+  medicalOutline,
+  chatbubbleOutline,
+  fileTrayStackedOutline,
+  checkboxOutline,
+  checkmark,
+  close,
+  cameraOutline,
+  informationCircleOutline,
+  checkmarkCircle,
+  ellipseOutline,
+  arrowBackOutline,
+  flameOutline,
+  timeOutline,
+  heart,
+  heartOutline,
+  chevronDownOutline,
+} from 'ionicons/icons';
 
-  // CORS
-  app.enableCors();
-  // app.enableCors({
-  //   origin: ['https://midominio.com', 'https://otrodominio.com'], // Dominios permitidos
-  //   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
-  //   allowedHeaders: ['Content-Type', 'Authorization'], // Headers permitidos
-  //   credentials: true, // Permitir envío de cookies o autenticación
-  // });
+initializeApp(environment.firebase);
+cordovaSQLiteDriver._driver;
 
-  // HTML Views
-  // Configuración del motor de vistas
-  app.setBaseViewsDir(join(__dirname, '..', 'views')); // Ruta a tus plantillas .hbs
-  app.setViewEngine('hbs'); // Muy importante
+const httpLoaderFactory = (http: HttpClient) =>
+  new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
-  // Swagger
-  const config = new DocumentBuilder()
-      .setTitle('API Documentation: '+process.env.API_NAME)
-      .setDescription('The API Swagger documentation for '+process.env.API_NAME)
-      .setVersion('1.0')
-      .build();
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideIonicAngular(),
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideRouter(routes, withPreloading(PreloadAllModules)),
+    provideHttpClient(withInterceptorsFromDi()),
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    importProvidersFrom([
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: httpLoaderFactory,
+          deps: [HttpClient],
+        },
+      }),
+      IonicStorageModule.forRoot({
+        driverOrder: [
+          cordovaSQLiteDriver._driver,
+          Drivers.IndexedDB,
+          Drivers.LocalStorage,
+        ],
+        name: environment.dbName,
+      }),
+    ]),
+  ],
+});
 
-  // Run server
-  await app.listen(process.env.API_PORT ?? 3000);
-
-  // Print system logo
-  printStartLogo();
-
-}
-bootstrap();
+addIcons({
+  'eye-outline': eyeOutline,
+  'eye-off-outline': eyeOffOutline,
+  'create-outline': createOutline,
+  'checkmark-outline': checkmarkOutline,
+  'logo-apple': logoApple,
+  'mail-outline': mailOutline,
+  'pencil-outline': pencilOutline,
+  'check-outline': checkmark,
+  'home-outline': homeOutline,
+  'close-outline': close,
+  'person-outline': personOutline,
+  'fitness-outline': fitnessOutline,
+  'stats-chart-outline': statsChartOutline,
+  'settings-outline': settingsOutline,
+  'chevron-forward-outline': chevronForwardOutline,
+  'chevron-down-outline': chevronDownOutline,
+  'notifications-outline': notificationsOutline,
+  'lock-closed-outline': lockClosedOutline,
+  'log-out-outline': logOutOutline,
+  'trash-outline': trashOutline,
+  'document-text-outline': documentTextOutline,
+  'shield-outline': shieldOutline,
+  'medical-outline': medicalOutline,
+  'chatbubble-outline': chatbubbleOutline,
+  'file-tray-stacked-outline': fileTrayStackedOutline,
+  'camera-outline': cameraOutline,
+  'information-circle-outline': informationCircleOutline,
+  'checkmark-circle': checkmarkCircle,
+  'ellipse-outline': ellipseOutline,
+  'arrow-back-outline': arrowBackOutline,
+  'elipse-outline': ellipseOutline,
+  'chevron-back-outline': chevronBackOutline,
+  'flame-outline': flameOutline,
+  'time-outline': timeOutline,
+  'heart': heart,
+  'heart-outline': heartOutline,
+});
