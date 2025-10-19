@@ -12,7 +12,7 @@
     },
     {
       "name": "Git Push Branch",
-      "description": "Interactive git workflow: status → add → create branch (feature/chore/bugfix) → push",
+      "description": "Smart git workflow: auto-creates branch if on master/develop, or commits to current branch",
       "command": ".cursor/git-push-branch.sh"
     }
   ]
