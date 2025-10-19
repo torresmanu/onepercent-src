@@ -1,0 +1,20 @@
+{
+  "commands": [
+    {
+      "name": "Run Backend Locally",
+      "description": "Start the NestJS backend in development mode with watch",
+      "command": "cd onepercentapp-be && npm run start:dev"
+    },
+    {
+      "name": "Run Frontend Locally",
+      "description": "Start the Ionic/Angular frontend with local configuration",
+      "command": "cd onepercentapp-fe && npm run start:local"
+    },
+    {
+      "name": "Git Push Branch",
+      "description": "Smart git workflow: auto-creates branch if on master/develop, or commits to current branch",
+      "command": ".cursor/git-push-branch.sh"
+    }
+  ]
+}
+
