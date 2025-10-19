@@ -249,10 +249,6 @@ export class LoginPageComponent {
     this.navCtrl.navigateForward('/public/login-with-email');
   }
 
-  goBack() {
-    this.navCtrl.back();
-  }
-
   goToTerms() {
     this.navCtrl.navigateForward('/public/termsAndConditions');
   }
