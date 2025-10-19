@@ -101,6 +101,10 @@ code/public/uploads
 /.nx
 /.nx/cache
 
+# Angular/Vite cache
+.angular/
+.vite/
+
 # IDEs and editors
 .idea/
 .project
