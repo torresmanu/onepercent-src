@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../../node_modules/capacitor-health/dist/esm/index.js"],
-  "sourcesContent": ["import { registerPlugin } from '@capacitor/core';\nexport const Health = registerPlugin('HealthPlugin', {});\nexport * from './definitions';\n"],
-  "mappings": ";;;;;;AACO,IAAM,SAAS,eAAe,gBAAgB,CAAC,CAAC;",
-  "names": []
-}
