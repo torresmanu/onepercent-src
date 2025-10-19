@@ -11,6 +11,11 @@
       "command": "cd onepercentapp-fe && npm run start:local"
     },
     {
+      "name": "Build Local",
+      "description": "Interactive build: choose to build Frontend, Backend, or Both",
+      "command": ".cursor/build-local.sh"
+    },
+    {
       "name": "Git Push Branch",
       "description": "Smart git workflow: auto-creates branch if on master/develop, or commits to current branch",
       "command": ".cursor/git-push-branch.sh"
