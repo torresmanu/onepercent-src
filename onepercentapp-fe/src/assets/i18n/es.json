@@ -15,7 +15,8 @@
     },
 
     "WELCOME_PAGE": {
-      "TITLE": "Cada hábito importa.",
+      "TITLE1": "Cada hábito",
+      "TITLE2": "importa.",
       "SPAN1": "Haz que",
       "SPAN2": "sumen.",
 

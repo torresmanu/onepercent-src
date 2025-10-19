@@ -2,6 +2,12 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  
+  // CSS custom properties para safe area con fallbacks
+  --safe-area-top: env(safe-area-inset-top, 44px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
 
   // Imagen de fondo que ocupa toda la pantalla
   .background-image {
@@ -41,56 +47,83 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 60px 24px 40px 24px;
+    // Safe area con fallback para navegadores que no lo soportan
+    padding-top: calc(var(--safe-area-top) + 16px);
+    padding-left: calc(var(--safe-area-left) + 16px);
+    padding-right: calc(var(--safe-area-right) + 16px);
+    padding-bottom: calc(var(--safe-area-bottom) + 16px);
   }
 
-  // Texto motivacional en la parte superior
+  // Texto motivacional en la parte superior izquierda
   .welcome-text {
-    margin-top: 80px;
+    margin-top: 0; // Sin margen superior adicional
+    margin-left: 0;
 
     h1 {
       margin: 0;
-      line-height: 1.0;
+      line-height: 1.1; // Aumentado para más espacio
       text-align: left;
       font-family: 'TWKLausanne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
       .text-white {
         color: #ffffff;
         font-size: 2.8rem;
-        font-weight: 700;
+        font-weight: 550; // Laussanne_XXL_550
         letter-spacing: -0.02em;
+        line-height: 1.1; // Aumentado para más espacio
+        display: block;
+        margin-bottom: 0; // Removemos el margen negativo
       }
 
       .text-green {
-        color: var(--ion-color-primary);
+        color: #BCDF84; // Verde específico del diseño
         font-size: 2.8rem;
-        font-weight: 700;
+        font-weight: 550; // Laussanne_XXL_550
         letter-spacing: -0.02em;
+        line-height: 1.1; // Aumentado para más espacio
+        display: block;
+        margin-bottom: 0;
+        
+        // Agregar margen superior al primer span verde para separarlo del texto blanco
+        &:first-of-type {
+          margin-top: calc(2.8rem * 0.1); // Mismo espaciado que el line-height (10% del tamaño de fuente)
+        }
+      }
+      
+      // Logo dentro del h1
+      img {
+        display: block;
+        margin-top: calc(2.8rem * 0.15); // Un poco más de espacio (15% del tamaño de fuente)
+        width: 56px;
+        height: 56px;
       }
     }
   }
 
-  // Logo de la aplicación
+  // Logo de la aplicación - posicionado debajo del texto verde
   .logo-section {
     display: flex;
     justify-content: flex-start;
-    margin-top: 24px;
+    margin-top: 16px; // Espaciado exacto de 16px entre texto y logo
+    margin-left: 0;
 
     .app-logo {
       width: 56px;
       height: 56px;
       background: #ffffff;
-      border-radius: 12px;
+      border-radius: 8px; // Bordes menos redondeados como en Figma
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 8px; // Padding interno para que el logo no toque los bordes
 
       img {
-        width: 32px;
-        height: 32px;
+        width: 100%; // Usar todo el espacio disponible
+        height: 100%; // Usar todo el espacio disponible
         object-fit: contain;
-        filter: none; // Mantener el logo original
+        filter: none;
+        display: block; // Evitar espacios en línea
       }
     }
   }
@@ -100,36 +133,40 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 16px; // Espaciado ajustado
     margin-bottom: 40px;
 
     .btn-start {
-      --background: var(--ion-color-primary);
-      --color: #000000; // Texto negro como en la imagen
-      --border-radius: 16px; // Bordes más redondeados
-      --padding-top: 18px;
-      --padding-bottom: 18px;
+      --background: #BCDF84; // Verde específico del diseño
+      --color: #000000;
+      --border-radius: 12px; // Bordes menos redondeados
+      --padding-top: 16px;
+      --padding-bottom: 16px;
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 550; // Laussanne_XXL_550
       text-transform: none;
-      width: calc(100% - 32px); // Casi todo el ancho con mínimo margen
+      width: calc(100% - 32px);
       max-width: none;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       font-family: 'TWKLausanne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     .login-link {
-      color: #ffffff;
+      color: #FFFFFF; // Color blanco para el texto normal
       font-size: 16px;
       margin: 0;
       text-align: center;
       font-family: 'TWKLausanne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
       a {
-        color: var(--ion-color-primary);
-        text-decoration: none;
+        color: #BCDF84; // Verde para el link "Inicia sesión"
+        text-decoration: underline; // Subrayado para indicar que es un link
         font-weight: 600;
         cursor: pointer;
+        
+        &:hover {
+          color: #FFFFFF; // Blanco al hover
+        }
       }
     }
   }
@@ -139,18 +176,54 @@
 @media (max-width: 375px) {
   .welcome-page {
     .welcome-text h1 {
-      .text-white,
+      line-height: 1.1; // Aumentado para más espacio en móvil
+      
+      .text-white {
+        font-size: 2rem;
+        font-weight: 550; // Mantener Laussanne_XXL_550
+        line-height: 1.1; // Aumentado para más espacio en móvil
+        margin-bottom: 0; // Removemos el margen negativo
+      }
+      
       .text-green {
         font-size: 2rem;
+        font-weight: 550; // Mantener Laussanne_XXL_550
+        line-height: 1.1; // Aumentado para más espacio en móvil
+        
+        // Agregar margen superior al primer span verde en móvil
+        &:first-of-type {
+          margin-top: calc(2rem * 0.1); // Mismo espaciado proporcional en móvil
+        }
+      }
+      
+      // Logo dentro del h1 en móvil
+      img {
+        margin-top: calc(2rem * 0.15); // Un poco más de espacio en móvil (15% del tamaño de fuente)
+        width: 48px;
+        height: 48px;
       }
     }
 
     .welcome-container {
-      padding: 40px 20px 30px 20px;
+      padding-top: calc(var(--safe-area-top) + 16px);
+      padding-left: calc(var(--safe-area-left) + 16px);
+      padding-right: calc(var(--safe-area-right) + 16px);
+      padding-bottom: calc(var(--safe-area-bottom) + 16px);
     }
 
     .welcome-text {
-      margin-top: 40px;
+      margin-top: 0; // Sin margen superior en móvil
+    }
+
+    .logo-section .app-logo {
+      width: 48px;
+      height: 48px;
+      padding: 6px; // Padding proporcional para móvil
+      
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
@@ -161,7 +234,17 @@
       .text-white,
       .text-green {
         font-size: 2.8rem;
+        font-weight: 550; // Mantener Laussanne_XXL_550
       }
     }
   }
+}
+
+// Asegurar que la clase font-lausanne-xxl-550 esté definida
+.font-lausanne-xxl-550 {
+  font-family: 'TWKLausanne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 550;
+  font-size: 2.8rem;
+  line-height: 1.1; // Aumentado para más espacio
+  letter-spacing: -0.02em;
 }
