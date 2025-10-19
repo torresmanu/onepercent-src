@@ -1,128 +1,169 @@
 .login-page {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+  --background: #ffffff;
+  background: #ffffff;
 
-  // Imagen de fondo que ocupa toda la pantalla
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  .h-full {
     height: 100%;
-    background-image: url('../../../../../assets/imgs/bienvenida.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
   }
 
-  // Overlay oscuro para mejor legibilidad del texto
-  .dark-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.6) 100%
-    );
-    z-index: 2;
-  }
-
-  // Contenedor principal del contenido
-  .login-container {
-    position: relative;
-    z-index: 3;
-    height: 100%;
+  .flex-col {
     display: flex;
     flex-direction: column;
+  }
+
+  .justify-between {
     justify-content: space-between;
-    padding: 60px 24px 40px 24px;
   }
 
-  // Texto motivacional en la parte superior
-  .motivational-text {
-    margin-top: 60px;
+  .align-center {
+    align-items: center;
+  }
 
-    h1 {
+  .justify-center {
+    justify-content: center;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  // Botón back
+  .back-button {
+    padding: 0;
+    margin-top: -8px;
+    
+    ion-button {
+      --color: #000000;
+      --background: transparent;
+      --box-shadow: none;
+    }
+  }
+
+  // Logo container
+  .logo-container {
+    margin: 8px 0 40px 0;
+    gap: 12px;
+
+    img {
+      height: 32px;
+    }
+  }
+
+  // Welcome text
+  .welcome-text {
+    margin-top: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+
+    p {
       margin: 0;
-      line-height: 1.1;
-      text-align: left;
+      color: #000000;
+      font-family: 'TWK Lausanne', sans-serif;
+      font-size: 28px;
+      font-weight: 550;
+      line-height: auto;
+      letter-spacing: 0px;
 
-      .text-white {
-        color: #ffffff;
-        font-size: 2.5rem;
-        font-weight: 600;
-      }
-
-      .text-green {
-        color: var(--ion-color-primary);
-        font-size: 2.5rem;
-        font-weight: 600;
+      &:first-child {
+        font-weight: 550;
+        margin-bottom: 0;
       }
     }
   }
 
-  // Logo de la aplicación
-  .logo-section {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 20px;
-
-    .app-logo {
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
-      img {
-        width: 40px;
-        height: 40px;
-        object-fit: contain;
-      }
-    }
-  }
-
-  // Botones en la parte inferior centrados
-  .buttons-section {
+  // Botones sociales
+  .buttons {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 24px;
 
-    .btn-start {
-      --background: var(--ion-color-primary);
-      --color: #ffffff;
+    .btn-outline-dark {
+      --border-color: #e0e0e0;
+      --color: #000000;
+      --background: #ffffff;
+      --border-width: 1px;
+      --border-style: solid;
       --border-radius: 12px;
       --padding-top: 16px;
       --padding-bottom: 16px;
+      --padding-start: 16px;
+      --padding-end: 16px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 500;
       text-transform: none;
-      width: 100%;
-      max-width: 280px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      height: 56px;
+
+      .continue-with {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      // Todos los botones de redes sociales tienen el mismo estilo
+      &.google,
+      &.apple,
+      &.facebook {
+        --border-color: #e0e0e0;
+        --color: #000000;
+        --background: #ffffff;
+      }
+    }
+  }
+
+  // Separador
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+    width: 100%;
+
+    .line {
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background-color: #000000;
     }
 
-    .login-link {
-      color: #ffffff;
-      font-size: 14px;
+    .circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      margin: 0 16px;
+      flex-shrink: 0;
+    }
+  }
+
+  // Botón de email
+  .btn-dark {
+    --background: #000000;
+    --color: #ffffff;
+    --border-radius: 12px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: none;
+    height: 56px;
+    margin-bottom: 24px;
+  }
+
+  // Enlaces de términos
+  .terms-links {
+    padding: 0 0 24px 0;
+
+    p {
       margin: 0;
-      text-align: center;
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.4;
 
       a {
-        color: var(--ion-color-primary);
-        text-decoration: none;
-        font-weight: 600;
+        color: #000000;
+        text-decoration: underline;
         cursor: pointer;
       }
     }

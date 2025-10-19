@@ -1,41 +1,65 @@
-<ion-content class="login-page">
-  <!-- Imagen de fondo -->
-  <div class="background-image"></div>
-  
-  <!-- Overlay oscuro para mejor legibilidad -->
-  <div class="dark-overlay"></div>
-  
-  <!-- Contenido principal -->
-  <div class="login-container">
-    <!-- Texto motivacional -->
-    <div class="motivational-text">
-      <h1 class="font-lausanne-xxl">
-        <span class="text-white">{{ 'WELCOME_PAGE.TITLE' | translate }}</span><br>
-        <span class="text-green">{{ 'WELCOME_PAGE.SPAN1' | translate }}</span><br>
-        <span class="text-green">{{ 'WELCOME_PAGE.SPAN2' | translate }}</span>
-      </h1>
-    </div>
-
-    <!-- Logo de la aplicación -->
-    <div class="logo-section">
-      <div class="app-logo">
-        <img src="assets/icon/icon-128.webp" alt="One Percent App Logo">
-      </div>
-    </div>
-
-    <!-- Botones centrados en la parte inferior -->
-    <div class="buttons-section">
-      <ion-button 
-        expand="block" 
-        class="btn-primary btn-start" 
-        (click)="goToRegister()"
-        shape="round">
-        {{ 'WELCOME_PAGE.BUTTON_START' | translate }}
+<ion-content class="safe-area ion-padding login-page">
+  <div class="h-full flex-col justify-between">
+    <!-- Botón back -->
+    <div class="back-button">
+      <ion-button fill="clear" (click)="goBack()">
+        <img src="assets/icon/btn-back.svg" alt="Back button">
       </ion-button>
-      
-      <p class="login-link">
-        {{ 'WELCOME_PAGE.ARE_YOU_USER?' | translate }} 
-        <a (click)="goToLoginWithEmail()">{{ 'WELCOME_PAGE.BUTTON_LOGIN' | translate }}</a>
+    </div>
+
+    <!-- Logo -->
+    <div>
+      <div class="logo-container flex-row align-center justify-center align-items-center">
+        <app-logo [dark]="true"></app-logo>
+        <img src="assets/imgs/onepercent-text.svg" alt="onepercent logo">
+      </div>
+
+      <!-- Texto de bienvenida -->
+      <div class="welcome-text">
+        <p class="font-lausanne-l-550">{{ 'LOGIN.WELCOME_BACK' | translate}}</p>
+        <p class="font-lausanne-l-550">{{ 'LOGIN.SIGN_IN_TO_ACCOUNT' | translate}}</p>
+      </div>
+
+      <!-- Botones de redes sociales -->
+      <div class="buttons">
+        <ion-button expand="block" fill="outline" class="btn-outline-dark google"
+          (click)="signInWith(providers.google)">
+          <img src="assets/icon/google-logo.png" slot="start" class="ion-margin-end" />
+          <p class="continue-with">{{ 'LOGIN.CONTINUE_WITH_GOOGLE' | translate}}</p>
+        </ion-button>
+
+        <ion-button expand="block" fill="outline" class="btn-outline-dark apple" (click)="signInWith(providers.apple)">
+          <ion-icon name="logo-apple" slot="start" class="ion-margin-end"></ion-icon>
+          <p class="continue-with">{{ 'LOGIN.CONTINUE_WITH_APPLE' | translate}}</p>
+        </ion-button>
+
+        <ion-button expand="block" fill="outline" class="btn-outline-dark facebook"
+          (click)="signInWith(providers.facebook)">
+          <img src="assets/icon/meta-logo.png" slot="start" class="ion-margin-end" />
+          <p class="continue-with">{{ 'LOGIN.CONTINUE_WITH_FACEBOOK' | translate}}</p>
+        </ion-button>
+      </div>
+
+      <!-- Separador -->
+      <div class="divider">
+        <div class="line"></div>
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+
+      <!-- Botón de inicio de sesión con correo -->
+      <ion-button expand="block" class="btn-dark" (click)="goToLoginWithEmail()">
+        {{ 'LOGIN.SIGN_IN_WITH_EMAIL' | translate}}
+      </ion-button>
+    </div>
+
+    <!-- Enlaces a términos y privacidad -->
+    <div class="terms-links">
+      <p class="text-center">
+        {{ 'LOGIN.CONTINUE_ACCEPTS' | translate}}
+        <a (click)="goToTerms()">{{ 'LOGIN.TERMS_LINK' | translate}}</a>
+        {{ 'LOGIN.AND' | translate}}
+        <a (click)="goToPrivacy()">{{ 'LOGIN.PRIVACY_LINK' | translate}}</a>
       </p>
     </div>
   </div>

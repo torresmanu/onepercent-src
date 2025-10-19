@@ -18,12 +18,13 @@ export const authGuard: CanActivateFn = (route, state) => {
         return authService.checkTokenValidity().pipe(
           map((isValidToken) => {
             if (isValidToken) {
-              // Si el token es válido y está intentando acceder a una ruta pública, redirige a las rutas privadas
-              if (state.url.includes('public')) {
+              // Si el token es válido y está intentando acceder a una ruta pública, 
+              // permite el acceso solo a la página de login, redirige el resto a privadas
+              if (state.url.includes('public') && !state.url.includes('login')) {
                 navCtrl.navigateForward('/private');
                 return false;
               }
-              return true; // Permite el acceso a rutas privadas
+              return true; // Permite el acceso a rutas privadas y a la página de login
             }
 
             // Si el token no es válido, redirige al login
