@@ -1,6 +1,6 @@
-# Build Local Command
+# run Local Command
 
-Interactive command to build the OnePercent application locally.
+Interactive command to run the OnePercent application locally.
 
 ## What it does
 
@@ -11,15 +11,11 @@ When you run this command, you'll be prompted to choose:
 
 ## Build Commands Used
 
-- **Frontend**: `npm run build:local` (uses Angular local configuration)
-- **Backend**: `npm run build` (creates production-ready NestJS build)
+- **Frontend**: `npm start` (uses Angular local configuration)
+- **Backend**: `npm run dev` (creates production-ready NestJS build)
 
-## Output
-
-- Frontend build output: `onepercentapp-fe/www/`
-- Backend build output: `onepercentapp-be/dist/`
 
 ## Usage
 
-Simply run the "Build Local" command from Cursor's command palette (Cmd/Ctrl + Shift + P) and follow the interactive prompts.
+Simply run the "run Local" command from Cursor's command palette (Cmd/Ctrl + Shift + P) and follow the interactive prompts.
 
