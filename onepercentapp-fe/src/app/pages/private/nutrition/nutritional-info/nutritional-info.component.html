@@ -12,13 +12,13 @@
 
 <ion-content class="nutritional-content">
   <div class="nutritional-container">
-    <!-- Recipe Title -->
-    <div class="recipe-title">
-      <h1>{{ recipe.name || recipe.title }}</h1>
-      <ion-button (click)="toggleFavorite()" fill="clear" class="favorite-button">
-        <ion-icon name="heart-outline" color="light"></ion-icon>
-      </ion-button>
-    </div>
+        <!-- Recipe Title -->
+        <div class="recipe-title">
+          <h1>{{ recipe.name || recipe.title }}</h1>
+          <ion-button (click)="toggleFavorite()" fill="clear" class="favorite-button">
+            <ion-icon [name]="recipe.favorite ? 'heart' : 'heart-outline'" color="light"></ion-icon>
+          </ion-button>
+        </div>
 
     <!-- Loading State -->
     <div *ngIf="!nutritionalData" class="loading-container">

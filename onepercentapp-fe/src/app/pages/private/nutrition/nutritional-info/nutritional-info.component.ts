@@ -27,10 +27,12 @@ export class NutritionalInfoComponent implements OnInit {
     const id = idParam ? Number(idParam) : NaN;
     
     if (!isNaN(id)) {
-      this.recipeService.getRecipeById(id).subscribe({
+      // Load recipe with favorite status in one call
+      this.recipeService.getRecipeByIdWithFavoriteStatus(id).subscribe({
         next: (data) => {
           this.recipe = data;
           this.loadNutritionalData();
+          console.log(`Recipe ${id} loaded with favorite status:`, this.recipe.favorite);
         },
         error: () => {
           this.navCtrl.navigateBack('/private/nutrition/recipe-library');
@@ -80,6 +82,21 @@ export class NutritionalInfoComponent implements OnInit {
   }
 
   toggleFavorite() {
-    // TODO: Implement favorite functionality
+    if (this.recipe?.id) {
+      this.recipeService.toggleFavoriteRecipe(this.recipe).subscribe({
+        next: () => {
+          // Update local recipe state
+          this.recipe.favorite = !this.recipe.favorite;
+          console.log('Recipe favorite status updated:', this.recipe.favorite);
+          
+          // Force refresh of recipe library to reflect changes
+          this.recipeService.loadRecipes();
+        },
+        error: (error) => {
+          console.error('Error updating favorite status:', error);
+          // TODO: Show error message to user
+        }
+      });
+    }
   }
 }

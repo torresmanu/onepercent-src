@@ -26,11 +26,12 @@
     <h3 class="category-label">{{ recipe.description }}</h3>
     <h2 class="recipe-title">{{ recipe.title }}</h2>
   </div>
-  <div *ngIf="!recipe.featured" >
-    <ion-icon style="color: #3e3e3e" (click)="setFavourite()" name="heart-outline"></ion-icon>
-  </div>
-  <div *ngIf="recipe.featured">
-    <ion-icon style="color: #3e3e3e" (click)="setFavourite()" name="heart"></ion-icon>
+  <div>
+    <ion-icon 
+      [style.color]="getTextColor(recipe.section)" 
+      (click)="setFavourite()" 
+      [name]="recipe.favorite ? 'heart' : 'heart-outline'">
+    </ion-icon>
   </div>
 
     </div>
