@@ -1,57 +1,40 @@
-ion-item {
-  --padding-start: 0;
-  --inner-padding-end: 0;
-  --inner-padding-start: 0;
-  --min-height: auto;
+.ingredient-card {
+  background: white;
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center; /* vertically center content */
+  padding: .75rem .75rem; /* slightly more vertical padding */
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   margin-bottom: .5rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .ingredient-card {
-    background: white;
-    border-radius: 0.5rem;
+  .ingredient-content {
     display: flex;
-    align-items: center;
-    padding: .5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* center title and qty vertically */
     width: 100%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    gap: 1rem;
 
-    img {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
+    h3 {
+      font-family: Inter;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0px;
+      vertical-align: middle;
+      margin: 0; /* remove top margin to center text */
+      color: var(--onepercent-gray-950, #131313);
     }
 
-    ion-label {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-
-      h3 {
-  font-size: .875rem;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-margin-top: .625rem;
-color: var(--onepercent-gray-950, #131313);
-
-
-      }
-
-      p {
-        color: var(--onepercent-gray-400, #808080);
-        text-align: right;
-        font-size: .75rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
+    p {
+      color: var(--onepercent-gray-400, #808080);
+      text-align: right;
+      font-size: .75rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0; /* avoid extra bottom spacing */
     }
   }
 }

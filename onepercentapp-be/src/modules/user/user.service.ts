@@ -63,15 +63,21 @@ export class UserService extends BaseService<User>{
         user.password = await this.hashPassword(user.password);
         user = await this.userRepository.save(user);
 
-        // Send account validation email
-        let accountValidationToken = randomBytes(20).toString('hex');
-        await this.emailValidationRepository.save({
-          token: accountValidationToken,
-          email: user.email,
-        });
+        // Auto-validate email in development
+        if (process.env.NODE_ENV === 'development') {
+            user.validatedEmail = new Date();
+            user = await this.userRepository.save(user);
+        } else {
+            // Send account validation email
+            let accountValidationToken = randomBytes(20).toString('hex');
+            await this.emailValidationRepository.save({
+              token: accountValidationToken,
+              email: user.email,
+            });
 
-        // Send validation email
-        this.mailService.sendAccountValidation(user, accountValidationToken);
+            // Send validation email
+            this.mailService.sendAccountValidation(user, accountValidationToken);
+        }
 
         // Basic user license creation
         await this.licenseService.setBasicLicense(user.id);

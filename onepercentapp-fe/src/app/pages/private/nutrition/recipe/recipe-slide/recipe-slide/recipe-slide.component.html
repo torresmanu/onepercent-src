@@ -1,4 +1,4 @@
-<ion-card [class]="'recipe_' + (recipe.section?.toLowerCase() || '')">
+<ion-card [class]="'recipe_' + (recipe.section?.toLowerCase() || '')" [routerLink]="['/private/recipe-detail', recipe.id]">
   <ion-card-header>
     <div class="title-block">
       <ion-card-subtitle>{{ recipe.description }}</ion-card-subtitle>

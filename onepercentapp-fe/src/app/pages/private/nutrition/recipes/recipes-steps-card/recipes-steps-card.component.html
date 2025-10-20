@@ -5,7 +5,7 @@
                 <h3>Paso {{ step.step }}</h3>
                   <ion-icon name="chevron-forward-outline"></ion-icon>
               </div>
-              <p>{{ step.text }}</p>
+              <p>{{ step.text || step.description || step.name || 'Descripción no disponible' }}</p>
             </ion-label>
           </div>
           </ion-item>

@@ -97,7 +97,8 @@ export class AuthService {
             throw new UnauthorizedException('User not found');
         }
 
-        if (!user.validatedEmail) {
+        // Skip email validation in development
+        if (process.env.NODE_ENV !== 'development' && !user.validatedEmail) {
             throw new UnauthorizedException('Email not validated');
         }
 

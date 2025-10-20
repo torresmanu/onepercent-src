@@ -115,16 +115,21 @@ ion-content {
     border-radius: 0.5rem;
     margin-bottom: 0.8rem;
     font-family: Inter;
+    height: 47px;
 
     ion-segment-button {
       color: black;
       margin-top: 0rem;
       margin-bottom: 0rem;
       --indicator-color: none;
-      font-size: 0.875rem;
+      font-family: Inter;
+      font-weight: 700;
       font-style: normal;
-      font-weight: 400;
-      line-height: normal;
+      font-size: 12px;
+      line-height: 100%;
+      letter-spacing: 0px;
+      text-align: center;
+      vertical-align: middle;
 
       &.segment-button-checked {
         background-color: #3e3e3e;

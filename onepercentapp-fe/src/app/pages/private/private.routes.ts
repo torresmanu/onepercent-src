@@ -20,6 +20,7 @@ import { RecipeLibraryComponent } from './nutrition/recipe/recipe-library/recipe
 import { ProFormResultsComponent } from './plans/plan-form/pro-results/pro-form-results.component';
 import { ProgresDayComponent } from './nutrition/progres-day/progres-day.component';
 import { RecipeDetailComponent } from './nutrition/recipes/recipeDetail/recipeDetail.component';
+import { RecipeStepsComponent } from './nutrition/recipes/recipe-steps/recipe-steps.component';
 import { EditIngredientComponent } from './nutrition/food-registration/edit-ingredient/edit-ingredient.component';
 import { HealtTestComponent } from './healt-test/healt-test.component';
 
@@ -107,6 +108,10 @@ export const privateRoutes: Routes = [
   {
     path: 'recipe-detail/:id',
     component: RecipeDetailComponent,
+  },
+  {
+    path: 'recipe-steps/:id',
+    component: RecipeStepsComponent,
   },
   {
     path: 'confirmation-of-terms',

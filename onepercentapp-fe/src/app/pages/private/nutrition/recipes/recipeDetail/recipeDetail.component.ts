@@ -5,7 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
 import { NavController, Platform } from '@ionic/angular/standalone';
-import { NutritionService } from '@src/app/services/nutrition.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RecipeService } from '@src/app/services/recipe.service';
 import { RecipesIngredientsCardComponent } from '../recipes-ingredients-card/recipes-ingredients-card.component';
 import { RecipesStepsCardComponent } from '../recipes-steps-card/recipes-steps-card.component';
 import { alarm } from 'ionicons/icons';
@@ -33,13 +34,33 @@ export class RecipeDetailComponent implements OnInit {
   private readonly navCtrl = inject(NavController);
   private readonly platform = inject(Platform);
   private readonly translate = inject(TranslateService);
-  private readonly nutritionService = inject(NutritionService);
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+  private readonly recipeService = inject(RecipeService);
   private readonly modalService = inject(ModalService);
 
   ngOnInit() {
-    this.nutritionService.getRecipeDetail('1').subscribe((data) => {
-      this.recipe = data;
-    });
+    const idParam = this.route.snapshot.paramMap.get('id');
+    const id = idParam ? Number(idParam) : NaN;
+    
+    if (!isNaN(id)) {
+      this.recipeService.getRecipeById(id).subscribe({
+        next: (data) => {
+          console.log('Recipe data received:', data);
+          console.log('Recipe steps:', data.recipeSteps);
+          this.recipe = {
+            ...data,
+            image: data.image || this.getDefaultImageForSection(data.section),
+          };
+        },
+        error: () => {
+          // In case of error, go back to library to keep UX consistent
+          this.navCtrl.navigateBack('/private/nutrition/recipe-library');
+        },
+      });
+    } else {
+      this.navCtrl.navigateBack('/private/nutrition/recipe-library');
+    }
   }
 
   increasePortion() {
@@ -48,60 +69,60 @@ export class RecipeDetailComponent implements OnInit {
   decreasePortion() {
     if (this.portion > 1) this.portion--;
   }
-  getBackgroundColor(category: string): string {
-    switch (category) {
-      case 'dinner':
+  getBackgroundColor(section: string): string {
+    switch (section) {
+      case 'Dinner':
         return '#131313';
-      case 'lunch':
+      case 'Lunch':
         return '#F0FBD2';
-      case 'breakfast':
+      case 'Breakfast':
         return '#F0FFF0';
-      case 'snack':
+      case 'Snacks':
         return '#F8FDE8';
       default:
         return '#FFFFFF';
     }
   }
 
-  getTextColor(category: string): string {
-    switch (category) {
-      case 'dinner':
+  getTextColor(section: string): string {
+    switch (section) {
+      case 'Dinner':
         return '#FFFFFF';
-      case 'lunch':
+      case 'Lunch':
         return '#131313';
-      case 'breakfast':
+      case 'Breakfast':
         return '#131313';
-      case 'snack':
+      case 'Snacks':
         return '#131313';
       default:
         return '#FFFFFF';
     }
   }
 
-  getQuialityColor(category: string): string {
-    switch (category) {
-      case 'dinner':
+  getQuialityColor(section: string): string {
+    switch (section) {
+      case 'Dinner':
         return '#75A042';
-      case 'lunch':
+      case 'Lunch':
         return '#75A042';
-      case 'breakfast':
+      case 'Breakfast':
         return '#E8B225';
-      case 'snack':
+      case 'Snacks':
         return '#E8B225';
       default:
         return '#B2B2B2';
     }
   }
 
-  buttonType(category: string): boolean {
-    switch (category) {
-      case 'dinner':
+  buttonType(section: string): boolean {
+    switch (section) {
+      case 'Dinner':
         return false;
-      case 'lunch':
+      case 'Lunch':
         return true;
-      case 'breakfast':
+      case 'Breakfast':
         return true;
-      case 'snack':
+      case 'Snacks':
         return true;
       default:
         return false;
@@ -113,18 +134,48 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   setFavourite() {
-    console.log('Favourite set for recipe:', this.recipe.name);
+    // TODO: Implement favorite functionality
   }
 
   openModalStepRecipe(steps: any, stepNumber: number) {
-    console.log('Opening modal for step:', steps, stepNumber);
     this.modalService.presentFullScreenModal(RecipeStepsComponent, {
       recipe: this.recipe,
       steps: steps,
       stepNumber: stepNumber,
-      backgroundColor: this.getBackgroundColor(this.recipe.category),
-      textColor: this.getTextColor(this.recipe.category),
-      buttonTypes: this.buttonType(this.recipe.category),
+      backgroundColor: this.getBackgroundColor(this.recipe.section),
+      textColor: this.getTextColor(this.recipe.section),
+      buttonTypes: this.buttonType(this.recipe.section),
     });
+  }
+
+  private getDefaultImageForSection(section?: string): string {
+    switch (section) {
+      case 'Breakfast':
+      case 'Snacks':
+        return '/assets/imgs/nutrition/recipe-defaults/breakfast-snack.jpg';
+      case 'Lunch':
+        return '/assets/imgs/nutrition/recipe-defaults/lunch.jpg';
+      case 'Dinner':
+        return '/assets/imgs/nutrition/recipe-defaults/dinner.jpg';
+      default:
+        return '/assets/imgs/nutrition/fruit.svg';
+    }
+  }
+
+  getQualityText(value?: number): string {
+    if (!value) return '';
+    const map: Record<number, string> = {
+      4: 'Calidad excelente',
+      3: 'Calidad muy buena',
+      2: 'Calidad buena',
+      1: 'Calidad moderada',
+    };
+    return map[value] || '';
+  }
+
+  startRecipe() {
+    if (this.recipe?.id) {
+      this.router.navigate(['/private/recipe-steps', this.recipe.id]);
+    }
   }
 }

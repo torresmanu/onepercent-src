@@ -1,12 +1,6 @@
-<ion-item *ngFor="let ingredient of ingredients">
-  <div class="ingredient-card">
-    <img
-      src="../../../../../../assets/imgs/bienvenida.png"
-      alt="{{ ingredient.name }}"
-    />
-    <ion-label>
-      <h3>{{ ingredient.name }}</h3>
-      <p>{{ ingredient.quantity * portion }} {{ ingredient.measurament }}</p>
-    </ion-label>
+<div *ngFor="let ingredient of ingredients" class="ingredient-card">
+  <div class="ingredient-content">
+    <h3>{{ ingredient?.ingredient?.name }}</h3>
+    <p>{{ ingredient?.quantity * portion }} {{ ingredient?.unit }}</p>
   </div>
-</ion-item>
+</div>

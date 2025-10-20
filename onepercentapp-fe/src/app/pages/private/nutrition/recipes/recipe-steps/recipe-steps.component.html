@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" fill="clear" aria-label="Volver">
+        <ion-icon name="arrow-back" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Preparando receta...</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="recipe-steps-container" *ngIf="recipe && currentStepData">
+    <!-- Recipe Info -->
+    <section class="recipe-info" role="banner">
+      <div class="recipe-category font-s-bold">{{ recipe?.recipeDietTypes?.[0]?.name || 'Receta' }}</div>
+      <h1 class="recipe-title font-lausanne-l">{{ recipe?.name || recipe?.title }}</h1>
+    </section>
+
+    <!-- Step Counter -->
+    <div class="step-counter font-xm-semibold" role="status" aria-live="polite">
+      Paso {{ currentStep + 1 }} de {{ totalSteps }}
+    </div>
+
+    <!-- Step Content -->
+    <main class="step-content" role="main">
+      <p class="font-m-regular">{{ currentStepData?.name || 'Descripción del paso no disponible' }}</p>
+    </main>
+
+    <!-- Navigation Buttons -->
+    <nav class="navigation-buttons" role="navigation" aria-label="Navegación de pasos">
+      <!-- Previous Button (only show if not first step) -->
+      <ion-button 
+        *ngIf="currentStep > 0" 
+        (click)="previousStep()" 
+        class="nav-button previous-button"
+        fill="outline"
+        aria-label="Paso anterior">
+        <ion-icon name="chevron-back" slot="start"></ion-icon>
+        Anterior
+      </ion-button>
+
+      <!-- Next Button (only show if not last step) -->
+      <ion-button 
+        *ngIf="currentStep < totalSteps - 1" 
+        (click)="nextStep()" 
+        class="nav-button next-button"
+        aria-label="Siguiente paso">
+        Siguiente
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-button>
+
+      <!-- Finish Button (only show on last step) -->
+      <ion-button 
+        *ngIf="currentStep === totalSteps - 1" 
+        (click)="finishRecipe()" 
+        class="nav-button finish-button"
+        aria-label="Finalizar receta">
+        Finalizar
+        <ion-icon name="checkmark" slot="end"></ion-icon>
+      </ion-button>
+    </nav>
+  </div>
+
+  <!-- Loading state -->
+  <div *ngIf="!recipe || !currentStepData" class="loading-container">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando receta...</p>
+  </div>
+</ion-content>

@@ -12,6 +12,7 @@ import {
   IonCardTitle,
   IonCardSubtitle,
 } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-slide',
@@ -27,6 +28,7 @@ import {
     CommonModule,
     IonCardHeader,
     IonCard,
+    RouterLink,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

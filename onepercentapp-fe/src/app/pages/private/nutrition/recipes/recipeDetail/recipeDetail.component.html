@@ -7,23 +7,23 @@
       src="../../../../../../assets/icon/backButtonWhite.svg"
       alt="nobutton"
     />
-    <img [src]="recipe.imageUrl" alt="{{ recipe.title }}" />
+    <img [src]="recipe.image" alt="{{ recipe.title }}" />
     <div 
-    [style.background-color]="getBackgroundColor(recipe.category)"
+    [style.background-color]="getBackgroundColor(recipe.section)"
     
     class="bottomBlack"></div>
   </div>
 
   <!-- Contenedor principal -->
   <div
-    [style.background-color]="getBackgroundColor(recipe.category)"
-    [style.color]="getTextColor(recipe.category)"
+    [style.background-color]="getBackgroundColor(recipe.section)"
+    [style.color]="getTextColor(recipe.section)"
     class="recipe-detail-container"
   >
 
   <div class="maincontainer-category">
   <div class="category-container">
-    <h3 class="category-label">{{ recipe.category }}</h3>
+    <h3 class="category-label">{{ recipe.description }}</h3>
     <h2 class="recipe-title">{{ recipe.title }}</h2>
   </div>
   <div *ngIf="!recipe.featured" >
@@ -46,24 +46,24 @@
       </div>
       <div class="info-item">
         <ion-icon name="time-outline"></ion-icon>
-        <span>{{ recipe.time }}</span>
+        <span>{{ recipe.time }} minutos</span>
       </div>
       <div class="info-item">
-        <span
-          ><img
-            [style.background-color]="getQuialityColor(recipe.category)"
-            class="point-icon"
-            src="../../../../../../assets/icons/logoPointWhite.svg"
-            alt=""
-        /></span>
-           <span
-          ><img
-            [style.background-color]="getQuialityColor('none')"
-            class="point-icon"
-            src="../../../../../../assets/icons/logoPointWhite.svg"
-            alt=""
-        /></span>
-        <span>{{ recipe.quality.text }}</span>
+        <span class="points">
+          <img
+            *ngFor="let n of [].constructor(recipe.value || 0); let i = index"
+            src="../../../../../../assets/imgs/nutrition/traffic-light-on.svg"
+            style="width: 16px; height: 16px"
+            alt="on"
+          />
+          <img
+            *ngFor="let n of [].constructor(4 - (recipe.value || 0)); let i = index"
+            src="../../../../../../assets/imgs/nutrition/traffic-light-off.svg"
+            style="width: 16px; height: 16px"
+            alt="off"
+          />
+        </span>
+        <span>{{ getQualityText(recipe.value) }}</span>
       </div>
     </div>
 
@@ -71,11 +71,11 @@
 <ion-button
   expand="block"
   fill="outline"
-  [style.color]="getTextColor(recipe.category)"
-  [style.--border-color]="getTextColor(recipe.category)"
+  [style.color]="getTextColor(recipe.section)"
+  [style.--border-color]="getTextColor(recipe.section)"
   class="nutritional-button"
 >
-  <ion-icon [style.color]="getQuialityColor(recipe.category)" name="information-circle-outline" slot="start"></ion-icon>
+  <ion-icon [style.color]="getQuialityColor(recipe.section)" name="information-circle-outline" slot="start"></ion-icon>
   Información nutricional
   <ion-icon [style.color]="getTextColor(recipe.category)" name="chevron-forward-outline" slot="end"></ion-icon>
 </ion-button>
@@ -96,8 +96,8 @@
       <div class="portion-control-container">
 
         <div class="portion-control">
-          <img *ngIf="recipe.category === 'dinner'" src="../../../../../../assets/icons/plate.svg" alt="noIcon">
-          <img *ngIf="recipe.category !== 'dinner'" src="../../../../../../assets/icons/plate_black.svg" alt="noIcon">
+          <img *ngIf="recipe.section === 'Dinner'" src="../../../../../../assets/icons/plate.svg" alt="noIcon">
+          <img *ngIf="recipe.section !== 'Dinner'" src="../../../../../../assets/icons/plate_black.svg" alt="noIcon">
 
           <span>Ración:</span>
           <ion-button size="small" fill="clear" (click)="decreasePortion()"
@@ -109,14 +109,14 @@
           >
         </div>
         
-          <span>{{ recipe.ingredients.length }} ingredientes</span>
+          <span>{{ recipe.recipeIngredients?.length }} ingredientes</span>
 
       </div>
       
       
 
 
-<app-recipes-ingredients-card *ngIf="recipe.ingredients?.length" [ingredients]="recipe.ingredients" [portion]="portion"></app-recipes-ingredients-card>
+<app-recipes-ingredients-card *ngIf="recipe.recipeIngredients?.length" [ingredients]="recipe.recipeIngredients" [portion]="portion"></app-recipes-ingredients-card>
 
     </div>
 
@@ -124,8 +124,8 @@
            <div class="portion-control-container">
 
         <div class="portion-control">
-          <img *ngIf="recipe.category === 'dinner'" src="../../../../../../assets/icons/plate.svg" alt="noIcon">
-          <img *ngIf="recipe.category !== 'dinner'" src="../../../../../../assets/icons/plate_black.svg" alt="noIcon">
+          <img *ngIf="recipe.section === 'Dinner'" src="../../../../../../assets/icons/plate.svg" alt="noIcon">
+          <img *ngIf="recipe.section !== 'Dinner'" src="../../../../../../assets/icons/plate_black.svg" alt="noIcon">
           <span>Ración:</span>
           <ion-button size="small" fill="clear" (click)="decreasePortion()"
           >-</ion-button
@@ -136,15 +136,27 @@
           >
         </div>
         
-          <span>{{ recipe.instructions?.length }} pasos</span>
+          <span>{{ recipe.recipeSteps?.length }} pasos</span>
 
       </div>
-      <app-recipes-steps-card *ngIf="recipe.instructions?.length" [steps]="recipe.instructions" (openModalStepRecipe)="openModalStepRecipe($event.steps, $event.stepNumber)"></app-recipes-steps-card>
+      <app-recipes-steps-card *ngIf="recipe.recipeSteps?.length" [steps]="recipe.recipeSteps" (openModalStepRecipe)="openModalStepRecipe($event.steps, $event.stepNumber)"></app-recipes-steps-card>
     </div>
 
     <!-- Botón comenzar -->
-<ion-button *ngIf="!buttonType(recipe.category)" class="ion-margin-bottom start-button" mode="ios">Comenzar</ion-button> 
-<ion-button *ngIf="buttonType(recipe.category)" class="ion-margin-bottom btn-dark" mode="ios">Comenzar</ion-button> 
+<ion-button 
+  *ngIf="!buttonType(recipe.section)" 
+  class="ion-margin-bottom start-button" 
+  mode="ios"
+  (click)="startRecipe()">
+  Comenzar
+</ion-button> 
+<ion-button 
+  *ngIf="buttonType(recipe.section)" 
+  class="ion-margin-bottom btn-dark" 
+  mode="ios"
+  (click)="startRecipe()">
+  Comenzar
+</ion-button> 
  </div>
 
 </ion-content>
