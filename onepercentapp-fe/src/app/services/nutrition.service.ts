@@ -189,4 +189,21 @@ saveMealRecord(mealData: { mealType: string; ingredients: any[]; date?: string }
     })
   );
 }
+
+getUserMeals(): Observable<any[]> {
+  return this.apiCallService.get<any>('/user-meal').pipe(
+    map(response => {
+      // El backend devuelve { statusCode: 200, data: [...] }
+      if (response && response.data && Array.isArray(response.data)) {
+        return response.data;
+      }
+      // Si la respuesta ya es un array directamente (por compatibilidad)
+      if (Array.isArray(response)) {
+        return response;
+      }
+      // Si no hay datos, devuelve array vacío
+      return [];
+    })
+  );
+}
 }

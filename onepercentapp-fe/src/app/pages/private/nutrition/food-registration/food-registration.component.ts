@@ -37,6 +37,7 @@ export class FoodRegistrationComponent implements OnInit {
 
   selectedMealTitle: string | null = null;
   meals: any[] = [];
+  recentMeals: any[] = [];
   selectedTab = signal<string>('registrando');
 
   get ingredients() {
@@ -55,6 +56,18 @@ export class FoodRegistrationComponent implements OnInit {
   ngOnInit() {
     this.nutritionService.getFoodData().subscribe((data) => {
       this.meals = Array.isArray(data) ? data : Object.values(data);
+    });
+    this.loadRecentMeals();
+  }
+
+  loadRecentMeals() {
+    this.nutritionService.getUserMeals().subscribe({
+      next: (meals) => {
+        this.recentMeals = meals;
+      },
+      error: (error) => {
+        console.error('Error al cargar meals recientes:', error);
+      }
     });
   }
 
@@ -148,6 +161,9 @@ export class FoodRegistrationComponent implements OnInit {
         // Limpiar los ingredientes después de guardar
         this.nutritionService.getIngredients().length = 0;
         this.selectedMealTitle = null;
+        
+        // Recargar las meals recientes
+        this.loadRecentMeals();
         
         // Navegar de regreso a la pantalla de nutrición
         this.navCtrl.navigateBack('/private/nutrition');

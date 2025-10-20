@@ -551,6 +551,9 @@
     "NO_INGREDIENTS": "Todavía no hay ingredientes.",
     "ADD_INGREDIENT": "Añade uno.",
 
+    "NO_RECENT_MEALS": "No hay comidas registradas todavía.",
+    "NO_FAVORITE_MEALS": "No hay comidas favoritas todavía.",
+
     "SAVE_BUTTON": "Guardar",
 
     "SEARCHING": "Buscando...",
