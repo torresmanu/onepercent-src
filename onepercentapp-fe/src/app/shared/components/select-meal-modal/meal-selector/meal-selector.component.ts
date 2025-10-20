@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output, inject } from '@angular/core';
-import { IonRadio, IonRadioGroup } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { NutritionService } from 'src/app/services/nutrition.service';
 
@@ -12,8 +12,7 @@ import { NutritionService } from 'src/app/services/nutrition.service';
   imports: [
     CommonModule,
     FormsModule,
-    IonRadio,
-    IonRadioGroup,
+    IonicModule,
   ],
 })
 export class MealSelectorComponent {
@@ -27,6 +26,18 @@ export class MealSelectorComponent {
   constructor() {
     this.nutritionService.getFoodData().subscribe((data) => {
       this.meals = Array.isArray(data) ? data : Object.values(data);
+      console.log('Meals loaded in selector:', this.meals);
     });
+  }
+
+  selectMeal(index: number) {
+    console.log('Meal card clicked, selecting index:', index);
+    this.selectedIndex = index;
+    this.onMealChange();
+  }
+
+  onMealChange() {
+    console.log('Meal changed to:', this.selectedIndex);
+    this.selectionChange.emit(this.selectedIndex);
   }
 }

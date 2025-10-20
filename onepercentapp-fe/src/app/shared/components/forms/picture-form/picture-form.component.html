@@ -31,7 +31,7 @@
         </ion-header>
         <div class="step-content">
             <div class="step-text-container">
-                <h2 class="step-title font-lausanne-xl" *ngIf="stepData.content != 'text' && stepData.title"
+                <h2 class="step-title font-lausanne-xl" *ngIf="stepData.content !== 'text' && stepData.title"
                     [innerHTML]="stepData.title | translate">
                 </h2>
                 <p class="step-description" [innerHTML]="stepData.description | translate"></p>

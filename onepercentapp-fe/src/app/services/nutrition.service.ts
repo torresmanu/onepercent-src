@@ -26,20 +26,17 @@ import { image } from 'ionicons/icons';
 })
 export class NutritionService {
   private readonly basePath = '/nutrition';
+  private apiCallService = inject(ApiCallService);
 
-  // Ingredientes mokeados para usar en toda la app
-  private mockIngredients = [
-    { name: 'Arroz blanco', quantity: 100, unit: 'gramos', kcal: 350 },
-    { name: 'Pechuga de pollo', quantity: 150, unit: 'gramos', kcal: 165 },
-    { name: 'Aceite de oliva', quantity: 10, unit: 'mililitros', kcal: 90 }
-  ];
+  // Ingredientes temporales para el registro de comida
+  private tempIngredients: any[] = [];
 
   getIngredients(): any[] {
-    return this.mockIngredients;
+    return this.tempIngredients;
   }
 
   getIngredientByIndex(index: number): any {
-    return this.mockIngredients[index];
+    return this.tempIngredients[index];
   }
 
   getNutritionData(type: 'split' | 'water' | 'fruit'): Observable<number> {
@@ -158,5 +155,55 @@ getRecipeDetail(id: string): Observable<any> {
     imageUrl: '../../../../../../assets/imgs/welcome-final.png',
   };
   return of(mockRecipeDetail);
+}
+
+searchIngredients(query: string): Observable<any[]> {
+  if (!query || query.length < 2) {
+    return of([]);
+  }
+  return this.apiCallService.get<any>(`/ingredient/search?query=${encodeURIComponent(query)}`).pipe(
+    map(response => {
+      // El backend devuelve { statusCode: 200, data: [...] }
+      // Esto es debido al ResponseFormatInterceptor global
+      if (response && response.data && Array.isArray(response.data)) {
+        return response.data;
+      }
+      // Si la respuesta ya es un array directamente (por compatibilidad)
+      if (Array.isArray(response)) {
+        return response;
+      }
+      // Si no hay datos, devuelve array vacío
+      return [];
+    })
+  );
+}
+
+saveMealRecord(mealData: { mealType: string; ingredients: any[]; date?: string }): Observable<any> {
+  return this.apiCallService.post<any>('/user-meal', mealData).pipe(
+    map(response => {
+      // El backend devuelve { statusCode: 201, data: {...} }
+      if (response && response.data) {
+        return response.data;
+      }
+      return response;
+    })
+  );
+}
+
+getUserMeals(): Observable<any[]> {
+  return this.apiCallService.get<any>('/user-meal').pipe(
+    map(response => {
+      // El backend devuelve { statusCode: 200, data: [...] }
+      if (response && response.data && Array.isArray(response.data)) {
+        return response.data;
+      }
+      // Si la respuesta ya es un array directamente (por compatibilidad)
+      if (Array.isArray(response)) {
+        return response;
+      }
+      // Si no hay datos, devuelve array vacío
+      return [];
+    })
+  );
 }
 }

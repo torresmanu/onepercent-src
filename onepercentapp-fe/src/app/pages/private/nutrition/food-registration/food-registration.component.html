@@ -1,7 +1,10 @@
 <app-header backButton="/private/nutrition" title="{{ 'FOOD_REGISTRATION.TITLE' | translate }}" />
 <ion-content class="safe-area ion-padding">
-  <app-custom-input [control]="foodInputControl" [placeholder]="'FOOD_REGISTRATION.INPUT_PLACEHOLDER' | translate"
-    name="foodInput" customIcon="assets/imgs/search-btn.svg"></app-custom-input>
+  <app-ingredient-autocomplete 
+    [control]="foodInputControl" 
+    [placeholder]="'FOOD_REGISTRATION.INPUT_PLACEHOLDER' | translate"
+    (ingredientSelected)="onIngredientSelected($event)">
+  </app-ingredient-autocomplete>
 
   <div class="meal-of-the-day">
     <p class="meal-title" [ngClass]="{ 'no-meal-selected': !selectedMealTitle, 'meal-selected': selectedMealTitle }">
@@ -58,10 +61,42 @@
       </div>
     </div>
     <div [hidden]="selectedTab() !== 'recientes'">
-      Contenido de Recientes
+      <div class="content">
+        <ng-container *ngIf="recentMeals.length > 0; else noRecentMeals">
+          <div class="meal-card" 
+               *ngFor="let meal of recentMeals; let i = index"
+               [class.selected]="isRecentMealSelected(i)"
+               (click)="selectRecentMeal(i)">
+            <div class="meal-header">
+              <div class="meal-info">
+                <div class="meal-type">{{ meal.mealType }}</div>
+                <div class="meal-date">{{ meal.date | date:'short' }}</div>
+              </div>
+              <div class="meal-total-kcal">
+                {{ meal.totalKcal || 0 }} kcal
+              </div>
+            </div>
+            <div class="meal-ingredients">
+              <div class="ingredient-item" *ngFor="let mealIngredient of meal.ingredients">
+                <div class="ingredient-name-small">
+                  {{ mealIngredient.ingredient?.name || 'Ingrediente desconocido' }}
+                </div>
+                <div class="ingredient-details-small">
+                  {{ mealIngredient.quantity }} {{ mealIngredient.unit }} | {{ mealIngredient.kcal }} kcal
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #noRecentMeals>
+          <p class="content-text">{{ 'FOOD_REGISTRATION.NO_RECENT_MEALS' | translate }}</p>
+        </ng-template>
+      </div>
     </div>
     <div [hidden]="selectedTab() !== 'favoritos'">
-      Contenido de Favoritos
+      <div class="content">
+        <p class="content-text">{{ 'FOOD_REGISTRATION.NO_FAVORITE_MEALS' | translate }}</p>
+      </div>
     </div>
 
     <div class="camera-btn">
@@ -73,11 +108,9 @@
     </div>
   </div>
 
-  <ion-footer>
-    <div class="button-container">
-      <ion-button expand="block" class="btn-dark" [disabled]="!selectedMealTitle">
-        {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
-      </ion-button>
-    </div>
-  </ion-footer>
+  <div class="button-container">
+    <ion-button expand="block" class="btn-dark" [disabled]="!canSave" (click)="saveMeal()">
+      {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
+    </ion-button>
+  </div>
 </ion-content>

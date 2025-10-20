@@ -2,7 +2,7 @@ import {Inject, Injectable} from '@nestjs/common';
 import {BaseService} from "../../common/services/base.service";
 import {Ingredient} from "./entities/ingredient.entity";
 import {InjectRepository} from "@nestjs/typeorm";
-import {In, Repository} from "typeorm";
+import {In, Like, Repository} from "typeorm";
 import {IngredientGroup} from "./entities/ingredientGroup.entity";
 import {async} from "rxjs";
 import {Allergy} from "../plan/entities/allergy";
@@ -41,5 +41,19 @@ export class IngredientService extends BaseService<Ingredient>{
         });
     }
 
+    async search(query: string): Promise<Ingredient[]> {
+        if (!query || query.length < 2) {
+            return [];
+        }
+        
+        return this.ingredientRepository.find({
+            where: [
+                { name: Like(`%${query}%`) },
+                { name_en: Like(`%${query}%`) }
+            ],
+            relations: ['ingredientGroup'],
+            take: 10
+        });
+    }
 
 }

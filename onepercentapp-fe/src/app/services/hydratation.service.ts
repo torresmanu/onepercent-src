@@ -1,31 +1,15 @@
-import { inject, Injectable, input } from '@angular/core';
-import { NavController } from '@ionic/angular/standalone';
-import { SocialLoginPayload } from 'src/app/core/interfaces/social-login-payload.interface';
-import { StorageKey } from 'src/app/core/interfaces/storage';
-
-import {
-    catchError,
-    map,
-    Observable,
-    of,
-    switchMap,
-    tap,
-    throwError,
-    combineLatest,
-} from 'rxjs';
-import { StorageService } from './storage.service';
+import { inject, Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { ApiCallService } from './api-call.service';
-import { User } from '@capacitor-firebase/authentication';
 
 /**
- * Auth Service
+ * Hydration Service
  */
 @Injectable({
     providedIn: 'root',
 })
-
 export class HydrationService {
-    private readonly basePath = '/hydration';
+    private apiCallService = inject(ApiCallService);
 
     getHydrationStatus(): Observable<{ color: string; status: string; }[]> {
         const mockHydration = [
@@ -37,8 +21,10 @@ export class HydrationService {
         return of(mockHydration);
     }
 
-    sendHydrationStatus(selected: number) {
-        console.log('Índice seleccionado:', selected);
+    sendHydrationStatus(selectedIndex: number): Observable<any> {
+        const colors = ['#E3EDFA', '#E8FA96', '#E4F504', '#F1D11A'];
+        const peeColor = colors[selectedIndex];
+        
+        return this.apiCallService.post('/user-hydration', { peeColor });
     }
-
 }

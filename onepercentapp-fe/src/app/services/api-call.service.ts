@@ -23,9 +23,13 @@ export class ApiCallService {
   }
 
   get<T>(path: string, params?: HttpParams, token?: string): Observable<T> {
+    const headers = token 
+      ? this.defaultHeaders.append('Authorization', `Bearer ${token}`)
+      : this.defaultHeaders;
+    
     return this.http
       .get<T>(`${this.basePath}${path}`, {
-        headers: this.defaultHeaders.append('Authorization', `Bearer ${token}`),
+        headers,
         params,
       })
       .pipe(catchError(this.handleError));
@@ -34,9 +38,16 @@ export class ApiCallService {
   post<T>(path: string, body: any, token?: string): Observable<T> {
     const isFormData = body instanceof FormData;
 
-    const headers = isFormData
-      ? new HttpHeaders({ Authorization: `Bearer ${token}` })
-      : this.defaultHeaders.append('Authorization', `Bearer ${token}`);
+    let headers: HttpHeaders;
+    if (token) {
+      headers = isFormData
+        ? new HttpHeaders({ Authorization: `Bearer ${token}` })
+        : this.defaultHeaders.append('Authorization', `Bearer ${token}`);
+    } else {
+      headers = isFormData
+        ? new HttpHeaders()
+        : this.defaultHeaders;
+    }
 
     return this.http
       .post<T>(`${this.basePath}${path}`, body, { headers })

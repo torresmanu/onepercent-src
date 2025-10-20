@@ -1,0 +1,75 @@
+<div class="ingredient-autocomplete-container">
+  <div class="input-wrapper">
+    <ion-item lines="none" class="custom-input-item">
+      <ion-input
+        [formControl]="control"
+        [placeholder]="placeholder"
+        type="text"
+        autocomplete="off"
+        (ionFocus)="onInputFocus()"
+        (ionBlur)="onInputBlur()"
+        (keydown)="onKeyDown($event)"
+        role="combobox"
+        [attr.aria-expanded]="showDropdown"
+        [attr.aria-autocomplete]="'list'"
+        [attr.aria-controls]="showDropdown ? 'autocomplete-listbox' : null"
+      ></ion-input>
+      <ion-icon slot="end" name="search" class="search-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div 
+    *ngIf="showDropdown" 
+    class="autocomplete-dropdown"
+    id="autocomplete-listbox"
+    role="listbox"
+  >
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="autocomplete-message">
+      <ion-spinner name="dots"></ion-spinner>
+      <span>{{ 'FOOD_REGISTRATION.SEARCHING' | translate }}</span>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="hasError && !isLoading" class="autocomplete-message error">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <span>{{ 'FOOD_REGISTRATION.SEARCH_ERROR' | translate }}</span>
+    </div>
+
+    <!-- Min Characters Warning -->
+    <div *ngIf="showMinChars" class="autocomplete-message info">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <span>{{ 'FOOD_REGISTRATION.MIN_CHARS' | translate }}</span>
+    </div>
+
+    <!-- No Results -->
+    <div *ngIf="showNoResults" class="autocomplete-message">
+      <ion-icon name="search-outline"></ion-icon>
+      <span>{{ 'FOOD_REGISTRATION.NO_RESULTS' | translate }}</span>
+    </div>
+
+    <!-- Results List -->
+    <div 
+      *ngFor="let ingredient of searchResults; let i = index"
+      class="autocomplete-item"
+      [class.selected]="i === selectedIndex"
+      (click)="selectIngredient(ingredient)"
+      role="option"
+      [attr.aria-selected]="i === selectedIndex"
+      [id]="'ingredient-option-' + i"
+    >
+      <div class="ingredient-main">
+        <span class="ingredient-name">{{ ingredient.name }}</span>
+        <span *ngIf="ingredient.ingredientGroup" class="ingredient-category">
+          {{ ingredient.ingredientGroup.name }}
+        </span>
+      </div>
+      <div class="ingredient-info">
+        <span *ngIf="ingredient.energy" class="ingredient-energy">
+          {{ ingredient.energy }} kcal
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -27,6 +27,8 @@ import { IngredientModule } from './ingredient/ingredient.module';
 import { RecipeModule } from './recipe/recipe.module';
 import { RecipeAllergenModule } from './recipe-allergen/recipe-allergen.module';
 import { UserActivityModule } from './user-activity/user-activity.module';
+import { UserHydrationModule } from './user-hydration/user-hydration.module';
+import { UserMealModule } from './user-meal/user-meal.module';
 
 @Module({
     imports: [
@@ -54,6 +56,8 @@ import { UserActivityModule } from './user-activity/user-activity.module';
         forwardRef(() => RecipeModule),
         forwardRef(() => RecipeAllergenModule),
         forwardRef(() => UserActivityModule),
+        forwardRef(() => UserHydrationModule),
+        forwardRef(() => UserMealModule),
 
     ],
     providers: [
@@ -88,6 +92,8 @@ import { UserActivityModule } from './user-activity/user-activity.module';
         forwardRef(() => RecipeModule),
         forwardRef(() => RecipeAllergenModule),
         forwardRef(() => UserActivityModule),
+        forwardRef(() => UserHydrationModule),
+        forwardRef(() => UserMealModule),
 
         // JwtAuthGuard,
         IsInDatabaseConstraint,

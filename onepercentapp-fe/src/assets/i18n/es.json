@@ -551,7 +551,15 @@
     "NO_INGREDIENTS": "Todavía no hay ingredientes.",
     "ADD_INGREDIENT": "Añade uno.",
 
-    "SAVE_BUTTON": "Guardar"
+    "NO_RECENT_MEALS": "No hay comidas registradas todavía.",
+    "NO_FAVORITE_MEALS": "No hay comidas favoritas todavía.",
+
+    "SAVE_BUTTON": "Guardar",
+
+    "SEARCHING": "Buscando...",
+    "NO_RESULTS": "Sin resultados",
+    "SEARCH_ERROR": "Error al buscar ingredientes",
+    "MIN_CHARS": "Escribe al menos 2 caracteres"
   },
 
   "WEEKLY_MENU": {
