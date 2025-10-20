@@ -1,42 +1,44 @@
-<app-header backButton="/private/food-registration" title="{{ 'EDIT_INGREDIENT.TITLE' | translate }}" />
+<app-header backButton="/private/food-registration" title="{{ 'EDIT_INGREDIENT.TITLE' | translate }}" heartIcon="true" />
 <ion-content class="safe-area ion-padding">
-    <div class="ingredient">
+    <!-- Ingredient Name -->
+    <div class="ingredient-name">
         <h2 class="title">{{ ingredient.name }}</h2>
-        <div class="icon">
-            <ion-icon [name]="isFavorited ? 'heart' : 'heart-outline'"
-                [ngClass]="{ favorited: isFavorited, animate: animateHeart }" (click)="toggleFavorite()"></ion-icon>
+    </div>
+
+    <!-- Unit Selection -->
+    <div class="unit-container">
+        <div class="unit-input">
+            <span class="unit-text">{{ ingredient.unit }}</span>
+            <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
         </div>
     </div>
 
-    <div class="unit">
-        <p class="text">
-            {{ ingredient.unit }}
-        </p>
-        <button class="select-unit" disabled>
-            <img src="assets/imgs/btn-select.svg" alt="">
-        </button>
-    </div>
-
-    <div class="quantity-kcal">
-        <div class="quantity">
-            <p class="text">{{ ingredient.quantity }}</p>
+    <!-- Quantity and Calories -->
+    <div class="quantity-calories-container">
+        <div class="quantity-input">
+            <input type="number" [(ngModel)]="ingredient.quantity" class="quantity-field" placeholder="100" (input)="onQuantityChange()">
         </div>
-
-        <div class="kcal">
-            <p class="text">{{ ingredient.kcal }} kcal</p>
+        <div class="calories-display">
+            <span class="calories-text">{{ ingredient.kcal }} kcal</span>
         </div>
     </div>
 
-    <div class="nutrition-info">
-        
+    <!-- Nutritional Information -->
+    <div class="nutrition-info-container">
+        <div class="nutrition-info">
+            <ion-icon name="information-circle" class="info-icon"></ion-icon>
+            <span class="info-text">Información nutricional</span>
+            <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
+        </div>
     </div>
 
-
-    <ion-footer>
-        <div class="button-container">
-            <ion-button expand="block" class="btn-dark">
-                {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
-            </ion-button>
-        </div>
-    </ion-footer>
+    <!-- Bottom spacing to prevent content from being hidden behind fixed button -->
+    <div class="bottom-spacing"></div>
 </ion-content>
+
+<!-- Fixed Save Button -->
+<div class="save-button-container">
+    <ion-button expand="block" class="save-button" (click)="onSaveChanges()">
+        {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
+    </ion-button>
+</div>
