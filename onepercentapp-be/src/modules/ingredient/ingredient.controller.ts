@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, Patch, Post, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards} from '@nestjs/common';
 import {IngredientService} from "./ingredient.service";
 import {ApiBody, ApiOperation, ApiResponse} from "@nestjs/swagger";
 import {JwtAuthGuard} from "../../common/guards/jwt-auth.guard";
@@ -13,6 +13,16 @@ export class IngredientController {
     constructor(
         private readonly ingredientService: IngredientService
     ) {
+    }
+
+    // Search ingredients by query
+    @Get('search')
+    // @UseGuards(JwtAuthGuard, RolesGuard)
+    // @Roles('admin','user')
+    @ApiOperation({ summary: 'Search ingredients by name' })
+    @ApiResponse({ status: 200, description: 'List of matching ingredients.' })
+    async search(@Query('query') query: string): Promise<Ingredient[]> {
+        return this.ingredientService.search(query);
     }
 
     // Get all ingredients

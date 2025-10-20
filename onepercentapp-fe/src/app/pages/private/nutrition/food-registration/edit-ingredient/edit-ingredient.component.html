@@ -38,7 +38,8 @@
 
 <!-- Fixed Save Button -->
 <div class="save-button-container">
-    <ion-button expand="block" class="save-button" (click)="onSaveChanges()">
-        {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
+    <ion-button expand="block" class="save-button" (click)="onSaveChanges()" [disabled]="isSaving">
+        <ion-spinner *ngIf="isSaving" name="crescent"></ion-spinner>
+        <span *ngIf="!isSaving">{{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}</span>
     </ion-button>
 </div>

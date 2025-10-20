@@ -1,7 +1,10 @@
 <app-header backButton="/private/nutrition" title="{{ 'FOOD_REGISTRATION.TITLE' | translate }}" />
 <ion-content class="safe-area ion-padding">
-  <app-custom-input [control]="foodInputControl" [placeholder]="'FOOD_REGISTRATION.INPUT_PLACEHOLDER' | translate"
-    name="foodInput" customIcon="assets/imgs/search-btn.svg"></app-custom-input>
+  <app-ingredient-autocomplete 
+    [control]="foodInputControl" 
+    [placeholder]="'FOOD_REGISTRATION.INPUT_PLACEHOLDER' | translate"
+    (ingredientSelected)="onIngredientSelected($event)">
+  </app-ingredient-autocomplete>
 
   <div class="meal-of-the-day">
     <p class="meal-title" [ngClass]="{ 'no-meal-selected': !selectedMealTitle, 'meal-selected': selectedMealTitle }">

@@ -26,6 +26,7 @@ import { image } from 'ionicons/icons';
 })
 export class NutritionService {
   private readonly basePath = '/nutrition';
+  private apiCallService = inject(ApiCallService);
 
   // Ingredientes mokeados para usar en toda la app
   private mockIngredients = [
@@ -158,5 +159,26 @@ getRecipeDetail(id: string): Observable<any> {
     imageUrl: '../../../../../../assets/imgs/welcome-final.png',
   };
   return of(mockRecipeDetail);
+}
+
+searchIngredients(query: string): Observable<any[]> {
+  if (!query || query.length < 2) {
+    return of([]);
+  }
+  return this.apiCallService.get<any>(`/ingredient/search?query=${encodeURIComponent(query)}`).pipe(
+    map(response => {
+      // El backend devuelve { statusCode: 200, data: [...] }
+      // Esto es debido al ResponseFormatInterceptor global
+      if (response && response.data && Array.isArray(response.data)) {
+        return response.data;
+      }
+      // Si la respuesta ya es un array directamente (por compatibilidad)
+      if (Array.isArray(response)) {
+        return response;
+      }
+      // Si no hay datos, devuelve array vacío
+      return [];
+    })
+  );
 }
 }

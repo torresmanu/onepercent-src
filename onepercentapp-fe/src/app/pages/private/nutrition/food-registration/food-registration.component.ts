@@ -3,7 +3,7 @@ import { FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angu
 import { IonicModule, NavController } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
-import { CustomInputComponent } from 'src/app/shared/components/custom-input/custom-input.component';
+import { IngredientAutocompleteComponent } from 'src/app/shared/components/ingredient-autocomplete/ingredient-autocomplete.component';
 import { SelectMealModalComponent } from 'src/app/shared/components/select-meal-modal/select-meal-modal.component';
 import { ModalService } from '@src/app/services/modal.service';
 import { NutritionService } from 'src/app/services/nutrition.service';
@@ -18,7 +18,7 @@ import { signal } from '@angular/core';
     HeaderComponent,
     ReactiveFormsModule,
     FormsModule,
-    CustomInputComponent,
+    IngredientAutocompleteComponent,
     CommonModule,
   ],
   selector: 'app-food-registration',
@@ -72,5 +72,31 @@ export class FoodRegistrationComponent implements OnInit {
 
   removeIngredient(index: number) {
     this.nutritionService.getIngredients().splice(index, 1);
+  }
+
+  onIngredientSelected(ingredient: any) {
+    // Crear el ingrediente con valores por defecto
+    const newIngredient = {
+      id: ingredient.id,
+      name: ingredient.name,
+      quantity: 100,
+      unit: 'gramos',
+      kcal: ingredient.energy || 0,
+      // Guardar datos adicionales del API
+      energy: ingredient.energy,
+      protein: ingredient.protein,
+      carbs: ingredient.carbs,
+      fat: ingredient.fat,
+      ingredientGroup: ingredient.ingredientGroup
+    };
+    
+    // Agregar el ingrediente a la lista
+    this.nutritionService.getIngredients().push(newIngredient);
+    
+    // Obtener el índice del ingrediente recién agregado
+    const index = this.nutritionService.getIngredients().length - 1;
+    
+    // Navegar a editar con el índice
+    this.navCtrl.navigateForward(['/private/edit-ingredient', index]);
   }
 }
