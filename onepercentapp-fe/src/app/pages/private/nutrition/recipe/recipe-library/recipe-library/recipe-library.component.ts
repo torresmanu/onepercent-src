@@ -67,32 +67,64 @@ export class RecipeLibraryComponent implements OnInit {
   searchedRecipes: Recipe[] = [];
 
   constructor() {
+    // Effect to handle search text changes
     effect(() => {
-      // This effect will run whenever the searchText signal changes
       console.log('Search text updated:', this.searchText());
-      this.searchedRecipes = this.recipesService.getByText(this.searchText());
+      if (this.searchText()) {
+        this.recipesService.searchRecipes(this.searchText()).subscribe(recipes => {
+          this.searchedRecipes = recipes;
+        });
+      } else {
+        this.searchedRecipes = [];
+      }
+    });
+
+    // Effect to handle recipe data changes
+    effect(() => {
+      const recipes = this.recipesService.recipesSignal();
+      const isLoading = this.recipesService.loadingSignal();
+      
+      console.log('Recipe data effect triggered:', { recipesCount: recipes.length, isLoading });
+      
+      // Update recipe lists when data changes
+      if (recipes.length > 0) {
+        this.recipesFavorites = this.recipesService.getFavorites();
+        this.recipesBreakfast = this.recipesService.getBySection('Breakfast');
+        this.recipesLunch = this.recipesService.getBySection('Lunch');
+        this.recipesDinner = this.recipesService.getBySection('Dinner');
+        this.recipesSnacks = this.recipesService.getBySection('Snacks');
+        
+        console.log('Recipe lists updated:', {
+          favorites: this.recipesFavorites.length,
+          breakfast: this.recipesBreakfast.length,
+          lunch: this.recipesLunch.length,
+          dinner: this.recipesDinner.length,
+          snacks: this.recipesSnacks.length
+        });
+      }
+      
+      this.loading.set(isLoading);
+      console.log('Loading state set to:', isLoading);
     });
   }
 
   ngOnInit() {
-    // Initialization logic can go here
-    this.setData();
+    // Data loading is handled by the effect in the constructor
   }
 
   setData() {
-    this.loading.set(true);
+    // Refresh recipe lists from current service data
     this.recipesFavorites = this.recipesService.getFavorites();
     this.recipesBreakfast = this.recipesService.getBySection('Breakfast');
     this.recipesLunch = this.recipesService.getBySection('Lunch');
     this.recipesDinner = this.recipesService.getBySection('Dinner');
     this.recipesSnacks = this.recipesService.getBySection('Snacks');
-    this.loading.set(false);
   }
 
   updateSearch(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     this.searchText.set(value);
-    this.searchedRecipes = this.recipesService.getByText(value);
+    // The search is handled in the effect above
   }
 
   clearSearch() {

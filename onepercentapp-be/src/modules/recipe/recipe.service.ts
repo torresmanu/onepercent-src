@@ -36,6 +36,21 @@ export class RecipeService extends BaseService<Recipe>{
         super(recipeRepository);
     }
 
+    async findAll(): Promise<Recipe[]> {
+        return this.recipeRepository.find({
+            relations: {
+                recipeSteps: true,
+                recipeAllergens: true,
+                recipeDietTypes: true,
+                recipeMomentsOfDay: true,
+                recipeNutritionalInfos: true,
+                recipeIngredients: {
+                    ingredient: true
+                }
+            }
+        });
+    }
+
     async findById(id: number): Promise<Recipe> {
         const recipe = await this.recipeRepository.findOne({
             where: { id: id },
@@ -44,7 +59,10 @@ export class RecipeService extends BaseService<Recipe>{
                 recipeAllergens: true,
                 recipeDietTypes: true,
                 recipeMomentsOfDay: true,
-                recipeNutritionalInfos: true
+                recipeNutritionalInfos: true,
+                recipeIngredients: {
+                    ingredient: true
+                }
             }
         });
 

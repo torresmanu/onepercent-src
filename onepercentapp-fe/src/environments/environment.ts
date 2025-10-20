@@ -2,8 +2,8 @@ export const environment = {
   production: false,
   dbName: '__App_OnePercent_DEV_DB',
   logStorageOnStartup: true,
-  apiBaseUrl: 'https://onepercentapp-api-dev.armadilloamarillo.cloud',
-  assetsUrl: 'https://onepercentapp-api-dev.armadilloamarillo.cloud',
+  apiBaseUrl: 'http://localhost:3000',
+  assetsUrl: 'http://localhost:3000',
 
   emailRegex: new RegExp(
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i

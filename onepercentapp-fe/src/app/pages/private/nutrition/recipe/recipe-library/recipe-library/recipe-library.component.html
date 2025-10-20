@@ -55,12 +55,14 @@
       </div>
 
       <swiper-container
-        slides-per-view="2"
+        slides-per-view="auto"
         pagination="false"
+        auto-height="true"
+        space-between="16"
         *ngIf="recipesFavorites.length > 0"
       >
         <ng-container *ngFor="let recipe of recipesFavorites">
-          <swiper-slide>
+          <swiper-slide style="width: 200px;">
             <ng-container>
               <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
             </ng-container>
@@ -81,12 +83,14 @@
       </div>
 
       <swiper-container
-        slides-per-view="2"
+        slides-per-view="auto"
         pagination="false"
+        auto-height="true"
+        space-between="16"
         *ngIf="recipesBreakfast.length > 0"
       >
         <ng-container *ngFor="let recipe of recipesBreakfast">
-          <swiper-slide>
+          <swiper-slide style="width: 200px;">
             <ng-container>
               <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
             </ng-container>
@@ -107,12 +111,14 @@
       </div>
 
       <swiper-container
-        slides-per-view="2"
+        slides-per-view="auto"
         pagination="false"
+        auto-height="true"
+        space-between="16"
         *ngIf="recipesLunch.length > 0"
       >
         <ng-container *ngFor="let recipe of recipesLunch">
-          <swiper-slide>
+          <swiper-slide style="width: 200px;">
             <ng-container>
               <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
             </ng-container>
@@ -133,12 +139,14 @@
       </div>
 
       <swiper-container
-        slides-per-view="2"
+        slides-per-view="auto"
         pagination="false"
+        auto-height="true"
+        space-between="16"
         *ngIf="recipesDinner.length > 0"
       >
         <ng-container *ngFor="let recipe of recipesDinner">
-          <swiper-slide>
+          <swiper-slide style="width: 200px;">
             <ng-container>
               <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
             </ng-container>
@@ -158,12 +166,14 @@
       </div>
 
       <swiper-container
-        slides-per-view="2"
+        slides-per-view="auto"
         pagination="false"
+        auto-height="true"
+        space-between="16"
         *ngIf="recipesSnacks.length > 0"
       >
         <ng-container *ngFor="let recipe of recipesSnacks">
-          <swiper-slide>
+          <swiper-slide style="width: 200px;">
             <ng-container>
               <app-recipe-slide [recipe]="recipe"></app-recipe-slide>
             </ng-container>

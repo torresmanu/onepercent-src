@@ -14,6 +14,11 @@ export class MailService {
     }
 
     async sendEmailResetPassword(user: User, platform: string, appScheme: string) {
+        // Skip sending emails in development if MAIL_ENABLED is not explicitly 'true'
+        if (process.env.MAIL_ENABLED !== 'true') {
+        console.log('MAIL_ENABLED is not true - skipping reset password email in dev');
+        return;
+        }
         let resetPasswordToken = randomBytes(20).toString('hex');
         await this.resetPasswordService.create({ email: user.email, token: resetPasswordToken });
         console.log("Sending email of platform: " + platform);

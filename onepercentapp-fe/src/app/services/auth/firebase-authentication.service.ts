@@ -10,7 +10,7 @@ import { Platform } from '@ionic/angular/standalone';
 import { Observable, ReplaySubject, lastValueFrom, take } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { initializeApp } from 'firebase/app';
-import { deleteUser, getAuth, OAuthProvider, signInWithPopup, UserCredential } from 'firebase/auth';
+import { deleteUser, FacebookAuthProvider, getAuth, GoogleAuthProvider, OAuthProvider, signInWithPopup, UserCredential } from 'firebase/auth';
 import { StorageService } from '../storage.service';
 import { StorageKey } from '@src/app/core/interfaces/storage';
 
@@ -104,43 +104,69 @@ export class FirebaseAuthenticationService {
 
   public async signInWithApple(): Promise<UserCredential | SignInResult> {
     try {
-      //if (Capacitor.isNativePlatform()) {
+      if (Capacitor.isNativePlatform()) {
         const result = await FirebaseAuthentication.signInWithApple();
         return result;
-      /* } else {
+      } else {
+        // Web implementation
         const auth = getAuth();
         const provider = new OAuthProvider('apple.com');
         const result = await signInWithPopup(auth, provider);
         return result;
-      } */
+      }
     } catch (error) {
       console.error('FirebaseAuthenticationService: Error en signInWithApple:', error);
       throw error;
     }
   }
 
-  public async signInWithFacebook(): Promise<SignInResult> {
-    const result = await FirebaseAuthentication.signInWithFacebook();
-      try {
-        
-    const token = result?.credential?.accessToken;
-    console.log('Facebook access token:', token);
-    if (token) {
-      await this.storageService.set(StorageKey.metaAccessToken, token);
+  public async signInWithFacebook(): Promise<UserCredential | SignInResult> {
+    try {
+      if (Capacitor.isNativePlatform()) {
+        const result = await FirebaseAuthentication.signInWithFacebook();
+        try {
+          const token = result?.credential?.accessToken;
+          console.log('Facebook access token:', token);
+          if (token) {
+            await this.storageService.set(StorageKey.metaAccessToken, token);
+          }
+        } catch {}
+        return result;
+      } else {
+        // Web implementation
+        const auth = getAuth();
+        const provider = new FacebookAuthProvider();
+        const result = await signInWithPopup(auth, provider);
+        return result;
+      }
+    } catch (error) {
+      console.error('FirebaseAuthenticationService: Error en signInWithFacebook:', error);
+      throw error;
     }
-  } catch {}
-  return result;
   }
 
- public async signInWithGoogle(): Promise<SignInResult> {
-  const result = await FirebaseAuthentication.signInWithGoogle();
+ public async signInWithGoogle(): Promise<UserCredential | SignInResult> {
   try {
-    const token = result?.credential?.accessToken;
-    if (token) {
-      await this.storageService.set(StorageKey.googleAccessToken, token);
+    if (Capacitor.isNativePlatform()) {
+      const result = await FirebaseAuthentication.signInWithGoogle();
+      try {
+        const token = result?.credential?.accessToken;
+        if (token) {
+          await this.storageService.set(StorageKey.googleAccessToken, token);
+        }
+      } catch {}
+      return result;
+    } else {
+      // Web implementation
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      return result;
     }
-  } catch {}
-  return result;
+  } catch (error) {
+    console.error('FirebaseAuthenticationService: Error en signInWithGoogle:', error);
+    throw error;
+  }
 }
 
   public async signInWithTwitter(): Promise<SignInResult> {

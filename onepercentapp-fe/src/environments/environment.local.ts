@@ -2,8 +2,8 @@ export const environment = {
   production: false,
   dbName: '__App_OnePercent_LOCAL_DB',
   logStorageOnStartup: true,
-  apiBaseUrl: 'http://localhost:3000',
-  assetsUrl: 'http://localhost:3000',
+  apiBaseUrl: 'http://192.168.0.203:3000',
+  assetsUrl: 'http://192.168.0.203:3000',
 
   emailRegex: new RegExp(
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i

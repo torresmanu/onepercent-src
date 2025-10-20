@@ -81,7 +81,7 @@ export class AuthService {
         const userPayload = { email: user.email, id: user.id };
         const token = this.jwtService.sign(userPayload, {
             secret: process.env.JWT_SECRET,
-            expiresIn: process.env.JWT_EXPIRATION,
+            expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
 
         // Save new token in the database
@@ -112,13 +112,13 @@ export class AuthService {
         const payload = { email: user.email, id: user.id };
         const token = this.jwtService.sign(payload, {
             secret: process.env.JWT_SECRET,
-            expiresIn: process.env.JWT_EXPIRATION,
+            expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
 
         // Generar de nuevo un RefreshToken válido
         const refreshToken = this.jwtService.sign(payload, {
             secret: process.env.JWT_REFRESH_SECRET,
-            expiresIn: process.env.JWT_REFRESH_EXPIRATION,
+            expiresIn: process.env.JWT_REFRESH_EXPIRATION || '7d',
         });
 
         // Actualizar el usuario con el nuevo refresh token
@@ -177,13 +177,13 @@ export class AuthService {
         const payload = { email: user.email, id: user.id };
         const token = this.jwtService.sign(payload, {
             secret: process.env.JWT_SECRET,
-            expiresIn: process.env.JWT_EXPIRATION,
+            expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
 
         // Generar de nuevo un RefreshToken válido
         const refreshToken = this.jwtService.sign(payload, {
             secret: process.env.JWT_REFRESH_SECRET,
-            expiresIn: process.env.JWT_REFRESH_EXPIRATION,
+            expiresIn: process.env.JWT_REFRESH_EXPIRATION || '7d',
         });
 
         // Actualizar el usuario con el nuevo refresh token
@@ -242,13 +242,13 @@ export class AuthService {
         const payload = { email: user.email, id: user.id };
         const token = this.jwtService.sign(payload, {
             secret: process.env.JWT_SECRET,
-            expiresIn: process.env.JWT_EXPIRATION,
+            expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
 
         // Generar de nuevo un RefreshToken válido
         const refreshToken = this.jwtService.sign(payload, {
             secret: process.env.JWT_REFRESH_SECRET,
-            expiresIn: process.env.JWT_REFRESH_EXPIRATION,
+            expiresIn: process.env.JWT_REFRESH_EXPIRATION || '7d',
         });
 
         // Actualizar el usuario con el nuevo refresh token

@@ -2,7 +2,7 @@
 <ng-container *ngFor="let recipe of recipes">
   <ion-row
     class="ion-margin"
-    [class]="'recipe_' + recipe.section.toLowerCase()"
+    [class]="'recipe_' + (recipe.section?.toLowerCase() || '')"
   >
     <ion-col
       size="4"

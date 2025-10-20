@@ -1,0 +1,2874 @@
+[
+  {
+    "name": "Tortitas de quinoa con plátano y miel",
+    "preparation_time": 15,
+    "kcal": 320,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Quinoa, hervida/cocida en agua, sin sal",
+        "amount": "80g",
+        "food_id": 9341
+      },
+      {
+        "name": "Huevo de gallina",
+        "amount": "1 unidad",
+        "food_id": 22000
+      },
+      {
+        "name": "Plátano",
+        "amount": "1/2 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "5ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Miel",
+        "amount": "10g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Triturar la quinoa cocida con el plátano hasta obtener una masa homogénea.",
+      "Paso 2: Añadir el huevo y mezclar bien.",
+      "Paso 3: Calentar una sartén antiadherente con el aceite de oliva.",
+      "Paso 4: Cocinar las tortitas por ambos lados hasta que estén doradas.",
+      "Paso 5: Servir calientes con miel por encima."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7],
+    "nutritional_info": {
+      "carbohydrates": 45.2,
+      "fiber": 4.8,
+      "sugars": 18.5,
+      "proteins": 12.8,
+      "fats": 8.9,
+      "saturated_fats": 2.1,
+      "unsaturated_fats": 6.2,
+      "potassium_mg": 420.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Bowl de yogur griego con frutos rojos y granola sin gluten",
+    "preparation_time": 5,
+    "kcal": 280,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Yogur griego natural",
+        "amount": "150g",
+        "food_id": 19860
+      },
+      {
+        "name": "Fresa",
+        "amount": "50g",
+        "food_id": 13014
+      },
+      {
+        "name": "Arándanos",
+        "amount": "30g",
+        "food_id": 13028
+      },
+      {
+        "name": "Almendra cruda",
+        "amount": "15g",
+        "food_id": 15000
+      },
+      {
+        "name": "Miel",
+        "amount": "5g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Lavar y cortar las fresas en cuartos.",
+      "Paso 2: Verter el yogur griego en un bol.",
+      "Paso 3: Añadir las fresas y arándanos por encima.",
+      "Paso 4: Esparcir las almendras picadas.",
+      "Paso 5: Drizar con miel y servir inmediatamente."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [8, 6],
+    "nutritional_info": {
+      "carbohydrates": 22.4,
+      "fiber": 3.2,
+      "sugars": 18.8,
+      "proteins": 18.5,
+      "fats": 12.8,
+      "saturated_fats": 6.2,
+      "unsaturated_fats": 5.9,
+      "potassium_mg": 380.0,
+      "sodium_mg": 65.0
+    }
+  },
+  {
+    "name": "Revuelto de huevos con espinacas y queso de cabra",
+    "preparation_time": 10,
+    "kcal": 285,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Huevo de gallina",
+        "amount": "3 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Espinaca fresca",
+        "amount": "50g",
+        "food_id": 20059
+      },
+      {
+        "name": "Queso de cabra fresco",
+        "amount": "30g",
+        "food_id": 12807
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Ajo",
+        "amount": "1 diente",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Lavar y picar las espinacas.",
+      "Paso 2: Picar el ajo finamente.",
+      "Paso 3: Calentar el aceite en una sartén y sofreír el ajo.",
+      "Paso 4: Añadir las espinacas y cocinar hasta que se reduzcan.",
+      "Paso 5: Batir los huevos y añadirlos a la sartén, removiendo constantemente.",
+      "Paso 6: Cuando estén casi cuajados, añadir el queso de cabra desmenuzado.",
+      "Paso 7: Servir inmediatamente."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7, 8],
+    "nutritional_info": {
+      "carbohydrates": 4.2,
+      "fiber": 1.8,
+      "sugars": 2.1,
+      "proteins": 22.5,
+      "fats": 20.8,
+      "saturated_fats": 8.9,
+      "unsaturated_fats": 10.2,
+      "potassium_mg": 485.0,
+      "sodium_mg": 320.0
+    }
+  },
+  {
+    "name": "Porridge de avena sin gluten con manzana y canela",
+    "preparation_time": 15,
+    "kcal": 295,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Avena sin gluten",
+        "amount": "40g",
+        "food_id": 9310
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "200ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Manzana",
+        "amount": "1/2 unidad",
+        "food_id": 13039
+      },
+      {
+        "name": "Canela en polvo",
+        "amount": "2g",
+        "food_id": 11025
+      },
+      {
+        "name": "Miel",
+        "amount": "8g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Calentar la leche de almendras en un cazo.",
+      "Paso 2: Añadir la avena y cocinar a fuego medio durante 8-10 minutos.",
+      "Paso 3: Mientras tanto, pelar y cortar la manzana en dados pequeños.",
+      "Paso 4: Añadir la manzana a la avena y cocinar 2 minutos más.",
+      "Paso 5: Endulzar con miel y espolvorear con canela.",
+      "Paso 6: Servir caliente."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 52.8,
+      "fiber": 6.2,
+      "sugars": 22.4,
+      "proteins": 8.5,
+      "fats": 6.8,
+      "saturated_fats": 0.8,
+      "unsaturated_fats": 4.2,
+      "potassium_mg": 285.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Tostadas de pan sin gluten con aguacate y tomate",
+    "preparation_time": 8,
+    "kcal": 245,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Pan, sin gluten",
+        "amount": "2 rebanadas",
+        "food_id": 7130
+      },
+      {
+        "name": "Aguacate",
+        "amount": "1/2 unidad",
+        "food_id": 13004
+      },
+      {
+        "name": "Tomate",
+        "amount": "1/2 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "5ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Sal marina",
+        "amount": "1 pizca",
+        "food_id": 11082
+      }
+    ],
+    "steps": [
+      "Paso 1: Tostar las rebanadas de pan sin gluten.",
+      "Paso 2: Cortar el aguacate por la mitad y extraer la pulpa.",
+      "Paso 3: Machacar el aguacate con un tenedor y aliñar con aceite y sal.",
+      "Paso 4: Cortar el tomate en rodajas finas.",
+      "Paso 5: Untar el aguacate sobre las tostadas y colocar el tomate encima.",
+      "Paso 6: Servir inmediatamente."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 8.2,
+      "sugars": 4.8,
+      "proteins": 6.2,
+      "fats": 12.8,
+      "saturated_fats": 2.1,
+      "unsaturated_fats": 9.5,
+      "potassium_mg": 520.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Smoothie de plátano, espinacas y leche de almendras",
+    "preparation_time": 5,
+    "kcal": 185,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Plátano",
+        "amount": "1 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Espinaca fresca",
+        "amount": "30g",
+        "food_id": 20059
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "200ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Miel",
+        "amount": "5g",
+        "food_id": 31008
+      },
+      {
+        "name": "Hielo",
+        "amount": "4 cubitos",
+        "food_id": 9310
+      }
+    ],
+    "steps": [
+      "Paso 1: Pelar el plátano y cortarlo en trozos.",
+      "Paso 2: Lavar las espinacas.",
+      "Paso 3: Introducir todos los ingredientes en la batidora.",
+      "Paso 4: Triturar hasta obtener una mezcla homogénea y cremosa.",
+      "Paso 5: Servir inmediatamente en un vaso alto."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 32.5,
+      "fiber": 4.2,
+      "sugars": 24.8,
+      "proteins": 4.8,
+      "fats": 3.2,
+      "saturated_fats": 0.5,
+      "unsaturated_fats": 2.1,
+      "potassium_mg": 485.0,
+      "sodium_mg": 25.0
+    }
+  },
+  {
+    "name": "Huevos escalfados sobre puré de calabaza",
+    "preparation_time": 20,
+    "kcal": 220,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Huevo de gallina",
+        "amount": "2 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Calabaza",
+        "amount": "150g",
+        "food_id": 20128
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Nuez moscada",
+        "amount": "1 pizca",
+        "food_id": 11048
+      },
+      {
+        "name": "Sal marina",
+        "amount": "1 pizca",
+        "food_id": 11082
+      }
+    ],
+    "steps": [
+      "Paso 1: Cortar la calabaza en dados y cocerla al vapor durante 15 minutos.",
+      "Paso 2: Triturar la calabaza con aceite, nuez moscada y sal hasta obtener un puré cremoso.",
+      "Paso 3: Calentar agua en una cazuela y añadir un chorrito de vinagre.",
+      "Paso 4: Cascar los huevos uno por uno en un bol pequeño.",
+      "Paso 5: Crear un remolino en el agua y dejar caer los huevos suavemente.",
+      "Paso 6: Cocinar 3-4 minutos y retirar con una espumadera.",
+      "Paso 7: Servir sobre el puré de calabaza."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7],
+    "nutritional_info": {
+      "carbohydrates": 12.8,
+      "fiber": 2.5,
+      "sugars": 6.2,
+      "proteins": 15.8,
+      "fats": 14.2,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 9.5,
+      "potassium_mg": 485.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Crepes de harina de arroz con fresas",
+    "preparation_time": 25,
+    "kcal": 195,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Harina de arroz",
+        "amount": "60g",
+        "food_id": 9520
+      },
+      {
+        "name": "Huevo de gallina",
+        "amount": "1 unidad",
+        "food_id": 22000
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "150ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Fresa",
+        "amount": "80g",
+        "food_id": 13014
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "5ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Mezclar la harina de arroz con el huevo y la leche de almendras.",
+      "Paso 2: Dejar reposar la masa 10 minutos.",
+      "Paso 3: Calentar una sartén antiadherente con un poco de aceite.",
+      "Paso 4: Verter un poco de masa y extenderla por toda la sartén.",
+      "Paso 5: Cocinar por ambos lados hasta que estén doradas.",
+      "Paso 6: Lavar y cortar las fresas en rodajas.",
+      "Paso 7: Rellenar las crepes con las fresas y servir."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7, 6],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 2.8,
+      "sugars": 8.2,
+      "proteins": 8.5,
+      "fats": 6.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 4.8,
+      "potassium_mg": 285.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Bowl de quinoa con frutas y frutos secos",
+    "preparation_time": 10,
+    "kcal": 315,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Quinoa, hervida/cocida en agua, sin sal",
+        "amount": "60g",
+        "food_id": 9341
+      },
+      {
+        "name": "Yogur griego natural",
+        "amount": "100g",
+        "food_id": 19860
+      },
+      {
+        "name": "Arándanos",
+        "amount": "40g",
+        "food_id": 13028
+      },
+      {
+        "name": "Nueces",
+        "amount": "15g",
+        "food_id": 15005
+      },
+      {
+        "name": "Miel",
+        "amount": "8g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Preparar la quinoa según las instrucciones del paquete.",
+      "Paso 2: Dejar enfriar la quinoa completamente.",
+      "Paso 3: Mezclar la quinoa con el yogur griego.",
+      "Paso 4: Añadir los arándanos por encima.",
+      "Paso 5: Picar las nueces y esparcirlas sobre el bowl.",
+      "Paso 6: Drizar con miel y servir frío."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [8, 6],
+    "nutritional_info": {
+      "carbohydrates": 42.8,
+      "fiber": 5.2,
+      "sugars": 18.5,
+      "proteins": 16.8,
+      "fats": 12.5,
+      "saturated_fats": 4.2,
+      "unsaturated_fats": 7.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 65.0
+    }
+  },
+  {
+    "name": "Tortilla española sin gluten con patatas y cebolla",
+    "preparation_time": 30,
+    "kcal": 285,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Huevo de gallina",
+        "amount": "4 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Patata temprana, hervida/cocida en agua, pelada",
+        "amount": "200g",
+        "food_id": 4029
+      },
+      {
+        "name": "Cebolla",
+        "amount": "1/2 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "15ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Sal marina",
+        "amount": "1 pizca",
+        "food_id": 11082
+      }
+    ],
+    "steps": [
+      "Paso 1: Pelar y cortar las patatas en rodajas finas.",
+      "Paso 2: Cortar la cebolla en juliana.",
+      "Paso 3: Calentar el aceite en una sartén y freír las patatas y cebolla a fuego lento.",
+      "Paso 4: Batir los huevos con sal en un bol grande.",
+      "Paso 5: Añadir las patatas y cebolla a los huevos batidos.",
+      "Paso 6: Verter la mezcla en la sartén y cocinar a fuego medio.",
+      "Paso 7: Dar la vuelta con un plato y cocinar el otro lado.",
+      "Paso 8: Servir caliente o fría."
+    ],
+    "meal_times": [3, 2],
+    "diets": [4],
+    "allergens": [7],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 3.2,
+      "sugars": 4.8,
+      "proteins": 18.5,
+      "fats": 12.8,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 8.2,
+      "potassium_mg": 485.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Smoothie bowl de mango y coco",
+    "preparation_time": 8,
+    "kcal": 245,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Mango",
+        "amount": "1/2 unidad",
+        "food_id": 13021
+      },
+      {
+        "name": "Leche de coco",
+        "amount": "100ml",
+        "food_id": 18041
+      },
+      {
+        "name": "Plátano",
+        "amount": "1/2 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Coco rallado",
+        "amount": "10g",
+        "food_id": 15044
+      },
+      {
+        "name": "Granola sin gluten",
+        "amount": "15g",
+        "food_id": 9310
+      }
+    ],
+    "steps": [
+      "Paso 1: Pelar y cortar el mango y el plátano en trozos.",
+      "Paso 2: Congelar la fruta durante 30 minutos.",
+      "Paso 3: Triturar la fruta congelada con la leche de coco.",
+      "Paso 4: Verter en un bol y decorar con coco rallado y granola.",
+      "Paso 5: Servir inmediatamente."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 38.5,
+      "fiber": 4.8,
+      "sugars": 28.2,
+      "proteins": 4.2,
+      "fats": 8.5,
+      "saturated_fats": 6.8,
+      "unsaturated_fats": 1.2,
+      "potassium_mg": 385.0,
+      "sodium_mg": 25.0
+    }
+  },
+  {
+    "name": "Huevos benedictinos sin gluten con espinacas",
+    "preparation_time": 25,
+    "kcal": 320,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Huevo de gallina",
+        "amount": "2 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Pan, sin gluten",
+        "amount": "2 rebanadas",
+        "food_id": 7130
+      },
+      {
+        "name": "Espinaca fresca",
+        "amount": "40g",
+        "food_id": 20059
+      },
+      {
+        "name": "Mantequilla",
+        "amount": "10g",
+        "food_id": 16400
+      },
+      {
+        "name": "Vinagre blanco",
+        "amount": "5ml",
+        "food_id": 11018
+      }
+    ],
+    "steps": [
+      "Paso 1: Tostar las rebanadas de pan sin gluten.",
+      "Paso 2: Lavar y cocinar las espinacas al vapor.",
+      "Paso 3: Preparar los huevos escalfados con vinagre en agua hirviendo.",
+      "Paso 4: Untar mantequilla en las tostadas.",
+      "Paso 5: Colocar las espinacas sobre las tostadas.",
+      "Paso 6: Colocar los huevos escalfados encima.",
+      "Paso 7: Servir inmediatamente."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7, 8],
+    "nutritional_info": {
+      "carbohydrates": 22.5,
+      "fiber": 3.8,
+      "sugars": 2.8,
+      "proteins": 18.5,
+      "fats": 18.8,
+      "saturated_fats": 8.5,
+      "unsaturated_fats": 8.2,
+      "potassium_mg": 385.0,
+      "sodium_mg": 280.0
+    }
+  },
+  {
+    "name": "Pudding de chía con leche de almendras y frutas",
+    "preparation_time": 5,
+    "kcal": 195,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Semillas de chía",
+        "amount": "20g",
+        "food_id": 15047
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "200ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Miel",
+        "amount": "8g",
+        "food_id": 31008
+      },
+      {
+        "name": "Arándanos",
+        "amount": "30g",
+        "food_id": 13028
+      },
+      {
+        "name": "Frambuesa",
+        "amount": "20g",
+        "food_id": 13015
+      }
+    ],
+    "steps": [
+      "Paso 1: Mezclar las semillas de chía con la leche de almendras y miel.",
+      "Paso 2: Dejar reposar en la nevera durante 2 horas o toda la noche.",
+      "Paso 3: Lavar las frutas del bosque.",
+      "Paso 4: Servir el pudding en un vaso y decorar con las frutas.",
+      "Paso 5: Consumir frío."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 22.8,
+      "fiber": 8.5,
+      "sugars": 15.2,
+      "proteins": 6.8,
+      "fats": 8.2,
+      "saturated_fats": 0.8,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 285.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Tostadas francesas sin gluten con canela",
+    "preparation_time": 15,
+    "kcal": 265,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Pan, sin gluten",
+        "amount": "3 rebanadas",
+        "food_id": 7130
+      },
+      {
+        "name": "Huevo de gallina",
+        "amount": "2 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "100ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Canela en polvo",
+        "amount": "3g",
+        "food_id": 11025
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Batir los huevos con la leche de almendras y canela.",
+      "Paso 2: Sumergir las rebanadas de pan en la mezcla.",
+      "Paso 3: Dejar que absorban bien la mezcla.",
+      "Paso 4: Calentar el aceite en una sartén antiadherente.",
+      "Paso 5: Cocinar las tostadas por ambos lados hasta que estén doradas.",
+      "Paso 6: Servir calientes con miel o sirope de arce."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7, 6],
+    "nutritional_info": {
+      "carbohydrates": 32.5,
+      "fiber": 4.2,
+      "sugars": 8.5,
+      "proteins": 12.8,
+      "fats": 10.5,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 285.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Bowl de açaí con granola sin gluten",
+    "preparation_time": 8,
+    "kcal": 285,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Açaí en polvo",
+        "amount": "15g",
+        "food_id": 13028
+      },
+      {
+        "name": "Plátano",
+        "amount": "1 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "150ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Granola sin gluten",
+        "amount": "20g",
+        "food_id": 9310
+      },
+      {
+        "name": "Coco rallado",
+        "amount": "8g",
+        "food_id": 15044
+      }
+    ],
+    "steps": [
+      "Paso 1: Congelar el plátano cortado en rodajas durante 30 minutos.",
+      "Paso 2: Triturar el plátano congelado con el açaí y la leche de almendras.",
+      "Paso 3: Verter en un bol y decorar con granola y coco rallado.",
+      "Paso 4: Servir inmediatamente."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 45.8,
+      "fiber": 6.2,
+      "sugars": 28.5,
+      "proteins": 6.8,
+      "fats": 8.5,
+      "saturated_fats": 4.2,
+      "unsaturated_fats": 3.8,
+      "potassium_mg": 485.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Huevos revueltos con champiñones y hierbas",
+    "preparation_time": 12,
+    "kcal": 195,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Huevo de gallina",
+        "amount": "3 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Champiñones",
+        "amount": "60g",
+        "food_id": 20010
+      },
+      {
+        "name": "Perejil fresco",
+        "amount": "5g",
+        "food_id": 11014
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Ajo",
+        "amount": "1 diente",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Limpiar y cortar los champiñones en láminas.",
+      "Paso 2: Picar el ajo y el perejil finamente.",
+      "Paso 3: Calentar el aceite en una sartén y sofreír el ajo.",
+      "Paso 4: Añadir los champiñones y cocinar hasta que se doren.",
+      "Paso 5: Batir los huevos y añadirlos a la sartén.",
+      "Paso 6: Remover constantemente hasta que estén cuajados.",
+      "Paso 7: Añadir el perejil picado y servir."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7],
+    "nutritional_info": {
+      "carbohydrates": 4.8,
+      "fiber": 1.2,
+      "sugars": 2.8,
+      "proteins": 16.8,
+      "fats": 12.5,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 7.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Porridge de mijo con manzana y canela",
+    "preparation_time": 20,
+    "kcal": 275,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Mijo, cocido, sin sal",
+        "amount": "80g",
+        "food_id": 9331
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "200ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Manzana",
+        "amount": "1/2 unidad",
+        "food_id": 13039
+      },
+      {
+        "name": "Canela en polvo",
+        "amount": "2g",
+        "food_id": 11025
+      },
+      {
+        "name": "Miel",
+        "amount": "8g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer el mijo según las instrucciones del paquete.",
+      "Paso 2: Calentar la leche de almendras en un cazo.",
+      "Paso 3: Añadir el mijo cocido y cocinar a fuego medio 5 minutos.",
+      "Paso 4: Pelar y cortar la manzana en dados pequeños.",
+      "Paso 5: Añadir la manzana al mijo y cocinar 2 minutos más.",
+      "Paso 6: Endulzar con miel y espolvorear con canela.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 48.5,
+      "fiber": 5.8,
+      "sugars": 18.2,
+      "proteins": 8.5,
+      "fats": 6.8,
+      "saturated_fats": 0.8,
+      "unsaturated_fats": 4.2,
+      "potassium_mg": 285.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Tostadas de pan sin gluten con hummus y tomate",
+    "preparation_time": 8,
+    "kcal": 225,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Pan, sin gluten",
+        "amount": "2 rebanadas",
+        "food_id": 7130
+      },
+      {
+        "name": "Garbanzos cocidos",
+        "amount": "60g",
+        "food_id": 20507
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Tomate",
+        "amount": "1/2 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Ajo",
+        "amount": "1 diente",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Tostar las rebanadas de pan sin gluten.",
+      "Paso 2: Triturar los garbanzos con aceite de oliva y ajo.",
+      "Paso 3: Cortar el tomate en rodajas finas.",
+      "Paso 4: Untar el hummus sobre las tostadas.",
+      "Paso 5: Colocar las rodajas de tomate encima.",
+      "Paso 6: Servir inmediatamente."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 32.5,
+      "fiber": 6.8,
+      "sugars": 4.2,
+      "proteins": 8.5,
+      "fats": 8.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Bowl de yogur con granola sin gluten y frutas",
+    "preparation_time": 5,
+    "kcal": 295,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Yogur griego natural",
+        "amount": "150g",
+        "food_id": 19860
+      },
+      {
+        "name": "Granola sin gluten",
+        "amount": "25g",
+        "food_id": 9310
+      },
+      {
+        "name": "Fresa",
+        "amount": "40g",
+        "food_id": 13014
+      },
+      {
+        "name": "Plátano",
+        "amount": "1/2 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Miel",
+        "amount": "8g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Verter el yogur griego en un bol.",
+      "Paso 2: Lavar y cortar las fresas en cuartos.",
+      "Paso 3: Pelar y cortar el plátano en rodajas.",
+      "Paso 4: Añadir las frutas sobre el yogur.",
+      "Paso 5: Esparcir la granola por encima.",
+      "Paso 6: Drizar con miel y servir."
+    ],
+    "meal_times": [3, 4],
+    "diets": [4],
+    "allergens": [8, 6],
+    "nutritional_info": {
+      "carbohydrates": 38.5,
+      "fiber": 4.2,
+      "sugars": 22.8,
+      "proteins": 16.8,
+      "fats": 8.5,
+      "saturated_fats": 4.2,
+      "unsaturated_fats": 3.8,
+      "potassium_mg": 485.0,
+      "sodium_mg": 65.0
+    }
+  },
+  {
+    "name": "Huevos al plato con espinacas y queso",
+    "preparation_time": 15,
+    "kcal": 245,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Huevo de gallina",
+        "amount": "2 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Espinaca fresca",
+        "amount": "50g",
+        "food_id": 20059
+      },
+      {
+        "name": "Queso rallado",
+        "amount": "20g",
+        "food_id": 12120
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Ajo",
+        "amount": "1 diente",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Precalentar el horno a 180°C.",
+      "Paso 2: Lavar y cocinar las espinacas al vapor.",
+      "Paso 3: Picar el ajo finamente.",
+      "Paso 4: Calentar el aceite en una sartén y sofreír el ajo.",
+      "Paso 5: Añadir las espinacas y cocinar 2 minutos.",
+      "Paso 6: Colocar las espinacas en un molde individual.",
+      "Paso 7: Cascar los huevos encima y espolvorear con queso.",
+      "Paso 8: Hornear 8-10 minutos hasta que los huevos estén cuajados."
+    ],
+    "meal_times": [3],
+    "diets": [4],
+    "allergens": [7, 8],
+    "nutritional_info": {
+      "carbohydrates": 4.8,
+      "fiber": 2.2,
+      "sugars": 2.8,
+      "proteins": 18.5,
+      "fats": 16.8,
+      "saturated_fats": 6.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 385.0,
+      "sodium_mg": 280.0
+    }
+  },
+  {
+    "name": "Ensalada de quinoa con pollo y verduras",
+    "preparation_time": 20,
+    "kcal": 385,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Quinoa, hervida/cocida en agua, sin sal",
+        "amount": "80g",
+        "food_id": 9341
+      },
+      {
+        "name": "Pechuga de pollo",
+        "amount": "100g",
+        "food_id": 36017
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Pepino",
+        "amount": "1/2 unidad",
+        "food_id": 20019
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer la quinoa según las instrucciones del paquete.",
+      "Paso 2: Cocinar la pechuga de pollo a la plancha con sal y pimienta.",
+      "Paso 3: Cortar el pollo en tiras finas.",
+      "Paso 4: Cortar el tomate y pepino en dados pequeños.",
+      "Paso 5: Mezclar la quinoa con las verduras y el pollo.",
+      "Paso 6: Aliñar con aceite de oliva y servir frío."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 35.8,
+      "fiber": 4.2,
+      "sugars": 6.8,
+      "proteins": 28.5,
+      "fats": 12.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 485.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Salmón a la plancha con puré de boniato",
+    "preparation_time": 25,
+    "kcal": 420,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Salmón",
+        "amount": "150g",
+        "food_id": 26036
+      },
+      {
+        "name": "Boniato",
+        "amount": "200g",
+        "food_id": 4101
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "12ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Limón",
+        "amount": "1/2 unidad",
+        "food_id": 13009
+      },
+      {
+        "name": "Eneldo fresco",
+        "amount": "5g",
+        "food_id": 11093
+      }
+    ],
+    "steps": [
+      "Paso 1: Pelar y cortar el boniato en dados.",
+      "Paso 2: Cocer el boniato al vapor durante 15 minutos.",
+      "Paso 3: Triturar el boniato con aceite de oliva hasta obtener un puré cremoso.",
+      "Paso 4: Sazonar el salmón con sal, pimienta y zumo de limón.",
+      "Paso 5: Cocinar el salmón a la plancha 4-5 minutos por cada lado.",
+      "Paso 6: Servir el salmón sobre el puré de boniato.",
+      "Paso 7: Decorar con eneldo fresco."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 4.8,
+      "sugars": 8.2,
+      "proteins": 32.5,
+      "fats": 18.8,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 12.5,
+      "potassium_mg": 685.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Ensalada de garbanzos con verduras asadas",
+    "preparation_time": 30,
+    "kcal": 325,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Garbanzos cocidos",
+        "amount": "120g",
+        "food_id": 20507
+      },
+      {
+        "name": "Calabacín",
+        "amount": "1/2 unidad",
+        "food_id": 20020
+      },
+      {
+        "name": "Berenjena",
+        "amount": "1/2 unidad",
+        "food_id": 20053
+      },
+      {
+        "name": "Pimiento rojo",
+        "amount": "1/2 unidad",
+        "food_id": 20087
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "15ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Precalentar el horno a 200°C.",
+      "Paso 2: Cortar todas las verduras en dados medianos.",
+      "Paso 3: Colocar las verduras en una bandeja y aliñar con aceite de oliva.",
+      "Paso 4: Hornear durante 20 minutos hasta que estén doradas.",
+      "Paso 5: Mezclar las verduras asadas con los garbanzos.",
+      "Paso 6: Aliñar con más aceite de oliva y servir templado."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 38.5,
+      "fiber": 12.8,
+      "sugars": 8.5,
+      "proteins": 15.8,
+      "fats": 12.8,
+      "saturated_fats": 1.8,
+      "unsaturated_fats": 9.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Pasta sin gluten con atún y tomate",
+    "preparation_time": 15,
+    "kcal": 385,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Pasta seca, sin gluten, cocida, sin sal",
+        "amount": "100g",
+        "food_id": 9824
+      },
+      {
+        "name": "Atún en aceite de oliva, escurrido",
+        "amount": "80g",
+        "food_id": 26179
+      },
+      {
+        "name": "Tomate",
+        "amount": "2 unidades",
+        "food_id": 20172
+      },
+      {
+        "name": "Ajo",
+        "amount": "2 dientes",
+        "food_id": 11000
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer la pasta sin gluten según las instrucciones del paquete.",
+      "Paso 2: Picar el ajo finamente y cortar los tomates en dados.",
+      "Paso 3: Calentar el aceite en una sartén y sofreír el ajo.",
+      "Paso 4: Añadir los tomates y cocinar hasta que se deshagan.",
+      "Paso 5: Desmenuzar el atún y añadirlo a la salsa.",
+      "Paso 6: Mezclar la pasta con la salsa de tomate y atún.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 45.8,
+      "fiber": 3.2,
+      "sugars": 6.8,
+      "proteins": 28.5,
+      "fats": 12.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 485.0,
+      "sodium_mg": 280.0
+    }
+  },
+  {
+    "name": "Ensalada de lentejas con verduras frescas",
+    "preparation_time": 20,
+    "kcal": 295,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Lentejas cocidas",
+        "amount": "100g",
+        "food_id": 20588
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Pepino",
+        "amount": "1/2 unidad",
+        "food_id": 20019
+      },
+      {
+        "name": "Cebolla morada",
+        "amount": "1/4 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "12ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Escurrir y enjuagar las lentejas cocidas.",
+      "Paso 2: Cortar el tomate y pepino en dados pequeños.",
+      "Paso 3: Cortar la cebolla en juliana fina.",
+      "Paso 4: Mezclar todos los ingredientes en un bol.",
+      "Paso 5: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 6: Dejar reposar 10 minutos antes de servir."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 35.8,
+      "fiber": 8.5,
+      "sugars": 6.8,
+      "proteins": 18.5,
+      "fats": 8.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 485.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Pollo al horno con patatas y romero",
+    "preparation_time": 30,
+    "kcal": 425,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Muslo de pollo",
+        "amount": "150g",
+        "food_id": 36019
+      },
+      {
+        "name": "Patata temprana",
+        "amount": "200g",
+        "food_id": 4029
+      },
+      {
+        "name": "Romero fresco",
+        "amount": "3g",
+        "food_id": 11068
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "12ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Ajo",
+        "amount": "2 dientes",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Precalentar el horno a 200°C.",
+      "Paso 2: Pelar y cortar las patatas en dados medianos.",
+      "Paso 3: Picar el ajo y el romero finamente.",
+      "Paso 4: Aliñar el pollo con aceite, ajo, romero, sal y pimienta.",
+      "Paso 5: Colocar el pollo y las patatas en una bandeja de horno.",
+      "Paso 6: Hornear durante 25 minutos hasta que esté dorado.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 3.8,
+      "sugars": 2.8,
+      "proteins": 32.5,
+      "fats": 18.8,
+      "saturated_fats": 4.2,
+      "unsaturated_fats": 12.5,
+      "potassium_mg": 685.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Ensalada de quinoa con aguacate y tomate",
+    "preparation_time": 15,
+    "kcal": 345,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Quinoa, hervida/cocida en agua, sin sal",
+        "amount": "80g",
+        "food_id": 9341
+      },
+      {
+        "name": "Aguacate",
+        "amount": "1/2 unidad",
+        "food_id": 13004
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Cebolla morada",
+        "amount": "1/4 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer la quinoa según las instrucciones del paquete.",
+      "Paso 2: Cortar el aguacate y tomate en dados pequeños.",
+      "Paso 3: Cortar la cebolla en juliana fina.",
+      "Paso 4: Mezclar la quinoa fría con las verduras.",
+      "Paso 5: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 6: Servir frío."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 38.5,
+      "fiber": 6.8,
+      "sugars": 8.5,
+      "proteins": 8.5,
+      "fats": 16.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 12.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Merluza a la plancha con verduras al vapor",
+    "preparation_time": 20,
+    "kcal": 285,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Merluza",
+        "amount": "150g",
+        "food_id": 26044
+      },
+      {
+        "name": "Brócoli",
+        "amount": "100g",
+        "food_id": 20057
+      },
+      {
+        "name": "Zanahoria",
+        "amount": "1 unidad",
+        "food_id": 13032
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Limón",
+        "amount": "1/2 unidad",
+        "food_id": 13009
+      }
+    ],
+    "steps": [
+      "Paso 1: Cortar el brócoli en ramilletes y la zanahoria en bastones.",
+      "Paso 2: Cocer las verduras al vapor durante 8-10 minutos.",
+      "Paso 3: Sazonar la merluza con sal, pimienta y zumo de limón.",
+      "Paso 4: Cocinar la merluza a la plancha 4-5 minutos por cada lado.",
+      "Paso 5: Servir la merluza con las verduras al vapor.",
+      "Paso 6: Aliñar con aceite de oliva y más zumo de limón."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 12.8,
+      "fiber": 4.2,
+      "sugars": 6.8,
+      "proteins": 28.5,
+      "fats": 8.8,
+      "saturated_fats": 1.8,
+      "unsaturated_fats": 5.8,
+      "potassium_mg": 685.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Ensalada de arroz integral con pollo y verduras",
+    "preparation_time": 25,
+    "kcal": 365,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Arroz integral, cocido",
+        "amount": "100g",
+        "food_id": 9103
+      },
+      {
+        "name": "Pechuga de pollo",
+        "amount": "80g",
+        "food_id": 36017
+      },
+      {
+        "name": "Pimiento rojo",
+        "amount": "1/2 unidad",
+        "food_id": 20087
+      },
+      {
+        "name": "Pepino",
+        "amount": "1/2 unidad",
+        "food_id": 20019
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer el arroz integral según las instrucciones del paquete.",
+      "Paso 2: Cocinar la pechuga de pollo a la plancha y cortarla en tiras.",
+      "Paso 3: Cortar el pimiento y pepino en dados pequeños.",
+      "Paso 4: Mezclar el arroz frío con el pollo y las verduras.",
+      "Paso 5: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 6: Servir frío."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 45.8,
+      "fiber": 3.8,
+      "sugars": 4.2,
+      "proteins": 22.5,
+      "fats": 8.8,
+      "saturated_fats": 1.8,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Tortilla de patatas sin gluten",
+    "preparation_time": 25,
+    "kcal": 285,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Huevo de gallina",
+        "amount": "4 unidades",
+        "food_id": 22000
+      },
+      {
+        "name": "Patata temprana",
+        "amount": "300g",
+        "food_id": 4029
+      },
+      {
+        "name": "Cebolla",
+        "amount": "1/2 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "20ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Sal marina",
+        "amount": "1 pizca",
+        "food_id": 11082
+      }
+    ],
+    "steps": [
+      "Paso 1: Pelar y cortar las patatas en rodajas finas.",
+      "Paso 2: Cortar la cebolla en juliana.",
+      "Paso 3: Calentar el aceite en una sartén y freír las patatas y cebolla a fuego lento.",
+      "Paso 4: Batir los huevos con sal en un bol grande.",
+      "Paso 5: Añadir las patatas y cebolla a los huevos batidos.",
+      "Paso 6: Verter la mezcla en la sartén y cocinar a fuego medio.",
+      "Paso 7: Dar la vuelta con un plato y cocinar el otro lado.",
+      "Paso 8: Servir caliente o fría."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [7],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 3.2,
+      "sugars": 4.8,
+      "proteins": 18.5,
+      "fats": 12.8,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 8.2,
+      "potassium_mg": 485.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Ensalada de espinacas con fresas y nueces",
+    "preparation_time": 10,
+    "kcal": 245,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Espinaca fresca",
+        "amount": "80g",
+        "food_id": 20059
+      },
+      {
+        "name": "Fresa",
+        "amount": "60g",
+        "food_id": 13014
+      },
+      {
+        "name": "Nueces",
+        "amount": "20g",
+        "food_id": 15005
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Vinagre balsámico",
+        "amount": "5ml",
+        "food_id": 11091
+      }
+    ],
+    "steps": [
+      "Paso 1: Lavar y escurrir las espinacas.",
+      "Paso 2: Lavar y cortar las fresas en cuartos.",
+      "Paso 3: Picar las nueces groseramente.",
+      "Paso 4: Mezclar las espinacas con las fresas y nueces.",
+      "Paso 5: Aliñar con aceite de oliva y vinagre balsámico.",
+      "Paso 6: Servir inmediatamente."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 12.8,
+      "fiber": 4.2,
+      "sugars": 8.5,
+      "proteins": 6.8,
+      "fats": 18.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 14.5,
+      "potassium_mg": 485.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Pollo con verduras al wok",
+    "preparation_time": 20,
+    "kcal": 315,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Pechuga de pollo",
+        "amount": "120g",
+        "food_id": 36017
+      },
+      {
+        "name": "Brócoli",
+        "amount": "80g",
+        "food_id": 20057
+      },
+      {
+        "name": "Pimiento rojo",
+        "amount": "1/2 unidad",
+        "food_id": 20087
+      },
+      {
+        "name": "Zanahoria",
+        "amount": "1 unidad",
+        "food_id": 13032
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cortar el pollo en tiras finas.",
+      "Paso 2: Cortar todas las verduras en bastones.",
+      "Paso 3: Calentar el aceite en un wok o sartén grande.",
+      "Paso 4: Cocinar el pollo a fuego alto 3-4 minutos.",
+      "Paso 5: Añadir las verduras y cocinar 5-6 minutos más.",
+      "Paso 6: Sazonar con sal, pimienta y especias al gusto.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 15.8,
+      "fiber": 4.8,
+      "sugars": 8.5,
+      "proteins": 28.5,
+      "fats": 12.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Ensalada de garbanzos con tomate y albahaca",
+    "preparation_time": 15,
+    "kcal": 275,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Garbanzos cocidos",
+        "amount": "100g",
+        "food_id": 20507
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Cebolla morada",
+        "amount": "1/4 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Albahaca fresca",
+        "amount": "5g",
+        "food_id": 11033
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Escurrir y enjuagar los garbanzos.",
+      "Paso 2: Cortar el tomate en dados pequeños.",
+      "Paso 3: Cortar la cebolla en juliana fina.",
+      "Paso 4: Picar la albahaca fresca.",
+      "Paso 5: Mezclar todos los ingredientes en un bol.",
+      "Paso 6: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 7: Servir frío."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 32.5,
+      "fiber": 8.5,
+      "sugars": 6.8,
+      "proteins": 12.8,
+      "fats": 8.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Salmón con quinoa y espinacas",
+    "preparation_time": 25,
+    "kcal": 385,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Salmón",
+        "amount": "120g",
+        "food_id": 26036
+      },
+      {
+        "name": "Quinoa, hervida/cocida en agua, sin sal",
+        "amount": "60g",
+        "food_id": 9341
+      },
+      {
+        "name": "Espinaca fresca",
+        "amount": "60g",
+        "food_id": 20059
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Limón",
+        "amount": "1/2 unidad",
+        "food_id": 13009
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer la quinoa según las instrucciones del paquete.",
+      "Paso 2: Sazonar el salmón con sal, pimienta y zumo de limón.",
+      "Paso 3: Cocinar el salmón a la plancha 4-5 minutos por cada lado.",
+      "Paso 4: Lavar las espinacas y cocinarlas al vapor 2-3 minutos.",
+      "Paso 5: Mezclar la quinoa con las espinacas y aceite de oliva.",
+      "Paso 6: Servir el salmón sobre la mezcla de quinoa y espinacas."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 4.2,
+      "sugars": 2.8,
+      "proteins": 28.5,
+      "fats": 16.8,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 11.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Ensalada de arroz con pollo y verduras",
+    "preparation_time": 20,
+    "kcal": 325,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Arroz basmati, cocido",
+        "amount": "80g",
+        "food_id": 9125
+      },
+      {
+        "name": "Pechuga de pollo",
+        "amount": "80g",
+        "food_id": 36017
+      },
+      {
+        "name": "Pepino",
+        "amount": "1/2 unidad",
+        "food_id": 20019
+      },
+      {
+        "name": "Tomate",
+        "amount": "1/2 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer el arroz basmati según las instrucciones del paquete.",
+      "Paso 2: Cocinar la pechuga de pollo a la plancha y cortarla en dados.",
+      "Paso 3: Cortar el pepino y tomate en dados pequeños.",
+      "Paso 4: Mezclar el arroz frío con el pollo y las verduras.",
+      "Paso 5: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 6: Servir frío."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 38.5,
+      "fiber": 2.8,
+      "sugars": 4.2,
+      "proteins": 22.5,
+      "fats": 8.8,
+      "saturated_fats": 1.8,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Pasta sin gluten con verduras salteadas",
+    "preparation_time": 20,
+    "kcal": 295,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Pasta seca, sin gluten, cocida, sin sal",
+        "amount": "80g",
+        "food_id": 9824
+      },
+      {
+        "name": "Calabacín",
+        "amount": "1/2 unidad",
+        "food_id": 20020
+      },
+      {
+        "name": "Pimiento rojo",
+        "amount": "1/2 unidad",
+        "food_id": 20087
+      },
+      {
+        "name": "Champiñones",
+        "amount": "50g",
+        "food_id": 20010
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer la pasta sin gluten según las instrucciones del paquete.",
+      "Paso 2: Cortar todas las verduras en tiras finas.",
+      "Paso 3: Calentar el aceite en una sartén grande.",
+      "Paso 4: Saltear las verduras a fuego alto 5-6 minutos.",
+      "Paso 5: Añadir la pasta cocida a las verduras.",
+      "Paso 6: Sazonar con sal, pimienta y hierbas al gusto.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 45.8,
+      "fiber": 4.2,
+      "sugars": 6.8,
+      "proteins": 8.5,
+      "fats": 8.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Ensalada de lentejas con atún y verduras",
+    "preparation_time": 15,
+    "kcal": 315,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Lentejas cocidas",
+        "amount": "80g",
+        "food_id": 20588
+      },
+      {
+        "name": "Atún en aceite de oliva, escurrido",
+        "amount": "60g",
+        "food_id": 26179
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Cebolla morada",
+        "amount": "1/4 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Escurrir y enjuagar las lentejas.",
+      "Paso 2: Desmenuzar el atún.",
+      "Paso 3: Cortar el tomate en dados y la cebolla en juliana.",
+      "Paso 4: Mezclar todos los ingredientes en un bol.",
+      "Paso 5: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 6: Servir frío."
+    ],
+    "meal_times": [2],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 6.8,
+      "sugars": 4.2,
+      "proteins": 22.5,
+      "fats": 12.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 485.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Salmón al horno con verduras mediterráneas",
+    "preparation_time": 30,
+    "kcal": 385,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Salmón",
+        "amount": "150g",
+        "food_id": 26036
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Calabacín",
+        "amount": "1/2 unidad",
+        "food_id": 20020
+      },
+      {
+        "name": "Pimiento rojo",
+        "amount": "1/2 unidad",
+        "food_id": 20087
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "12ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Precalentar el horno a 200°C.",
+      "Paso 2: Cortar todas las verduras en dados medianos.",
+      "Paso 3: Colocar las verduras en una bandeja de horno.",
+      "Paso 4: Aliñar las verduras con aceite de oliva, sal y pimienta.",
+      "Paso 5: Hornear las verduras durante 15 minutos.",
+      "Paso 6: Colocar el salmón sobre las verduras y hornear 12-15 minutos más.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [1],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 12.8,
+      "fiber": 3.2,
+      "sugars": 8.5,
+      "proteins": 28.5,
+      "fats": 18.8,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 12.5,
+      "potassium_mg": 685.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Pollo a la plancha con puré de calabaza",
+    "preparation_time": 25,
+    "kcal": 325,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Pechuga de pollo",
+        "amount": "120g",
+        "food_id": 36017
+      },
+      {
+        "name": "Calabaza",
+        "amount": "200g",
+        "food_id": 20128
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Nuez moscada",
+        "amount": "1 pizca",
+        "food_id": 11048
+      },
+      {
+        "name": "Romero fresco",
+        "amount": "2g",
+        "food_id": 11068
+      }
+    ],
+    "steps": [
+      "Paso 1: Pelar y cortar la calabaza en dados.",
+      "Paso 2: Cocer la calabaza al vapor durante 15 minutos.",
+      "Paso 3: Triturar la calabaza con aceite de oliva y nuez moscada.",
+      "Paso 4: Sazonar el pollo con sal, pimienta y romero.",
+      "Paso 5: Cocinar el pollo a la plancha 6-7 minutos por cada lado.",
+      "Paso 6: Servir el pollo sobre el puré de calabaza."
+    ],
+    "meal_times": [1],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 18.5,
+      "fiber": 3.8,
+      "sugars": 8.2,
+      "proteins": 28.5,
+      "fats": 12.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Merluza en papillote con verduras",
+    "preparation_time": 20,
+    "kcal": 245,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Merluza",
+        "amount": "150g",
+        "food_id": 26044
+      },
+      {
+        "name": "Calabacín",
+        "amount": "1/2 unidad",
+        "food_id": 20020
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Limón",
+        "amount": "1/2 unidad",
+        "food_id": 13009
+      }
+    ],
+    "steps": [
+      "Paso 1: Precalentar el horno a 180°C.",
+      "Paso 2: Cortar las verduras en rodajas finas.",
+      "Paso 3: Colocar las verduras en el centro de papel de aluminio.",
+      "Paso 4: Colocar la merluza sobre las verduras.",
+      "Paso 5: Aliñar con aceite de oliva, zumo de limón, sal y pimienta.",
+      "Paso 6: Cerrar el papillote y hornear 15-18 minutos.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [1],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 8.5,
+      "fiber": 2.8,
+      "sugars": 6.8,
+      "proteins": 28.5,
+      "fats": 8.8,
+      "saturated_fats": 1.8,
+      "unsaturated_fats": 5.8,
+      "potassium_mg": 485.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Ternera a la plancha con patatas asadas",
+    "preparation_time": 30,
+    "kcal": 425,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Ternera",
+        "amount": "120g",
+        "food_id": 6530
+      },
+      {
+        "name": "Patata temprana",
+        "amount": "200g",
+        "food_id": 4029
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "12ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Tomillo fresco",
+        "amount": "3g",
+        "food_id": 11070
+      },
+      {
+        "name": "Ajo",
+        "amount": "2 dientes",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Precalentar el horno a 200°C.",
+      "Paso 2: Pelar y cortar las patatas en dados.",
+      "Paso 3: Aliñar las patatas con aceite, tomillo, ajo, sal y pimienta.",
+      "Paso 4: Hornear las patatas durante 25 minutos.",
+      "Paso 5: Sazonar la ternera con sal y pimienta.",
+      "Paso 6: Cocinar la ternera a la plancha 4-5 minutos por cada lado.",
+      "Paso 7: Servir la ternera con las patatas asadas."
+    ],
+    "meal_times": [1],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 3.8,
+      "sugars": 2.8,
+      "proteins": 32.5,
+      "fats": 18.8,
+      "saturated_fats": 6.8,
+      "unsaturated_fats": 10.5,
+      "potassium_mg": 685.0,
+      "sodium_mg": 180.0
+    }
+  },
+  {
+    "name": "Atún a la plancha con ensalada de quinoa",
+    "preparation_time": 20,
+    "kcal": 365,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Atún fresco",
+        "amount": "120g",
+        "food_id": 26076
+      },
+      {
+        "name": "Quinoa, hervida/cocida en agua, sin sal",
+        "amount": "60g",
+        "food_id": 9341
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Pepino",
+        "amount": "1/2 unidad",
+        "food_id": 20019
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer la quinoa según las instrucciones del paquete.",
+      "Paso 2: Cortar el tomate y pepino en dados pequeños.",
+      "Paso 3: Mezclar la quinoa fría con las verduras.",
+      "Paso 4: Aliñar la ensalada con aceite de oliva, sal y pimienta.",
+      "Paso 5: Sazonar el atún con sal y pimienta.",
+      "Paso 6: Cocinar el atún a la plancha 2-3 minutos por cada lado.",
+      "Paso 7: Servir el atún con la ensalada de quinoa."
+    ],
+    "meal_times": [1],
+    "diets": [4],
+    "allergens": [11],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 4.2,
+      "sugars": 6.8,
+      "proteins": 32.5,
+      "fats": 12.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Pollo al horno con verduras de temporada",
+    "preparation_time": 35,
+    "kcal": 345,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Muslo de pollo",
+        "amount": "150g",
+        "food_id": 36019
+      },
+      {
+        "name": "Brócoli",
+        "amount": "100g",
+        "food_id": 20057
+      },
+      {
+        "name": "Zanahoria",
+        "amount": "1 unidad",
+        "food_id": 13032
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "10ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Ajo",
+        "amount": "2 dientes",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Precalentar el horno a 200°C.",
+      "Paso 2: Cortar el brócoli en ramilletes y la zanahoria en bastones.",
+      "Paso 3: Picar el ajo finamente.",
+      "Paso 4: Aliñar el pollo y las verduras con aceite, ajo, sal y pimienta.",
+      "Paso 5: Colocar todo en una bandeja de horno.",
+      "Paso 6: Hornear durante 30 minutos hasta que esté dorado.",
+      "Paso 7: Servir caliente."
+    ],
+    "meal_times": [1],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 15.8,
+      "fiber": 4.8,
+      "sugars": 6.8,
+      "proteins": 28.5,
+      "fats": 12.8,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 8.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Salmón con espinacas y almendras",
+    "preparation_time": 20,
+    "kcal": 365,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Salmón",
+        "amount": "120g",
+        "food_id": 26036
+      },
+      {
+        "name": "Espinaca fresca",
+        "amount": "80g",
+        "food_id": 20059
+      },
+      {
+        "name": "Almendra cruda",
+        "amount": "15g",
+        "food_id": 15000
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Limón",
+        "amount": "1/2 unidad",
+        "food_id": 13009
+      }
+    ],
+    "steps": [
+      "Paso 1: Sazonar el salmón con sal, pimienta y zumo de limón.",
+      "Paso 2: Cocinar el salmón a la plancha 4-5 minutos por cada lado.",
+      "Paso 3: Lavar las espinacas y cocinarlas al vapor 2-3 minutos.",
+      "Paso 4: Picar las almendras groseramente.",
+      "Paso 5: Aliñar las espinacas con aceite de oliva.",
+      "Paso 6: Servir el salmón sobre las espinacas y espolvorear con almendras."
+    ],
+    "meal_times": [1],
+    "diets": [4],
+    "allergens": [11, 6],
+    "nutritional_info": {
+      "carbohydrates": 8.5,
+      "fiber": 3.8,
+      "sugars": 2.8,
+      "proteins": 28.5,
+      "fats": 18.8,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 12.5,
+      "potassium_mg": 585.0,
+      "sodium_mg": 120.0
+    }
+  },
+  {
+    "name": "Ensalada de frutas con yogur griego",
+    "preparation_time": 10,
+    "kcal": 185,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Yogur griego natural",
+        "amount": "100g",
+        "food_id": 19860
+      },
+      {
+        "name": "Fresa",
+        "amount": "50g",
+        "food_id": 13014
+      },
+      {
+        "name": "Plátano",
+        "amount": "1/2 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Arándanos",
+        "amount": "30g",
+        "food_id": 13028
+      },
+      {
+        "name": "Miel",
+        "amount": "5g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Lavar y cortar las fresas en cuartos.",
+      "Paso 2: Pelar y cortar el plátano en rodajas.",
+      "Paso 3: Lavar los arándanos.",
+      "Paso 4: Mezclar todas las frutas en un bol.",
+      "Paso 5: Añadir el yogur griego por encima.",
+      "Paso 6: Drizar con miel y servir frío."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [8],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 3.2,
+      "sugars": 22.8,
+      "proteins": 12.8,
+      "fats": 4.2,
+      "saturated_fats": 2.8,
+      "unsaturated_fats": 1.2,
+      "potassium_mg": 385.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Hummus de garbanzos con crudités",
+    "preparation_time": 15,
+    "kcal": 225,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Garbanzos cocidos",
+        "amount": "100g",
+        "food_id": 20507
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      },
+      {
+        "name": "Zanahoria",
+        "amount": "1 unidad",
+        "food_id": 13032
+      },
+      {
+        "name": "Pepino",
+        "amount": "1/2 unidad",
+        "food_id": 20019
+      },
+      {
+        "name": "Ajo",
+        "amount": "1 diente",
+        "food_id": 11000
+      }
+    ],
+    "steps": [
+      "Paso 1: Triturar los garbanzos con aceite de oliva y ajo.",
+      "Paso 2: Añadir sal y pimienta al gusto.",
+      "Paso 3: Cortar la zanahoria y pepino en bastones.",
+      "Paso 4: Servir el hummus en un bol con las verduras crudas.",
+      "Paso 5: Consumir inmediatamente."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 25.8,
+      "fiber": 6.8,
+      "sugars": 4.2,
+      "proteins": 8.5,
+      "fats": 8.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 6.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Smoothie verde de espinacas y piña",
+    "preparation_time": 8,
+    "kcal": 165,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Espinaca fresca",
+        "amount": "40g",
+        "food_id": 20059
+      },
+      {
+        "name": "Piña",
+        "amount": "80g",
+        "food_id": 13002
+      },
+      {
+        "name": "Plátano",
+        "amount": "1/2 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "150ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Miel",
+        "amount": "5g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Lavar las espinacas.",
+      "Paso 2: Pelar y cortar la piña y plátano en trozos.",
+      "Paso 3: Introducir todos los ingredientes en la batidora.",
+      "Paso 4: Triturar hasta obtener una mezcla homogénea.",
+      "Paso 5: Servir inmediatamente en un vaso alto."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 32.5,
+      "fiber": 4.2,
+      "sugars": 25.8,
+      "proteins": 4.8,
+      "fats": 3.2,
+      "saturated_fats": 0.5,
+      "unsaturated_fats": 2.1,
+      "potassium_mg": 485.0,
+      "sodium_mg": 25.0
+    }
+  },
+  {
+    "name": "Ensalada de quinoa con aguacate y tomate",
+    "preparation_time": 15,
+    "kcal": 285,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Quinoa, hervida/cocida en agua, sin sal",
+        "amount": "60g",
+        "food_id": 9341
+      },
+      {
+        "name": "Aguacate",
+        "amount": "1/2 unidad",
+        "food_id": 13004
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Cebolla morada",
+        "amount": "1/4 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Cocer la quinoa según las instrucciones del paquete.",
+      "Paso 2: Cortar el aguacate y tomate en dados pequeños.",
+      "Paso 3: Cortar la cebolla en juliana fina.",
+      "Paso 4: Mezclar la quinoa fría con las verduras.",
+      "Paso 5: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 6: Servir frío."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 4.8,
+      "sugars": 6.8,
+      "proteins": 6.8,
+      "fats": 12.8,
+      "saturated_fats": 2.1,
+      "unsaturated_fats": 9.5,
+      "potassium_mg": 485.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Yogur con granola sin gluten y frutos rojos",
+    "preparation_time": 5,
+    "kcal": 245,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Yogur griego natural",
+        "amount": "120g",
+        "food_id": 19860
+      },
+      {
+        "name": "Granola sin gluten",
+        "amount": "20g",
+        "food_id": 9310
+      },
+      {
+        "name": "Arándanos",
+        "amount": "40g",
+        "food_id": 13028
+      },
+      {
+        "name": "Frambuesa",
+        "amount": "30g",
+        "food_id": 13015
+      },
+      {
+        "name": "Miel",
+        "amount": "8g",
+        "food_id": 31008
+      }
+    ],
+    "steps": [
+      "Paso 1: Verter el yogur griego en un bol.",
+      "Paso 2: Lavar los frutos rojos.",
+      "Paso 3: Añadir los frutos rojos sobre el yogur.",
+      "Paso 4: Esparcir la granola por encima.",
+      "Paso 5: Drizar con miel y servir."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [8, 6],
+    "nutritional_info": {
+      "carbohydrates": 32.5,
+      "fiber": 3.8,
+      "sugars": 22.8,
+      "proteins": 14.8,
+      "fats": 6.8,
+      "saturated_fats": 3.8,
+      "unsaturated_fats": 2.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 65.0
+    }
+  },
+  {
+    "name": "Ensalada de lentejas con verduras",
+    "preparation_time": 15,
+    "kcal": 225,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Lentejas cocidas",
+        "amount": "80g",
+        "food_id": 20588
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Pepino",
+        "amount": "1/2 unidad",
+        "food_id": 20019
+      },
+      {
+        "name": "Cebolla morada",
+        "amount": "1/4 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "8ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Escurrir y enjuagar las lentejas.",
+      "Paso 2: Cortar el tomate y pepino en dados pequeños.",
+      "Paso 3: Cortar la cebolla en juliana fina.",
+      "Paso 4: Mezclar todos los ingredientes en un bol.",
+      "Paso 5: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 6: Servir frío."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 28.5,
+      "fiber": 6.8,
+      "sugars": 4.2,
+      "proteins": 12.8,
+      "fats": 6.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 4.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 45.0
+    }
+  },
+  {
+    "name": "Smoothie de plátano y cacao",
+    "preparation_time": 5,
+    "kcal": 195,
+    "nutritional_quality_score": 3,
+    "ingredients": [
+      {
+        "name": "Plátano",
+        "amount": "1 unidad",
+        "food_id": 13005
+      },
+      {
+        "name": "Leche de almendras",
+        "amount": "200ml",
+        "food_id": 18107
+      },
+      {
+        "name": "Cacao en polvo",
+        "amount": "8g",
+        "food_id": 18100
+      },
+      {
+        "name": "Miel",
+        "amount": "8g",
+        "food_id": 31008
+      },
+      {
+        "name": "Hielo",
+        "amount": "4 cubitos",
+        "food_id": 9310
+      }
+    ],
+    "steps": [
+      "Paso 1: Pelar el plátano y cortarlo en trozos.",
+      "Paso 2: Introducir todos los ingredientes en la batidora.",
+      "Paso 3: Triturar hasta obtener una mezcla cremosa.",
+      "Paso 4: Servir inmediatamente en un vaso alto."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [6],
+    "nutritional_info": {
+      "carbohydrates": 35.8,
+      "fiber": 4.2,
+      "sugars": 28.5,
+      "proteins": 4.8,
+      "fats": 4.2,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 2.8,
+      "potassium_mg": 485.0,
+      "sodium_mg": 25.0
+    }
+  },
+  {
+    "name": "Ensalada de garbanzos con tomate y albahaca",
+    "preparation_time": 12,
+    "kcal": 195,
+    "nutritional_quality_score": 4,
+    "ingredients": [
+      {
+        "name": "Garbanzos cocidos",
+        "amount": "80g",
+        "food_id": 20507
+      },
+      {
+        "name": "Tomate",
+        "amount": "1 unidad",
+        "food_id": 20172
+      },
+      {
+        "name": "Cebolla morada",
+        "amount": "1/4 unidad",
+        "food_id": 20034
+      },
+      {
+        "name": "Albahaca fresca",
+        "amount": "3g",
+        "food_id": 11033
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "amount": "6ml",
+        "food_id": 17270
+      }
+    ],
+    "steps": [
+      "Paso 1: Escurrir y enjuagar los garbanzos.",
+      "Paso 2: Cortar el tomate en dados pequeños.",
+      "Paso 3: Cortar la cebolla en juliana fina.",
+      "Paso 4: Picar la albahaca fresca.",
+      "Paso 5: Mezclar todos los ingredientes en un bol.",
+      "Paso 6: Aliñar con aceite de oliva, sal y pimienta.",
+      "Paso 7: Servir frío."
+    ],
+    "meal_times": [4],
+    "diets": [4],
+    "allergens": [],
+    "nutritional_info": {
+      "carbohydrates": 22.5,
+      "fiber": 6.8,
+      "sugars": 4.2,
+      "proteins": 8.5,
+      "fats": 6.8,
+      "saturated_fats": 1.2,
+      "unsaturated_fats": 4.8,
+      "potassium_mg": 385.0,
+      "sodium_mg": 45.0
+    }
+  }
+]

@@ -36,6 +36,6 @@ export class RecipeSlideComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.points = 4 - this.recipe.value;
+    this.points = 4 - (this.recipe.value || 0);
   }
 }
