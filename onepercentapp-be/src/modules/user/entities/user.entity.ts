@@ -29,6 +29,7 @@ import {NutritionPreference} from "../../plan/entities/nutritionPreference";
 import {UserActivity} from "../../user-activity/entities/userActivity.entity";
 import {UserActivityTarget} from "../../user-activity/entities/userActivityTarget.entity";
 import {UserHydration} from "../../user-hydration/entities/user-hydration.entity";
+import {UserMeal} from "../../user-meal/entities/user-meal.entity";
 
 @Entity()
 export class User {
@@ -226,4 +227,7 @@ export class User {
 
     @OneToMany(() => UserHydration, (uh) => uh.user)
     userHydrations: UserHydration[];
+
+    @OneToMany(() => UserMeal, (um) => um.user)
+    userMeals: UserMeal[];
 }

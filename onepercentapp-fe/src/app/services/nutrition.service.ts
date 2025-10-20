@@ -28,19 +28,15 @@ export class NutritionService {
   private readonly basePath = '/nutrition';
   private apiCallService = inject(ApiCallService);
 
-  // Ingredientes mokeados para usar en toda la app
-  private mockIngredients = [
-    { name: 'Arroz blanco', quantity: 100, unit: 'gramos', kcal: 350 },
-    { name: 'Pechuga de pollo', quantity: 150, unit: 'gramos', kcal: 165 },
-    { name: 'Aceite de oliva', quantity: 10, unit: 'mililitros', kcal: 90 }
-  ];
+  // Ingredientes temporales para el registro de comida
+  private tempIngredients: any[] = [];
 
   getIngredients(): any[] {
-    return this.mockIngredients;
+    return this.tempIngredients;
   }
 
   getIngredientByIndex(index: number): any {
-    return this.mockIngredients[index];
+    return this.tempIngredients[index];
   }
 
   getNutritionData(type: 'split' | 'water' | 'fruit'): Observable<number> {
@@ -178,6 +174,18 @@ searchIngredients(query: string): Observable<any[]> {
       }
       // Si no hay datos, devuelve array vacío
       return [];
+    })
+  );
+}
+
+saveMealRecord(mealData: { mealType: string; ingredients: any[]; date?: string }): Observable<any> {
+  return this.apiCallService.post<any>('/user-meal', mealData).pipe(
+    map(response => {
+      // El backend devuelve { statusCode: 201, data: {...} }
+      if (response && response.data) {
+        return response.data;
+      }
+      return response;
     })
   );
 }

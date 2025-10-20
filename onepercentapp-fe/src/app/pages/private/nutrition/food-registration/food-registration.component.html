@@ -78,7 +78,7 @@
 
   <ion-footer>
     <div class="button-container">
-      <ion-button expand="block" class="btn-dark" [disabled]="!selectedMealTitle">
+      <ion-button expand="block" class="btn-dark" [disabled]="!canSave" (click)="saveMeal()">
         {{ 'FOOD_REGISTRATION.SAVE_BUTTON' | translate }}
       </ion-button>
     </div>

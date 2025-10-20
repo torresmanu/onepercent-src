@@ -9,6 +9,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.meal-card:hover {
+  background-color: rgba(151, 191, 96, 0.1);
 }
 
 .meal-card.selected {

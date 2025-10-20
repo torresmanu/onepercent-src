@@ -28,13 +28,14 @@ export class SelectMealModalComponent {
   constructor(private modalController: ModalController) { }
 
   onSelectionChange(selected: number | null) {
+    console.log('Selection changed in modal:', selected);
     this.selected = selected;
   }
 
 
   confirm() {
+    console.log('Confirming with selected meal ID:', this.selected);
     this.modalController.dismiss(this.selected, 'confirm');
-    console.log('Selected meal ID:', this.selected);
   }
 
 
