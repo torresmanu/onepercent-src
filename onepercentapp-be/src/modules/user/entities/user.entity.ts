@@ -28,6 +28,7 @@ import {Intolerance} from "../../plan/entities/intolerance";
 import {NutritionPreference} from "../../plan/entities/nutritionPreference";
 import {UserActivity} from "../../user-activity/entities/userActivity.entity";
 import {UserActivityTarget} from "../../user-activity/entities/userActivityTarget.entity";
+import {UserHydration} from "../../user-hydration/entities/user-hydration.entity";
 
 @Entity()
 export class User {
@@ -222,4 +223,7 @@ export class User {
 
     @OneToMany(() => UserActivityTarget, (uat) => uat.user)
     userActivityTargets: UserActivityTarget[];
+
+    @OneToMany(() => UserHydration, (uh) => uh.user)
+    userHydrations: UserHydration[];
 }

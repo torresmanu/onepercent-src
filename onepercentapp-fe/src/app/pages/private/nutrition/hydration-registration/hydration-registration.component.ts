@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { IonicModule, } from "@ionic/angular";
+import { IonicModule } from "@ionic/angular";
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from "src/app/shared/components/header/header.component";
 import { InputCardComponent } from "./input-card/input-card.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { HydrationService } from 'src/app/services/hydratation.service';
+import { ToastService } from 'src/app/services/toast.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -14,18 +16,20 @@ import { HydrationService } from 'src/app/services/hydratation.service';
     TranslateModule,
     HeaderComponent,
     InputCardComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   selector: 'app-hydration-registration',
   templateUrl: './hydration-registration.component.html',
   styleUrls: ['./hydration-registration.component.scss']
 })
-
 export class HydrationRegistrationComponent {
   private hydrationService = inject(HydrationService);
+  private toastService = inject(ToastService);
+  private router = inject(Router);
 
   selected: number | null = null;
-  constructor(private router: Router) { }
+  isLoading = false;
 
   goBack() {
     this.router.navigate(['/private/nutrition']);
@@ -36,8 +40,20 @@ export class HydrationRegistrationComponent {
   }
 
   registerHydration() {
-    if (this.selected !== null) {
-      this.hydrationService.sendHydrationStatus(this.selected);
+    if (this.selected !== null && !this.isLoading) {
+      this.isLoading = true;
+      this.hydrationService.sendHydrationStatus(this.selected)
+        .subscribe({
+          next: () => {
+            this.toastService.presentToastSuccess('Hidratación registrada exitosamente');
+            this.router.navigate(['/private/nutrition']);
+          },
+          error: (error) => {
+            this.isLoading = false;
+            console.error('Error registering hydration:', error);
+            this.toastService.presentToastDanger('Error al registrar la hidratación');
+          }
+        });
     }
   }
 }

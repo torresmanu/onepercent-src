@@ -10,8 +10,9 @@
   </div>
 
   <div class="button-container">
-    <ion-button expand="block" class="btn-dark" [disabled]="selected === null" (click)="registerHydration()">
-      {{ 'HYDRATION_REGISTRATION.REGISTRATION.BUTTON' | translate }}
+    <ion-button expand="block" class="btn-dark" [disabled]="selected === null || isLoading" (click)="registerHydration()">
+      <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+      <span *ngIf="!isLoading">{{ 'HYDRATION_REGISTRATION.REGISTRATION.BUTTON' | translate }}</span>
     </ion-button>
   </div>
 </ion-content>
