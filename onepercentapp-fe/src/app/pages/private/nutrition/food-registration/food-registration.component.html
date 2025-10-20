@@ -63,7 +63,10 @@
     <div [hidden]="selectedTab() !== 'recientes'">
       <div class="content">
         <ng-container *ngIf="recentMeals.length > 0; else noRecentMeals">
-          <div class="meal-card" *ngFor="let meal of recentMeals; let i = index">
+          <div class="meal-card" 
+               *ngFor="let meal of recentMeals; let i = index"
+               [class.selected]="isRecentMealSelected(i)"
+               (click)="selectRecentMeal(i)">
             <div class="meal-header">
               <div class="meal-info">
                 <div class="meal-type">{{ meal.mealType }}</div>

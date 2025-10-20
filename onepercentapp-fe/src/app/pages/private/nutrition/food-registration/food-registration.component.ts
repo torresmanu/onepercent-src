@@ -39,6 +39,7 @@ export class FoodRegistrationComponent implements OnInit {
   meals: any[] = [];
   recentMeals: any[] = [];
   selectedTab = signal<string>('registrando');
+  selectedRecentMealIndex: number | null = null;
 
   get ingredients() {
     return this.nutritionService.getIngredients();
@@ -47,8 +48,9 @@ export class FoodRegistrationComponent implements OnInit {
   get canSave(): boolean {
     const hasTitle = !!this.selectedMealTitle;
     const hasIngredients = this.ingredients.length > 0;
-    console.log('Can save check:', { hasTitle, hasIngredients, selectedMealTitle: this.selectedMealTitle, ingredientsLength: this.ingredients.length });
-    return hasTitle && hasIngredients;
+    const hasSelectedRecentMeal = this.selectedTab() === 'recientes' && this.selectedRecentMealIndex !== null && hasTitle;
+    console.log('Can save check:', { hasTitle, hasIngredients, hasSelectedRecentMeal, selectedMealTitle: this.selectedMealTitle, ingredientsLength: this.ingredients.length });
+    return (hasTitle && hasIngredients) || hasSelectedRecentMeal;
   }
 
   constructor() {}
@@ -130,11 +132,46 @@ export class FoodRegistrationComponent implements OnInit {
     this.navCtrl.navigateForward(['/private/edit-ingredient', index]);
   }
 
+  selectRecentMeal(index: number) {
+    // Toggle selection - if clicking the same meal, deselect it
+    if (this.selectedRecentMealIndex === index) {
+      this.selectedRecentMealIndex = null;
+      this.selectedMealTitle = null;
+    } else {
+      this.selectedRecentMealIndex = index;
+      this.selectedMealTitle = this.recentMeals[index].mealType;
+    }
+  }
+
+  isRecentMealSelected(index: number): boolean {
+    return this.selectedRecentMealIndex === index;
+  }
+
   async saveMeal() {
-    // Validar que hay ingredientes y comida seleccionada
-    if (!this.selectedMealTitle || this.ingredients.length === 0) {
-      await this.showToast('Por favor selecciona una comida y agrega al menos un ingrediente', 'warning');
+    // Validar que hay un tipo de comida seleccionado
+    if (!this.selectedMealTitle) {
+      await this.showToast('Por favor selecciona una comida', 'warning');
       return;
+    }
+
+    // Determinar qué ingredientes usar
+    let ingredientsToSave: any[] = [];
+    
+    // Si estamos en la pestaña de recientes y hay una comida seleccionada
+    if (this.selectedTab() === 'recientes' && this.selectedRecentMealIndex !== null) {
+      const selectedMeal = this.recentMeals[this.selectedRecentMealIndex];
+      if (!selectedMeal || !selectedMeal.ingredients || selectedMeal.ingredients.length === 0) {
+        await this.showToast('La comida seleccionada no tiene ingredientes', 'warning');
+        return;
+      }
+      ingredientsToSave = selectedMeal.ingredients;
+    } else {
+      // Validar que hay ingredientes
+      if (this.ingredients.length === 0) {
+        await this.showToast('Por favor agrega al menos un ingrediente', 'warning');
+        return;
+      }
+      ingredientsToSave = this.ingredients;
     }
 
     const loading = await this.loadingCtrl.create({
@@ -145,8 +182,8 @@ export class FoodRegistrationComponent implements OnInit {
     // Preparar los datos para enviar al backend
     const mealData = {
       mealType: this.selectedMealTitle,
-      ingredients: this.ingredients.map((ing: any) => ({
-        id: ing.id,
+      ingredients: ingredientsToSave.map((ing: any) => ({
+        id: ing.ingredient?.id || ing.id,
         quantity: ing.quantity,
         unit: ing.unit,
         kcal: ing.kcal
@@ -161,6 +198,7 @@ export class FoodRegistrationComponent implements OnInit {
         // Limpiar los ingredientes después de guardar
         this.nutritionService.getIngredients().length = 0;
         this.selectedMealTitle = null;
+        this.selectedRecentMealIndex = null;
         
         // Recargar las meals recientes
         this.loadRecentMeals();

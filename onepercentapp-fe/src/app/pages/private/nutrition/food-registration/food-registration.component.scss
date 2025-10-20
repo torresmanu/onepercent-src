@@ -194,6 +194,13 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 1rem; // 16px
   margin-bottom: 1rem; // 16px
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  
+  &.selected {
+    border-color: #97bf60;
+  }
   
   .meal-header {
     display: flex;
