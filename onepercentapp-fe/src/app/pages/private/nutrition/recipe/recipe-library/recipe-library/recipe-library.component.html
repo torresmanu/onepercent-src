@@ -1,18 +1,16 @@
 <ion-header>
   <ion-toolbar class="ion-no-border ion-no-shadow">
-    <div class="header">
-      <ion-buttons slot="start">
-        <ion-back-button
-          class="back-button"
-          defaultHref="/nutrition"
-          mode="md"
-          icon="../../../../../../assets/icon/backArrow.svg"
-
-        ></ion-back-button>
-      </ion-buttons>
-      <h1 class="title">Biblioteca de recetas</h1>
-      <ion-buttons slot="end"> </ion-buttons>
-    </div>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/nutrition" 
+        icon="arrow-back-outline" 
+        text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="header-title">Biblioteca de recetas</ion-title>
+    <ion-buttons slot="end">
+      <!-- Empty slot to keep title centered -->
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
