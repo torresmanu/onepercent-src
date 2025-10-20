@@ -1,0 +1,192 @@
+// Dark theme background
+ion-content {
+  --background: #1a1a1a;
+  --color: #fff;
+}
+
+ion-header {
+  ion-toolbar {
+    --background: #1a1a1a;
+    --color: #fff;
+    --border-color: transparent;
+    
+    // Ensure button area is visible
+    ion-buttons {
+      --background: transparent;
+    }
+  }
+}
+
+// Header title typography - centered
+ion-toolbar {
+  ion-title {
+    text-align: center;
+  }
+  
+  // Consistent spacing for start buttons like other components
+  ion-buttons[slot="start"] {
+    width: 60px;
+    padding-left: 4px; // Add explicit padding to move button away from edge
+  }
+  
+  // Style the back button to be visible
+  ion-back-button {
+    --color: #fff;
+    --icon-color: #fff;
+    --icon-font-size: 24px;
+    --padding-start: 16px; // Additional padding for the button itself
+  }
+}
+
+.header-title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+}
+
+// Main container
+.nutritional-container {
+  padding: 1.5rem;
+  background: #1a1a1a;
+  min-height: calc(100vh - 56px);
+  color: #fff;
+}
+
+// Recipe title
+.recipe-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px dotted #fff;
+  border-spacing: 4px; // More spaced dots
+
+  h1 {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #fff;
+    margin: 0;
+    flex: 1;
+  }
+
+  .favorite-button {
+    margin-left: 1rem;
+    
+    ion-icon {
+      color: #fff;
+    }
+  }
+}
+
+// Nutritional list container
+.nutritional-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// Nutrition groups with proper spacing and borders
+.nutrition-group {
+  margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Section titles with spaced dotted borders
+.section-title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #fff;
+  margin: 1.5rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dotted #fff;
+  border-spacing: 4px; // More spaced dots
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// Add borders between nutritional groups
+.nutrition-group:not(:last-child) {
+  border-bottom: 2px dotted #fff;
+  border-spacing: 4px;
+  padding-bottom: 1rem;
+}
+
+// Individual nutrition items
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  // Remove individual borders - borders will be handled by section groups
+
+  .nutrition-label {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #fff;
+  }
+
+  .nutrition-value {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #fff;
+  }
+}
+
+// Special styling for calories (first item)
+.nutrition-item:first-of-type {
+  .nutrition-label,
+  .nutrition-value {
+    font-weight: 600; // Make calories slightly bolder
+  }
+}
+
+// Loading state
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 2rem;
+
+  ion-spinner {
+    margin-bottom: 1rem;
+    --color: #fff;
+  }
+
+  p {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+  }
+}

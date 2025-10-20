@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref (click)="goBack()" icon="arrow-back-outline" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header-title">Información nutricional</ion-title>
+    <ion-buttons slot="end">
+      <!-- Empty slot to keep title centered -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="nutritional-content">
+  <div class="nutritional-container">
+    <!-- Recipe Title -->
+    <div class="recipe-title">
+      <h1>{{ recipe.name || recipe.title }}</h1>
+      <ion-button (click)="toggleFavorite()" fill="clear" class="favorite-button">
+        <ion-icon name="heart-outline" color="light"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="!nutritionalData" class="loading-container">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Cargando información nutricional...</p>
+    </div>
+
+    <!-- Nutritional Information -->
+    <div class="nutritional-list" *ngIf="nutritionalData">
+      <!-- Calories Group -->
+      <div class="nutrition-group">
+        <div class="nutrition-item">
+          <span class="nutrition-label">Calorías</span>
+          <span class="nutrition-value">{{ nutritionalData?.calories || 0 }} kcal</span>
+        </div>
+      </div>
+
+      <!-- Carbohydrates Section -->
+      <div class="nutrition-group">
+        <div class="section-title">Carbohidratos</div>
+        <div class="nutrition-item">
+          <span class="nutrition-label">Fibra</span>
+          <span class="nutrition-value">{{ nutritionalData?.carbohydrates?.fiber || 0 }} g</span>
+        </div>
+        <div class="nutrition-item">
+          <span class="nutrition-label">Azúcares</span>
+          <span class="nutrition-value">{{ nutritionalData?.carbohydrates?.sugars || 0 }} g</span>
+        </div>
+      </div>
+
+      <!-- Proteins Section -->
+      <div class="nutrition-group">
+        <div class="section-title">Proteínas</div>
+        <!-- No individual protein item since it's the same as section title -->
+      </div>
+
+      <!-- Fats Section -->
+      <div class="nutrition-group">
+        <div class="section-title">Grasas</div>
+        <div class="nutrition-item">
+          <span class="nutrition-label">Grasas saturadas</span>
+          <span class="nutrition-value">{{ nutritionalData?.fats?.saturated || 0 }} g</span>
+        </div>
+        <div class="nutrition-item">
+          <span class="nutrition-label">Grasas no saturadas</span>
+          <span class="nutrition-value">{{ nutritionalData?.fats?.unsaturated || 0 }} g</span>
+        </div>
+      </div>
+
+      <!-- Other Section -->
+      <div class="nutrition-group">
+        <div class="section-title">Otros</div>
+        <div class="nutrition-item" *ngIf="nutritionalData?.other?.potassium">
+          <span class="nutrition-label">Potasio</span>
+          <span class="nutrition-value">{{ nutritionalData?.other?.potassium || 0 }} mg</span>
+        </div>
+        <div class="nutrition-item" *ngIf="nutritionalData?.other?.sodium">
+          <span class="nutrition-label">Sodio</span>
+          <span class="nutrition-value">{{ nutritionalData?.other?.sodium || 0 }} mg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -53,13 +53,13 @@
           <img
             *ngFor="let n of [].constructor(recipe.value || 0); let i = index"
             src="../../../../../../assets/imgs/nutrition/traffic-light-on.svg"
-            style="width: 16px; height: 16px"
+            style="width: 20px; height: 20px; margin-right: 2px"
             alt="on"
           />
           <img
             *ngFor="let n of [].constructor(4 - (recipe.value || 0)); let i = index"
             src="../../../../../../assets/imgs/nutrition/traffic-light-off.svg"
-            style="width: 16px; height: 16px"
+            style="width: 20px; height: 20px; margin-right: 2px"
             alt="off"
           />
         </span>
@@ -74,8 +74,9 @@
   [style.color]="getTextColor(recipe.section)"
   [style.--border-color]="getTextColor(recipe.section)"
   class="nutritional-button"
+  (click)="openNutritionalInfo()"
 >
-  <ion-icon [style.color]="getQuialityColor(recipe.section)" name="information-circle-outline" slot="start"></ion-icon>
+  <ion-icon [style.color]="getQuialityColor(recipe.section)" name="information-circle-outline" slot="start" style="font-size: 24px; width: 24px; height: 24px;"></ion-icon>
   Información nutricional
   <ion-icon [style.color]="getTextColor(recipe.category)" name="chevron-forward-outline" slot="end"></ion-icon>
 </ion-button>

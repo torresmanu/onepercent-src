@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
@@ -38,6 +38,7 @@ export class RecipeDetailComponent implements OnInit {
   private readonly router = inject(Router);
   private readonly recipeService = inject(RecipeService);
   private readonly modalService = inject(ModalService);
+  private readonly location = inject(Location);
 
   ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -46,8 +47,6 @@ export class RecipeDetailComponent implements OnInit {
     if (!isNaN(id)) {
       this.recipeService.getRecipeById(id).subscribe({
         next: (data) => {
-          console.log('Recipe data received:', data);
-          console.log('Recipe steps:', data.recipeSteps);
           this.recipe = {
             ...data,
             image: data.image || this.getDefaultImageForSection(data.section),
@@ -130,7 +129,11 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.navCtrl.navigateBack('/private/home');
+    this.location.back();
+  }
+
+  openNutritionalInfo() {
+    this.router.navigate(['/private/nutritional-info', this.recipe.id]);
   }
 
   setFavourite() {

@@ -21,6 +21,7 @@ import { ProFormResultsComponent } from './plans/plan-form/pro-results/pro-form-
 import { ProgresDayComponent } from './nutrition/progres-day/progres-day.component';
 import { RecipeDetailComponent } from './nutrition/recipes/recipeDetail/recipeDetail.component';
 import { RecipeStepsComponent } from './nutrition/recipes/recipe-steps/recipe-steps.component';
+import { NutritionalInfoComponent } from './nutrition/nutritional-info/nutritional-info.component';
 import { EditIngredientComponent } from './nutrition/food-registration/edit-ingredient/edit-ingredient.component';
 import { HealtTestComponent } from './healt-test/healt-test.component';
 
@@ -112,6 +113,10 @@ export const privateRoutes: Routes = [
   {
     path: 'recipe-steps/:id',
     component: RecipeStepsComponent,
+  },
+  {
+    path: 'nutritional-info/:id',
+    component: NutritionalInfoComponent,
   },
   {
     path: 'confirmation-of-terms',

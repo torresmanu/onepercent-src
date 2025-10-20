@@ -14,10 +14,7 @@ export class RecipesStepsCardComponent implements OnInit {
   @Output() openModalStepRecipe = new EventEmitter<{ steps: any[], stepNumber: number }>();
 
   ngOnInit() {
-    console.log('Steps received in component:', this.steps);
-    this.steps.forEach((step, index) => {
-      console.log(`Step ${index}:`, step);
-    });
+    // Component initialization
   }
 
   openModalStepRecipes(steps: any, stepNumber: number) {

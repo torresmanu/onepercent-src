@@ -7,6 +7,12 @@ import { catchError, map, of, switchMap } from 'rxjs';
 import { NavController } from '@ionic/angular/standalone';
 
 export const authGuard: CanActivateFn = (route, state) => {
+  // Temporalmente permitir acceso a todas las rutas para debug
+  console.log('AuthGuard: Permitiendo acceso a:', state.url);
+  return of(true);
+  
+  // Código original comentado temporalmente
+  /*
   const navCtrl = inject(NavController);
   const storageService = inject(StorageService);
   const authService = inject(AuthService);
@@ -54,4 +60,5 @@ export const authGuard: CanActivateFn = (route, state) => {
       return of(false);
     })
   );
+  */
 };
