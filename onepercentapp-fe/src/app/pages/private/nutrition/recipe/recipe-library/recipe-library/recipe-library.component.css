@@ -81,3 +81,35 @@ ion-radio::part(label) {
 ion-radio.radio-checked {
   background: var(--ion-color-primary);
 }
+
+/* Hide the inner radio element that's causing the visual issue */
+ion-radio::part(native) {
+  display: none;
+}
+
+ion-radio::part(container) .radio-inner {
+  display: none;
+}
+
+.radio-inner {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Additional styles to ensure no visual artifacts */
+ion-radio-group ion-radio .radio-inner {
+  display: none !important;
+}
+
+ion-radio-group .radio-inner {
+  display: none !important;
+}
+
+/* Ensure the radio buttons look clean without inner elements */
+ion-radio.time-chip::part(container) {
+  position: relative;
+  overflow: hidden;
+}
