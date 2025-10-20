@@ -1,5 +1,5 @@
-<ion-radio-group [(ngModel)]="selectedIndex" (ionChange)="selectionChange.emit(selectedIndex)">
-    <div class="meal-card" *ngFor="let meal of meals; let i = index" [class.selected]="selectedIndex === i">
+<ion-radio-group [(ngModel)]="selectedIndex" (ionChange)="onMealChange()">
+    <div class="meal-card" *ngFor="let meal of meals; let i = index" [class.selected]="selectedIndex === i" (click)="selectMeal(i)">
         <div class="title">
             <img [src]="meal.icon" [alt]="meal.title" class="meal-icon" />
             <div class="meal-title">{{ meal.title }}</div>
