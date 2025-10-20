@@ -24,20 +24,31 @@ export class EditIngredientComponent implements OnInit {
   route = inject(ActivatedRoute);
   nutritionService = inject(NutritionService);
   ingredient: any;
-  isFavorited = false;
-  animateHeart = false;
 
   ngOnInit() {
     const index = Number(this.route.snapshot.paramMap.get('id'));
     this.ingredient = this.nutritionService.getIngredientByIndex(index);
+    
+    // Initialize with default values if not present
+    if (!this.ingredient.quantity) {
+      this.ingredient.quantity = 100;
+    }
+    if (!this.ingredient.unit) {
+      this.ingredient.unit = 'Gramos';
+    }
+    if (!this.ingredient.kcal) {
+      this.ingredient.kcal = 220;
+    }
   }
 
-  toggleFavorite() {
-    this.isFavorited = !this.isFavorited;
-    this.animateHeart = true;
+  onQuantityChange() {
+    // Recalculate calories based on quantity if needed
+    // This could be expanded to update calories dynamically
+  }
 
-    setTimeout(() => {
-      this.animateHeart = false;
-    }, 300);
+  onSaveChanges() {
+    // Implement save logic here
+    console.log('Saving ingredient changes:', this.ingredient);
+    // Navigate back or show success message
   }
 }
