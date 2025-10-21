@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar class="ion-no-border ion-no-shadow">
     <ion-buttons slot="start">
-      <ion-back-button 
-        defaultHref="/nutrition" 
-        icon="arrow-back-outline" 
-        text="">
-      </ion-back-button>
+      <ion-button (click)="goBack()" fill="clear" aria-label="Volver">
+        <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title class="header-title">Biblioteca de recetas</ion-title>
     <ion-buttons slot="end">

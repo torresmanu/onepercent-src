@@ -3,12 +3,14 @@ import {
   IonHeader,
   IonContent,
   IonButtons,
-  IonBackButton,
+  IonButton,
+  IonIcon,
   IonSearchbar,
   IonRow,
   IonCol,
   IonRadio,
   IonRadioGroup,
+  NavController,
 } from '@ionic/angular/standalone';
 import {
   Component,
@@ -19,7 +21,7 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Location } from '@angular/router';
 import { Recipe, RECETAS } from '@src/app/core/interfaces/recipe';
 import { CommonModule } from '@angular/common';
 import { RecipeSlideComponent } from '../../recipe-slide/recipe-slide/recipe-slide.component';
@@ -34,26 +36,29 @@ import { RecipeSearchComponent } from '../../recipe-search/recipe-search/recipe-
     './recipe-library.component.css',
     '../../../nutrition.component.scss',
   ],
-  imports: [
-    CommonModule,
-    RouterLink,
-    IonCol,
-    IonRow,
-    IonSearchbar,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonButtons,
-    IonBackButton,
-    IonRadioGroup,
-    IonRadio,
-    RecipeSlideComponent,
-    RecipeSearchComponent,
-  ],
+      imports: [
+        CommonModule,
+        RouterLink,
+        IonCol,
+        IonRow,
+        IonSearchbar,
+        IonHeader,
+        IonContent,
+        IonToolbar,
+        IonButtons,
+        IonButton,
+        IonIcon,
+        IonRadioGroup,
+        IonRadio,
+        RecipeSlideComponent,
+        RecipeSearchComponent,
+      ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class RecipeLibraryComponent implements OnInit {
   private recipesService = inject(RecipeService);
+  private navCtrl = inject(NavController);
+  private location = inject(Location);
 
   recipesFavorites: Recipe[] = [];
   recipesBreakfast: Recipe[] = [];
@@ -179,5 +184,10 @@ export class RecipeLibraryComponent implements OnInit {
       
       this.loading.set(false);
     }, 300); // Reduced from 1500ms to 300ms for faster response
+  }
+
+  goBack() {
+    // Use location.back() for more reliable navigation
+    this.location.back();
   }
 }
