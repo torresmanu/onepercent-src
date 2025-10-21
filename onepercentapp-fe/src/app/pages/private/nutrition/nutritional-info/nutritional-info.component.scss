@@ -157,6 +157,24 @@ ion-toolbar {
     vertical-align: middle;
     color: #fff;
   }
+
+  // Main category styling (bold)
+  &.main-category {
+    .nutrition-label,
+    .nutrition-value {
+      font-weight: 600;
+    }
+  }
+
+  // Sub-category styling (indented and normal weight)
+  &.sub-category {
+    padding-left: 1rem;
+    
+    .nutrition-label,
+    .nutrition-value {
+      font-weight: 400;
+    }
+  }
 }
 
 // Special styling for calories (first item)

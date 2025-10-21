@@ -38,12 +38,15 @@
 
       <!-- Carbohydrates Section -->
       <div class="nutrition-group">
-        <div class="section-title">Carbohidratos</div>
-        <div class="nutrition-item">
+        <div class="nutrition-item main-category">
+          <span class="nutrition-label">Carbohidratos</span>
+          <span class="nutrition-value">{{ getNutritionalValue('Carbohidratos') }} g</span>
+        </div>
+        <div class="nutrition-item sub-category">
           <span class="nutrition-label">Fibra</span>
           <span class="nutrition-value">{{ nutritionalData?.carbohydrates?.fiber || 0 }} g</span>
         </div>
-        <div class="nutrition-item">
+        <div class="nutrition-item sub-category">
           <span class="nutrition-label">Azúcares</span>
           <span class="nutrition-value">{{ nutritionalData?.carbohydrates?.sugars || 0 }} g</span>
         </div>
@@ -51,18 +54,23 @@
 
       <!-- Proteins Section -->
       <div class="nutrition-group">
-        <div class="section-title">Proteínas</div>
-        <!-- No individual protein item since it's the same as section title -->
+        <div class="nutrition-item main-category">
+          <span class="nutrition-label">Proteínas</span>
+          <span class="nutrition-value">{{ getNutritionalValue('Proteínas') }} g</span>
+        </div>
       </div>
 
       <!-- Fats Section -->
       <div class="nutrition-group">
-        <div class="section-title">Grasas</div>
-        <div class="nutrition-item">
+        <div class="nutrition-item main-category">
+          <span class="nutrition-label">Grasas</span>
+          <span class="nutrition-value">{{ getNutritionalValue('Grasas') }} g</span>
+        </div>
+        <div class="nutrition-item sub-category">
           <span class="nutrition-label">Grasas saturadas</span>
           <span class="nutrition-value">{{ nutritionalData?.fats?.saturated || 0 }} g</span>
         </div>
-        <div class="nutrition-item">
+        <div class="nutrition-item sub-category">
           <span class="nutrition-label">Grasas no saturadas</span>
           <span class="nutrition-value">{{ nutritionalData?.fats?.unsaturated || 0 }} g</span>
         </div>
@@ -70,12 +78,11 @@
 
       <!-- Other Section -->
       <div class="nutrition-group">
-        <div class="section-title">Otros</div>
-        <div class="nutrition-item" *ngIf="nutritionalData?.other?.potassium">
+        <div class="nutrition-item sub-category" *ngIf="nutritionalData?.other?.potassium">
           <span class="nutrition-label">Potasio</span>
           <span class="nutrition-value">{{ nutritionalData?.other?.potassium || 0 }} mg</span>
         </div>
-        <div class="nutrition-item" *ngIf="nutritionalData?.other?.sodium">
+        <div class="nutrition-item sub-category" *ngIf="nutritionalData?.other?.sodium">
           <span class="nutrition-label">Sodio</span>
           <span class="nutrition-value">{{ nutritionalData?.other?.sodium || 0 }} mg</span>
         </div>

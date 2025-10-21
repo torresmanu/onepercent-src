@@ -109,7 +109,7 @@ export class RecipeDetailComponent implements OnInit {
       case 'Lunch':
         return '#75A042';
       case 'Breakfast':
-        return '#E8B225';
+        return '#131313'; // Changed from #E8B225 to black for breakfast
       case 'Snacks':
         return '#E8B225';
       default:

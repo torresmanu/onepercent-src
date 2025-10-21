@@ -25,7 +25,7 @@ ion-card {
 
 ion-card-header {
   padding: 10px 10px 0px !important;
-  height: 188px; /* extra room to avoid text clipping */
+  height: 200px; /* Increased to accommodate larger title-block */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ ion-card-header {
 /* Enforce 176x87 block for subtitle + title with 8px gap */
 .title-block {
   width: 176px;
-  height: 96px; /* more vertical room for subtitle + 2-line title */
+  height: 110px; /* Further increased to accommodate better line-height for 2-line titles */
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -59,7 +59,7 @@ ion-card-title {
   line-clamp: 2;
   -webkit-box-orient: vertical;
   color: black;
-  line-height: 1.2; /* avoid descender clipping */
+  line-height: 1.4; /* Further increased to prevent second line clipping */
   letter-spacing: 0px;
   margin-bottom: 0;
 }
@@ -75,7 +75,7 @@ ion-card-subtitle {
   line-clamp: 1;
   -webkit-box-orient: vertical;
   color: black;
-  line-height: 1.1;
+  line-height: 1.3; /* Increased from 1.1 to prevent descender clipping */
   letter-spacing: 0px;
   text-transform: none;
   margin-bottom: 0;

@@ -69,18 +69,18 @@
     </div>
 
     <!-- Información nutricional -->
-<ion-button
-  expand="block"
-  fill="outline"
-  [style.color]="getTextColor(recipe.section)"
-  [style.--border-color]="getTextColor(recipe.section)"
+<div
   class="nutritional-button"
+  [style.color]="getTextColor(recipe.section)"
+  [style.border-color]="getTextColor(recipe.section)"
   (click)="openNutritionalInfo()"
 >
-  <ion-icon [style.color]="getQuialityColor(recipe.section)" name="information-circle-outline" slot="start" style="font-size: 24px; width: 24px; height: 24px;"></ion-icon>
-  Información nutricional
-  <ion-icon [style.color]="getTextColor(recipe.category)" name="chevron-forward-outline" slot="end"></ion-icon>
-</ion-button>
+  <div class="nutritional-button-content">
+    <ion-icon [style.color]="getQuialityColor(recipe.section)" name="information-circle-outline" style="font-size: 24px; width: 24px; height: 24px;"></ion-icon>
+    <span>Información nutricional</span>
+  </div>
+  <ion-icon [style.color]="getTextColor(recipe.category)" name="chevron-forward-outline" style="font-size: 24px; width: 24px; height: 24px;"></ion-icon>
+</div>
 
     <!-- Tabs de ingredientes / instrucciones -->
     <ion-segment [(ngModel)]="selectedTab" value="ingredients">
