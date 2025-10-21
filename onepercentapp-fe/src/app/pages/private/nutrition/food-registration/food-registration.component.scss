@@ -65,6 +65,50 @@
   }
 }
 
+// Total registrado section styles
+.total-registered {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; // 16px
+  margin: 1rem 0; // 16px 0
+  background-color: #f8f8f8;
+  border-radius: 0.75rem; // 12px
+  border: 1px solid #e8e8e8;
+
+  .total-label {
+    color: #131313;
+    font-family: Inter;
+    font-size: 1rem; // 16px
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .total-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem; // 16px
+
+    .nutritional-score {
+      display: flex;
+      align-items: center;
+      gap: 0.125rem; // 2px
+
+      img {
+        display: block;
+      }
+    }
+
+    .total-kcal {
+      color: #131313;
+      font-family: Inter;
+      font-size: 1rem; // 16px
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}
+
 .tab-content {
   height: 63%;
   margin-top: 1rem; // 16px

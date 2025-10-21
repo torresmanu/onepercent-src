@@ -53,6 +53,62 @@ export class FoodRegistrationComponent implements OnInit {
     return (hasTitle && hasIngredients) || hasSelectedRecentMeal;
   }
 
+  /**
+   * Calculate total calories from all ingredients
+   */
+  getTotalKcal(): number {
+    return this.ingredients.reduce((total, ingredient) => {
+      return total + (ingredient.kcal || 0);
+    }, 0);
+  }
+
+  /**
+   * Calculate nutritional score based on ingredients
+   * Returns a score from 1-4 based on nutritional quality
+   */
+  getNutritionalScore(): number {
+    if (this.ingredients.length === 0) return 0;
+
+    let score = 0;
+    let totalWeight = 0;
+
+    this.ingredients.forEach(ingredient => {
+      const weight = ingredient.quantity || 0;
+      totalWeight += weight;
+
+      // Calculate individual ingredient score based on nutritional values
+      let ingredientScore = 1; // Base score
+
+      // Protein content bonus (good protein sources get higher score)
+      if (ingredient.protein && ingredient.protein > 10) {
+        ingredientScore += 0.5;
+      }
+
+      // Fiber content bonus
+      if (ingredient.fiber && ingredient.fiber > 3) {
+        ingredientScore += 0.5;
+      }
+
+      // Low saturated fat bonus
+      if (ingredient.fat && ingredient.fat < 5) {
+        ingredientScore += 0.3;
+      }
+
+      // Energy density consideration (lower is better for most foods)
+      const energyDensity = (ingredient.kcal || 0) / (weight || 1);
+      if (energyDensity < 2) {
+        ingredientScore += 0.2;
+      }
+
+      score += ingredientScore * weight;
+    });
+
+    // Normalize score to 1-4 range
+    const normalizedScore = totalWeight > 0 ? (score / totalWeight) : 0;
+    return Math.min(4, Math.max(1, Math.round(normalizedScore)));
+  }
+
+
   constructor() {}
 
   ngOnInit() {

@@ -29,6 +29,28 @@
     </ion-segment>
   </div>
 
+  <!-- Total registrado section -->
+  <div class="total-registered" *ngIf="ingredients.length > 0">
+    <div class="total-label">Total registrado</div>
+    <div class="total-info">
+      <div class="nutritional-score">
+        <img
+          *ngFor="let number of [].constructor(getNutritionalScore()); let i = index"
+          src="../../../../assets/imgs/nutrition/traffic-light-on.svg"
+          style="width: 20px; height: 20px; margin-right: 2px"
+          alt="on"
+        />
+        <img
+          *ngFor="let number of [].constructor(4 - getNutritionalScore()); let i = index"
+          src="../../../../assets/imgs/nutrition/traffic-light-off.svg"
+          style="width: 20px; height: 20px; margin-right: 2px"
+          alt="off"
+        />
+      </div>
+      <div class="total-kcal">{{ getTotalKcal() }} kcal</div>
+    </div>
+  </div>
+
   <div class="tab-content">
     <div [hidden]="selectedTab() !== 'registrando'">
       <div class="content">
