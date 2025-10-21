@@ -69,10 +69,14 @@ export class RecipeLibraryComponent implements OnInit {
   constructor() {
     // Effect to handle search text changes
     effect(() => {
-      console.log('Search text updated:', this.searchText());
       if (this.searchText()) {
         this.recipesService.searchRecipes(this.searchText()).subscribe(recipes => {
-          this.searchedRecipes = recipes;
+          // Apply time filter if one is selected
+          if (this.time > 0) {
+            this.searchedRecipes = recipes.filter(recipe => (recipe.time || 0) <= this.time);
+          } else {
+            this.searchedRecipes = recipes;
+          }
         });
       } else {
         this.searchedRecipes = [];
@@ -84,8 +88,6 @@ export class RecipeLibraryComponent implements OnInit {
       const recipes = this.recipesService.recipesSignal();
       const isLoading = this.recipesService.loadingSignal();
       
-      console.log('Recipe data effect triggered:', { recipesCount: recipes.length, isLoading });
-      
       // Update recipe lists when data changes
       if (recipes.length > 0) {
         this.recipesFavorites = this.recipesService.getFavorites();
@@ -93,18 +95,9 @@ export class RecipeLibraryComponent implements OnInit {
         this.recipesLunch = this.recipesService.getBySection('Lunch');
         this.recipesDinner = this.recipesService.getBySection('Dinner');
         this.recipesSnacks = this.recipesService.getBySection('Snacks');
-        
-        console.log('Recipe lists updated:', {
-          favorites: this.recipesFavorites.length,
-          breakfast: this.recipesBreakfast.length,
-          lunch: this.recipesLunch.length,
-          dinner: this.recipesDinner.length,
-          snacks: this.recipesSnacks.length
-        });
       }
       
       this.loading.set(isLoading);
-      console.log('Loading state set to:', isLoading);
     });
   }
 
@@ -121,8 +114,8 @@ export class RecipeLibraryComponent implements OnInit {
     this.recipesSnacks = this.recipesService.getBySection('Snacks');
   }
 
-  updateSearch(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
+  updateSearch(event: CustomEvent) {
+    const value = event.detail.value;
     this.searchText.set(value);
     // The search is handled in the effect above
   }
@@ -131,32 +124,60 @@ export class RecipeLibraryComponent implements OnInit {
     this.searchText.set('');
   }
 
-  filterTime(event: CustomEvent) {
+  toggleTimeFilter(selectedTime: number) {
+    // If clicking the same filter, deselect it
+    if (this.time === selectedTime) {
+      this.time = 0;
+    } else {
+      this.time = selectedTime;
+    }
+    
+    this.applyTimeFilter();
+  }
+
+  private applyTimeFilter() {
     // Reset the recipes to the original data
     this.setData();
     this.loading.set(true);
 
-    console.log('Selected section:', event.detail.value);
-    this.time = event.detail.value;
+    // If no time filter is selected, show all recipes
+    if (this.time === 0) {
+      this.loading.set(false);
+      // If there's an active search, also clear search results
+      if (this.searchText()) {
+        this.recipesService.searchRecipes(this.searchText()).subscribe(recipes => {
+          this.searchedRecipes = recipes;
+        });
+      }
+      return;
+    }
 
     // Filter recipes based on the selected time
     setTimeout(() => {
       this.recipesFavorites = this.recipesFavorites.filter(
-        (recipe) => recipe.time === this.time
+        (recipe) => (recipe.time || 0) <= this.time
       );
       this.recipesBreakfast = this.recipesBreakfast.filter(
-        (recipe) => recipe.time === this.time
+        (recipe) => (recipe.time || 0) <= this.time
       );
       this.recipesLunch = this.recipesLunch.filter(
-        (recipe) => recipe.time === this.time
+        (recipe) => (recipe.time || 0) <= this.time
       );
       this.recipesDinner = this.recipesDinner.filter(
-        (recipe) => recipe.time === this.time
+        (recipe) => (recipe.time || 0) <= this.time
       );
       this.recipesSnacks = this.recipesSnacks.filter(
-        (recipe) => recipe.time === this.time
+        (recipe) => (recipe.time || 0) <= this.time
       );
+      
+      // If there's an active search, also filter search results
+      if (this.searchText()) {
+        this.recipesService.searchRecipes(this.searchText()).subscribe(recipes => {
+          this.searchedRecipes = recipes.filter(recipe => (recipe.time || 0) <= this.time);
+        });
+      }
+      
       this.loading.set(false);
-    }, 1500);
+    }, 300); // Reduced from 1500ms to 300ms for faster response
   }
 }

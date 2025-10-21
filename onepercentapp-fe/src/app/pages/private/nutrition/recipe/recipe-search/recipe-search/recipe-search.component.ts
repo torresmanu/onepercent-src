@@ -31,7 +31,7 @@ export class RecipeSearchComponent implements OnInit {
   constructor() {
     effect(() => {
       // This effect will run whenever the recipes input changes
-      console.log('Recipes updated:', this.recipes);
+      // Component will automatically re-render when recipes change
     });
   }
 

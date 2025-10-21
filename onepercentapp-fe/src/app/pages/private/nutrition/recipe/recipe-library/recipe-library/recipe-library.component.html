@@ -19,28 +19,39 @@
     placeholder="Buscar recetas"
     debounce="500"
     [value]="searchText()"
-    (input)="updateSearch($event)"
-    (ionCancel)="clearSearch()"
+    (ionInput)="updateSearch($event)"
+    (ionClear)="clearSearch()"
     mode="ios"
   ></ion-searchbar>
 
-  <ion-radio-group
-    class="ion-margin-bottom"
-    (ionChange)="filterTime($event)"
-    mode="ios"
-  >
+  <div class="time-filters ion-margin-bottom">
     <ion-row>
       <ion-col>
-        <ion-radio class="time-chip" [value]="10"> 10 minutos</ion-radio>
+        <ion-button 
+          class="time-chip" 
+          [class.selected]="time === 10"
+          (click)="toggleTimeFilter(10)">
+          10 minutos
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-radio class="time-chip" [value]="20">20 minutos</ion-radio>
+        <ion-button 
+          class="time-chip" 
+          [class.selected]="time === 20"
+          (click)="toggleTimeFilter(20)">
+          20 minutos
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-radio class="time-chip" [value]="30">30 minutos</ion-radio>
+        <ion-button 
+          class="time-chip" 
+          [class.selected]="time === 30"
+          (click)="toggleTimeFilter(30)">
+          30 minutos
+        </ion-button>
       </ion-col>
     </ion-row>
-  </ion-radio-group>
+  </div>
 
   <div [hidden]="searchText() !== ''">
     <div class="recipe-list" [hidden]="loading() === true">

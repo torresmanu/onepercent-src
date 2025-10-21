@@ -39,7 +39,7 @@ ion-toolbar {
   color: #131313;
 }
 
-ion-button.time-chip {
+.time-filters ion-button.time-chip {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,6 +54,13 @@ ion-button.time-chip {
   text-wrap: nowrap;
   color: black;
   box-shadow: 0px 0px 6px 0px rgba(34, 43, 43, 0.2);
+  transition: all 0.2s ease;
+}
+
+.time-filters ion-button.time-chip.selected {
+  --background: #BCDF84;
+  color: #000;
+  box-shadow: 0px 0px 8px 0px rgba(188, 223, 132, 0.4);
 }
 .recipe-library {
   /* Tighten vertical spacing for section headers like "Desayuno", "Comida" */
