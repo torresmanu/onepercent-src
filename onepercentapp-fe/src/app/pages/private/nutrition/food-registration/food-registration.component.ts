@@ -173,18 +173,26 @@ export class FoodRegistrationComponent implements OnInit {
   }
 
   onIngredientSelected(ingredient: any) {
-    // Crear el ingrediente con valores por defecto
+    // Crear el ingrediente con valores por defecto y TODOS los datos nutricionales
     const newIngredient = {
       id: ingredient.id,
       name: ingredient.name,
       quantity: 100,
       unit: 'gramos',
       kcal: ingredient.energy || 0,
-      // Guardar datos adicionales del API
+      // Guardar TODOS los datos nutricionales del API
       energy: ingredient.energy,
       protein: ingredient.protein,
       carbs: ingredient.carbs,
       fat: ingredient.fat,
+      fiber: ingredient.fiber,
+      sugar: ingredient.sugar,
+      saturatedFat: ingredient.saturatedFat,
+      nonSaturatedFat: ingredient.nonSaturatedFat,
+      sodium: ingredient.sodium,
+      potassium: ingredient.potassium,
+      cholesterol: ingredient.cholesterol,
+      salt: ingredient.salt,
       ingredientGroup: ingredient.ingredientGroup
     };
     

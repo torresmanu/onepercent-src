@@ -227,11 +227,19 @@ export class RecipeDetailComponent implements OnInit {
         quantity: adjustedQuantity,
         unit: recipeIngredient.unit || 'gramos',
         kcal: ingredient.energy || 0,
-        // Include additional nutritional data
+        // Include ALL nutritional data
         energy: ingredient.energy,
         protein: ingredient.protein,
         carbs: ingredient.carbs,
         fat: ingredient.fat,
+        fiber: ingredient.fiber,
+        sugar: ingredient.sugar,
+        saturatedFat: ingredient.saturatedFat,
+        nonSaturatedFat: ingredient.nonSaturatedFat,
+        sodium: ingredient.sodium,
+        potassium: ingredient.potassium,
+        cholesterol: ingredient.cholesterol,
+        salt: ingredient.salt,
         ingredientGroup: ingredient.ingredientGroup
       };
     });

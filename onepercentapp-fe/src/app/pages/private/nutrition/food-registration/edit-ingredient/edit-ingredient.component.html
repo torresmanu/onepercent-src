@@ -25,10 +25,86 @@
 
     <!-- Nutritional Information -->
     <div class="nutrition-info-container">
-        <div class="nutrition-info">
+        <div class="nutrition-info" (click)="toggleNutritionInfo()">
             <ion-icon name="information-circle" class="info-icon"></ion-icon>
             <span class="info-text">Información nutricional</span>
-            <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
+            <ion-icon 
+                [name]="isNutritionExpanded ? 'chevron-up-outline' : 'chevron-down-outline'" 
+                class="dropdown-icon">
+            </ion-icon>
+        </div>
+        
+        <!-- Nutritional Details Dropdown -->
+        <div class="nutrition-details" *ngIf="isNutritionExpanded && getNutritionalData()">
+            <div class="nutrition-list">
+                <!-- Calories Group -->
+                <div class="nutrition-group">
+                    <div class="nutrition-item">
+                        <span class="nutrition-label">Calorías</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.calories || 0 }} kcal</span>
+                    </div>
+                </div>
+
+                <!-- Carbohydrates Section -->
+                <div class="nutrition-group">
+                    <div class="nutrition-item main-category">
+                        <span class="nutrition-label">Carbohidratos</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.carbs || 0 }} g</span>
+                    </div>
+                    <div class="nutrition-item sub-category">
+                        <span class="nutrition-label">Fibra</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.fiber || 0 }} g</span>
+                    </div>
+                    <div class="nutrition-item sub-category">
+                        <span class="nutrition-label">Azúcares</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.sugars || 0 }} g</span>
+                    </div>
+                </div>
+
+                <!-- Proteins Section -->
+                <div class="nutrition-group">
+                    <div class="nutrition-item main-category">
+                        <span class="nutrition-label">Proteínas</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.protein || 0 }} g</span>
+                    </div>
+                </div>
+
+                <!-- Fats Section -->
+                <div class="nutrition-group">
+                    <div class="nutrition-item main-category">
+                        <span class="nutrition-label">Grasas</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.fat || 0 }} g</span>
+                    </div>
+                    <div class="nutrition-item sub-category">
+                        <span class="nutrition-label">Grasas saturadas</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.saturatedFat || 0 }} g</span>
+                    </div>
+                    <div class="nutrition-item sub-category">
+                        <span class="nutrition-label">Grasas no saturadas</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.unsaturatedFat || 0 }} g</span>
+                    </div>
+                </div>
+
+                <!-- Other Section -->
+                <div class="nutrition-group">
+                    <div class="nutrition-item main-category">
+                        <span class="nutrition-label">Otros</span>
+                        <span class="nutrition-value"></span>
+                    </div>
+                    <div class="nutrition-item sub-category">
+                        <span class="nutrition-label">Colesterol</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.cholesterol || 0 }} mg</span>
+                    </div>
+                    <div class="nutrition-item sub-category">
+                        <span class="nutrition-label">Potasio</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.potassium || 0 }} mg</span>
+                    </div>
+                    <div class="nutrition-item sub-category">
+                        <span class="nutrition-label">Sodio</span>
+                        <span class="nutrition-value">{{ getNutritionalData()?.sodium || 0 }} mg</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

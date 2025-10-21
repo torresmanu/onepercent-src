@@ -21,7 +21,7 @@
   width: 100%;
   height: 50px;
   background: #f2f2f2;
-  border: 2px solid #4CAF50;
+  border: 2px solid #BCDF84;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -31,7 +31,7 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background: #e8f5e8;
+    background: #f0f7e8;
   }
 }
 
@@ -62,7 +62,7 @@
   width: 100%;
   height: 50px;
   background: #ffffff;
-  border: 2px solid #4CAF50;
+  border: 2px solid #BCDF84;
   border-radius: 10px;
   padding: 0 16px;
   font-family: Inter, sans-serif;
@@ -73,8 +73,8 @@
   transition: all 0.3s ease;
 
   &:focus {
-    border-color: #45a049;
-    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    border-color: #a8c96a;
+    box-shadow: 0 0 0 2px rgba(188, 223, 132, 0.2);
   }
 
   &::placeholder {
@@ -103,37 +103,158 @@
 
 // Nutritional Information Section
 .nutrition-info-container {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .nutrition-info {
   width: 100%;
   height: 50px;
   background: #f2f2f2;
+  border: 2px solid #BCDF84;
   border-radius: 10px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0 16px;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    background: #e8f5e8;
+    background: #f0f7e8;
   }
 }
 
 .info-icon {
-  color: #4CAF50;
+  color: #BCDF84;
   font-size: 20px;
-  margin-right: 12px;
 }
 
 .info-text {
-  flex: 1;
   color: #575757;
   font-family: Inter, sans-serif;
   font-size: 14px;
   font-weight: 600;
+  flex: 1;
+  margin-left: 8px;
+}
+
+.dropdown-icon {
+  color: #575757;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+// Nutritional Details Dropdown
+.nutrition-details {
+  margin-top: 0.5rem;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nutrition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nutrition-group {
+  margin-bottom: 0;
+  position: relative;
+  
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-title {
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #ddd;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  min-height: 1.5rem;
+
+  .nutrition-label {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #333;
+  }
+
+  .nutrition-value {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #333;
+  }
+
+  // Main category styling (bold)
+  &.main-category {
+    .nutrition-label,
+    .nutrition-value {
+      font-weight: 600;
+    }
+  }
+
+  // Sub-category styling (indented and normal weight)
+  &.sub-category {
+    padding-left: 1rem;
+    
+    .nutrition-label,
+    .nutrition-value {
+      font-weight: 400;
+    }
+  }
+}
+
+// Special styling for calories (first item)
+.nutrition-item:first-of-type {
+  .nutrition-label,
+  .nutrition-value {
+    font-weight: 600; // Make calories slightly bolder
+  }
 }
 
 // Bottom spacing to prevent content from being hidden behind fixed button
@@ -154,8 +275,8 @@
 }
 
 .save-button {
-  --background: #424242;
-  --color: #ffffff;
+  --background: var(--ion-color-dark);
+  --color: var(--ion-color-dark-contrast);
   --border-radius: 10px;
   height: 50px;
   font-family: Inter, sans-serif;
