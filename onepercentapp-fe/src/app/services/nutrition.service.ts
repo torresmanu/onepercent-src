@@ -39,6 +39,21 @@ export class NutritionService {
     return this.tempIngredients[index];
   }
 
+  /**
+   * Set ingredients for food registration
+   * Used when navigating from a recipe to pre-load its ingredients
+   */
+  setIngredients(ingredients: any[]): void {
+    this.tempIngredients = ingredients;
+  }
+
+  /**
+   * Clear all ingredients from temporary storage
+   */
+  clearIngredients(): void {
+    this.tempIngredients = [];
+  }
+
   getNutritionData(type: 'split' | 'water' | 'fruit'): Observable<number> {
     const mockValues = {
       split: 33,

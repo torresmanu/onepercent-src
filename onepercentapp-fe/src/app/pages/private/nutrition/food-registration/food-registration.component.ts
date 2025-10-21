@@ -60,6 +60,16 @@ export class FoodRegistrationComponent implements OnInit {
       this.meals = Array.isArray(data) ? data : Object.values(data);
     });
     this.loadRecentMeals();
+
+    // Check if navigating from recipe detail with pre-selected meal type
+    const navigation = this.navCtrl['router']?.getCurrentNavigation();
+    if (navigation?.extras?.state) {
+      const state = navigation.extras.state;
+      if (state['preSelectedMealType']) {
+        this.selectedMealTitle = state['preSelectedMealType'];
+        console.log('Pre-selected meal type from recipe:', this.selectedMealTitle);
+      }
+    }
   }
 
   loadRecentMeals() {

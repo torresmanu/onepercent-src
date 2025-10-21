@@ -144,20 +144,20 @@
       <app-recipes-steps-card *ngIf="recipe.recipeSteps?.length" [steps]="recipe.recipeSteps" (openModalStepRecipe)="openModalStepRecipe($event.steps, $event.stepNumber)"></app-recipes-steps-card>
     </div>
 
-    <!-- Botón comenzar -->
+    <!-- Botón registrar -->
 <ion-button 
   *ngIf="!buttonType(recipe.section)" 
   class="ion-margin-bottom start-button" 
   mode="ios"
   (click)="startRecipe()">
-  Comenzar
+  Registrar
 </ion-button> 
 <ion-button 
   *ngIf="buttonType(recipe.section)" 
   class="ion-margin-bottom btn-dark" 
   mode="ios"
   (click)="startRecipe()">
-  Comenzar
+  Registrar
 </ion-button> 
  </div>
 

@@ -12,6 +12,7 @@ import { RecipesStepsCardComponent } from '../recipes-steps-card/recipes-steps-c
 import { alarm } from 'ionicons/icons';
 import { ModalService } from '@src/app/services/modal.service';
 import { RecipeStepsComponent } from '@src/app/shared/components/recipe-steps-modal/recipe-steps-modal.component';
+import { NutritionService } from '@src/app/services/nutrition.service';
 @Component({
   standalone: true,
   imports: [
@@ -39,6 +40,7 @@ export class RecipeDetailComponent implements OnInit {
   private readonly recipeService = inject(RecipeService);
   private readonly modalService = inject(ModalService);
   private readonly location = inject(Location);
+  private readonly nutritionService = inject(NutritionService);
 
   ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -193,9 +195,67 @@ export class RecipeDetailComponent implements OnInit {
     return map[value] || '';
   }
 
+  /**
+   * Register meal from recipe
+   * Navigates to food registration with pre-loaded ingredients from the recipe
+   */
   startRecipe() {
-    if (this.recipe?.id) {
-      this.router.navigate(['/private/recipe-steps', this.recipe.id]);
+    if (!this.recipe?.id) {
+      console.error('No recipe ID available');
+      return;
     }
+
+    // Check if recipe has ingredients
+    if (!this.recipe.recipeIngredients || this.recipe.recipeIngredients.length === 0) {
+      console.error('Recipe has no ingredients');
+      // TODO: Show error toast to user
+      return;
+    }
+
+    // Transform recipe ingredients to the format expected by food registration
+    const ingredientsForRegistration = this.recipe.recipeIngredients.map((recipeIngredient: any) => {
+      // Extract ingredient data, handling both possible structures
+      const ingredient = recipeIngredient.ingredient || recipeIngredient;
+      
+      // Calculate quantity based on selected portion
+      const baseQuantity = recipeIngredient.quantity || 100;
+      const adjustedQuantity = baseQuantity * this.portion;
+
+      return {
+        id: ingredient.id,
+        name: ingredient.name || 'Ingrediente sin nombre',
+        quantity: adjustedQuantity,
+        unit: recipeIngredient.unit || 'gramos',
+        kcal: ingredient.energy || 0,
+        // Include additional nutritional data
+        energy: ingredient.energy,
+        protein: ingredient.protein,
+        carbs: ingredient.carbs,
+        fat: ingredient.fat,
+        ingredientGroup: ingredient.ingredientGroup
+      };
+    });
+
+    // Pre-load ingredients in nutrition service
+    this.nutritionService.setIngredients(ingredientsForRegistration);
+
+    // Map recipe section to meal type for food registration
+    const mealTypeMap: { [key: string]: string } = {
+      'Breakfast': 'Desayuno',
+      'Lunch': 'Comida',
+      'Dinner': 'Cena',
+      'Snacks': 'Snack'
+    };
+    
+    const mealType = mealTypeMap[this.recipe.section] || null;
+
+    // Navigate to food registration with meal type as state
+    this.router.navigate(['/private/food-registration'], {
+      state: { 
+        preSelectedMealType: mealType,
+        fromRecipe: true,
+        recipeId: this.recipe.id
+      }
+    });
   }
 }
