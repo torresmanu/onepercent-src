@@ -73,13 +73,13 @@ export class RecipeDetailComponent implements OnInit {
   getBackgroundColor(section: string): string {
     switch (section) {
       case 'Dinner':
-        return '#131313';
+        return '#131313'; // --ion-color-dark
       case 'Lunch':
-        return '#F0FBD2';
+        return '#F0FBD2'; // --ion-color-secondary
       case 'Breakfast':
-        return '#F0FFF0';
+        return '#BCDF84'; // --ion-color-primary (consistent with cards)
       case 'Snacks':
-        return '#F8FDE8';
+        return '#F0FBD2'; // --ion-color-secondary (consistent with cards)
       default:
         return '#FFFFFF';
     }
@@ -88,15 +88,15 @@ export class RecipeDetailComponent implements OnInit {
   getTextColor(section: string): string {
     switch (section) {
       case 'Dinner':
-        return '#FFFFFF';
+        return '#FFFFFF'; // White text for dark background
       case 'Lunch':
-        return '#131313';
+        return '#131313'; // Dark text for light background
       case 'Breakfast':
-        return '#131313';
+        return '#000000'; // Black text for green primary background
       case 'Snacks':
-        return '#131313';
+        return '#131313'; // Dark text for light background
       default:
-        return '#FFFFFF';
+        return '#131313';
     }
   }
 

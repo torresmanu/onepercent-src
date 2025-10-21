@@ -21,9 +21,9 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { RouterLink, Location } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { Recipe, RECETAS } from '@src/app/core/interfaces/recipe';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { RecipeSlideComponent } from '../../recipe-slide/recipe-slide/recipe-slide.component';
 import { RecipeService } from '../../../../../../services/recipe.service';
 import { RecipeSearchComponent } from '../../recipe-search/recipe-search/recipe-search.component';
