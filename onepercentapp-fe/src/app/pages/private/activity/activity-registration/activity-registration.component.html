@@ -1,21 +1,22 @@
 <app-header backButton="/private/activity" title="{{ 'ACTIVITY_REGISTRATION.TITLE' | translate }}" />
-<ion-content class="safe-area ion-padding">
-  <app-activity-type-autocomplete 
-    [control]="activityTypeControl" 
-    [placeholder]="'ACTIVITY_REGISTRATION.SELECT_TYPE' | translate"
-    (activityTypeSelected)="onActivityTypeSelected($event)">
-  </app-activity-type-autocomplete>
+<ion-content class="safe-area">
+  <div class="main-container">
+    <!-- Activity Type Selection Button -->
+    <div class="activity-type-selection" (click)="openActivityTypeSelector()">
+      <div class="selection-content">
+        <div class="selection-text">
+          <p class="activity-type-title" [ngClass]="{ 'no-activity-selected': !selectedActivityType, 'activity-selected': selectedActivityType }">
+            {{ selectedActivityType?.title || ('ACTIVITY_REGISTRATION.SELECT_TYPE' | translate) }}
+          </p>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+      </div>
+    </div>
 
-  <div class="selected-activity-type">
-    <p class="activity-type-title" [ngClass]="{ 'no-activity-selected': !selectedActivityType, 'activity-selected': selectedActivityType }">
-      {{ selectedActivityType?.title || ('ACTIVITY_REGISTRATION.SELECT_TYPE' | translate) }}
-    </p>
-  </div>
-
-  <div class="activity-details-form">
     <h3 class="form-title">{{ 'ACTIVITY_REGISTRATION.DETAILS_TITLE' | translate }}</h3>
-    
-    <div class="form-fields">
+
+    <div class="activity-details-form">
+      <div class="form-fields">
       <!-- Field: Title -->
       <div class="form-field">
         <ion-input 
@@ -83,9 +84,10 @@
     </div>
   </div>
 
-  <div class="button-container">
-    <ion-button expand="block" class="btn-dark" [disabled]="!canSave" (click)="saveActivity()">
-      {{ 'ACTIVITY_REGISTRATION.SAVE_BUTTON' | translate }}
-    </ion-button>
+    <div class="button-container">
+      <ion-button expand="block" [class]="canSave ? 'btn-dark' : 'btn-dark button-disabled'" [disabled]="!canSave" (click)="saveActivity()">
+        {{ 'ACTIVITY_REGISTRATION.SAVE_BUTTON' | translate }}
+      </ion-button>
+    </div>
   </div>
 </ion-content>

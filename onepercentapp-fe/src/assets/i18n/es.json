@@ -615,6 +615,10 @@
 
   },
 
+  "COMMON": {
+    "LOADING": "Cargando..."
+  },
+
   "ACTIVITY_REGISTRATION": {
     "TITLE": "Registro de actividad",
     "SELECT_TYPE": "Selecciona el tipo de actividad",
@@ -629,7 +633,12 @@
     "SAVE_CHANGES": "Guardar cambios",
     "CANCEL": "Cancelar",
     "EDIT_DETAILS": "Editar detalles",
-    "NO_ACTIVITIES": "No hay actividades registradas"
+    "NO_ACTIVITIES": "No hay actividades registradas",
+    "ACTIVITY_TYPE_TITLE": "Tipo de actividad",
+    "SEARCH_ACTIVITY": "Escribe tu actividad",
+    "ACTIVITY_LIST_TITLE": "Lista de actividades",
+    "ERROR_LOADING_TYPES": "Error al cargar los tipos de actividad",
+    "NO_ACTIVITIES_FOUND": "No se encontraron actividades"
   }
 }
 

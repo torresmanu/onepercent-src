@@ -1,67 +1,170 @@
-.selected-activity-type {
-  width: 100%;
-  height: 3.125rem; // 50px
-  margin-top: 1rem; // 16px
-  border-radius: 0.625rem; // 10px
-  background: #f2f2f2;
+// Main container styling to match design specs
+ion-content {
+  --background: #FFFFFF;
+  position: relative;
+  width: 375px;
+  height: 812px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  gap: 16px;
+  width: 375px;
+  height: 593px;
+}
+
+// Activity type autocomplete styling
+app-activity-type-autocomplete {
+  width: 343px;
+  height: 50px;
+  
+  ::ng-deep {
+    .autocomplete-container {
+      width: 100%;
+      height: 50px;
+      background: #F2F2F2;
+      border-radius: 10px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      
+      ion-input {
+        --background: transparent;
+        --color: #B2B2B2;
+        --placeholder-color: #B2B2B2;
+        --padding-start: 0;
+        --padding-end: 0;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 17px;
+        flex: 1;
+      }
+      
+      ion-icon {
+        color: #B2B2B2;
+        font-size: 20px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+// Activity type selection styling
+.activity-type-selection {
+  width: 343px;
+  height: 50px;
+  margin: 16px auto 0;
+  border-radius: 10px;
+  background: #F2F2F2;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: #E8E8E8;
+  }
+
+  &:active {
+    background: #DDDDDD;
+  }
+}
+
+.selection-content {
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem; // 0 16px
   align-items: center;
+  padding: 8px 16px;
+  height: 100%;
+}
+
+.selection-text {
+  flex: 1;
+}
+
+.chevron-icon {
+  color: #B2B2B2;
+  font-size: 20px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .activity-type-title {
-  color: #b2b2b2;
-  font-family: Inter;
-  font-size: 0.875rem; // 14px
+  color: #B2B2B2;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
   font-weight: 600;
+  line-height: 17px;
+  margin: 0;
 }
 
 .activity-selected {
   color: #131313;
 }
 
+// Form container styling
 .activity-details-form {
-  margin-top: 1rem; // 16px
-  background-color: #d8d8d8;
-  border-radius: 0.625rem; // 10px
-  padding: 1rem; // 16px
+  width: 343px;
+  margin: 0 auto;
+  background-color: #D8D8D8;
+  border-radius: 10px;
+  padding: 16px 8px 8px;
 }
 
 .form-title {
-  color: #1c1c1c;
-  font-family: Inter;
-  font-size: 1rem; // 16px
+  color: #1C1C1C;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   font-weight: 600;
-  margin: 0 0 1rem 0;
+  line-height: 19px;
+  margin: 0 auto 8px;
+  width: 343px;
+  text-align: left;
 }
 
 .form-fields {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem; // 12px
+  gap: 8px;
 }
 
 .form-field {
   position: relative;
-  background: #fff;
-  border-radius: 0.5rem; // 8px
-  padding: 0.75rem 1rem; // 12px 16px
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 8px 16px;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  width: 327px;
+  height: 50px;
+  margin: 0 auto;
 }
 
 .form-input {
   flex: 1;
   --background: transparent;
   --color: #131313;
-  --placeholder-color: #b2b2b2;
+  --placeholder-color: #B2B2B2;
   --padding-start: 0;
   --padding-end: 0;
-  font-family: Inter;
-  font-size: 0.875rem; // 14px
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  height: 25px;
 }
 
 .datetime-button {
@@ -70,10 +173,12 @@
   --color: #131313;
   --padding-start: 0;
   --padding-end: 0;
-  font-family: Inter;
-  font-size: 0.875rem; // 14px
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
   text-align: left;
+  height: 25px;
   
   &::part(native) {
     background: transparent;
@@ -83,35 +188,54 @@
 }
 
 .field-icon {
-  color: #b2b2b2;
-  font-size: 1.25rem; // 20px
-  margin-left: 0.5rem; // 8px
+  color: #B2B2B2;
+  font-size: 20px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
+// Button container and styling
 .button-container {
   position: absolute;
-  bottom: 20px;
+  bottom: 16px;
   left: 16px;
   right: 16px;
   width: calc(100% - 32px);
+  max-width: 343px;
+  margin: 0 auto;
+  height: 50px;
 }
 
 .btn-dark {
-  --background: #1e1e1e;
-  --color: #fff;
-  --border-radius: 0.75rem; // 12px
-  --padding-top: 1rem; // 16px
-  --padding-bottom: 1rem; // 16px
-  font-family: Inter;
-  font-size: 1rem; // 16px
+  --background: #131313;
+  --color: #F2F2F2;
+  --border-radius: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   font-weight: 600;
+  line-height: 19px;
   text-transform: none;
-  height: 3.5rem; // 56px
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
 
-  &:disabled {
-    --background: #e8e8e8;
-    --color: #b2b2b2;
+  &.button-disabled {
+    --background: #717171 !important;
+    --color: white !important;
+    opacity: 1 !important;
+    cursor: not-allowed;
   }
 }
 
@@ -156,15 +280,51 @@ ion-datetime-button {
 
 // Responsive adjustments
 @media (max-width: 768px) {
+  ion-content {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .main-container {
+    width: 100%;
+    padding: 0 16px;
+  }
+  
+  .activity-type-selection,
+  .activity-details-form,
+  app-activity-type-autocomplete,
+  .form-title {
+    width: 100%;
+    max-width: 343px;
+  }
+  
   .form-field {
-    padding: 1rem; // 16px
+    width: 100%;
+    max-width: 327px;
   }
   
-  .form-input {
-    font-size: 1rem; // 16px
+  .button-container {
+    width: calc(100% - 32px);
+    max-width: 343px;
+    left: 16px;
+    right: 16px;
   }
+}
+
+// Home bar styling (iPhone 13/Mini)
+.home-bar {
+  width: 343px;
+  height: 34px;
+  position: relative;
   
-  .datetime-button {
-    font-size: 1rem; // 16px
+  &::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 5px;
+    left: calc(50% - 60px);
+    top: 21px;
+    background: #1C1C1C;
+    border-radius: 5px;
   }
 }

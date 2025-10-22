@@ -1,9 +1,9 @@
 import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { IonicModule, NavController } from '@ionic/angular';
+import { IonicModule, NavController, ModalController } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
-import { ActivityTypeAutocompleteComponent } from 'src/app/shared/components/activity-type-autocomplete/activity-type-autocomplete.component';
+import { ActivityTypeSelectorComponent } from 'src/app/shared/components/activity-type-selector/activity-type-selector.component';
 import { ModalService } from '@src/app/services/modal.service';
 import { ActivityService, ActivityType, ActivityDetails } from 'src/app/services/activity.service';
 import { CommonModule } from '@angular/common';
@@ -18,7 +18,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
     HeaderComponent,
     ReactiveFormsModule,
     FormsModule,
-    ActivityTypeAutocompleteComponent,
+    ActivityTypeSelectorComponent,
     CommonModule,
   ],
   selector: 'app-activity-registration',
@@ -30,6 +30,7 @@ export class ActivityRegistrationComponent implements OnInit {
   modalService = inject(ModalService);
   activityService = inject(ActivityService);
   navCtrl = inject(NavController);
+  modalCtrl = inject(ModalController);
   loadingCtrl = inject(LoadingController);
   toastCtrl = inject(ToastController);
   cdr = inject(ChangeDetectorRef);
@@ -47,10 +48,10 @@ export class ActivityRegistrationComponent implements OnInit {
 
   get canSave(): boolean {
     const hasActivityType = !!this.selectedActivityType;
-    const hasTitle = !!this.activityTitle?.trim();
+    const hasTitle = !!this.activityTitle?.trim() && this.activityTitle.trim().length > 1;
     const hasStartTime = !!this.startTime;
     const hasDuration = !!this.duration && this.duration > 0;
-    const hasIntensity = this.intensity !== null && this.intensity >= 0 && this.intensity <= 10;
+    const hasIntensity = this.intensity !== null && this.intensity > 0 && this.intensity <= 10;
     
     return hasActivityType && hasTitle && hasStartTime && hasDuration && hasIntensity;
   }
@@ -63,8 +64,27 @@ export class ActivityRegistrationComponent implements OnInit {
     this.startTime = now.toISOString();
   }
 
+  async openActivityTypeSelector() {
+    const modal = await this.modalCtrl.create({
+      component: ActivityTypeSelectorComponent,
+      componentProps: {
+        selectedActivityType: this.selectedActivityType
+      },
+      presentingElement: await this.modalCtrl.getTop()
+    });
+
+    modal.onDidDismiss().then((result) => {
+      if (result.data) {
+        this.onActivityTypeSelected(result.data);
+      }
+    });
+
+    await modal.present();
+  }
+
   onActivityTypeSelected(activityType: ActivityType) {
     this.selectedActivityType = activityType;
+    this.activityTypeControl.setValue(activityType.title);
     console.log('Selected activity type:', activityType);
     this.cdr.detectChanges();
   }
@@ -76,8 +96,8 @@ export class ActivityRegistrationComponent implements OnInit {
       return;
     }
 
-    if (!this.activityTitle?.trim()) {
-      await this.showToast('Por favor ingresa un título para la actividad', 'warning');
+    if (!this.activityTitle?.trim() || this.activityTitle.trim().length <= 1) {
+      await this.showToast('Por favor ingresa un título válido para la actividad (más de 1 carácter)', 'warning');
       return;
     }
 
@@ -91,8 +111,8 @@ export class ActivityRegistrationComponent implements OnInit {
       return;
     }
 
-    if (this.intensity === null || this.intensity < 0 || this.intensity > 10) {
-      await this.showToast('Por favor ingresa la intensidad percibida (0-10)', 'warning');
+    if (this.intensity === null || this.intensity <= 0 || this.intensity > 10) {
+      await this.showToast('Por favor ingresa la intensidad percibida (mayor a 0)', 'warning');
       return;
     }
 
@@ -142,6 +162,7 @@ export class ActivityRegistrationComponent implements OnInit {
     this.distance = null;
     this.intensity = null;
     this.activityTypeControl.setValue('');
+    this.activityTypeControl.markAsUntouched();
   }
 
   private async showToast(message: string, color: string) {
