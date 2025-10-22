@@ -12,6 +12,8 @@ import {
   tap,
   throwError,
   combineLatest,
+  BehaviorSubject,
+  shareReplay,
 } from 'rxjs';
 import { StorageService } from './storage.service';
 import { ApiCallService } from './api-call.service';
@@ -30,6 +32,11 @@ export class NutritionService {
 
   // Ingredientes temporales para el registro de comida
   private tempIngredients: any[] = [];
+
+  // Estado reactivo para el conteo de frutas
+  private fruitsCountSubject = new BehaviorSubject<number>(0);
+  private lastFruitsCountDate: string | null = null;
+  private fruitsCountCache$: Observable<number> | null = null;
 
   getIngredients(): any[] {
     return this.tempIngredients;
@@ -52,6 +59,80 @@ export class NutritionService {
    */
   clearIngredients(): void {
     this.tempIngredients = [];
+  }
+
+  /**
+   * Get today's fruits count with reactive state management
+   * Uses cache to avoid unnecessary API calls
+   */
+  getTodayFruitsCount(): Observable<number> {
+    const today = new Date().toISOString().split('T')[0];
+    
+    // If we already have data for today, return cached observable
+    if (this.lastFruitsCountDate === today && this.fruitsCountCache$) {
+      return this.fruitsCountCache$;
+    }
+
+    // Create new observable for today's data
+    this.fruitsCountCache$ = this.apiCallService.get<any>('/user-meal/fruits/today').pipe(
+      map(response => {
+        console.log('NutritionService - Raw API response:', response);
+        // El backend devuelve { statusCode: 200, data: number }
+        if (response && response.data && typeof response.data === 'number') {
+          const count = Math.floor(response.data);
+          console.log('NutritionService - Fruits count from data:', count);
+          return count; // Solo números enteros
+        }
+        // Si la respuesta ya es un número directamente (por compatibilidad)
+        if (typeof response === 'number') {
+          const count = Math.floor(response);
+          console.log('NutritionService - Fruits count direct:', count);
+          return count;
+        }
+        console.log('NutritionService - No valid data found, returning 0');
+        return 0;
+      }),
+      tap(count => {
+        this.fruitsCountSubject.next(count);
+        this.lastFruitsCountDate = today;
+      }),
+      catchError(error => {
+        console.error('Error fetching fruits count:', error);
+        return of(0);
+      }),
+      shareReplay(1)
+    );
+
+    return this.fruitsCountCache$;
+  }
+
+  /**
+   * Get current fruits count from reactive state
+   */
+  getCurrentFruitsCount(): Observable<number> {
+    return this.fruitsCountSubject.asObservable();
+  }
+
+  /**
+   * Update fruits count after meal registration
+   * This should be called after successfully saving a meal
+   */
+  updateFruitsCountAfterMeal(): void {
+    // Invalidate cache to force refresh on next request
+    this.lastFruitsCountDate = null;
+    this.fruitsCountCache$ = null;
+    
+    // Refresh data immediately
+    this.getTodayFruitsCount().subscribe();
+  }
+
+  /**
+   * Force refresh of fruits count
+   */
+  refreshFruitsCount(): Observable<number> {
+    this.lastFruitsCountDate = null;
+    this.fruitsCountCache$ = null;
+    return this.getTodayFruitsCount();
   }
 
   getNutritionData(type: 'split' | 'water' | 'fruit'): Observable<number> {
@@ -201,6 +282,10 @@ saveMealRecord(mealData: { mealType: string; ingredients: any[]; date?: string }
         return response.data;
       }
       return response;
+    }),
+    tap(() => {
+      // Update fruits count after successful meal registration
+      this.updateFruitsCountAfterMeal();
     })
   );
 }

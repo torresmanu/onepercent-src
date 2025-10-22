@@ -25,6 +25,9 @@ export class UserMeal {
     @Column({ type: 'float', default: 0 })
     totalKcal: number;
 
+    @Column({ type: 'float', default: 0 })
+    fruitsCount: number; // Number of fruit/vegetable/legume/nut portions
+
     @CreateDateColumn()
     createdAt: Date;
 

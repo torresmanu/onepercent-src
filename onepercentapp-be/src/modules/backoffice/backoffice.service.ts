@@ -32,13 +32,13 @@ export class BackofficeService {
         }
 
         const payload = { email: user.email, id: user.id };
-        const token = this.jwtService.sign(payload, {
+        const token = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_SECRET,
             expiresIn: process.env.JWT_EXPIRATION,
         });
 
         // Generar de nuevo un RefreshToken válido
-        const refreshToken = this.jwtService.sign(payload, {
+        const refreshToken = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_REFRESH_SECRET,
             expiresIn: process.env.JWT_REFRESH_EXPIRATION,
         });

@@ -79,7 +79,7 @@ export class AuthService {
         await this.licenseService.checkUserLicense(user.id);
 
         const userPayload = { email: user.email, id: user.id };
-        const token = this.jwtService.sign(userPayload, {
+        const token = (this.jwtService as any).sign(userPayload, {
             secret: process.env.JWT_SECRET,
             expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
@@ -111,13 +111,13 @@ export class AuthService {
         await this.licenseService.checkUserLicense(user.id);
 
         const payload = { email: user.email, id: user.id };
-        const token = this.jwtService.sign(payload, {
+        const token = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_SECRET,
             expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
 
         // Generar de nuevo un RefreshToken válido
-        const refreshToken = this.jwtService.sign(payload, {
+        const refreshToken = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_REFRESH_SECRET,
             expiresIn: process.env.JWT_REFRESH_EXPIRATION || '7d',
         });
@@ -176,13 +176,13 @@ export class AuthService {
         }
         // 3️⃣ Generar tokens de autenticación
         const payload = { email: user.email, id: user.id };
-        const token = this.jwtService.sign(payload, {
+        const token = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_SECRET,
             expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
 
         // Generar de nuevo un RefreshToken válido
-        const refreshToken = this.jwtService.sign(payload, {
+        const refreshToken = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_REFRESH_SECRET,
             expiresIn: process.env.JWT_REFRESH_EXPIRATION || '7d',
         });
@@ -241,13 +241,13 @@ export class AuthService {
 
         // 3️⃣ Generar tokens de autenticación
         const payload = { email: user.email, id: user.id };
-        const token = this.jwtService.sign(payload, {
+        const token = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_SECRET,
             expiresIn: process.env.JWT_EXPIRATION || '1d',
         });
 
         // Generar de nuevo un RefreshToken válido
-        const refreshToken = this.jwtService.sign(payload, {
+        const refreshToken = (this.jwtService as any).sign(payload, {
             secret: process.env.JWT_REFRESH_SECRET,
             expiresIn: process.env.JWT_REFRESH_EXPIRATION || '7d',
         });
@@ -299,7 +299,7 @@ export class AuthService {
             let token: any;
             try{
                 const payload = { email: user.email, id: user.id };
-                token = this.jwtService.sign(payload);
+                token = (this.jwtService as any).sign(payload);
             }catch(err) {
                 this.logger.error('Error generating JWT token', err);
                 throw new UnauthorizedException('Error generating JWT token: ' + err);

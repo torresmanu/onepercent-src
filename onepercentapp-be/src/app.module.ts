@@ -34,6 +34,7 @@ import { UserPointModule } from './modules/user-point/user-point.module';
 import { PlanModule } from './modules/plan/plan.module';
 import { ProvinceModule } from './modules/province/province.module';
 import { BusinessModule } from './modules/business.module';
+import { UserMealModule } from './modules/user-meal/user-meal.module';
 
 @Module({
   imports: [
@@ -69,6 +70,7 @@ import { BusinessModule } from './modules/business.module';
     PlanModule,
     ProvinceModule,
     BusinessModule,
+    UserMealModule,
   ],
   controllers: [AppController, ProfileController],
   providers: [AppService, SeederService, StorageService, NominatimService, RestService, MailService],

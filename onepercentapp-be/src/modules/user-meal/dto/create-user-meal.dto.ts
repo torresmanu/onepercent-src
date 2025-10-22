@@ -62,5 +62,14 @@ export class CreateUserMealDto {
     @ValidateNested({ each: true })
     @Type(() => CreateUserMealIngredientDto)
     ingredients: CreateUserMealIngredientDto[];
+
+    @ApiProperty({
+        description: 'Número de porciones de frutas/verduras/legumbres/frutos secos',
+        example: 2.5,
+        required: false
+    })
+    @IsOptional()
+    @IsNumber()
+    fruitsCount?: number;
 }
 

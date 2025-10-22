@@ -86,6 +86,7 @@ export class NutritionComponent implements OnInit {
 
   ngOnInit() {
     this.loadUserData();
+    this.initializeFruitsCount();
 
     this.nutritionService.getHydrateRegister().subscribe((data) => {
       this.hydrateRegister = data;
@@ -93,6 +94,13 @@ export class NutritionComponent implements OnInit {
 
     this.nutritionService.getFoodData().subscribe((data) => {
       this.foodData = data; 
+    });
+  }
+
+  private initializeFruitsCount() {
+    // Initialize fruits count to ensure data is loaded
+    this.nutritionService.getTodayFruitsCount().subscribe(count => {
+      console.log('NutritionComponent - Initialized fruits count:', count);
     });
   }
 

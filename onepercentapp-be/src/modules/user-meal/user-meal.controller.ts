@@ -86,5 +86,31 @@ export class UserMealController {
     async deleteMealRecord(@Param('id') id: number, @Req() req: any): Promise<void> {
         return await this.userMealService.deleteMealRecord(id, req.user.id);
     }
+
+    @Get('fruits/today')
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Obtener el conteo de frutas del día de hoy' })
+    @ApiResponse({ status: 200, description: 'Conteo de frutas del día.', schema: { type: 'number', example: 2.5 } })
+    async getTodayFruitsCount(@Req() req: any): Promise<number> {
+        return await this.userMealService.getTodayFruitsCount(req.user.id);
+    }
+
+    @Get('fruits/date-range')
+    @UseGuards(JwtAuthGuard)
+    @ApiOperation({ summary: 'Obtener el conteo de frutas por rango de fechas' })
+    @ApiQuery({ name: 'startDate', type: String, description: 'Fecha de inicio (YYYY-MM-DD)' })
+    @ApiQuery({ name: 'endDate', type: String, description: 'Fecha de fin (YYYY-MM-DD)' })
+    @ApiResponse({ status: 200, description: 'Conteo total de frutas en el rango.', schema: { type: 'number', example: 15.2 } })
+    async getUserFruitsCountByDateRange(
+        @Req() req: any,
+        @Query('startDate') startDate: string,
+        @Query('endDate') endDate: string
+    ): Promise<number> {
+        return await this.userMealService.getUserFruitsCountByDateRange(
+            req.user.id,
+            startDate,
+            endDate
+        );
+    }
 }
 

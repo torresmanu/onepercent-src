@@ -26,7 +26,7 @@ import {BusinessModule} from "../business.module";
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET || '1234123412341234',
-      signOptions: { expiresIn: process.env.JWT_EXPIRATION || '24h' },
+      signOptions: { expiresIn: process.env.JWT_EXPIRATION || '24h' as any },
     }),
     // forwardRef(() => UserModule),
     // forwardRef(() => HttpModule),
