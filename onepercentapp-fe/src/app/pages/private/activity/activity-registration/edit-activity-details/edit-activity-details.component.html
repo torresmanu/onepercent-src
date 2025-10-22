@@ -1,0 +1,95 @@
+<app-header backButton="/private/activity-registration" title="{{ 'ACTIVITY_REGISTRATION.EDIT_DETAILS' | translate }}" />
+<ion-content class="safe-area ion-padding">
+  <div class="edit-form">
+    <div class="form-section">
+      <h3 class="section-title">{{ 'ACTIVITY_REGISTRATION.DETAILS_TITLE' | translate }}</h3>
+      
+      <div class="form-fields">
+        <!-- Field: Title -->
+        <div class="form-field">
+          <label class="field-label">{{ 'ACTIVITY_REGISTRATION.TITLE_FIELD' | translate }} *</label>
+          <ion-input 
+            [(ngModel)]="activityTitle"
+            placeholder="{{ 'ACTIVITY_REGISTRATION.TITLE_FIELD' | translate }}"
+            class="form-input">
+          </ion-input>
+        </div>
+
+        <!-- Field: Start time -->
+        <div class="form-field">
+          <label class="field-label">{{ 'ACTIVITY_REGISTRATION.START_TIME' | translate }} *</label>
+          <ion-datetime-button datetime="start-time" class="datetime-button">
+            <span>{{ startTime | date:'short' }}</span>
+          </ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime 
+                id="start-time" 
+                [(ngModel)]="startTime"
+                presentation="time"
+                [showDefaultButtons]="true"
+                [showClearButton]="true">
+              </ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </div>
+
+        <!-- Field: Duration -->
+        <div class="form-field">
+          <label class="field-label">{{ 'ACTIVITY_REGISTRATION.DURATION' | translate }} *</label>
+          <ion-input 
+            type="number" 
+            [(ngModel)]="duration"
+            placeholder="{{ 'ACTIVITY_REGISTRATION.DURATION' | translate }}"
+            class="form-input">
+          </ion-input>
+          <span class="field-unit">minutos</span>
+        </div>
+
+        <!-- Field: Distance (optional) -->
+        <div class="form-field">
+          <label class="field-label">{{ 'ACTIVITY_REGISTRATION.DISTANCE' | translate }}</label>
+          <ion-input 
+            type="number" 
+            [(ngModel)]="distance"
+            placeholder="{{ 'ACTIVITY_REGISTRATION.DISTANCE' | translate }}"
+            class="form-input">
+          </ion-input>
+          <span class="field-unit">km</span>
+        </div>
+
+        <!-- Field: Intensity (0-10) -->
+        <div class="form-field">
+          <label class="field-label">{{ 'ACTIVITY_REGISTRATION.INTENSITY' | translate }} *</label>
+          <ion-input 
+            type="number" 
+            min="0" 
+            max="10" 
+            [(ngModel)]="intensity"
+            placeholder="{{ 'ACTIVITY_REGISTRATION.INTENSITY' | translate }}"
+            class="form-input">
+          </ion-input>
+          <span class="field-unit">(0-10)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <ion-button 
+      expand="block" 
+      class="btn-secondary" 
+      (click)="onCancel()"
+      [disabled]="isSaving">
+      {{ 'ACTIVITY_REGISTRATION.CANCEL' | translate }}
+    </ion-button>
+    <ion-button 
+      expand="block" 
+      class="btn-dark" 
+      (click)="onSaveChanges()"
+      [disabled]="isSaving">
+      <ion-spinner *ngIf="isSaving" name="crescent"></ion-spinner>
+      <span *ngIf="!isSaving">{{ 'ACTIVITY_REGISTRATION.SAVE_CHANGES' | translate }}</span>
+    </ion-button>
+  </div>
+</ion-content>

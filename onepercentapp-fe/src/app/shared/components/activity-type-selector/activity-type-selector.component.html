@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border" mode="md">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref
+        mode="md"
+        (click)="dismiss()"
+        icon="arrow-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center font-lsb-semibold">
+      {{ 'ACTIVITY_REGISTRATION.ACTIVITY_TYPE_TITLE' | translate }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <div class="invisible-spacer"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="activity-type-selector-content">
+  <div class="main-container">
+
+    <!-- Body Section -->
+    <div class="body-section">
+      <!-- Search Input -->
+      <div class="search-container">
+        <div class="searchbar-content">
+          <ion-icon name="search-outline"></ion-icon>
+          <ion-input
+            [(ngModel)]="searchQuery"
+            (ionInput)="onSearchChange()"
+            [placeholder]="'ACTIVITY_REGISTRATION.SEARCH_ACTIVITY' | translate">
+          </ion-input>
+        </div>
+      </div>
+
+      <!-- Loading indicator -->
+      <div *ngIf="isLoading" class="loading-container">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>{{ 'COMMON.LOADING' | translate }}</p>
+      </div>
+
+      <!-- Error message -->
+      <div *ngIf="hasError" class="error-container">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        <p>{{ 'ACTIVITY_REGISTRATION.ERROR_LOADING_TYPES' | translate }}</p>
+      </div>
+
+      <!-- Content Section -->
+      <div *ngIf="!isLoading && !hasError" class="content-section">
+        <!-- Title Section -->
+        <div class="title-section">
+          <h3 class="list-title">{{ 'ACTIVITY_REGISTRATION.ACTIVITY_LIST_TITLE' | translate }}</h3>
+        </div>
+        
+        <!-- Options Container -->
+        <ion-radio-group [(ngModel)]="selectedActivityTypeId" (ionChange)="onSelectionChange($event)">
+          <div class="options-container">
+            <div 
+              *ngFor="let activityType of filteredActivityTypes; trackBy: trackByActivityType"
+              class="activity-type-item"
+              (click)="selectActivityType(activityType)">
+              
+              <div class="activity-type-item-master">
+                <div class="activity-type-content">
+                  <div class="activity-type-labels">
+                    <div class="activity-type-start">
+                      <div class="activity-type-name">{{ activityType.title }}</div>
+                    </div>
+                    <div class="activity-type-end">
+                      <div class="activity-type-radio">
+                        <ion-radio [value]="activityType.id"></ion-radio>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-radio-group>
+
+        <!-- No results message -->
+        <div *ngIf="filteredActivityTypes.length === 0 && searchQuery" class="no-results">
+          <ion-icon name="search-outline"></ion-icon>
+          <p>{{ 'ACTIVITY_REGISTRATION.NO_ACTIVITIES_FOUND' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+      <div class="home-bar"></div>
+    </div>
+  </div>
+</ion-content>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IonIcon } from "@ionic/angular/standalone";
+import { Component, OnInit, inject } from '@angular/core';
+import { IonIcon, NavController } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-register-activity-card',
@@ -9,9 +9,13 @@ import { IonIcon } from "@ionic/angular/standalone";
   styleUrls: ['./register-activity-card.component.scss'],
 })
 export class RegisterActivityCardComponent  implements OnInit {
+  navCtrl = inject(NavController);
 
   constructor() { }
 
   ngOnInit() {}
 
+  onRegisterActivity() {
+    this.navCtrl.navigateForward(['/private/activity-registration']);
+  }
 }

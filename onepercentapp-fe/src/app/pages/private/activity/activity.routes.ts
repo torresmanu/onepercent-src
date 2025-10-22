@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ActivityMainComponent } from './activity-main/activity-main.component';
+
 export const activityRoutes: Routes = [
   {
     path: '',
@@ -10,5 +11,4 @@ export const activityRoutes: Routes = [
     path: '',
     component: ActivityMainComponent,
   },
-
 ];

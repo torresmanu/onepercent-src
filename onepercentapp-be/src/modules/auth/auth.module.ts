@@ -19,14 +19,21 @@ import {UserLicenseService} from "../user-license/user-license.service";
 import {UserLicense} from "../user-license/entities/user-license.entity";
 import {HttpModule} from "@nestjs/axios";
 import {BusinessModule} from "../business.module";
+import {ConfigModule, ConfigService} from "@nestjs/config";
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([UserToken, User, ResetPassword, EmailValidation, License, UserLicense]),
     PassportModule,
-    JwtModule.register({
-      secret: process.env.JWT_SECRET || '1234123412341234',
-      signOptions: { expiresIn: process.env.JWT_EXPIRATION || '24h' as any },
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        secret: configService.get<string>('JWT_SECRET') || '1234123412341234',
+        signOptions: { 
+          expiresIn: configService.get<string>('JWT_EXPIRATION') || '24h' 
+        },
+      }),
     }),
     // forwardRef(() => UserModule),
     // forwardRef(() => HttpModule),

@@ -24,6 +24,8 @@ import { RecipeStepsComponent } from './nutrition/recipes/recipe-steps/recipe-st
 import { NutritionalInfoComponent } from './nutrition/nutritional-info/nutritional-info.component';
 import { EditIngredientComponent } from './nutrition/food-registration/edit-ingredient/edit-ingredient.component';
 import { HealtTestComponent } from './healt-test/healt-test.component';
+import { ActivityRegistrationComponent } from './activity/activity-registration/activity-registration.component';
+import { EditActivityDetailsComponent } from './activity/activity-registration/edit-activity-details/edit-activity-details.component';
 
 
 export const privateRoutes: Routes = [
@@ -149,6 +151,14 @@ export const privateRoutes: Routes = [
   {
     path: 'edit-ingredient/:id',
     component: EditIngredientComponent
+  },
+  {
+    path: 'activity-registration',
+    component: ActivityRegistrationComponent,
+  },
+  {
+    path: 'edit-activity-details/:id',
+    component: EditActivityDetailsComponent,
   },
   {
     path: '**',
