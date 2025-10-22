@@ -14,6 +14,7 @@ import { StorageService } from 'src/app/services/storage.service';
 import { StorageKey } from 'src/app/core/interfaces/storage';
 import { NavController } from '@ionic/angular/standalone';
 import { ToastService } from 'src/app/services/toast.service';
+import { NutritionService } from 'src/app/services/nutrition.service';
 
 const URL_EXCEPTIONS = ["/quadrant/add-quadrant"];
 
@@ -26,6 +27,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   private readonly authService = inject(AuthService);
   private readonly storageService = inject(StorageService);
   private readonly navCtrl = inject(NavController);
+  private readonly nutritionService = inject(NutritionService);
 
   intercept(
     request: HttpRequest<unknown>,
@@ -82,6 +84,9 @@ export class ErrorInterceptor implements HttpInterceptor {
    * Manejar errores 401 (Unauthorized)
    */
   private handle401Error(): Observable<never> {
+    // Clear user-specific data from NutritionService
+    this.nutritionService.clearUserData();
+    
     return this.storageService.clearUnlockedKeys().pipe(
       switchMap(() => {
         this.navCtrl.navigateRoot('/public/login'); // Redirigir al login

@@ -32,6 +32,7 @@ import { routes } from './app/app.routes';
 import { environment } from './environments/environment';
 
 import { TokenInterceptor } from './app/core/interceptors/token.interceptor';
+import { NutritionService } from './app/services/nutrition.service';
 
 import { addIcons } from 'ionicons';
 import {
@@ -86,6 +87,7 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient(withInterceptorsFromDi()),
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    NutritionService,
     importProvidersFrom([
       TranslateModule.forRoot({
         loader: {

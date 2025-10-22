@@ -49,7 +49,6 @@ export class FoodRegistrationComponent implements OnInit {
     const hasTitle = !!this.selectedMealTitle;
     const hasIngredients = this.ingredients.length > 0;
     const hasSelectedRecentMeal = this.selectedTab() === 'recientes' && this.selectedRecentMealIndex !== null && hasTitle;
-    console.log('Can save check:', { hasTitle, hasIngredients, hasSelectedRecentMeal, selectedMealTitle: this.selectedMealTitle, ingredientsLength: this.ingredients.length });
     return (hasTitle && hasIngredients) || hasSelectedRecentMeal;
   }
 

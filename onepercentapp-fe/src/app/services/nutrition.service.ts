@@ -122,8 +122,11 @@ export class NutritionService {
     this.lastFruitsCountDate = null;
     this.fruitsCountCache$ = null;
     
-    // Refresh data immediately
-    this.getTodayFruitsCount().subscribe();
+    // Refresh data immediately and update reactive state
+    this.getTodayFruitsCount().subscribe(count => {
+      this.fruitsCountSubject.next(count);
+      console.log('NutritionService - Fruits count updated after meal:', count);
+    });
   }
 
   /**
@@ -133,6 +136,25 @@ export class NutritionService {
     this.lastFruitsCountDate = null;
     this.fruitsCountCache$ = null;
     return this.getTodayFruitsCount();
+  }
+
+  /**
+   * Clear user-specific data when user changes
+   * This should be called on logout or user switch
+   */
+  clearUserData(): void {
+    console.log('NutritionService - Clearing user data');
+    // Reset reactive state
+    this.fruitsCountSubject.next(0);
+    
+    // Clear cache
+    this.lastFruitsCountDate = null;
+    this.fruitsCountCache$ = null;
+    
+    // Clear temporary ingredients
+    this.tempIngredients = [];
+    
+    console.log('NutritionService - User data cleared');
   }
 
   getNutritionData(type: 'split' | 'water' | 'fruit'): Observable<number> {

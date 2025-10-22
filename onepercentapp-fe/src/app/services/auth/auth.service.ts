@@ -18,6 +18,7 @@ import { ApiCallService } from '../api-call.service';
 import { PushNotificationService } from '../push-notification.service';
 import { StorageService } from '../storage.service';
 import { FirebaseAuthenticationService } from './firebase-authentication.service';
+import { NutritionService } from '../nutrition.service';
 /**
  * Auth Service
  */
@@ -33,6 +34,7 @@ export class AuthService {
   private readonly firebaseAuthService = inject(FirebaseAuthenticationService);
   private readonly pushNotificationService = inject(PushNotificationService);
   private readonly http = inject(HttpClient);
+  private readonly nutritionService = inject(NutritionService);
 
   constructor() {}
   private platform = String(Capacitor.getPlatform());
@@ -105,6 +107,9 @@ export class AuthService {
    * Logout
    */
   logout(): Observable<void> {
+    // Clear user-specific data from NutritionService
+    this.nutritionService.clearUserData();
+    
     this.storageService.set(StorageKey.accessToken, null).subscribe({
       next: async () => {
         await this.firebaseAuthService.signOut();
