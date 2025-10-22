@@ -6,6 +6,7 @@ import { HeaderComponent } from "src/app/shared/components/header/header.compone
 import { InputCardComponent } from "./input-card/input-card.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { HydrationService } from 'src/app/services/hydratation.service';
+import { NutritionService } from 'src/app/services/nutrition.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { CommonModule } from '@angular/common';
 
@@ -25,6 +26,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HydrationRegistrationComponent {
   private hydrationService = inject(HydrationService);
+  private nutritionService = inject(NutritionService);
   private toastService = inject(ToastService);
   private router = inject(Router);
 
@@ -45,6 +47,9 @@ export class HydrationRegistrationComponent {
       this.hydrationService.sendHydrationStatus(this.selected)
         .subscribe({
           next: () => {
+            // Update hydration data in NutritionService
+            this.nutritionService.updateHydrationDataAfterRegistration();
+            
             this.toastService.presentToastSuccess('Hidratación registrada exitosamente');
             this.router.navigate(['/private/nutrition']);
           },

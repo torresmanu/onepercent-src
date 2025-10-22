@@ -17,6 +17,7 @@ import {
 } from 'rxjs';
 import { StorageService } from './storage.service';
 import { ApiCallService } from './api-call.service';
+import { HydrationService } from './hydratation.service';
 import { User } from '@capacitor-firebase/authentication';
 import { image } from 'ionicons/icons';
 
@@ -29,6 +30,7 @@ import { image } from 'ionicons/icons';
 export class NutritionService {
   private readonly basePath = '/nutrition';
   private apiCallService = inject(ApiCallService);
+  private hydrationService = inject(HydrationService);
 
   // Ingredientes temporales para el registro de comida
   private tempIngredients: any[] = [];
@@ -37,6 +39,11 @@ export class NutritionService {
   private fruitsCountSubject = new BehaviorSubject<number>(0);
   private lastFruitsCountDate: string | null = null;
   private fruitsCountCache$: Observable<number> | null = null;
+
+  // Estado reactivo para los datos de hidratación
+  private hydrationDataSubject = new BehaviorSubject<{ status: string; hour: string }[]>([]);
+  private lastHydrationDate: string | null = null;
+  private hydrationDataCache$: Observable<{ status: string; hour: string }[]> | null = null;
 
   getIngredients(): any[] {
     return this.tempIngredients;
@@ -114,6 +121,13 @@ export class NutritionService {
   }
 
   /**
+   * Get current hydration data reactively
+   */
+  getCurrentHydrationData(): Observable<{ status: string; hour: string }[]> {
+    return this.hydrationDataSubject.asObservable();
+  }
+
+  /**
    * Update fruits count after meal registration
    * This should be called after successfully saving a meal
    */
@@ -126,6 +140,31 @@ export class NutritionService {
     this.getTodayFruitsCount().subscribe(count => {
       this.fruitsCountSubject.next(count);
       console.log('NutritionService - Fruits count updated after meal:', count);
+    });
+  }
+
+  /**
+   * Update hydration data after hydration registration
+   * This should be called after successfully saving a hydration record
+   */
+  updateHydrationDataAfterRegistration(): void {
+    console.log('NutritionService - Starting hydration data update after registration...');
+    
+    // Invalidate cache to force refresh on next request
+    this.lastHydrationDate = null;
+    this.hydrationDataCache$ = null;
+    console.log('NutritionService - Cache invalidated, fetching fresh data...');
+    
+    // Refresh data immediately and update reactive state
+    this.getHydrateRegister().subscribe({
+      next: data => {
+        console.log('NutritionService - Fresh hydration data received:', data);
+        this.hydrationDataSubject.next(data);
+        console.log('NutritionService - Hydration data updated after registration:', data);
+      },
+      error: error => {
+        console.error('NutritionService - Error updating hydration data:', error);
+      }
     });
   }
 
@@ -146,10 +185,13 @@ export class NutritionService {
     console.log('NutritionService - Clearing user data');
     // Reset reactive state
     this.fruitsCountSubject.next(0);
+    this.hydrationDataSubject.next([]);
     
     // Clear cache
     this.lastFruitsCountDate = null;
     this.fruitsCountCache$ = null;
+    this.lastHydrationDate = null;
+    this.hydrationDataCache$ = null;
     
     // Clear temporary ingredients
     this.tempIngredients = [];
@@ -168,12 +210,29 @@ export class NutritionService {
   }
 
   getHydrateRegister(): Observable<{ status: string; hour: string }[]> {
-    const mockHydration = [
-      { status: 'Hidratación baja', hour: '9:00 am' },
-      { status: 'Hidratación media', hour: '12:00 pm' },
-      { status: 'Hidratación óptima', hour: '18:00 pm' },
-    ];
-    return of(mockHydration);
+    const today = new Date().toDateString();
+    console.log('NutritionService - getHydrateRegister called, today:', today);
+    console.log('NutritionService - lastHydrationDate:', this.lastHydrationDate);
+    console.log('NutritionService - hasCache:', !!this.hydrationDataCache$);
+    
+    // Si ya tenemos datos en caché para hoy, los devolvemos
+    if (this.lastHydrationDate === today && this.hydrationDataCache$) {
+      console.log('NutritionService - Returning cached hydration data');
+      return this.hydrationDataCache$;
+    }
+
+    console.log('NutritionService - Fetching fresh hydration data from backend...');
+    // Si no, obtenemos los datos del backend
+    this.hydrationDataCache$ = this.hydrationService.getTodayHydrationRecords().pipe(
+      tap(data => {
+        this.hydrationDataSubject.next(data);
+        this.lastHydrationDate = today;
+        console.log('NutritionService - Hydration data loaded and cached:', data);
+      }),
+      shareReplay(1)
+    );
+
+    return this.hydrationDataCache$;
   }
 
   getFoodData(): Observable<any[]> {
