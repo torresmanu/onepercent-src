@@ -1,0 +1,60 @@
+<div class="activity-type-autocomplete-container">
+  <ion-searchbar
+    [formControl]="control"
+    [placeholder]="placeholder"
+    (ionFocus)="onInputFocus()"
+    (ionBlur)="onInputBlur()"
+    (keydown)="onKeyDown($event)"
+    class="search-input">
+  </ion-searchbar>
+
+  <!-- Loading indicator -->
+  <div *ngIf="isLoading" class="loading-indicator">
+    <ion-spinner name="crescent"></ion-spinner>
+    <span>Buscando...</span>
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="hasError" class="error-message">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <span>Error al buscar tipos de actividad</span>
+  </div>
+
+  <!-- Dropdown with results -->
+  <div *ngIf="showDropdown && !isLoading && !hasError" class="autocomplete-dropdown">
+    <!-- All activity types header -->
+    <div *ngIf="searchResults.length > 0 && (!control.value || control.value.length === 0)" class="all-types-header">
+      <ion-icon name="list-outline"></ion-icon>
+      <span>Todos los tipos de actividad</span>
+    </div>
+
+    <!-- Minimum characters message -->
+    <div *ngIf="showMinChars" class="min-chars-message">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <span>Escribe al menos 2 caracteres</span>
+    </div>
+
+    <!-- No results message -->
+    <div *ngIf="showNoResults" class="no-results-message">
+      <ion-icon name="search-outline"></ion-icon>
+      <span>No se encontraron tipos de actividad</span>
+    </div>
+
+    <!-- Results list -->
+    <div *ngIf="searchResults.length > 0" class="results-list">
+      <div
+        *ngFor="let activityType of searchResults; let i = index"
+        class="autocomplete-item"
+        [class.selected]="i === selectedIndex"
+        (click)="selectActivityType(activityType)">
+        <div class="activity-type-info">
+          <div class="activity-type-name">{{ activityType.title }}</div>
+          <div *ngIf="activityType.description" class="activity-type-description">
+            {{ activityType.description }}
+          </div>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="select-icon"></ion-icon>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
-import {Repository} from "typeorm";
+import {Repository, Like} from "typeorm";
 import {ActivityType} from "./entities/activity-type.entity";
 import {BaseService} from "../../common/services/base.service";
 
@@ -19,5 +19,20 @@ export class ActivityTypeService extends BaseService<ActivityType>{
         // ...
 
         await super.delete(activityTypeId);
+    }
+
+    async search(query: string): Promise<ActivityType[]> {
+        if (!query || query.length < 2) {
+            return [];
+        }
+        
+        return this.activityTypeRepository.find({
+            where: [
+                { title: Like(`%${query}%`) },
+                { description: Like(`%${query}%`) }
+            ],
+            take: 20,
+            order: { title: 'ASC' }
+        });
     }
 }

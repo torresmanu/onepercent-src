@@ -1,4 +1,4 @@
-import {BadRequestException, Body, Controller, Delete, Get, Param, Patch, Post, UseGuards} from '@nestjs/common';
+import {BadRequestException, Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards} from '@nestjs/common';
 import {JwtAuthGuard} from "../../common/guards/jwt-auth.guard";
 import {RolesGuard} from "../../common/guards/role.guard";
 import {Roles} from "../../common/decorators/role.decorator";
@@ -14,6 +14,14 @@ export class ActivityTypeController {
     constructor(
         private readonly activityTypeService: ActivityTypeService,
     ) {
+    }
+
+    @Get('search')
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @ApiOperation({ summary: 'Search activity types by name' })
+    @ApiResponse({ status: 200, description: 'List of matching activity types.' })
+    async search(@Query('query') query: string): Promise<ActivityType[]> {
+        return this.activityTypeService.search(query);
     }
 
     @Get()

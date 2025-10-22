@@ -1,0 +1,91 @@
+<app-header backButton="/private/activity" title="{{ 'ACTIVITY_REGISTRATION.TITLE' | translate }}" />
+<ion-content class="safe-area ion-padding">
+  <app-activity-type-autocomplete 
+    [control]="activityTypeControl" 
+    [placeholder]="'ACTIVITY_REGISTRATION.SELECT_TYPE' | translate"
+    (activityTypeSelected)="onActivityTypeSelected($event)">
+  </app-activity-type-autocomplete>
+
+  <div class="selected-activity-type">
+    <p class="activity-type-title" [ngClass]="{ 'no-activity-selected': !selectedActivityType, 'activity-selected': selectedActivityType }">
+      {{ selectedActivityType?.title || ('ACTIVITY_REGISTRATION.SELECT_TYPE' | translate) }}
+    </p>
+  </div>
+
+  <div class="activity-details-form">
+    <h3 class="form-title">{{ 'ACTIVITY_REGISTRATION.DETAILS_TITLE' | translate }}</h3>
+    
+    <div class="form-fields">
+      <!-- Field: Title -->
+      <div class="form-field">
+        <ion-input 
+          placeholder="{{ 'ACTIVITY_REGISTRATION.TITLE_FIELD' | translate }} *" 
+          [(ngModel)]="activityTitle"
+          class="form-input">
+        </ion-input>
+        <ion-icon name="pencil-outline" class="field-icon"></ion-icon>
+      </div>
+
+      <!-- Field: Start time -->
+      <div class="form-field">
+        <ion-datetime-button datetime="start-time" class="datetime-button">
+          <span *ngIf="startTime">{{ startTime | date:'short' }}</span>
+          <span *ngIf="!startTime">{{ 'ACTIVITY_REGISTRATION.START_TIME' | translate }} *</span>
+        </ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime 
+              id="start-time" 
+              [(ngModel)]="startTime"
+              presentation="time"
+              [showDefaultButtons]="true"
+              [showClearButton]="true">
+            </ion-datetime>
+          </ng-template>
+        </ion-modal>
+        <ion-icon name="time-outline" class="field-icon"></ion-icon>
+      </div>
+
+      <!-- Field: Duration -->
+      <div class="form-field">
+        <ion-input 
+          type="number" 
+          placeholder="{{ 'ACTIVITY_REGISTRATION.DURATION' | translate }} *" 
+          [(ngModel)]="duration"
+          class="form-input">
+        </ion-input>
+        <ion-icon name="stopwatch-outline" class="field-icon"></ion-icon>
+      </div>
+
+      <!-- Field: Distance (optional) -->
+      <div class="form-field">
+        <ion-input 
+          type="number" 
+          placeholder="{{ 'ACTIVITY_REGISTRATION.DISTANCE' | translate }}" 
+          [(ngModel)]="distance"
+          class="form-input">
+        </ion-input>
+        <ion-icon name="walk-outline" class="field-icon"></ion-icon>
+      </div>
+
+      <!-- Field: Intensity (0-10) -->
+      <div class="form-field">
+        <ion-input 
+          type="number" 
+          min="0" 
+          max="10" 
+          placeholder="{{ 'ACTIVITY_REGISTRATION.INTENSITY' | translate }} *" 
+          [(ngModel)]="intensity"
+          class="form-input">
+        </ion-input>
+        <ion-icon name="speedometer-outline" class="field-icon"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <ion-button expand="block" class="btn-dark" [disabled]="!canSave" (click)="saveActivity()">
+      {{ 'ACTIVITY_REGISTRATION.SAVE_BUTTON' | translate }}
+    </ion-button>
+  </div>
+</ion-content>
