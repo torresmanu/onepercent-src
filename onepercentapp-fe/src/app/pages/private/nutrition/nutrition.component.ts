@@ -74,6 +74,7 @@ export class NutritionComponent implements OnInit {
 
   hydrateRegister: any[] = [];
   foodData: any[] = [];
+  mealsData: any[] = [];
 
   slides = [
     {
@@ -88,6 +89,7 @@ export class NutritionComponent implements OnInit {
     this.loadUserData();
     this.initializeFruitsCount();
     this.initializeHydrationData();
+    this.initializeMealsData();
 
     this.nutritionService.getFoodData().subscribe((data) => {
       this.foodData = data; 
@@ -105,13 +107,23 @@ export class NutritionComponent implements OnInit {
     // Initialize hydration data to ensure data is loaded
     this.nutritionService.getHydrateRegister().subscribe(data => {
       this.hydrateRegister = data;
-      console.log('NutritionComponent - Initialized hydration data:', data);
     });
 
     // Subscribe to reactive updates
     this.nutritionService.getCurrentHydrationData().subscribe(data => {
       this.hydrateRegister = data;
-      console.log('NutritionComponent - Hydration data updated reactively:', data);
+    });
+  }
+
+  private initializeMealsData() {
+    // Initialize meals data to ensure data is loaded
+    this.nutritionService.getTodayMeals().subscribe(data => {
+      this.mealsData = data;
+    });
+
+    // Subscribe to reactive updates
+    this.nutritionService.getCurrentMealsData().subscribe(data => {
+      this.mealsData = data;
     });
   }
 
@@ -136,5 +148,15 @@ export class NutritionComponent implements OnInit {
         console.error('Error al cargar datos del usuario:', error);
       },
     });
+  }
+
+  getRecommendedKcalRange(mealType: string): string {
+    const ranges: { [key: string]: string } = {
+      'Desayuno': '635 - 889',
+      'Comida': '500 - 800',
+      'Cena': '400 - 600',
+      'Snack': '100 - 300'
+    };
+    return ranges[mealType] || '400 - 600';
   }
 }

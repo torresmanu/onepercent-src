@@ -22,22 +22,27 @@
     </div>
 
     <!-- Bloque comida -->
-    <ng-container *ngIf="type === 'food' && items">
-
+    <ng-container *ngIf="type === 'food'">
 
       <div class="info-container">
-        <div class="item" *ngFor="let item of items">
-          <div class="item-row">
-            <span class="text">{{ item.text }}</span>
-            <span class="kcal-text">{{ item.kcal }} kcal</span>
-
+        <!-- Mostrar items si existen -->
+        <div *ngIf="items && items.length > 0">
+          <div class="item" *ngFor="let item of items">
+            <div class="item-row">
+              <span class="text">{{ item.text }}</span>
+              <span class="kcal-text">{{ item.kcal }} kcal</span>
+            </div>
+            <span class="dotted-line"></span>
           </div>
-          <span class="dotted-line"></span>
+        </div>
+
+        <!-- Mostrar mensaje cuando no hay registros -->
+        <div *ngIf="!items || items.length === 0" class="empty-state">
+          <p class="empty-message">{{ 'NUTRITION.NO_RECORDS_TODAY' | translate }}</p>
         </div>
 
         <div class="total">
           <p class="text">{{ 'NUTRITION.TOTAL' | translate }}</p>
-
 
           <div class="points" *ngIf="points">
             <img class="point-icon" *ngFor="let point of points" [src]="
@@ -46,15 +51,12 @@
                   : 'assets/imgs/nutrition/traffic-light-off.svg'
               " alt="Punto" />
 
-            <p class="kcal-text">{{ total }} kcal</p>
+            <p class="kcal-text">{{ total || 0 }} kcal</p>
           </div>
-
-
 
           <button class="edit-button">
             <img src="assets/imgs/nutrition/edit.svg" alt="">
           </button>
-
         </div>
       </div>
     </ng-container>

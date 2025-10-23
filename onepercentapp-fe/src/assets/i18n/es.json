@@ -504,7 +504,8 @@
     "HYDRATION_TITLE": "Agua",
     "FOOD_TITLE": "Comida",
     "RECOMMENDED": "Recomendado",
-    "TOTAL": "Total"
+    "TOTAL": "Total",
+    "NO_RECORDS_TODAY": "No hay registros para hoy"
   },
 
   "SPLIT_SLIDE": {

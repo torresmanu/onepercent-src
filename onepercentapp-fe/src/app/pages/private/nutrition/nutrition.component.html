@@ -73,10 +73,9 @@
 
   <!-- BLOQUE COMIDA -->
   <div class="collapsable-card-container">
-
-    <app-collapsable-card *ngFor="let food of foodData" class="mb-first" [type]="'food'" [icon]="food.icon"
-      [title]="food.title" [recommended]="food.recommended" [items]="food.items" [total]="food.total"
-      [points]="food.points">
+    <app-collapsable-card *ngFor="let meal of mealsData" class="mb-first" [type]="'food'" [icon]="meal.icon"
+      [title]="meal.displayName" [recommended]="getRecommendedKcalRange(meal.mealType)" [items]="meal.ingredients" [total]="meal.totalKcal"
+      [points]="meal.points">
     </app-collapsable-card>
   </div>
 

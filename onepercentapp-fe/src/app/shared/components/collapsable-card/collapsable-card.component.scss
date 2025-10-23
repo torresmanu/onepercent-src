@@ -91,12 +91,29 @@
     font-weight: 600;
   }
 
+  .empty-state {
+    padding: 1.5rem 0.875rem;
+    text-align: center;
+
+    .empty-message {
+      color: #999;
+      font-family: Inter;
+      font-size: 0.75rem;
+      font-weight: 400;
+      margin: 0;
+      font-style: italic;
+    }
+  }
+
   .hour1,
   .kcal-text {
     color: #3e3e3e;
     font-family: Inter;
     font-size: 0.75rem;
     font-weight: 400;
+    min-width: 50px;
+    text-align: right;
+    white-space: nowrap;
   }
 }
 
@@ -147,6 +164,9 @@
   .kcal-text {
     font-size: 0.75rem;
     font-weight: 400;
+    min-width: 50px;
+    text-align: right;
+    white-space: nowrap;
   }
 
   .edit-button {

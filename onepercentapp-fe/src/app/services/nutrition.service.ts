@@ -45,6 +45,11 @@ export class NutritionService {
   private lastHydrationDate: string | null = null;
   private hydrationDataCache$: Observable<{ status: string; hour: string }[]> | null = null;
 
+  // Estado reactivo para los datos de comidas
+  private mealsDataSubject = new BehaviorSubject<any[]>([]);
+  private lastMealsDate: string | null = null;
+  private mealsDataCache$: Observable<any[]> | null = null;
+
   getIngredients(): any[] {
     return this.tempIngredients;
   }
@@ -128,6 +133,173 @@ export class NutritionService {
   }
 
   /**
+   * Get today's meals grouped by meal type
+   */
+  getTodayMeals(): Observable<any[]> {
+    const today = new Date().toDateString();
+    console.log('NutritionService - getTodayMeals called, today:', today);
+    
+    // Si ya tenemos datos en caché para hoy, los devolvemos
+    if (this.lastMealsDate === today && this.mealsDataCache$) {
+      console.log('NutritionService - Using cached meals data');
+      return this.mealsDataCache$;
+    }
+
+    // Si no, obtenemos los datos del backend
+    this.mealsDataCache$ = this.apiCallService.get<any>('/user-meal/today').pipe(
+      map((response: any) => {
+        console.log('NutritionService - Raw meals response from API:', response);
+        
+        // Handle different response structures
+        let meals: any[] = [];
+        if (Array.isArray(response)) {
+          meals = response;
+        } else if (response && Array.isArray(response.data)) {
+          meals = response.data;
+        } else {
+          console.warn('NutritionService - Unexpected meals response structure:', response);
+          return [];
+        }
+        
+        console.log('NutritionService - Extracted meals:', meals);
+        console.log('NutritionService - Number of meals found:', meals.length);
+        
+        // Group meals by mealType and format for display
+        const groupedMeals = this.groupMealsByType(meals);
+        console.log('NutritionService - Grouped meals:', groupedMeals);
+        console.log('NutritionService - Number of grouped meals:', groupedMeals.length);
+        
+        return groupedMeals;
+      }),
+      tap(data => {
+        this.mealsDataSubject.next(data);
+        this.lastMealsDate = today;
+        console.log('NutritionService - Meals data loaded:', data);
+      }),
+      catchError(error => {
+        console.error('NutritionService - Error fetching meals records:', error);
+        return of([]);
+      }),
+      shareReplay(1)
+    );
+
+    return this.mealsDataCache$;
+  }
+
+  /**
+   * Get current meals data observable
+   */
+  getCurrentMealsData(): Observable<any[]> {
+    return this.mealsDataSubject.asObservable();
+  }
+
+  /**
+   * Update meals data after registration
+   */
+  updateMealsDataAfterRegistration(): void {
+    console.log('NutritionService - Starting meals data update after registration...');
+    
+    // Invalidate cache to force refresh on next request
+    this.lastMealsDate = null;
+    this.mealsDataCache$ = null;
+    console.log('NutritionService - Meals cache invalidated, fetching fresh data...');
+    
+    // Refresh data immediately and update reactive state
+    this.getTodayMeals().subscribe(data => {
+      this.mealsDataSubject.next(data);
+      console.log('NutritionService - Meals data updated after registration:', data);
+    });
+  }
+
+  /**
+   * Group meals by meal type and format for display
+   */
+  private groupMealsByType(meals: any[]): any[] {
+    console.log('NutritionService - groupMealsByType called with meals:', meals);
+    const mealTypes = ['Desayuno', 'Comida', 'Cena', 'Snack'];
+    const groupedMeals: any[] = [];
+
+    mealTypes.forEach(mealType => {
+      const mealsOfType = meals.filter(meal => meal.mealType === mealType);
+      console.log(`NutritionService - Found ${mealsOfType.length} meals for type: ${mealType}`);
+      
+      // Format ingredients for display and calculate total kcal
+      const allIngredients = mealsOfType.reduce((acc: any[], meal: any) => {
+        const mealIngredients = meal.ingredients?.map((ingredient: any) => {
+          // Convert "gramos" to "g" for better display
+          const unit = ingredient.unit === 'gramos' ? 'g' : ingredient.unit;
+          return {
+            text: `${ingredient.ingredient?.name || 'Ingrediente desconocido'} ${ingredient.quantity}${unit}`,
+            kcal: ingredient.kcal || 0
+          };
+        }) || [];
+        return acc.concat(mealIngredients);
+      }, []);
+      
+      // Calculate total kcal from individual ingredients
+      const totalKcal = allIngredients.reduce((sum, ingredient) => sum + (ingredient.kcal || 0), 0);
+      
+      console.log(`NutritionService - ${mealType} ingredients:`, allIngredients);
+      console.log(`NutritionService - ${mealType} totalKcal:`, totalKcal);
+
+      // Always add the meal type, even if no meals exist
+      groupedMeals.push({
+        mealType: mealType,
+        displayName: this.getMealDisplayName(mealType),
+        totalKcal: totalKcal,
+        ingredients: allIngredients,
+        mealCount: mealsOfType.length,
+        icon: this.getMealIcon(mealType),
+        points: this.getNutritionalScoreArray(totalKcal),
+        hasData: mealsOfType.length > 0
+      });
+    });
+
+    return groupedMeals;
+  }
+
+  /**
+   * Get display name for meal type
+   */
+  private getMealDisplayName(mealType: string): string {
+    const displayNames: { [key: string]: string } = {
+      'Desayuno': 'Desayuno',
+      'Comida': 'Comida',
+      'Cena': 'Cena',
+      'Snack': 'Snack'
+    };
+    return displayNames[mealType] || mealType;
+  }
+
+  /**
+   * Get icon for meal type
+   */
+  private getMealIcon(mealType: string): string {
+    const icons: { [key: string]: string } = {
+      'Desayuno': '/assets/imgs/nutrition/breakfast.svg',
+      'Comida': '/assets/imgs/nutrition/lunch.svg',
+      'Cena': '/assets/imgs/nutrition/dinner.svg',
+      'Snack': '/assets/imgs/nutrition/snack.svg'
+    };
+    return icons[mealType] || '/assets/imgs/nutrition/food.svg';
+  }
+
+  /**
+   * Get nutritional score as boolean array for collapsable card
+   */
+  private getNutritionalScoreArray(totalKcal: number): boolean[] {
+    // If totalKcal is 0 or less, show all points as grey (false)
+    if (totalKcal <= 0) return [false, false, false, false];
+    
+    let score = 1;
+    if (totalKcal >= 600) score = 4;
+    else if (totalKcal >= 400) score = 3;
+    else if (totalKcal >= 200) score = 2;
+    
+    return [true, true, true, true].map((_, index) => index < score);
+  }
+
+  /**
    * Update fruits count after meal registration
    * This should be called after successfully saving a meal
    */
@@ -186,12 +358,15 @@ export class NutritionService {
     // Reset reactive state
     this.fruitsCountSubject.next(0);
     this.hydrationDataSubject.next([]);
+    this.mealsDataSubject.next([]);
     
     // Clear cache
     this.lastFruitsCountDate = null;
     this.fruitsCountCache$ = null;
     this.lastHydrationDate = null;
     this.hydrationDataCache$ = null;
+    this.lastMealsDate = null;
+    this.mealsDataCache$ = null;
     
     // Clear temporary ingredients
     this.tempIngredients = [];
@@ -367,6 +542,9 @@ saveMealRecord(mealData: { mealType: string; ingredients: any[]; date?: string }
     tap(() => {
       // Update fruits count after successful meal registration
       this.updateFruitsCountAfterMeal();
+      
+      // Update meals data after successful meal registration
+      this.updateMealsDataAfterRegistration();
     })
   );
 }
