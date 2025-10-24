@@ -194,9 +194,13 @@ ion-row:not(.time-filters ion-row) {
   background: var(--ion-color-primary);
 }
 
-.recipe_lunch,
-.recipe_snacks {
+.recipe_lunch {
   background: var(--ion-color-secondary);
+}
+
+.recipe_snacks {
+  background: #F8FDE8;
+  border: 1px solid #BCDF84 !important;
 }
 
 .recipe_dinner {

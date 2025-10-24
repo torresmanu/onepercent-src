@@ -2,9 +2,13 @@ ion-card.recipe_breakfast {
   --background: var(--ion-color-primary);
 }
 
-ion-card.recipe_lunch,
-ion-card.recipe_snacks {
+ion-card.recipe_lunch {
   --background: var(--ion-color-secondary);
+}
+
+ion-card.recipe_snacks {
+  --background: #F8FDE8;
+  border: 1px solid #BCDF84;
 }
 
 ion-card.recipe_dinner {
