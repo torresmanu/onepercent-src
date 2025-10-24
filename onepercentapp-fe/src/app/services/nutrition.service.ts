@@ -42,6 +42,7 @@ export class NutritionService {
 
   // Estado reactivo para los datos de hidratación
   private hydrationDataSubject = new BehaviorSubject<{ status: string; hour: string }[]>([]);
+  private hydrationPointsSubject = new BehaviorSubject<number>(0);
   private lastHydrationDate: string | null = null;
   private hydrationDataCache$: Observable<{ status: string; hour: string }[]> | null = null;
 
@@ -130,6 +131,13 @@ export class NutritionService {
    */
   getCurrentHydrationData(): Observable<{ status: string; hour: string }[]> {
     return this.hydrationDataSubject.asObservable();
+  }
+
+  /**
+   * Get current hydration points for reactive updates
+   */
+  getCurrentHydrationPoints(): Observable<number> {
+    return this.hydrationPointsSubject.asObservable();
   }
 
   /**
@@ -332,6 +340,13 @@ export class NutritionService {
       next: data => {
         console.log('NutritionService - Fresh hydration data received:', data);
         this.hydrationDataSubject.next(data);
+        
+        // Also update hydration points
+        this.getHydrationPoints().subscribe(points => {
+          this.hydrationPointsSubject.next(points);
+          console.log('NutritionService - Hydration points updated after registration:', points);
+        });
+        
         console.log('NutritionService - Hydration data updated after registration:', data);
       },
       error: error => {
@@ -358,6 +373,7 @@ export class NutritionService {
     // Reset reactive state
     this.fruitsCountSubject.next(0);
     this.hydrationDataSubject.next([]);
+    this.hydrationPointsSubject.next(0);
     this.mealsDataSubject.next([]);
     
     // Clear cache
@@ -375,13 +391,78 @@ export class NutritionService {
   }
 
   getNutritionData(type: 'split' | 'water' | 'fruit'): Observable<number> {
+    if (type === 'water') {
+      return this.getHydrationPoints();
+    }
+    
     const mockValues = {
       split: 33,
-      water: 22,
       fruit: 11,
     };
 
     return of(mockValues[type]);
+  }
+
+  /**
+   * Calculate hydration points based on today's hydration records
+   * Points mapping:
+   * - Bajo: 25 puntos
+   * - Regular: 50 puntos  
+   * - Bueno: 75 puntos
+   * - Excelente: 100 puntos
+   * 
+   * Final score = Sum of all hydration points / Number of records
+   */
+  private getHydrationPoints(): Observable<number> {
+    return this.getHydrateRegister().pipe(
+      map(hydrationRecords => {
+        console.log('NutritionService - Calculating hydration points for records:', hydrationRecords);
+        
+        if (!hydrationRecords || hydrationRecords.length === 0) {
+          console.log('NutritionService - No hydration records, returning 0 points');
+          return 0;
+        }
+
+        // Map status to points
+        const statusToPoints: { [key: string]: number } = {
+          'Hidratación excelente': 100,
+          'Hidratación buena': 75,
+          'Hidratación regular': 50,
+          'Hidratación baja': 25
+        };
+
+        // Calculate total points
+        const totalPoints = hydrationRecords.reduce((sum, record) => {
+          const points = statusToPoints[record.status] || 25; // Default to "bajo" if status not found
+          console.log(`NutritionService - Record status: ${record.status}, points: ${points}`);
+          return sum + points;
+        }, 0);
+
+        // Calculate average points
+        const averagePoints = Math.round(totalPoints / hydrationRecords.length);
+        console.log(`NutritionService - Total points: ${totalPoints}, Records: ${hydrationRecords.length}, Average: ${averagePoints}`);
+        
+        return averagePoints;
+      }),
+      catchError(error => {
+        console.error('NutritionService - Error calculating hydration points:', error);
+        return of(0);
+      })
+    );
+  }
+
+  /**
+   * Get hydration level based on points
+   * - 0-25: Bajo
+   * - 26-50: Regular  
+   * - 51-75: Bueno
+   * - 76-100: Excelente
+   */
+  getHydrationLevel(points: number): string {
+    if (points >= 76) return 'Excelente';
+    if (points >= 51) return 'Bueno';
+    if (points >= 26) return 'Regular';
+    return 'Bajo';
   }
 
   getHydrateRegister(): Observable<{ status: string; hour: string }[]> {
@@ -402,6 +483,13 @@ export class NutritionService {
       tap(data => {
         this.hydrationDataSubject.next(data);
         this.lastHydrationDate = today;
+        
+        // Also calculate and update hydration points
+        this.getHydrationPoints().subscribe(points => {
+          this.hydrationPointsSubject.next(points);
+          console.log('NutritionService - Initial hydration points calculated:', points);
+        });
+        
         console.log('NutritionService - Hydration data loaded and cached:', data);
       }),
       shareReplay(1)

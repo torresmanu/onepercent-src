@@ -4,7 +4,7 @@
   </div>
   <div class="info-container">
     <h2 class="title">{{ 'WATER_SLIDE.TITLE' | translate}}</h2>
-    <p class="objective">Nivel bajo</p>
-    <p class="score">{{ puntosActuales }}{{ 'WATER_SLIDE.SCORE' | translate}}</p>
+    <p class="objective">Nivel {{ nivelHidratacion?.toLowerCase() || 'bajo' }}</p>
+    <p class="score">{{ puntosActuales || 0 }}{{ 'WATER_SLIDE.SCORE' | translate}}</p>
   </div>
 </div>

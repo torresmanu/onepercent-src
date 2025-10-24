@@ -96,6 +96,7 @@ export class NutritionComponent implements OnInit {
     });
   }
 
+
   private initializeFruitsCount() {
     // Initialize fruits count to ensure data is loaded
     this.nutritionService.getTodayFruitsCount().subscribe(count => {
