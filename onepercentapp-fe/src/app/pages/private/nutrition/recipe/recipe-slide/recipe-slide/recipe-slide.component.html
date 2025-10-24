@@ -1,7 +1,7 @@
 <ion-card [class]="'recipe_' + (recipe.section?.toLowerCase() || '')" [routerLink]="['/private/recipe-detail', recipe.id]">
   <ion-card-header>
     <div class="title-block">
-      <ion-card-subtitle>{{ recipe.description }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ getMealTimeDisplayName(recipe.section) }} - {{ getDietTypeDisplay(recipe.description) }}</ion-card-subtitle>
       <ion-card-title>{{ recipe.title }}</ion-card-title>
     </div>
 
@@ -9,14 +9,14 @@
       <ion-col size="8" class="ion-text-start">
         <div class="points">
           <img
-            *ngFor="let number of [].constructor(recipe.value); let i = index"
+            *ngFor="let number of [].constructor(recipe.value || 0); let i = index"
             src="../../../../../assets/imgs/nutrition/traffic-light-on.svg"
-            style="width: 16px; height: 16px"
+            style="width: 18px; height: 18px"
           />
           <img
-            *ngFor="let number of [].constructor(points); let i = index"
+            *ngFor="let number of [].constructor(4 - (recipe.value || 0)); let i = index"
             src="../../../../../assets/imgs/nutrition/traffic-light-off.svg"
-            style="width: 16px; height: 16px"
+            style="width: 18px; height: 18px"
           />
         </div>
       </ion-col>
@@ -25,12 +25,12 @@
           <img
             *ngIf="recipe.section !== 'Breakfast'"
             src="../../../../../assets/icons/initFormIcons/clock_green_solid.svg"
-            style="width: 16px; height: 16px"
+            style="width: 18px; height: 18px"
           />
           <img
             *ngIf="recipe.section === 'Breakfast'"
             src="../../../../../assets/icons/initFormIcons/clock_black_solid.svg"
-            style="width: 16px; height: 16px"
+            style="width: 18px; height: 18px"
           />
           <span> {{ recipe.time }}'</span>
         </div>
