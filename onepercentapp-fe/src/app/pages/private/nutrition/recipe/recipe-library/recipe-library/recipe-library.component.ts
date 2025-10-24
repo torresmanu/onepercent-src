@@ -21,7 +21,7 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, NavigationEnd, Router, ActivatedRoute } from '@angular/router';
 import { Recipe, RECETAS } from '@src/app/core/interfaces/recipe';
 import { CommonModule, Location } from '@angular/common';
 import { RecipeSlideComponent } from '../../recipe-slide/recipe-slide/recipe-slide.component';
@@ -59,6 +59,8 @@ export class RecipeLibraryComponent implements OnInit {
   private recipesService = inject(RecipeService);
   private navCtrl = inject(NavController);
   private location = inject(Location);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
   recipesFavorites: Recipe[] = [];
   recipesBreakfast: Recipe[] = [];
@@ -70,6 +72,17 @@ export class RecipeLibraryComponent implements OnInit {
   loading = signal(false);
   searchText = signal('');
   searchedRecipes: Recipe[] = [];
+
+  // Properties for meal time filtering
+  selectedMealTime: string | null = null;
+  selectedPreparationTime: number | null = null;
+  fromMealTime: boolean = false;
+  
+  // Property to control view mode
+  showHorizontalCards: boolean = false;
+  
+  // Property to store filtered recipes for horizontal cards
+  filteredRecipesForHorizontalView: Recipe[] = [];
 
   constructor() {
     // Effect to handle search text changes
@@ -100,6 +113,11 @@ export class RecipeLibraryComponent implements OnInit {
         this.recipesLunch = this.recipesService.getBySection('Lunch');
         this.recipesDinner = this.recipesService.getBySection('Dinner');
         this.recipesSnacks = this.recipesService.getBySection('Snacks');
+        
+        // Apply meal time filter if we're on a meal time route
+        if (this.fromMealTime && this.selectedMealTime) {
+          this.applyMealTimeFilter();
+        }
       }
       
       this.loading.set(isLoading);
@@ -107,6 +125,35 @@ export class RecipeLibraryComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('RecipeLibrary - ngOnInit called');
+    
+    // Check for route data parameters (from meal time routes)
+    const routeData = this.route.snapshot.data;
+    console.log('RecipeLibrary - Route data:', routeData);
+    
+    if (routeData && routeData['mealTime']) {
+      console.log('RecipeLibrary - Meal time route detected');
+      
+      this.selectedMealTime = routeData['mealTime'];
+      this.fromMealTime = true;
+      
+      // Enable horizontal cards view for meal time routes
+      this.showHorizontalCards = true;
+      
+      console.log('RecipeLibrary - Parsed parameters:', {
+        selectedMealTime: this.selectedMealTime,
+        fromMealTime: this.fromMealTime,
+        showHorizontalCards: this.showHorizontalCards
+      });
+      
+      // Apply meal time filter immediately
+      this.applyMealTimeFilter();
+    } else {
+      console.log('RecipeLibrary - Regular recipe library route');
+      this.fromMealTime = false;
+      this.showHorizontalCards = false;
+    }
+    
     // Data loading is handled by the effect in the constructor
   }
 
@@ -117,6 +164,66 @@ export class RecipeLibraryComponent implements OnInit {
     this.recipesLunch = this.recipesService.getBySection('Lunch');
     this.recipesDinner = this.recipesService.getBySection('Dinner');
     this.recipesSnacks = this.recipesService.getBySection('Snacks');
+
+    // Apply meal time filter if coming from meal time navigation
+    if (this.fromMealTime && this.selectedMealTime) {
+      this.applyMealTimeFilter();
+    }
+  }
+
+  private applyMealTimeFilter() {
+    console.log('RecipeLibrary - applyMealTimeFilter called for:', this.selectedMealTime);
+    
+    // Clear all recipe lists except the selected meal time
+    this.recipesFavorites = [];
+    
+    let filteredRecipes: Recipe[] = [];
+    
+    switch (this.selectedMealTime) {
+      case 'Breakfast':
+        filteredRecipes = this.recipesService.getBySection('Breakfast');
+        this.recipesBreakfast = filteredRecipes;
+        this.recipesLunch = [];
+        this.recipesDinner = [];
+        this.recipesSnacks = [];
+        console.log('RecipeLibrary - Found breakfast recipes:', filteredRecipes.length);
+        break;
+      case 'Lunch':
+        filteredRecipes = this.recipesService.getBySection('Lunch');
+        this.recipesBreakfast = [];
+        this.recipesLunch = filteredRecipes;
+        this.recipesDinner = [];
+        this.recipesSnacks = [];
+        console.log('RecipeLibrary - Found lunch recipes:', filteredRecipes.length);
+        break;
+      case 'Dinner':
+        filteredRecipes = this.recipesService.getBySection('Dinner');
+        this.recipesBreakfast = [];
+        this.recipesLunch = [];
+        this.recipesDinner = filteredRecipes;
+        this.recipesSnacks = [];
+        console.log('RecipeLibrary - Found dinner recipes:', filteredRecipes.length);
+        break;
+      case 'Snacks':
+        filteredRecipes = this.recipesService.getBySection('Snacks');
+        this.recipesBreakfast = [];
+        this.recipesLunch = [];
+        this.recipesDinner = [];
+        this.recipesSnacks = filteredRecipes;
+        console.log('RecipeLibrary - Found snacks recipes:', filteredRecipes.length);
+        break;
+    }
+    
+    // Store filtered recipes for horizontal view and apply time filter if active
+    if (this.time > 0) {
+      this.filteredRecipesForHorizontalView = filteredRecipes.filter(
+        (recipe) => (recipe.time || 0) <= this.time
+      );
+    } else {
+      this.filteredRecipesForHorizontalView = filteredRecipes;
+    }
+    
+    console.log('RecipeLibrary - Filtered recipes for horizontal view:', this.filteredRecipesForHorizontalView.length);
   }
 
   updateSearch(event: CustomEvent) {
@@ -182,8 +289,76 @@ export class RecipeLibraryComponent implements OnInit {
         });
       }
       
+      // If we're in meal time view, also update the filtered recipes for horizontal view
+      if (this.fromMealTime && this.selectedMealTime) {
+        this.applyMealTimeFilter();
+      }
+      
       this.loading.set(false);
     }, 300); // Reduced from 1500ms to 300ms for faster response
+  }
+
+  getMealTimeTitle(): string {
+    const titleMap: { [key: string]: string } = {
+      'Breakfast': 'Recetas de desayuno',
+      'Lunch': 'Recetas de comida',
+      'Dinner': 'Recetas de cena',
+      'Snacks': 'Recetas de snack'
+    };
+    
+    console.log('getMealTimeTitle - selectedMealTime:', this.selectedMealTime);
+    const result = titleMap[this.selectedMealTime || ''] || 'Biblioteca de recetas';
+    console.log('getMealTimeTitle - result:', result);
+    
+    return result;
+  }
+
+  getHeaderTitle(): string {
+    const titleMap: { [key: string]: string } = {
+      'Breakfast': 'Desayuno',
+      'Lunch': 'Comida',
+      'Dinner': 'Cena',
+      'Snacks': 'Snack'
+    };
+    
+    console.log('getHeaderTitle - fromMealTime:', this.fromMealTime);
+    console.log('getHeaderTitle - selectedMealTime:', this.selectedMealTime);
+    
+    const result = this.fromMealTime ? titleMap[this.selectedMealTime || ''] || 'Recetas' : 'Biblioteca de recetas';
+    console.log('getHeaderTitle - result:', result);
+    
+    return result;
+  }
+
+  getMealTimeDisplayName(): string {
+    // If we're in a specific meal time route, always show that meal time
+    if (this.fromMealTime && this.selectedMealTime) {
+      const titleMap: { [key: string]: string } = {
+        'Breakfast': 'Desayuno',
+        'Lunch': 'Comida',
+        'Dinner': 'Cena',
+        'Snacks': 'Snack'
+      };
+      return titleMap[this.selectedMealTime] || this.selectedMealTime;
+    }
+    
+    // Otherwise, return empty string or fallback
+    return '';
+  }
+
+  getDietTypeDisplay(description: any): string {
+    // If description is an array, get the first element
+    if (Array.isArray(description)) {
+      return description[0] || '';
+    }
+    
+    // If description is a string, return it
+    if (typeof description === 'string') {
+      return description;
+    }
+    
+    // Fallback
+    return '';
   }
 
   goBack() {

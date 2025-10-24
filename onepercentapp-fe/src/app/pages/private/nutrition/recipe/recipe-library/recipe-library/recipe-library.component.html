@@ -5,7 +5,9 @@
         <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title class="header-title">Biblioteca de recetas</ion-title>
+    <ion-title class="header-title">
+      {{ getHeaderTitle() }}
+    </ion-title>
     <ion-buttons slot="end">
       <!-- Empty slot to keep title centered -->
     </ion-buttons>
@@ -51,9 +53,10 @@
     </ion-row>
   </div>
 
-  <div [hidden]="searchText() !== ''">
+  <div [hidden]="searchText() !== '' || showHorizontalCards">
     <div class="recipe-list" [hidden]="loading() === true">
-      <div class="recipe-library" button [routerLink]="['recipe-favorites']">
+      <!-- Show favorites only if not coming from meal time navigation -->
+      <div class="recipe-library" button [routerLink]="['recipe-favorites']" *ngIf="!fromMealTime">
         <h2 class="library-text">Tus recetas favoritas</h2>
 
         <button class="button">
@@ -66,7 +69,7 @@
         pagination="false"
         auto-height="true"
         space-between="16"
-        *ngIf="recipesFavorites.length > 0"
+        *ngIf="recipesFavorites.length > 0 && !fromMealTime"
       >
         <ng-container *ngFor="let recipe of recipesFavorites">
           <swiper-slide style="width: 200px;">
@@ -77,15 +80,15 @@
         </ng-container>
       </swiper-container>
 
-      <p class="ion-padding" *ngIf="recipesFavorites.length === 0">
+      <p class="ion-padding" *ngIf="recipesFavorites.length === 0 && !fromMealTime">
         No se ha encontrado ninguna receta.
       </p>
 
-      <div class="recipe-library" button [routerLink]="['recipe-ingredients']">
+      <div class="recipe-library" *ngIf="!fromMealTime || selectedMealTime === 'Breakfast'">
         <h2 class="library-text">Desayuno</h2>
 
-        <button class="button">
-          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        <button class="button" [routerLink]="['/private/nutrition/recipe-library/breakfast']">
+          <img src="../../../../assets/imgs/button.svg" alt="" />
         </button>
       </div>
 
@@ -109,11 +112,11 @@
         No se ha encontrado ninguna receta.
       </p>
 
-      <div class="recipe-library" button [routerLink]="['recipe-categories']">
+      <div class="recipe-library" *ngIf="!fromMealTime || selectedMealTime === 'Lunch'">
         <h2 class="library-text">Comida</h2>
 
-        <button class="button">
-          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        <button class="button" [routerLink]="['/private/nutrition/recipe-library/lunch']">
+          <img src="../../../../assets/imgs/button.svg" alt="" />
         </button>
       </div>
 
@@ -137,11 +140,11 @@
         No se ha encontrado ninguna receta.
       </p>
 
-      <div class="recipe-library" button [routerLink]="['recipe-categories']">
+      <div class="recipe-library" *ngIf="!fromMealTime || selectedMealTime === 'Dinner'">
         <h2 class="library-text">Cena</h2>
 
-        <button class="button">
-          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        <button class="button" [routerLink]="['/private/nutrition/recipe-library/dinner']">
+          <img src="../../../../assets/imgs/button.svg" alt="" />
         </button>
       </div>
 
@@ -164,11 +167,11 @@
         No se ha encontrado ninguna receta.
       </p>
 
-      <div class="recipe-library" button [routerLink]="['recipe-categories']">
+      <div class="recipe-library" *ngIf="!fromMealTime || selectedMealTime === 'Snacks'">
         <h2 class="library-text">Snack</h2>
 
-        <button class="button">
-          <img src="../../../../assets/imgs/botton.svg" alt="" />
+        <button class="button" [routerLink]="['/private/nutrition/recipe-library/snack']">
+          <img src="../../../../assets/imgs/button.svg" alt="" />
         </button>
       </div>
 
@@ -212,6 +215,61 @@
         ></ion-skeleton-text>
       </p>
     </div>
+  </div>
+
+  <!-- Show horizontal cards when coming from meal time navigation -->
+  <div *ngIf="showHorizontalCards && !searchText()">
+    <ng-container *ngFor="let recipe of filteredRecipesForHorizontalView">
+      <ion-row
+        [class]="'recipe_' + (recipe.section?.toLowerCase() || '')"
+      >
+        <ion-col
+          size="4"
+          class="recipe-image"
+          [ngStyle]="{ backgroundImage: 'url(' + recipe.image + ')' }"
+        >
+        </ion-col>
+
+        <ion-col size="8" class="ion-padding recipe-content">
+          <div class="text-content">
+            <div class="diet-type">{{ getMealTimeDisplayName() }} - {{ getDietTypeDisplay(recipe.description) }}</div>
+            <div class="recipe-title">{{ recipe.title }}</div>
+          </div>
+
+          <div class="recipe-text">
+            <div class="points">
+              <img
+                *ngFor="let number of [].constructor(recipe.value || 0); let i = index"
+                src="../../../../../assets/imgs/nutrition/traffic-light-on.svg"
+                style="width: 18px; height: 18px"
+              />
+              <img
+                *ngFor="let number of [].constructor(4 - (recipe.value || 0)); let i = index"
+                src="../../../../../assets/imgs/nutrition/traffic-light-off.svg"
+                style="width: 18px; height: 18px"
+              />
+            </div>
+            <div class="time">
+              <img
+                *ngIf="recipe.section !== 'Breakfast'"
+                src="../../../../../assets/icons/initFormIcons/clock_green_solid.svg"
+                style="width: 16px; height: 16px"
+              />
+              <img
+                *ngIf="recipe.section === 'Breakfast'"
+                src="../../../../../assets/icons/initFormIcons/clock_black_solid.svg"
+                style="width: 16px; height: 16px"
+              />
+              <span> {{ recipe.time }}'</span>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    
+    <p class="ion-padding" *ngIf="filteredRecipesForHorizontalView.length === 0">
+      No se encontraron recetas para este momento del día.
+    </p>
   </div>
 
   <app-recipe-search

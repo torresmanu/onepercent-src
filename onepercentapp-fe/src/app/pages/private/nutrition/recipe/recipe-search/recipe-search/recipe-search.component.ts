@@ -36,4 +36,32 @@ export class RecipeSearchComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  getMealTimeDisplayName(section: string | undefined): string {
+    if (!section) return '';
+    
+    const titleMap: { [key: string]: string } = {
+      'Breakfast': 'Desayuno',
+      'Lunch': 'Comida',
+      'Dinner': 'Cena',
+      'Snacks': 'Snack'
+    };
+    
+    return titleMap[section] || section;
+  }
+
+  getDietTypeDisplay(description: any): string {
+    // If description is an array, get the first element
+    if (Array.isArray(description)) {
+      return description[0] || '';
+    }
+    
+    // If description is a string, return it
+    if (typeof description === 'string') {
+      return description;
+    }
+    
+    // Fallback
+    return '';
+  }
 }

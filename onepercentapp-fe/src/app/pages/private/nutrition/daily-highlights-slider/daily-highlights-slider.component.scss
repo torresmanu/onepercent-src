@@ -1,75 +1,63 @@
-.component {
+.meal-swiper {
   margin: 1rem; // 16px
-  display: flex;
-  gap: 0.625rem; // 10px
+  width: calc(100% - 2rem); // Full width minus margins
 }
 
-.container1 {
-  width: 12.925rem; // 206.8px
-  height: 21rem; // 336px
+.meal-card {
+  width: 206.81385803222656px;
+  height: 336px;
+  opacity: 1;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 10px;
 
   display: flex;
-  padding: 1rem; // 16px
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem; // 16px
+  justify-content: flex-start;
+  position: relative;
 
-  border-radius: 0.625rem; // 10px
-  background: #bcdf84;
-}
-
-h2 {
-  color: #131313;
-  /* Inter_L_Sb */
-  font-family: Inter;
-  font-size: 1.25rem; // 20px
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0;
-}
-
-img {
-  width: 12.5rem; // 200px
-  height: 12.5rem; // 200px
-  margin: 0;
-}
-
-.time {
-  gap: 0.5rem; // 8px
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  padding-right: 1rem; // 16px
-
-  .time-text {
+  h2 {
     color: #131313;
-
-    /* Inter_S_Bold */
     font-family: Inter;
-    font-size: 0.75rem; // 12px
+    font-weight: 600;
     font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    margin: 0;
+    padding: 0 16px;
   }
 
-  .time-icon {
-    width: 1rem; // 16px
-    height: 1rem; // 16px
+  img {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin: auto 0;
+    padding: 0;
+    align-self: center;
   }
-}
 
-.container2 {
-  width: 12.925rem; // 206.8px
-  height: 21rem; // 336px
+  // Background colors for each meal type - Consistent color scheme
+  &.breakfast {
+    background: var(--onepercent-Soft-Green-500, #BCDF84);
+  }
 
-  display: flex;
-  padding: 1rem; // 16px
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem; // 16px
+  &.lunch {
+    background: var(--onepercent-gray-100, #F2F2F2);
+  }
 
-  border-radius: 0.625rem; // 10px
-  background: #f2f2f2;
+  &.dinner {
+    background: var(--onepercent-gray-900, #1C1C1C);
+    
+    h2 {
+      color: #ffffff; // White text for dark background
+    }
+  }
+
+  &.snack {
+    background: var(--onepercent-Soft-Green-100, #F8FDE8);
+  }
 }

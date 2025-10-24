@@ -18,4 +18,24 @@ export const nutritionRoutes: Routes = [
     path: 'recipe-library',
     component: RecipeLibraryComponent,
   },
+  {
+    path: 'recipe-library/breakfast',
+    component: RecipeLibraryComponent,
+    data: { mealTime: 'Breakfast' }
+  },
+  {
+    path: 'recipe-library/lunch',
+    component: RecipeLibraryComponent,
+    data: { mealTime: 'Lunch' }
+  },
+  {
+    path: 'recipe-library/dinner',
+    component: RecipeLibraryComponent,
+    data: { mealTime: 'Dinner' }
+  },
+  {
+    path: 'recipe-library/snack',
+    component: RecipeLibraryComponent,
+    data: { mealTime: 'Snacks' }
+  },
 ];

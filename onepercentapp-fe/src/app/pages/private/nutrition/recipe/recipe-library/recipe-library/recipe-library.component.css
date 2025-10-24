@@ -62,9 +62,24 @@ ion-toolbar {
   color: #000;
   box-shadow: 0px 0px 8px 0px rgba(188, 223, 132, 0.4);
 }
+
+/* Ensure time filters have correct height */
+.time-filters ion-row {
+  height: auto !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+.time-filters ion-col {
+  height: auto !important;
+}
 .recipe-library {
-  /* Tighten vertical spacing for section headers like "Desayuno", "Comida" */
-  margin: 0 1rem !important;
+  /* Add vertical spacing for section headers like "Desayuno", "Comida" */
+  margin: 1rem 1rem !important;
 }
 
 /* Add spacing between recipe sections */
@@ -160,4 +175,128 @@ ion-radio-group .radio-inner {
 ion-radio.time-chip::part(container) {
   position: relative;
   overflow: hidden;
+}
+
+/* HORIZONTAL CARDS STYLES (for meal time navigation) - Now using same styles as search */
+
+/* Copy exact styles from recipe-search component - only for recipe cards */
+ion-row:not(.time-filters ion-row) {
+  height: 125px;
+  border-radius: 10px;
+  border : 1px solid white;
+  overflow: hidden; /* Ensure images respect border radius */
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.recipe_breakfast {
+  background: var(--ion-color-primary);
+}
+
+.recipe_lunch,
+.recipe_snacks {
+  background: var(--ion-color-secondary);
+}
+
+.recipe_dinner {
+  background: var(--ion-color-dark);
+  color: white;
+}
+
+.recipe-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 0 0 10px; /* Apply border radius to left corners */
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 8px;
+  padding: 12px;
+}
+
+.text-content {
+  width: 219px;
+  height: 71px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.diet-type {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: black;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* White text for dark recipe cards (dinner) */
+.recipe_dinner .diet-type,
+.recipe_dinner .recipe-title {
+  color: white !important;
+}
+
+.recipe-text {
+  width: 219px;
+  height: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.points {
+  display: flex;
+  flex-direction: row;
+  gap: 0.15rem;
+  align-items: center;
+}
+
+.points img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  text-wrap: nowrap;
+  font-size: 12px;
+  gap: 4px;
 }
